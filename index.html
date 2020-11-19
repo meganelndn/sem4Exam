@@ -4,8 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hey Captain</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    
+    <div id="topNavigation">
+    <nav class="navBar" id="navBar">
+        <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/heycaptain_logo.png" alt="logo" class="logo">
+        <a href="#home">Home</a>
+        <a href="#faq">FAQ</a>
+        <a href="#book">Book with us</a>
+        <!-- search bar -->
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button> 
+    </nav> 
+    </div> 
+
+    <section id="intro">
+        <template class="introTemplate">
+            <img src="" alt="" class="heroImg">
+            <h3 class="introTitle"></h3>
+            <p class="introText"></p>
+        </template>
+    </section>
+
+    <section id="trips">
+        <template class="tripTemplate">
+            <!-- THE LANDMARKS -->
+            <h3 class="tripTitle1"></h3>
+            <h3 class="duration1"></h3>
+            <img src="" alt="" class="tripImg1">
+            <p class="tripText1"></p>
+            <!-- HIDDEN GEMS -->
+            <h3 class="tripTitle2"></h3>
+            <h3 class="duration2"></h3>
+            <img src="" alt="" class="tripImg2">
+            <p class="tripText2"></p>
+            <!-- THE DIANA -->
+            <h3 class="tripTitle3"></h3>
+            <h3 class="duration3"></h3>
+            <img src="" alt="" class="tripImg3">
+            <p class="tripText3"></p>
+        </template>
+    </section>
+
+    <section id="tours">
+        <template class="tourTemplate">
+            <!-- PUBLIC TOUR -->
+            <img src="" alt="" class="tourImg1">
+            <h3 class="tourTitle1"></h3>
+            <p class="tourText1"></p>
+            <!-- PRIVATE TOUR -->
+            <img src="" alt="" class="tourImg2">
+            <h3 class="tourTitle2"></h3>
+            <p class="tourText2"></p>
+        </template>
+    </section>
+
+    <div id="bottomNavigation">
+        <template class="contactTemplate">
+            <!-- season openings -->
+            <p class="contactText"></p>
+            <!-- departures/arrivals -->
+            <p class="contactText2"></p>
+            <!-- contact us -->
+            <p class="contactTitle3"></p>
+            <p class="contactLink1"></p>
+            <p class="contactLink2"></p>
+            <!-- follow us/social media -->
+            <p class="contactTitle4"></p>
+        </template>    
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
