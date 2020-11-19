@@ -1,0 +1,70 @@
+/* --------- VARIABLES -------- */
+:root {
+  --main-font: "Noto Sans JP";
+  --link-font-size: 14px;
+}
+* {
+  font-family: var(--main-font);
+  margin: 0;
+}
+
+/* --------- TOP NAV -------- */
+#topNavigation,
+#bottomNavigation {
+  background-color: #eff0ea;
+  margin: 10px;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+}
+#navBar a {
+  color: #000;
+  font-family: var(--main-font);
+  font-size: var(--link-font-size);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+#navBar input[type="text"] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+#navBar .search-container {
+  float: right;
+}
+#navBar .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+/* --------- IMAGES -------- */
+.heroImg,
+.tripImg1,
+.tripImg2,
+.tripImg3,
+.tourImg1,
+.tourImg2 {
+  width: 100%;
+  height: auto;
+}
+/* --------- TRIPS -------- */
+/* --------- TOURS -------- */
+
+/* --------- INTRO -------- */
+#intro,
+#tours {
+  background: #2a3141;
+  color: #fff;
+  margin: 0;
+}
