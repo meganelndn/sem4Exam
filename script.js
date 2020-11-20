@@ -3,33 +3,18 @@ window.addEventListener("DOMContentLoaded", init);
 import { gsap } from "gsap";
 
 function init() {
-    /* getPaymentPlugin(); */
-    getLandingPage();
-    getTrips();
-    getTours();
     getContact();
-}
 
-/* function getPaymentPlugin() {
-    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/payment_test/")
-    .then(res => res.json())
-    .then(showPaymentPage)
-
-    function showPaymentPage(payment) {
-        console.log(payment)
-        // 1. template clones
-        const paymentTemplate = document.querySelector(".bookingTemplate").content;
-        const paymentCopy = paymentTemplate.cloneNode(true);
-
-        // 2. text content
-        // TEST
-        const paymentTest = paymentCopy.querySelector(".bookingTest");
-        paymentTest.innerHTML = payment[0].content.rendered; 
-
-        // 3. append
-        document.querySelector("#bookNow").appendChild(paymentCopy);
+    if (window.location.pathname.includes("index")) {
+        getLandingPage();
+        getTrips();
+        getTours();
     }
-} */
+
+    if (window.location.pathname.includes("faq")) {
+        getFAQ();
+    }
+}
 
 function getLandingPage() {
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/landing_page/")
@@ -46,6 +31,9 @@ function getLandingPage() {
         // HERO IMAGE
         const heroImg = introCopy.querySelector(".heroImg");
         heroImg.src = home[0].hero_video.guid;
+        // BANNER
+        const banner = introCopy.querySelector(".banner");
+        banner.src = home[0].banner.guid;
         // INTRO TEXT
         const title = introCopy.querySelector(".introTitle");
         title.textContent = home[0].social_sailing_in_copenhagen;
@@ -163,5 +151,29 @@ function getContact() {
 
         // 3. append
         document.querySelector("#bottomNavigation").appendChild(contactCopy);
+    }
+}
+
+function getFAQ() {
+        fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/faq/")
+        .then(res => res.json())
+        .then(showFAQPage)
+    
+        function showFAQPage(faq) {
+            console.log(faq)
+            // 1. template clone
+            const faqTemplate = document.querySelector(".faqTemplate").content;
+            const faqCopy = faqTemplate.cloneNode(true);
+    
+            // 2. text content
+            // HERO IMAGE
+            const Q = faqCopy.querySelector(".faqQuestion");
+            Q.src = faq[0].question;
+            // BANNER
+            const A = faqCopy.querySelector(".faqAnswer");
+            A.src = faq[0].answer;
+    
+            // 3. append
+            document.body.appendChild(faqCopy);
     }
 }
