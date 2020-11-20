@@ -1,11 +1,33 @@
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
+    /* getPaymentPlugin(); */
     getLandingPage();
     getTrips();
     getTours();
     getContact();
 }
+
+/* function getPaymentPlugin() {
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/payment_test/")
+    .then(res => res.json())
+    .then(showPaymentPage)
+
+    function showPaymentPage(payment) {
+        console.log(payment)
+        // 1. template clones
+        const paymentTemplate = document.querySelector(".bookingTemplate").content;
+        const paymentCopy = paymentTemplate.cloneNode(true);
+
+        // 2. text content
+        // TEST
+        const paymentTest = paymentCopy.querySelector(".bookingTest");
+        paymentTest.innerHTML = payment[0].content.rendered; 
+
+        // 3. append
+        document.querySelector("#bookNow").appendChild(paymentCopy);
+    }
+} */
 
 function getLandingPage() {
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/landing_page/")

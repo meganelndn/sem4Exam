@@ -1,0 +1,25 @@
+{
+  "name": "sem4_exam",
+  "version": "1.0.0",
+  "description": "Final MMD Exam",
+  "main": "script.js",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "scripts": {
+    "start": "parcel *.html --open",
+    "build": "parcel build *.html --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meganelndn/sem4Exam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meganelndn/sem4Exam/issues"
+  },
+  "homepage": "https://github.com/meganelndn/sem4Exam#readme"
+}
