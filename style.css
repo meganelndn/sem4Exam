@@ -2,6 +2,11 @@
 :root {
   --main-font: "Noto Sans JP";
   --link-font-size: 14px;
+
+  --light-beige: #eff0ea;
+  --dark-beige: #e3e5d7;
+  --light-blue: #3e4657;
+  --dark-blue: #2a3141;
 }
 * {
   font-family: var(--main-font);
@@ -11,13 +16,26 @@
 /* --------- TOP NAV -------- */
 #topNavigation,
 #bottomNavigation {
-  background-color: #eff0ea;
+  background-color: var(--light-beige);
   margin: 10px;
+  box-shadow:0 2px 10px rgba(226, 225, 225, 0.2); 
 }
+
 .logo {
   width: 50px;
   height: 50px;
   padding: 10px;
+}
+
+#navBar {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.navBarContent {
+  display: flex;
+  margin-inline-start: auto;
 }
 #navBar a {
   color: #000;
@@ -25,28 +43,68 @@
   font-size: var(--link-font-size);
   text-transform: uppercase;
   text-decoration: none;
+  margin: 10px;
 }
-#navBar input[type="text"] {
-  float: right;
-  padding: 6px;
-  border: none;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 17px;
+
+
+input {
+	outline: none;
 }
-#navBar .search-container {
-  float: right;
+input[type=search] {
+	font-family: inherit;
+	font-size: 100%;
 }
-#navBar .search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
 }
+
+
+input[type=search] {
+	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	border-radius: 10em;
+	transition: all .5s;
+}
+input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: #66CC75;
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+#searchBar input[type=search] {
+	width: 15px;
+	color: transparent;
+	cursor: pointer;
+}
+#searchBar input[type=search]:hover {
+	background-color: #fff;
+}
+#searchBar input[type=search]:focus {
+	width: 130px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+#searchBar input:-moz-placeholder {
+	color: transparent;
+}
+#searchBar input::-webkit-input-placeholder {
+	color: transparent;
+}
+
+
 
 /* --------- IMAGES -------- */
 .heroImg,
