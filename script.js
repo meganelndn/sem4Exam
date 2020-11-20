@@ -20,7 +20,7 @@ function init() {
 function getLandingPage() {
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/landing_page/")
     .then(res => res.json())
-    .then(showLandingPage)
+    .then(showLandingPage)        
 
     function showLandingPage(home) {
         console.log(home)
@@ -42,6 +42,12 @@ function getLandingPage() {
         // 3. append
         document.querySelector("#intro").appendChild(introCopy);
     }
+
+    // set up book now window
+    const bookBtn = document.querySelector(".bookBtn");
+    bookBtn.addEventListener("click", e => {
+        
+    })
 }
 
 function getTrips() {
