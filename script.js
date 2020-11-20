@@ -8,7 +8,7 @@ function init() {
     if (window.location.pathname.includes("index")) {
         getLandingPage();
         getTrips();
-        getTours();
+        getTours(); 
     }
 
     if (window.location.pathname.includes("faq")) {
@@ -120,6 +120,29 @@ function getTours() {
     }
 }
 
+function getFAQ() {
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/faq/")
+    .then(res => res.json())
+    .then(showFAQPage)
+
+    function showFAQPage(faq) {
+        console.log(faq)
+        // 1. template clone
+        const faqTemplate = document.querySelector(".faqTemplate").content;
+        const cloneFAQ = faqTemplate.cloneNode(true);
+
+        // 2. text content => loop through array
+        faq.forEach((oneFAQ) => {
+            console.log(oneFAQ)
+            cloneFAQ.querySelectorAll(".faqQuestion").textContent = oneFAQ.question;
+            cloneFAQ.querySelectorAll(".faqAnswer").textContent = oneFAQ.answer;
+        })
+
+        // 3. append
+        document.querySelector("#faq").appendChild(cloneFAQ);
+    }
+}
+
 function getContact() {
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/contact_page/")
     .then(res => res.json())
@@ -151,29 +174,5 @@ function getContact() {
 
         // 3. append
         document.querySelector("#bottomNavigation").appendChild(contactCopy);
-    }
-}
-
-function getFAQ() {
-        fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/faq/")
-        .then(res => res.json())
-        .then(showFAQPage)
-    
-        function showFAQPage(faq) {
-            console.log(faq)
-            // 1. template clone
-            const faqTemplate = document.querySelector(".faqTemplate").content;
-            const faqCopy = faqTemplate.cloneNode(true);
-    
-            // 2. text content
-            // HERO IMAGE
-            const Q = faqCopy.querySelector(".faqQuestion");
-            Q.src = faq[0].question;
-            // BANNER
-            const A = faqCopy.querySelector(".faqAnswer");
-            A.src = faq[0].answer;
-    
-            // 3. append
-            document.body.appendChild(faqCopy);
     }
 }
