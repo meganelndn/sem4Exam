@@ -137,13 +137,25 @@ input::-webkit-input-placeholder {
   width: 100%;
   height: auto;
 }
-/* --------- TRIPS -------- */
-/* --------- TOURS -------- */
 
 /* --------- INTRO -------- */
 #intro,
-#tours {
+#tours,
+#gallery {
   background: #2a3141;
   color: #fff;
   margin: 0;
+}
+
+/* --------- TRIPS -------- */
+/* --------- TOURS -------- */
+
+/* -------- GALLERY ------- */
+#gallery {
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+}
+#gallery img {
+  width: 210px;
+  height: 170px;
 }
