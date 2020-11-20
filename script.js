@@ -3,38 +3,24 @@ window.addEventListener("DOMContentLoaded", init);
 import { gsap } from "gsap";
 
 function init() {
-    /* getPaymentPlugin(); */
-    getLandingPage();
-    getTrips();
-    getTours();
     getContact();
-}
 
-/* function getPaymentPlugin() {
-    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/payment_test/")
-    .then(res => res.json())
-    .then(showPaymentPage)
-
-    function showPaymentPage(payment) {
-        console.log(payment)
-        // 1. template clones
-        const paymentTemplate = document.querySelector(".bookingTemplate").content;
-        const paymentCopy = paymentTemplate.cloneNode(true);
-
-        // 2. text content
-        // TEST
-        const paymentTest = paymentCopy.querySelector(".bookingTest");
-        paymentTest.innerHTML = payment[0].content.rendered; 
-
-        // 3. append
-        document.querySelector("#bookNow").appendChild(paymentCopy);
+    if (window.location.pathname.includes("index")) {
+        getLandingPage();
+        getTrips();
+        getTours(); 
+        getGallery();
     }
-} */
+
+    if (window.location.pathname.includes("faq")) {
+        getFAQ();
+    }
+}
 
 function getLandingPage() {
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/landing_page/")
     .then(res => res.json())
-    .then(showLandingPage)
+    .then(showLandingPage)        
 
     function showLandingPage(home) {
         console.log(home)
@@ -46,6 +32,9 @@ function getLandingPage() {
         // HERO IMAGE
         const heroImg = introCopy.querySelector(".heroImg");
         heroImg.src = home[0].hero_video.guid;
+        // BANNER
+        const banner = introCopy.querySelector(".banner");
+        banner.src = home[0].banner.guid;
         // INTRO TEXT
         const title = introCopy.querySelector(".introTitle");
         title.textContent = home[0].social_sailing_in_copenhagen;
@@ -53,6 +42,12 @@ function getLandingPage() {
         // 3. append
         document.querySelector("#intro").appendChild(introCopy);
     }
+
+    // set up book now window
+    const bookBtn = document.querySelector(".bookBtn");
+    bookBtn.addEventListener("click", e => {
+        
+    })
 }
 
 function getTrips() {
@@ -129,6 +124,53 @@ function getTours() {
 
         // 3. append
         document.querySelector("#tours").appendChild(tourCopy);
+    }
+}
+
+function getGallery() {
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/gallery_page/")
+    .then(res => res.json())
+    .then(showGalleryPage)
+
+    function showGalleryPage(gallery) {
+        console.log(gallery)
+        // 1. template clone
+        const galleryTemplate = document.querySelector(".galleryTemplate").content;
+        const galleryCopy = galleryTemplate.cloneNode(true);
+
+        // 2. text content
+        const galleryImg = galleryCopy.querySelector(".galleryImg1");
+        galleryImg.src = gallery[0].boat_image.guid;
+        const galleryImg2 = galleryCopy.querySelector(".galleryImg2");
+        galleryImg2.src = gallery[1].boat_image.guid;
+        const galleryImg3 = galleryCopy.querySelector(".galleryImg3");
+        galleryImg3.src = gallery[2].boat_image.guid;
+
+        // 3. append
+        document.querySelector("#gallery").appendChild(galleryCopy);
+    }
+}
+
+function getFAQ() {
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/faq/")
+    .then(res => res.json())
+    .then(showFAQPage)
+
+    function showFAQPage(faq) {
+        console.log(faq)
+        // 1. template clone
+        const faqTemplate = document.querySelector(".faqTemplate").content;
+        const cloneFAQ = faqTemplate.cloneNode(true);
+
+        // 2. text content => loop through array
+        faq.forEach((oneFAQ) => {
+            console.log(oneFAQ)
+            cloneFAQ.querySelectorAll(".faqQuestion").textContent = oneFAQ.question;
+            cloneFAQ.querySelectorAll(".faqAnswer").textContent = oneFAQ.answer;
+        })
+
+        // 3. append
+        document.querySelector("#faq").appendChild(cloneFAQ);
     }
 }
 
