@@ -1,4 +1,4 @@
-/* --------- FONTS -------- */
+/* ----------- FONTS ----------- */
 @font-face {
   font-family: "Brandon Text Regular";
   src: url("fonts/BrandonText-Regular.otf") format("woff");
@@ -13,6 +13,7 @@
   --dark-beige: #e3e5d7;
   --light-blue: #3e4657;
   --dark-blue: #2a3141;
+  --yellow: #ffff00;
 }
 * {
   font-family: var(--main-font);
@@ -34,6 +35,8 @@
 .banner {
   width: 50%;
   height: auto;
+  position: absolute;
+  top: 200px;
 }
 
 #navBar {
@@ -110,6 +113,18 @@ input::-webkit-input-placeholder {
 }
 #searchBar input::-webkit-input-placeholder {
   color: transparent;
+}
+/* -------- BOOK BTN -------- */
+.bookBtn {
+  background: var(--yellow);
+  border: none;
+  cursor: pointer;
+  padding: 15px 25px;
+  border-radius: 5px;
+  position: absolute;
+  top: 300px;
+  right: 0;
+  transform: rotate(-90deg);
 }
 
 /* --------- IMAGES -------- */
