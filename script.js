@@ -157,20 +157,20 @@ function getFAQ() {
     .then(showFAQPage)
 
     function showFAQPage(faq) {
-        console.log(faq)
         // 1. template clone
         const faqTemplate = document.querySelector(".faqTemplate").content;
-        const cloneFAQ = faqTemplate.cloneNode(true);
-
+        const faqArea = document.querySelector("#faqList");
+        
         // 2. text content => loop through array
         faq.forEach((oneFAQ) => {
-            console.log(oneFAQ)
-            cloneFAQ.querySelectorAll(".faqQuestion").textContent = oneFAQ.question;
-            cloneFAQ.querySelectorAll(".faqAnswer").textContent = oneFAQ.answer;
-        })
+            const cloneFAQ = faqTemplate.cloneNode(true);
 
-        // 3. append
-        document.querySelector("#faq").appendChild(cloneFAQ);
+            cloneFAQ.querySelector(".faqQuestion").textContent = oneFAQ.question;
+            cloneFAQ.querySelector(".faqAnswer").textContent = oneFAQ.answer;
+
+            //3. append
+            faqArea.appendChild(cloneFAQ);
+        })
     }
 }
 
@@ -180,7 +180,7 @@ function getContact() {
     .then(showContact)
 
     function showContact(contact) {
-        console.log(contact)
+        //console.log(contact)
         // 1. template clone
         const templateC = document.querySelector(".contactTemplate").content;
         const contactCopy = templateC.cloneNode(true);
