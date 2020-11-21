@@ -15,6 +15,10 @@ function init() {
     if (window.location.pathname.includes("faq")) {
         getFAQ();
     }
+
+       // set up book now window
+       const bookBtn = document.querySelector(".bookBtn");
+       bookBtn.addEventListener("click", startBooking);
 }
 
 function getLandingPage() {
@@ -43,11 +47,12 @@ function getLandingPage() {
         document.querySelector("#intro").appendChild(introCopy);
     }
 
-    // set up book now window
-    const bookBtn = document.querySelector(".bookBtn");
-    bookBtn.addEventListener("click", e => {
-        
-    })
+ 
+}
+
+function startBooking(){
+    document.querySelector("#bookingWindow").style.display = "block";
+
 }
 
 function getTrips() {

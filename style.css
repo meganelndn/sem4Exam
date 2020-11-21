@@ -114,18 +114,7 @@ input::-webkit-input-placeholder {
 #searchBar input::-webkit-input-placeholder {
   color: transparent;
 }
-/* -------- BOOK BTN -------- */
-.bookBtn {
-  background: var(--yellow);
-  border: none;
-  cursor: pointer;
-  padding: 15px 25px;
-  border-radius: 5px;
-  position: absolute;
-  top: 300px;
-  right: 0;
-  transform: rotate(-90deg);
-}
+
 
 /* --------- IMAGES -------- */
 .heroImg,
@@ -181,3 +170,29 @@ input::-webkit-input-placeholder {
 /* .displayBock {
   display: block;
 } */
+
+/* BOOKING */
+
+
+#bookingWindow {
+  display: none;
+  width: 700px;
+  height: 500px;
+  background-color: green;
+  position: absolute;
+  top: 20%;
+  right: 0;
+}
+
+/* -------- BOOK BTN -------- */
+.bookBtn {
+  background: var(--yellow);
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  padding: 15px 25px;
+  border-radius: 5px;
+  top: 300px;
+  right: 0;
+  transform: rotate(-90deg);
+}
