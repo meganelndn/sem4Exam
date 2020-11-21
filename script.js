@@ -170,8 +170,40 @@ function getFAQ() {
 
             //3. append
             faqArea.appendChild(cloneFAQ);
+
         })
+        accordion();
+        expandOptions();
     }
+}
+
+function accordion(){
+    let accordion = document.querySelectorAll(".faqQuestion");
+    let counter;
+    for (counter = 0; counter < accordion.length; counter++) {
+        accordion[counter].addEventListener("click", function() {
+        this.classList.toggle("accordionActive");
+        let getAnswer = this.nextElementSibling;
+            if (getAnswer.style.display === "block") {
+            getAnswer.style.display = "none";
+            } else {
+            getAnswer.style.display = "block";
+            }
+        });
+        }
+}
+
+function expandOptions(){
+    document.querySelector("#expandFaq").addEventListener("click", function() {
+    let getAnswer = document.querySelectorAll(".faqAnswer");
+        getAnswer.forEach((oneAnswer) => {
+            if (oneAnswer.style.display === "block") {
+            oneAnswer.style.display = "none";
+            } else {
+            oneAnswer.style.display = "block";
+            }
+        })
+    });
 }
 
 function getContact() {

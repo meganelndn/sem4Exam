@@ -159,3 +159,25 @@ input::-webkit-input-placeholder {
   width: 210px;
   height: 170px;
 }
+
+
+/* --------- FAQ ---------- */
+.faqQuestion {
+  cursor: pointer;
+}
+
+.faqAnswer {
+  display: none;
+}
+
+.oneQuestion {
+  padding: 10px;
+}
+
+.accordionActive, .faqQuestion:hover {
+    background-color: #ccc; 
+}
+
+/* .displayBock {
+  display: block;
+} */
