@@ -37,10 +37,19 @@ function setUpBooking(){
     // set up book now window
     const bookBtn = document.querySelector(".bookBtn");
     bookBtn.addEventListener("click", startBooking);
-}      
 
+    
+}      
 function startBooking(){
-    document.querySelector("#bookingWindow").style.display = "block";
+//   document.getElementById("bookingSection").style.width = "50%";
+let element = document.getElementById("bookingSection");
+element.classList.toggle("showOverlay");
+  
+//   function closeNav() {
+//     document.getElementById("bookingSection").style.width = "0%";
+//   }
+
+    // document.querySelector("#bookingWindow").style.display = "block";
 }
 
 function showLandingPage(home) {

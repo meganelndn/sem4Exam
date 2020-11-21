@@ -193,6 +193,60 @@ input::-webkit-input-placeholder {
   padding: 15px 25px;
   border-radius: 5px;
   top: 300px;
-  right: 0;
+  /* right: 0; */
+  left: 40%;
   transform: rotate(-90deg);
+}
+/* .bookBtn:focus{
+  left: 40%;
+} */
+
+.overlay {
+  height: 80%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 10%;
+  bottom: 25%;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.showOverlay {
+  width: 40%;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  background-color: green;
+}
+
+.overlay a{
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #000000;
+}
+
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
 }
