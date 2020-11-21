@@ -16,9 +16,7 @@ function init() {
         getFAQ();
     }
 
-       // set up book now window
-       const bookBtn = document.querySelector(".bookBtn");
-       bookBtn.addEventListener("click", startBooking);
+  
 }
 
 function getLandingPage() {
@@ -46,7 +44,9 @@ function getLandingPage() {
         // 3. append
         document.querySelector("#intro").appendChild(introCopy);
     }
-
+     // set up book now window
+     const bookBtn = document.querySelector(".bookBtn");
+     bookBtn.addEventListener("click", startBooking);
  
 }
 
