@@ -35,21 +35,10 @@ function fetchData(){
 
 function setUpBooking(){
     // set up book now window
-    const bookBtn = document.querySelector(".bookBtn");
-    bookBtn.addEventListener("click", startBooking);
-
-    
-}      
-function startBooking(){
-//   document.getElementById("bookingSection").style.width = "50%";
-let element = document.getElementById("bookingSection");
-element.classList.toggle("showOverlay");
-  
-//   function closeNav() {
-//     document.getElementById("bookingSection").style.width = "0%";
-//   }
-
-    // document.querySelector("#bookingWindow").style.display = "block";
+    document.getElementById("bookBtn").addEventListener("click", function(){
+        let bookOverlay = document.getElementById("bookingOverlay");
+        bookOverlay.classList.toggle("showOverlay");
+    });  
 }
 
 function showLandingPage(home) {
@@ -177,18 +166,18 @@ function showFAQPage(faq) {
 }
 
 function accordion(){
-let accordion = document.querySelectorAll(".faqQuestion");
-let counter;
-for (counter = 0; counter < accordion.length; counter++) {
-    accordion[counter].addEventListener("click", function() {
-    this.classList.toggle("accordionActive");
-    let getAnswer = this.nextElementSibling;
-        if (getAnswer.style.display === "block") {
-        getAnswer.style.display = "none";
-        } else {
-        getAnswer.style.display = "block";
-        }
-    });
+    let accordion = document.querySelectorAll(".faqQuestion");
+    let counter;
+    for (counter = 0; counter < accordion.length; counter++) {
+        accordion[counter].addEventListener("click", function() {
+        this.classList.toggle("accordionActive");
+        let getAnswer = this.nextElementSibling;
+            if (getAnswer.style.display === "block") {
+            getAnswer.style.display = "none";
+            } else {
+            getAnswer.style.display = "block";
+            }
+        });
     }
 }
 
