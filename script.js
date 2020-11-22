@@ -48,14 +48,11 @@ function showLandingPage(home) {
 
     // 2. text content
     // HERO IMAGE
-    const heroImg = introCopy.querySelector(".heroImg");
-    heroImg.src = home[0].hero_video.guid;
+    introCopy.querySelector(".heroImg").src = home[0].hero_video.guid;
     // BANNER
-    const banner = introCopy.querySelector(".banner");
-    banner.src = home[0].banner.guid;
+    introCopy.querySelector(".banner").src = home[0].banner.guid;
     // INTRO TEXT
-    const title = introCopy.querySelector(".introTitle");
-    title.textContent = home[0].social_sailing_in_copenhagen;
+    introCopy.querySelector(".introTitle").textContent = home[0].social_sailing_in_copenhagen;
 
     // 3. append
     document.querySelector("#intro").appendChild(introCopy);
@@ -160,25 +157,17 @@ function showContact(contact) {
     // 1. template clone
     const templateC = document.querySelector(".contactTemplate").content;
     const contactCopy = templateC.cloneNode(true);
-
     // 2. text content
     // SEASON OPENINGS
-    const descC = contactCopy.querySelector(".contactText");
-    descC.textContent = contact[2].openings;
+    contactCopy.querySelector(".contactText").textContent = contact[2].openings;
     // DEPARTURES/ARRIVALS
-    const descC2 = contactCopy.querySelector(".contactText2");
-    descC2.textContent = contact[1].location; 
+    contactCopy.querySelector(".contactText2").textContent = contact[1].location; 
     // CONTACT US
-    const contactTitle3 = contactCopy.querySelector(".contactTitle3");
-    contactTitle3.textContent = contact[3].title.rendered;
-    const mail = contactCopy.querySelector(".contactLink1");
-    mail.textContent = `E-mail: info@heycaptain.dk`; 
-    const phone = contactCopy.querySelector(".contactLink2");
-    phone.textContent = `Phone: ${contact[3].contact_phone}`; 
+    contactCopy.querySelector(".contactTitle3").textContent = contact[3].title.rendered;
+    contactCopy.querySelector(".contactLink1").textContent = `E-mail: info@heycaptain.dk`; 
+    contactCopy.querySelector(".contactLink2").textContent = `Phone: ${contact[3].contact_phone}`; 
     // FOLLOW US
-    const contactTitle4 = contactCopy.querySelector(".contactTitle4");
-    contactTitle4.textContent = contact[0].title.rendered;
-
+    contactCopy.querySelector(".contactTitle4").textContent = contact[0].title.rendered;
     // 3. append
     document.querySelector("#bottomNavigation").appendChild(contactCopy);
 }
