@@ -63,42 +63,22 @@ function showLandingPage(home) {
 }
 
 function showTrips(trips) {
-    console.log(trips)
+    console.log("the trips", trips)
     // 1. template clone
     const tripTemplate = document.querySelector(".tripTemplate").content;
-    const tripCopy = tripTemplate.cloneNode(true);
+    const tripArea = document.querySelector("#tripArea");
+    
+    trips.forEach((oneTrip) => {
+        const tripCopy = tripTemplate.cloneNode(true);
+        console.log(oneTrip)
 
-    // 2. text content
-    // THE LANDMARKS
-    const tripT = tripCopy.querySelector(".tripTitle1");
-    tripT.textContent = trips[2].title.rendered;
-    const dur = tripCopy.querySelector(".duration1");
-    dur.textContent = trips[2].duration;
-    const tripImg = tripCopy.querySelector(".tripImg1");
-    tripImg.src = trips[2].trip_image.guid;
-    const tripDesc = tripCopy.querySelector(".tripText1");
-    tripDesc.textContent = trips[2].description;
-    // HIDDEN GEMS
-    const tripT2 = tripCopy.querySelector(".tripTitle2");
-    tripT2.textContent = trips[1].title.rendered;
-    const dur2 = tripCopy.querySelector(".duration2");
-    dur2.textContent = trips[1].duration;
-    const tripImg2 = tripCopy.querySelector(".tripImg2");
-    tripImg2.src = trips[1].trip_image.guid;
-    const tripDesc2 = tripCopy.querySelector(".tripText2");
-    tripDesc2.textContent = trips[1].description;
-    // THE DIANA
-    const tripT3 = tripCopy.querySelector(".tripTitle3");
-    tripT3.textContent = trips[0].title.rendered;
-    const dur3 = tripCopy.querySelector(".duration3");
-    dur3.textContent = trips[0].duration;
-    const tripImg3 = tripCopy.querySelector(".tripImg3");
-    tripImg3.src = trips[0].trip_image.guid;
-    const tripDesc3 = tripCopy.querySelector(".tripText3");
-    tripDesc3.textContent = trips[0].description;
-
-    // 3. append
-    document.querySelector("#trips").appendChild(tripCopy);
+        tripCopy.querySelector(".tripTitle").textContent = oneTrip.title.rendered;
+        tripCopy.querySelector(".tripImg").src = oneTrip.trip_image.guid;
+        tripCopy.querySelector(".duration").textContent = oneTrip.duration;
+        tripCopy.querySelector(".tripText").textContent = oneTrip.description;
+        //3. append
+        tripArea.appendChild(tripCopy);
+    })
 }
 
 function showTours(tours) {
