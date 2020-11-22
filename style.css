@@ -118,9 +118,6 @@ input::-webkit-input-placeholder {
 
 /* --------- IMAGES -------- */
 .heroImg,
-.tripImg1,
-.tripImg2,
-.tripImg3,
 .tourImg1,
 .tourImg2 {
   width: 100%;
@@ -137,6 +134,19 @@ input::-webkit-input-placeholder {
 }
 
 /* --------- TRIPS -------- */
+.tripImg{
+  height: 200px;
+}
+#tripArea{
+  display: flex;
+  margin: 20px;
+  text-align: center;
+}
+
+#singleTripArea{
+  background-color: lightblue;
+}
+
 /* --------- TOURS -------- */
 
 /* -------- GALLERY ------- */
@@ -148,7 +158,6 @@ input::-webkit-input-placeholder {
   width: 210px;
   height: 170px;
 }
-
 
 /* --------- FAQ ---------- */
 .faqQuestion {
