@@ -28,6 +28,10 @@
   box-shadow: 0 2px 10px rgba(226, 225, 225, 0.2);
 }
 
+#topNavigation {
+  position: fixed;
+  width: -webkit-fill-available;
+}
 .logo {
   width: 50px;
   height: 50px;
@@ -115,7 +119,6 @@ input::-webkit-input-placeholder {
   color: transparent;
 }
 
-
 /* --------- IMAGES -------- */
 .heroImg,
 .tourImg1,
@@ -125,41 +128,65 @@ input::-webkit-input-placeholder {
 }
 
 /* --------- INTRO -------- */
-#intro,
 #tours,
+#trips,
 #gallery {
   background: #2a3141;
   color: #fff;
   margin: 0;
+  text-align: center;
+  margin: 50px 0 50px 0;
 }
 
 /* --------- TRIPS -------- */
-.tripImg{
-  height: 200px;
-}
 #tripArea{
-  display: flex;
-  margin: 20px;
-  text-align: center;
+  display: inline-flex;
 }
 
 #singleTripArea{
-  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: fit-content;
 }
 
+.tripImg{
+  height: 200px;
+}
 /* --------- TOURS -------- */
+#tourArea {
+  display: inline-flex;
+}
 
-/* -------- GALLERY ------- */
-#gallery {
+#singleTourArea {
   display: flex;
-  grid-template-columns: repeat(3, 1fr);
+  flex-direction: column;
+  align-items: center;
+  max-width: fit-content;
+}
+
+.tourImg{
+  width: 400px;
+}
+/* -------- GALLERY ------- */
+#galleryArea {
+  display: flex;
 }
 #gallery img {
   width: 210px;
   height: 170px;
 }
 
+/* display only the first 6 images for now, until we build the gallery */
+#singleGalleryImg:nth-child(n+6){
+  display: none;
+}
+
 /* --------- FAQ ---------- */
+#faq {
+  padding: 200px;
+}
+
 .faqQuestion {
   cursor: pointer;
 }
