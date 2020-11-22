@@ -27,7 +27,6 @@
         <template class="introTemplate">
             <img src="" alt="" class="banner">
             <img src="" alt="" class="heroImg">
-            <!-- <button class="bookBtn">Click to book!</button> -->
             <h3 class="introTitle"></h3>
             <p class="introText"></p>
         </template>
@@ -47,15 +46,13 @@
 
     <section id="tours">
         <template class="tourTemplate">
-            <!-- PUBLIC TOUR -->
-            <img src="" alt="" class="tourImg1">
-            <h3 class="tourTitle1"></h3>
-            <p class="tourText1"></p>
-            <!-- PRIVATE TOUR -->
-            <img src="" alt="" class="tourImg2">
-            <h3 class="tourTitle2"></h3>
-            <p class="tourText2"></p>
+            <div id="singleTourArea">
+                <img src="" alt="" class="tourImg">
+                <h3 class="tourTitle"></h3>
+                <p class="tourText"></p>
+            </div>
         </template>
+        <div id="tourArea"></div>
     </section>
 
     <section id="weather">
@@ -66,10 +63,11 @@
 
     <section id="gallery">
         <template class="galleryTemplate">
-            <img src="" alt="" class="galleryImg1">
-            <img src="" alt="" class="galleryImg2">
-            <img src="" alt="" class="galleryImg3">
+            <div id="singleGalleryImg">
+                <img src="" alt="" class="galleryImg">
+            </div>
         </template>
+        <div id="galleryArea"></div>
     </section>
 
     <div id="bottomNavigation">

@@ -42,7 +42,6 @@ function setUpBooking(){
 }
 
 function showLandingPage(home) {
-    console.log(home)
     // 1. template clone
     const introTemplate = document.querySelector(".introTemplate").content;
     const introCopy = introTemplate.cloneNode(true);
@@ -63,14 +62,12 @@ function showLandingPage(home) {
 }
 
 function showTrips(trips) {
-    console.log("the trips", trips)
     // 1. template clone
     const tripTemplate = document.querySelector(".tripTemplate").content;
     const tripArea = document.querySelector("#tripArea");
     
     trips.forEach((oneTrip) => {
         const tripCopy = tripTemplate.cloneNode(true);
-        console.log(oneTrip)
 
         tripCopy.querySelector(".tripTitle").textContent = oneTrip.title.rendered;
         tripCopy.querySelector(".tripImg").src = oneTrip.trip_image.guid;
@@ -82,47 +79,32 @@ function showTrips(trips) {
 }
 
 function showTours(tours) {
-    console.log(tours)
     // 1. template clone
     const tourTemplate = document.querySelector(".tourTemplate").content;
-    const tourCopy = tourTemplate.cloneNode(true);
+    const tourArea = document.querySelector("#tourArea");
+    
+    tours.forEach((oneTour) => {
+        console.log("one tour:", oneTour)
+        const tourCopy = tourTemplate.cloneNode(true);
 
-    // 2. text content
-    // PUBLIC TOUR
-    const tourImg = tourCopy.querySelector(".tourImg1");
-    tourImg.src = tours[1].tour_image.guid;
-    const tourT = tourCopy.querySelector(".tourTitle1");
-    tourT.textContent = tours[1].title.rendered;
-    const tourDesc = tourCopy.querySelector(".tourText1");
-    tourDesc.textContent = tours[1].description;
-    // PRIVATE TOUR
-    const tourImg2 = tourCopy.querySelector(".tourImg2");
-    tourImg2.src = tours[0].tour_image.guid;
-    const tourT2 = tourCopy.querySelector(".tourTitle2");
-    tourT2.textContent = tours[0].title.rendered;
-    const tourDesc2 = tourCopy.querySelector(".tourText2");
-    tourDesc2.textContent = tours[0].description;
+        tourCopy.querySelector(".tourImg").src = oneTour.tour_image.guid;
+        tourCopy.querySelector(".tourTitle").textContent = oneTour.title.rendered;
+        tourCopy.querySelector(".tourText").textContent = oneTour.description;
 
-    // 3. append
-    document.querySelector("#tours").appendChild(tourCopy);
+        tourArea.appendChild(tourCopy);
+    })
 }
 
 function showGalleryPage(gallery) {
-    console.log(gallery)
     // 1. template clone
     const galleryTemplate = document.querySelector(".galleryTemplate").content;
-    const galleryCopy = galleryTemplate.cloneNode(true);
-
-    // 2. text content
-    const galleryImg = galleryCopy.querySelector(".galleryImg1");
-    galleryImg.src = gallery[0].boat_image.guid;
-    const galleryImg2 = galleryCopy.querySelector(".galleryImg2");
-    galleryImg2.src = gallery[1].boat_image.guid;
-    const galleryImg3 = galleryCopy.querySelector(".galleryImg3");
-    galleryImg3.src = gallery[2].boat_image.guid;
-
-    // 3. append
-    document.querySelector("#gallery").appendChild(galleryCopy);
+    const galleryArea = document.querySelector("#galleryArea");
+    
+    gallery.forEach((oneImg) => {
+        const galleryCopy = galleryTemplate.cloneNode(true);
+        galleryCopy.querySelector(".galleryImg").src = oneImg.boat_image.guid;
+        galleryArea.appendChild(galleryCopy);
+    })
 }
 
 function showFAQPage(faq) {
@@ -175,7 +157,6 @@ let getAnswer = document.querySelectorAll(".faqAnswer");
 }
 
 function showContact(contact) {
-    //console.log(contact)
     // 1. template clone
     const templateC = document.querySelector(".contactTemplate").content;
     const contactCopy = templateC.cloneNode(true);
