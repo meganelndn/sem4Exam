@@ -167,32 +167,43 @@ input::-webkit-input-placeholder {
     background-color: #ccc; 
 }
 
-/* .displayBock {
-  display: block;
-} */
-
 /* BOOKING */
-
-
-#bookingWindow {
-  display: none;
-  width: 700px;
-  height: 500px;
-  background-color: green;
-  position: absolute;
-  top: 20%;
-  right: 0;
+/* -------- BOOK BTN -------- */
+.bookingArea{
+  position: fixed;
 }
 
-/* -------- BOOK BTN -------- */
-.bookBtn {
+#bookBtn {
   background: var(--yellow);
   border: none;
   cursor: pointer;
-  position: fixed;
+  position: inherit;
   padding: 15px 25px;
   border-radius: 5px;
-  top: 300px;
-  right: 0;
+  top: 40%;
+  width: 180px;
+  transform-origin: left 50px;
   transform: rotate(-90deg);
+}
+
+.overlay {
+  width: 0;
+  position: inherit;
+  top: 15%;
+  bottom: 15%;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: 0.8s;
+}
+
+.showOverlay {
+  width: 40%;
+}
+
+.overlay-content {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  background-color: white;
 }
