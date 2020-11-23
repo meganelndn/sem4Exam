@@ -139,18 +139,18 @@ input::-webkit-input-placeholder {
 }
 
 /* --------- TRIPS -------- */
-#tripArea{
+#tripArea {
   display: inline-flex;
 }
 
-#singleTripArea{
+#singleTripArea {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: fit-content;
 }
 
-.tripImg{
+.tripImg {
   height: 200px;
 }
 /* --------- TOURS -------- */
@@ -165,7 +165,7 @@ input::-webkit-input-placeholder {
   max-width: fit-content;
 }
 
-.tourImg{
+.tourImg {
   width: 400px;
 }
 /* -------- GALLERY ------- */
@@ -178,7 +178,7 @@ input::-webkit-input-placeholder {
 }
 
 /* display only the first 6 images for now, until we build the gallery */
-#singleGalleryImg:nth-child(n+6){
+#singleGalleryImg:nth-child(n + 6) {
   display: none;
 }
 
@@ -199,13 +199,14 @@ input::-webkit-input-placeholder {
   padding: 10px;
 }
 
-.accordionActive, .faqQuestion:hover {
-    background-color: #ccc; 
+.accordionActive,
+.faqQuestion:hover {
+  background-color: #ccc;
 }
 
 /* BOOKING */
 /* -------- BOOK BTN -------- */
-.bookingArea{
+.bookingArea {
   position: fixed;
 }
 
@@ -233,7 +234,8 @@ input::-webkit-input-placeholder {
 }
 
 .showOverlay {
-  width: 40%;
+  width: 50%;
+  height: 100%;
 }
 
 .overlay-content {
@@ -241,5 +243,4 @@ input::-webkit-input-placeholder {
   width: 100%;
   text-align: center;
   margin-top: 30px;
-  background-color: white;
 }

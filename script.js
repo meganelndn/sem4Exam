@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", init);
 
-import { gsap } from "gsap";
+/* import { gsap } from "gsap"; */
 
 function init() {
     fetchData();
