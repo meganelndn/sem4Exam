@@ -36,7 +36,6 @@ function fetchData(){
 }
 
 function setUpBooking(){
-
     // set up book now window
     document.getElementById("bookBtn").addEventListener("click", function(){
         let bookOverlay = document.getElementById("bookingOverlay");
@@ -44,10 +43,64 @@ function setUpBooking(){
 
         document.querySelector(".availability").classList.remove("step1");
     });  
+
+    // activate "previous" btn
+    /* var counter = 0; 
+    
+    document.querySelector(".previous").addEventListener('click', function() {
+        switch(++counter) {
+            case 1: 
+                return +counter;
+            case 2: 
+            document.querySelector(".availability").classList.remove("step1");
+                document.querySelector(".personalData").classList.add("step2");
+                console.log("2");
+                return +counter;
+            case 3:
+                document.querySelector(".personalData").classList.remove("step2");
+                document.querySelector(".orderOverview").classList.add("step3");
+                console.log("3");
+                return +counter;
+            case 4:
+                document.querySelector(".orderOverview").classList.remove("step3");
+                document.querySelector(".payment").classList.add("step4");
+                console.log("4");
+                return +counter;
+            case 5:
+                document.querySelector(".payment").classList.remove("step4");
+                document.querySelector(".receipt").classList.add("step5");
+                console.log("5");
+                return +counter;
+        } 
+        counter = 0; 
+    }); */
+
     // activate "next" btn
-    document.getElementById("next").addEventListener("click", function(){
-        document.querySelector(".availability").classList.add("step1");
-        document.querySelector(".personalData").classList.remove("step2");
+    var counter = 0; 
+
+    document.querySelector(".next").addEventListener('click', function() {
+
+        document.querySelector(".previous").classList.remove("hide");
+
+        switch(++counter) {
+            case 1: 
+                document.querySelector(".availability").classList.add("step1");
+                document.querySelector(".personalData").classList.remove("step2");
+                return +counter;
+            case 2: 
+                document.querySelector(".personalData").classList.add("step2");
+                document.querySelector(".orderOverview").classList.remove("step3");
+                return +counter;
+            case 3:
+                document.querySelector(".orderOverview").classList.add("step3");
+                document.querySelector(".payment").classList.remove("step4");
+                return +counter;
+            case 4:
+                document.querySelector(".payment").classList.add("step4");
+                document.querySelector(".receipt").classList.remove("step5");
+                return +counter;
+        }
+        counter = 0; 
     });
 }
 

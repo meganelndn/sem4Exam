@@ -275,8 +275,8 @@ select {
 }
 
 /* booking btns */
-#previous,
-#next {
+.previous,
+.next {
   text-transform: uppercase;
   padding: 10px 30px;
   background: var(--dark-blue);
@@ -293,7 +293,8 @@ select {
 .step2,
 .step3,
 .step4,
-.step5 {
+.step5,
+.hide {
   display: none;
 }
 .availability {
