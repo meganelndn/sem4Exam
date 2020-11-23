@@ -28,17 +28,27 @@ function fetchData(){
     .then(res => res.json())
     .then(showGalleryPage);
 
-    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/faq/")
-    .then(res => res.json())
-    .then(showFAQPage);
+    if (window.location.pathname.includes("faq")) {
+        fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/faq/")
+        .then(res => res.json())
+        .then(showFAQPage);
+    }
 }
 
 function setUpBooking(){
+
     // set up book now window
     document.getElementById("bookBtn").addEventListener("click", function(){
         let bookOverlay = document.getElementById("bookingOverlay");
         bookOverlay.classList.toggle("showOverlay");
+
+        document.querySelector(".availability").classList.remove("step1");
     });  
+    // activate "next" btn
+    document.getElementById("next").addEventListener("click", function(){
+        document.querySelector(".availability").classList.add("step1");
+        document.querySelector(".personalData").classList.remove("step2");
+    });
 }
 
 function showLandingPage(home) {
