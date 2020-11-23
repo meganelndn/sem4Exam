@@ -99,23 +99,31 @@
                 </div>
                 <!-- AVAILABILITY -->
                 <form class="availability step1">
-                    <label for="start">Choose a date</label>
+                    <label for="start">Choose a date
                         <input 
                         type="date" 
                         id="start" 
                         name="trip-start"  
                         value="2020-12-20"
                         min="2020-12-20" max="2020-12-31" required>
-                    <label for="tour-select">Choose a tour</label>
+                    </label>
+                    <label for="tour-select">Choose a tour
                         <select 
                         name="tour" 
                         id="tour-select" 
                         required>
+                            <option value=""></option>
                             <option value="landmarks">The Landmarks (1h)</option>
                             <option value="hidden-gems">Hidden Gems (2h)</option>
                             <option value="diana">The Diana (5h)</option>
                         </select>
-                    <label for="tentacles">Chose passengers (up to 12)</label>
+                    </label>
+                    <!-- keywords -->
+                            <p class="landmarks show">Historical sites | Royal Palace | Circle Brid | Black Diamond | Christiania | NOMA | Copenhagen Opera</p>
+                            <p class="hidden-gems show">Danish Lifestyle | Social activities | Design | Architecture</p>
+                            <p class="diana show">Exclusive | Inner Copenhagen | Historic buildings | Lunch | Swimming</p>
+                            
+                    <label for="tentacles">Chose passengers (up to 12)
                         <input 
                         type="number" 
                         id="passengers" 
@@ -123,7 +131,8 @@
                         min="1" 
                         max="12" 
                         required>
-                    <label for="tour-time">Choose a time</label>
+                    </label>
+                    <label for="tour-time">Choose a time
                         <input 
                         type="datetime-local" 
                         id="datetime-local"
@@ -132,13 +141,11 @@
                         min="2020-12-20T00:00" 
                         max="2020-12-31T00:00"
                         required>
+                    </label>
                 </form>
-                <!-- buttons -->
-                <button class="previous hide">Previous</button>
-                <button class="next">Next</button>
                 <!-- PERSONAL DATA -->
                 <form class="personalData step2 show">
-                    <label for="name">Full Name</label>
+                    <label for="name">Full Name
                         <input 
                         type="text" 
                         id="name" 
@@ -147,21 +154,24 @@
                         minlength="4" 
                         maxlength="8" 
                         size="10">
-                    <label for="email">Email address</label>
+                    </label>
+                    <label for="email">Email address
                         <input 
                         type="email" 
                         id="email"
                         pattern=".+@gmail.com" 
                         size="30" 
                         required>
-                    <label for="phone">Phone number</label>
+                    </label>
+                    <label for="phone">Phone number
                         <input 
                         type="tel" 
                         id="phone" 
                         name="phone"
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         required>
-                    <label for="accomodation-select">Currently staying at</label>
+                    </label>
+                    <label for="accomodation-select">Currently staying at
                         <select name="accomodation" id="accomodation" required>
                             <option value=""></option>
                             <option value="cruiseship">Cruise ship</option>
@@ -171,13 +181,15 @@
                             <option value="friends">At a friend's place</option>
                             <option value="local">I am a local</option>
                         </select>
-                    <label for="story">Comments</label>
+                    </label>
+                    <label for="story">Comments
                         <textarea 
                         id="story" 
                         name="story"
                         rows="5" 
                         cols="33"></textarea>
-                    <label for="campaign-code">Campaign code</label>
+                    </label>
+                    <label for="campaign-code">Campaign code
                         <input 
                         type="text" 
                         id="campaign-code" 
@@ -185,6 +197,7 @@
                         minlength="4" 
                         maxlength="8" 
                         size="10">
+                    </label>
                     <input 
                     type="checkbox" 
                     id="spam" 
@@ -215,7 +228,7 @@
                 <form class="payment step4 show">
                     <div id="billing">
                     <h5 class="billingInfo">Billing info</h5>
-                        <label for="name">Full Name</label>
+                        <label for="name">Full Name
                             <input 
                             type="text" 
                             id="payment-name" 
@@ -224,7 +237,8 @@
                             maxlength="8" 
                             size="10"
                             required />
-                        <label for="address">Address</label>
+                        </label>
+                        <label for="address">Address
                             <input 
                             type="street-address" 
                             id="address" name="address" 
@@ -232,23 +246,27 @@
                             maxlength="30" 
                             size="10"
                             required>
-                        <label for="city">Address</label>
+                        </label>
+                        <label for="city">Address
                             <input 
                             type="text" 
                             id="city" 
                             name="city" 
                             required>
-                        <label for="zipCode">ZIP Code</label>
+                        </label>
+                        <label for="zipCode">ZIP Code
                             <input 
                             type="text" 
                             pattern="[0-9]{5}" 
                             required/>
-                        <label for="country">Country</label>
+                        </label>
+                        <label for="country">Country
                             <input 
                             type="text" 
                             id="country" 
                             name="country" 
                             required>
+                        </label>
                     </div>
                     
                     <div id="cc">
@@ -296,6 +314,9 @@
                     <p>We've sent you an email with all the details of your order</p>
                     <h5>Order Number: #1</h5>
                 </div>
+                <!-- buttons -->
+                <button class="previous hide">Previous</button>
+                <button class="next">Next</button>
             </div>
         </div>
     </div>
