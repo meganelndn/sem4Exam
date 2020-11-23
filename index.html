@@ -14,7 +14,7 @@
             <!-- nav links -->
         <a href="index.html">Home</a>
         <a href="faq.html">FAQ</a>
-        <a href="#book">Book with us</a>
+        <a href="#book" class="bookBtn">Book with us</a>
             <!-- search bar -->
         <form id="searchBar">
             <input type="search" placeholder="Search">
@@ -89,9 +89,213 @@
         <div id="bookingOverlay" class="overlay">
             <button id="bookBtn">Click to book!</button>
             <div class="overlay-content">
-                <p>Booking steps</p>
-                <p>bla bla bla</p>
-                <p>bla bla bla bla</p>
+                <hr>
+                <div class="bookingSteps">
+                    <h6>Availability</h6>
+                    <h6>Personal data</h6>
+                    <h6>Order overview</h6>
+                    <h6>Payment</h6>
+                    <h6>Receipt</h6>
+                </div>
+                <!-- AVAILABILITY -->
+                <form class="availability step1">
+                    <label for="start">Choose a date</label>
+                        <input 
+                        type="date" 
+                        id="start" 
+                        name="trip-start"  
+                        value="2020-12-20"
+                        min="2020-12-20" max="2020-12-31" required>
+                    <label for="tour-select">Choose a tour</label>
+                        <select 
+                        name="tour" 
+                        id="tour-select" 
+                        required>
+                            <option value="landmarks">The Landmarks (1h)</option>
+                            <option value="hidden-gems">Hidden Gems (2h)</option>
+                            <option value="diana">The Diana (5h)</option>
+                        </select>
+                    <label for="tentacles">Chose passengers (up to 12)</label>
+                        <input 
+                        type="number" 
+                        id="passengers" 
+                        name="passengers"
+                        min="1" 
+                        max="12" 
+                        required>
+                    <label for="tour-time">Choose a time</label>
+                        <input 
+                        type="datetime-local" 
+                        id="datetime-local"
+                        name="meeting-time" 
+                        value="2020-12-20T19:30"
+                        min="2020-12-20T00:00" 
+                        max="2020-12-31T00:00"
+                        required>
+                </form>
+                <!-- buttons -->
+                <button class="previous hide">Previous</button>
+                <button class="next">Next</button>
+                <!-- PERSONAL DATA -->
+                <form class="personalData step2">
+                    <label for="name">Full Name</label>
+                        <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required
+                        minlength="4" 
+                        maxlength="8" 
+                        size="10">
+                    <label for="email">Email address</label>
+                        <input 
+                        type="email" 
+                        id="email"
+                        pattern=".+@gmail.com" 
+                        size="30" 
+                        required>
+                    <label for="phone">Phone number</label>
+                        <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        required>
+                    <label for="accomodation-select">Currently staying at</label>
+                        <select name="accomodation" id="accomodation" required>
+                            <option value=""></option>
+                            <option value="cruiseship">Cruise ship</option>
+                            <option value="airbnb">Airbnb</option>
+                            <option value="hotel">Hotel</option>
+                            <option value="hostel">Hostel</option>
+                            <option value="friends">At a friend's place</option>
+                            <option value="local">I am a local</option>
+                        </select>
+                    <label for="story">Comments</label>
+                        <textarea 
+                        id="story" 
+                        name="story"
+                        rows="5" 
+                        cols="33"></textarea>
+                    <label for="campaign-code">Campaign code</label>
+                        <input 
+                        type="text" 
+                        id="campaign-code" 
+                        name="campaign-code"
+                        minlength="4" 
+                        maxlength="8" 
+                        size="10">
+                    <input 
+                    type="checkbox" 
+                    id="spam" 
+                    name="spam">
+                    <label for="spam">Receive Hey Captain news and discounts (we won't spam you)</label>
+                </form>
+                <!-- ORDER OVERVIEW -->
+                <div class="orderOverview step3">
+                    <h5>Your Order</h5>
+                    <p class="orderData">Name, email, etc.</p>
+                    <p>Hey Captain is based on being social and informative and we look forward to welcoming you
+                        on board. We hope you will embrace the DNA of Hey Captain, and be open to having a dialogue 
+                        with us and your fellow passengers.
+                    </p>
+                    <p>Please be aware that you cannot bring your own alcohol and we for safety reasons have a strict
+                        alcohol policy. We always reserve the right to reject passengers to board if we deem their
+                        behavious to be inappropriate.
+                    </p>
+                    <h5 class="price">TOTAL: DKK </h5>
+                    <input 
+                    type="checkbox" 
+                    id="terms" 
+                    name="terms"
+                    required>
+                    <label for="terms">I have read and accept the terms</label>
+                </div>
+                <!-- PAYMENT -->
+                <form class="payment step4">
+                    <div id="billing">
+                    <h5 class="billingInfo">Billing info</h5>
+                        <label for="name">Full Name</label>
+                            <input 
+                            type="text" 
+                            id="payment-name" 
+                            name="payment-name" 
+                            minlength="4" 
+                            maxlength="8" 
+                            size="10"
+                            required />
+                        <label for="address">Address</label>
+                            <input 
+                            type="street-address" 
+                            id="address" name="address" 
+                            minlength="8" 
+                            maxlength="30" 
+                            size="10"
+                            required>
+                        <label for="city">Address</label>
+                            <input 
+                            type="text" 
+                            id="city" 
+                            name="city" 
+                            required>
+                        <label for="zipCode">ZIP Code</label>
+                            <input 
+                            type="text" 
+                            pattern="[0-9]{5}" 
+                            required/>
+                        <label for="country">Country</label>
+                            <input 
+                            type="text" 
+                            id="country" 
+                            name="country" 
+                            required>
+                    </div>
+                    
+                    <div id="cc">
+                    <h5 class="ccInfo">Credit card info</h5>
+                      <label for="cardNumber">Card Number
+                        <input
+                          name="cardNumber"
+                          type="text"
+                          maxlength="19"
+                          class="cc-number-input"
+                          inputmode="numeric"
+                          autocomplete="cc-number"
+                          placeholder="xxxx xxxx xxxx xxxx"
+                          required/>
+                      </label>
+                      <label for="cardName">Cardholder's Name
+                        <input
+                          type="text"
+                          name="cardName"
+                          placeholder="John Smith"
+                          autocomplete="name"
+                          required/>
+                      </label>
+                        <label for="expiryDate">Expiry Date
+                          <input
+                            name="expiryDate"
+                            type="text"
+                            maxlength="5"
+                            class="cc-expiry-input"
+                            required/>
+                        </label>
+                        <label for="ccv">CVC
+                          <input
+                            name="ccv"
+                            type="text"
+                            maxlength="3"
+                            class="cc-cvc-input"
+                            required/>
+                        </label>
+                    </div>
+                </form>
+                <!-- RECEIPT -->
+                <div class="receipt step5">
+                    <h5>Payment complete!</h5>
+                    <p>We've sent you an email with all the details of your order</p>
+                    <h5>Order Number: #1</h5>
+                </div>
             </div>
         </div>
     </div>
