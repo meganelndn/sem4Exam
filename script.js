@@ -41,8 +41,36 @@ function setUpBooking(){
         let bookOverlay = document.getElementById("bookingOverlay");
         bookOverlay.classList.toggle("showOverlay");
 
-        document.querySelector(".availability").classList.remove("step1");
+        /* document.querySelector(".availability").classList.remove("step1"); */
     });  
+
+    // enable buttons
+    var counter = 1, step = "step";
+
+    document.querySelector(".next").addEventListener('click', function () {
+        counter++;
+        if (counter > 5) {
+        counter = 5;
+        }
+
+        step = ".step" + counter; 
+
+        document.querySelector(step).classList.remove("show");
+    });
+
+    document.querySelector(".previous").addEventListener('click', function () {
+        if (counter > 1) {
+            
+        step = ".step" + counter;
+
+        document.querySelector(step).classList.add("show");
+    }
+
+    counter--;
+    if (counter < 1) {
+        counter = 1;
+    }
+});
 
     // activate "previous" btn
     /* var counter = 0; 
@@ -76,7 +104,7 @@ function setUpBooking(){
     }); */
 
     // activate "next" btn
-    var counter = 0; 
+    /* var counter = 0; 
 
     document.querySelector(".next").addEventListener('click', function() {
 
@@ -101,7 +129,7 @@ function setUpBooking(){
                 return +counter;
         }
         counter = 0; 
-    });
+    }); */
 }
 
 function showLandingPage(home) {
