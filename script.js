@@ -57,43 +57,6 @@ function setUpBooking(){
         }
     })
 
-    /* ------------ enable next/previous btn ----------- */
-    var counter = 1, step = "step";
-
-    document.querySelector(".next").addEventListener('click', function () {
-
-    step = ".step" + counter;
-    if (counter <= 5) {
-        document.querySelector(step).classList.add("show");
-    }
-    counter++;
-    if (counter > 5) {
-        counter = 5;
-    }
-    step = ".step" + counter; // step is the class and we are appending counter with step so that it looks like the same class in the given class(like counter 1 means step1)
-
-    document.querySelector(step).classList.remove("show");
-    }); 
-
-    var counter = 1, step = "step";
-
-    document.querySelector(".previous").addEventListener('click', function () {
-
-    if (counter > 1) { // we don't want to remove the first step, it will always be shown
-        step = ".step" + counter;
-
-        document.querySelector(step).classList.add("show");
-    }
-    counter--;
-    
-    if (counter < 1) {
-        counter = 1;
-    }
-    step = ".step" + counter;
-
-    document.querySelector(step).classList.remove("show");
-});
-
     formValidation();
 }
 
@@ -133,6 +96,24 @@ function formValidation() {
                 step = ".step" + counter; // step is the class and we are appending counter with step so that it looks like the same class in the given class(like counter 1 means step1)
 
                 document.querySelector(step).classList.remove("show");
+
+                // enable "previous" btn when form is valid
+                document.querySelector(".previous").addEventListener('click', function () {
+
+                    if (counter > 1) { // we don't want to remove the first step, it will always be shown
+                        step = ".step" + counter;
+                
+                        document.querySelector(step).classList.add("show");
+                    }
+                    counter--;
+                    
+                    if (counter < 1) {
+                        counter = 1;
+                    }
+                    step = ".step" + counter;
+                
+                    document.querySelector(step).classList.remove("show");
+                });
             });
 
             console.log("form is valid");
