@@ -3,6 +3,18 @@
   font-family: "Brandon Text Regular";
   src: url("fonts/BrandonText-Regular.otf") format("woff");
 }
+@font-face {
+  font-family: "Brandon Text Bold";
+  src: url("fonts/BrandonText-Bold.otf") format("woff");
+}
+@font-face {
+  font-family: "Brandon Text Light";
+  src: url("fonts/BrandonText-Light.otf") format("woff");
+}
+@font-face {
+  font-family: "Brandon Text Thin";
+  src: url("fonts/BrandonText-Thin.otf") format("woff");
+}
 
 /* --------- VARIABLES -------- */
 :root {
@@ -26,30 +38,21 @@
   background-color: var(--light-beige);
   margin: 10px;
   box-shadow: 0 2px 10px rgba(226, 225, 225, 0.2);
-  z-index: 9999;
+  z-index: 999999;
 }
-
 #topNavigation {
   position: fixed;
   width: -webkit-fill-available;
 }
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
-.banner {
-  width: 40%;
-  height: auto;
-  position: absolute;
-  top: 200px;
-}
-
 #navBar {
   display: flex;
   align-items: center;
   margin: 5px;
 }
-
 .navBarContent {
   display: flex;
   margin-inline-start: auto;
@@ -62,7 +65,9 @@
   text-decoration: none;
   margin: 10px;
 }
-
+#navBar a:hover {
+  border-bottom: 4px solid var(--dark-blue);
+}
 input {
   outline: none;
 }
@@ -74,12 +79,11 @@ input::-webkit-search-decoration,
 input::-webkit-search-cancel-button {
   display: none;
 }
-
 input[type="search"] {
   background: #ededed
     url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat
     9px center;
-  border: solid 1px #ccc;
+  border: solid 1px var(--dark-blue);
   padding: 9px 10px 9px 32px;
   border-radius: 10em;
   transition: all 0.5s;
@@ -87,27 +91,26 @@ input[type="search"] {
 input[type="search"]:focus {
   width: 130px;
   background-color: #fff;
-  border-color: #66cc75;
-  box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+  border-color: var(--dark-blue);
+  /* box-shadow: 0 0 5px rgba(109, 207, 246, 0.5); */
 }
-
 input:-moz-placeholder {
   color: #999;
 }
 input::-webkit-input-placeholder {
   color: #999;
 }
-
 #searchBar input[type="search"] {
   width: 15px;
   color: transparent;
   cursor: pointer;
+  margin-right: 20px;
 }
 #searchBar input[type="search"]:hover {
   background-color: #fff;
 }
 #searchBar input[type="search"]:focus {
-  width: 130px;
+  width: 200px;
   padding-left: 32px;
   color: #000;
   background-color: #fff;
@@ -120,6 +123,15 @@ input::-webkit-input-placeholder {
   color: transparent;
 }
 
+/* --------- HERO SECTION -------- */
+.banner {
+  width: 40%;
+  height: auto;
+  position: absolute;
+  top: 280px;
+  left: 430px;
+}
+
 /* --------- IMAGES -------- */
 .heroImg,
 .tourImg1,
@@ -128,54 +140,128 @@ input::-webkit-input-placeholder {
   height: auto;
 }
 
-/* --------- INTRO -------- */
+/* --------- SECTIONS -------- */
+#intro,
 #tours,
-#trips,
-#gallery {
+#gallery,
+#faqInfo {
   background: #2a3141;
   color: #fff;
   margin: 0;
   text-align: center;
-  margin: 50px 0 50px 0;
+}
+
+/* --------- INTRO -------- */
+.introTitle {
+  text-transform: uppercase;
+  padding-top: 70px;
+}
+.introText {
+  font-family: "Brandon Text Light";
+  padding: 30px 300px 70px 300px;
 }
 
 /* --------- TRIPS -------- */
 #tripArea {
   display: inline-flex;
 }
-
+.wheel {
+  width: 80px;
+  height: auto;
+  margin: 40px;
+}
 #singleTripArea {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: fit-content;
+  margin: 20px 25px 0 25px;
 }
-
+.tripTitle {
+  font-size: 16px;
+}
+.tripText,
+.tripTitle {
+  font-family: "Brandon Text Light";
+  margin: 20px 0;
+  text-align: justify;
+}
+.duration {
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-family: "Brandon Text Bold";
+}
+#trips {
+  margin: 0;
+  text-align: center;
+  margin: 50px;
+}
 .tripImg {
-  height: 200px;
+  width: 200px;
 }
 /* --------- TOURS -------- */
 #tourArea {
   display: inline-flex;
+  margin: 50px 0 100px 0;
 }
-
+.corona-guidelines {
+  text-transform: uppercase;
+  margin: 30px 500px;
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.anchor {
+  width: 80px;
+  height: auto;
+  margin-top: 30px;
+}
 #singleTourArea {
   display: flex;
+  margin: 40px;
   flex-direction: column;
   align-items: center;
   max-width: fit-content;
+  border: 1px solid var(--dark-blue);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px 3px #000;
 }
-
+.tourTitle {
+  padding: 50px 0 40px 0;
+  font-family: "Brandon Text Thin";
+}
+.tourText {
+  font-family: "Brandon Text Light";
+  padding: 40px;
+  padding-top: 0;
+  text-align: justify;
+}
+#tours {
+  padding-top: 10px;
+}
 .tourImg {
-  width: 400px;
+  width: 350px;
+}
+/* -------- WEATHER ------- */
+#weather {
+  text-align: center;
+  margin: 50px 0;
+}
+#weather h3,
+#weather h4,
+#weather img {
+  margin: 10px 0;
 }
 /* -------- GALLERY ------- */
 #galleryArea {
   display: flex;
+  padding: 100px 20px;
 }
 #gallery img {
-  width: 210px;
-  height: 170px;
+  width: 280px;
+  height: 240px;
 }
 
 /* display only the first 6 images for now, until we build the gallery */
@@ -183,26 +269,59 @@ input::-webkit-input-placeholder {
   display: none;
 }
 
-/* --------- FAQ ---------- */
-#faq {
-  padding: 200px;
+/* --------- BOTTOM NAV -------- */
+#bottomNavigation {
+  display: flex;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 30px;
+}
+#bottomNavigation p {
+  font-size: 14px;
+}
+#bottomNavigation h5 {
+  text-transform: uppercase;
+  font-size: 12px;
 }
 
+/* --------- FAQ ---------- */
+#faq {
+  padding: 50px 300px;
+}
+#faqInfo {
+  padding: 200px 0 80px 0;
+}
+.faqTitle {
+  padding-top: 0;
+  text-transform: uppercase;
+}
+.faqDescription {
+  font-family: "Brandon Text Light";
+  padding: 30px 300px 20px 300px;
+}
+#compass {
+  margin: 20px 0 60px 0;
+}
+.compass {
+  width: 80px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
 .faqQuestion {
   cursor: pointer;
 }
-
 .faqAnswer {
   display: none;
 }
-
 .oneQuestion {
   padding: 10px;
+  border: 1px solid var(--dark-blue);
+  margin: 10px 0;
 }
-
 .accordionActive,
 .faqQuestion:hover {
-  background-color: #ccc;
+  background-color: var(--dark-blue);
+  color: #fff;
 }
 
 /* BOOKING */
@@ -210,7 +329,6 @@ input::-webkit-input-placeholder {
 .bookingArea {
   position: fixed;
 }
-
 #bookBtn {
   background: var(--yellow);
   border: none;
@@ -222,8 +340,9 @@ input::-webkit-input-placeholder {
   width: 180px;
   transform-origin: left 50px;
   transform: rotate(-90deg);
+  text-transform: uppercase;
+  font-size: 11px;
 }
-
 .overlay {
   width: 0;
   position: inherit;
@@ -235,19 +354,16 @@ input::-webkit-input-placeholder {
   background-color: #fff;
   transition: 0.8s;
 }
-
 .showOverlay {
   width: 50%;
   height: 100%;
 }
-
 .overlay-content {
   position: relative;
   width: 100%;
   text-align: center;
   margin-top: 30px;
 }
-
 hr {
   border: 1px solid lightgray;
   margin: 140px 50px 20px 50px;
@@ -272,11 +388,28 @@ label {
 input,
 select {
   display: block;
+  padding: 5px;
+  width: -webkit-fill-available;
+  margin-right: 50px;
+}
+p.landmarks,
+p.hidden-gems,
+p.diana {
+  text-align: left;
+  font-size: 14px;
+}
+p.landmarks::before,
+p.hidden-gems::before,
+p.diana::before {
+  content: "ℹ";
+  margin-right: 5px;
+  color: var(--light-blue);
 }
 
 /* ------------ booking buttons ----------- */
 .previous,
-.next {
+.next,
+#expandFaq {
   text-transform: uppercase;
   padding: 10px 30px;
   background: var(--dark-blue);
@@ -284,6 +417,14 @@ select {
   border-radius: 3px;
   color: #fff;
   cursor: pointer;
+}
+.previous {
+  margin-right: 55%;
+  /* margin-top: 100px; */
+}
+.next {
+  margin-right: 0;
+  /* margin-top: 0px; */
 }
 /* ------------ booking forms ----------- */
 .show {
