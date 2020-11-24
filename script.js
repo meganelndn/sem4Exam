@@ -9,7 +9,7 @@ function fetchData(){
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/contact_page/")
     .then(res => res.json())
     .then(showContact);
-    
+
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/landing_page/")
     .then(res => res.json())
     .then(showLandingPage);
@@ -166,7 +166,8 @@ function showLandingPage(home) {
     /* -------------- banner ------------- */
     introCopy.querySelector(".banner").src = home[0].banner.guid;
     /* ------------ intro text ----------- */
-    introCopy.querySelector(".introTitle").textContent = home[0].social_sailing_in_copenhagen;
+    introCopy.querySelector(".introTitle").textContent = home[0].introduction_title;
+    introCopy.querySelector(".introText").textContent = home[0].social_sailing_in_copenhagen;
 
     // 3. append
     document.querySelector("#intro").appendChild(introCopy);
@@ -273,8 +274,10 @@ function showContact(contact) {
     const contactCopy = templateC.cloneNode(true);
     // 2. text content
     /* ------------ season openings ----------- */
+    contactCopy.querySelector(".contactTitle").textContent = contact[2].title.rendered;
     contactCopy.querySelector(".contactText").textContent = contact[2].openings;
     /* ---------- departures/arrivals ---------- */
+    contactCopy.querySelector(".contactTitle2").textContent = contact[1].title.rendered; 
     contactCopy.querySelector(".contactText2").textContent = contact[1].location; 
     /* -------------- contact us --------------- */
     contactCopy.querySelector(".contactTitle3").textContent = contact[3].title.rendered;
