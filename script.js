@@ -126,7 +126,17 @@ function formValidation() {
 
                     el.classList.add("invalid");
 
-                    /* ------------ tour ------------ */
+                    /* ------------ date ------------ */
+                    elements.date.addEventListener("change", () => {                
+                        if (elements.date.value != "") {
+                            elements.date.classList.add("valid");
+                            elements.date.classList.remove("invalid");
+                        } else {                
+                            elements.date.classList.remove("valid");
+                            elements.date.classList.add("invalid");
+                        }
+                    })
+                    /* -------------- tour ------------ */
                     elements.tour.addEventListener("change", () => {                
                         if (elements.tour.value != "") {
                             elements.tour.classList.add("valid");
@@ -144,6 +154,16 @@ function formValidation() {
                         } else {                
                             elements.passengers.classList.remove("valid");
                             elements.passengers.classList.add("invalid");
+                        }
+                    })
+                    /* ------------ date & time ------------ */
+                    elements.time.addEventListener("change", () => {                
+                        if (elements.time.value != "") {
+                            elements.time.classList.add("valid");
+                            elements.time.classList.remove("invalid");
+                        } else {                
+                            elements.time.classList.remove("valid");
+                            elements.time.classList.add("invalid");
                         }
                     })
 
