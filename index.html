@@ -108,7 +108,7 @@
                         min="2020-12-20" 
                         max="2020-12-31" 
                         required>
-                        <p class="error date-err invalid">Please pick a date for your tour</p>
+                        <p class="error date-err">Please pick a date for your tour</p>
                     </label>
                     <label for="tour">Choose a tour
                         <select 
@@ -120,7 +120,7 @@
                             <option value="hidden-gems">Hidden Gems (2h)</option>
                             <option value="diana">The Diana (5h)</option>
                         </select>
-                        <p class="error tour-err invalid">Please pick a tour</p>
+                        <p class="error tour-err">Please pick a tour</p>
                     </label>
                     <!-- keywords -->
                             <p class="landmarks show">Historical sites | Royal Palace | Circle Brid | Black Diamond | Christiania | NOMA | Copenhagen Opera</p>
@@ -135,7 +135,7 @@
                         min="1" 
                         max="12" 
                         required>
-                        <p class="error passengers-err invalid">Please select a number</p>
+                        <p class="error passengers-err">Please select a number</p>
                     </label>
                     <label for="time">Choose a time
                         <input 
@@ -146,7 +146,7 @@
                         min="2020-12-20T00:00" 
                         max="2020-12-31T00:00"
                         required>
-                        <p class="error time-err invalid">Please pick a time for your trip</p>
+                        <p class="error time-err">Please pick a time for your trip</p>
                     </label>
                 </form>
                 <!-- PERSONAL DATA -->
@@ -160,7 +160,7 @@
                         minlength="4" 
                         maxlength="8" 
                         size="10">
-                        <p class="error name-err invalid">Please fill out your name</p>
+                        <p class="error name-err">Please fill out your name</p>
                     </label>
                     <label for="email">Email address
                         <input 
@@ -169,7 +169,7 @@
                         pattern=".+@gmail.com" 
                         size="30" 
                         required>
-                        <p class="error email-err invalid">Please fill out your e-mail address</p>
+                        <p class="error email-err">Please fill out your e-mail address</p>
                     </label>
                     <label for="phone">Phone number
                         <input 
@@ -178,7 +178,7 @@
                         name="phone"
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         required>
-                        <p class="error phone-err invalid">Please fill out your phone number</p>
+                        <p class="error phone-err">Please fill out your phone number</p>
                     </label>
                     <label for="accomodation-select">Currently staying at
                         <select name="accomodation" id="accomodation" required>
@@ -190,7 +190,7 @@
                             <option value="friends">At a friend's place</option>
                             <option value="local">I am a local</option>
                         </select>
-                        <p class="error accommodation-err invalid">Please select your current accommodation type</p>
+                        <p class="error accommodation-err">Please select your current accommodation type</p>
                     </label>
                     <label for="comments">Comments
                         <textarea 
@@ -234,7 +234,7 @@
                     name="terms"
                     required>
                     <label for="terms">I have read and accept the terms</label>
-                    <p class="error terms-err invalid">Please tick this box in order to proceed</p>
+                    <p class="error terms-err">Please tick this box in order to proceed</p>
                 </div>
                 <!-- PAYMENT -->
                 <form class="payment step4 show">
@@ -249,7 +249,7 @@
                             maxlength="8" 
                             size="10"
                             required />
-                            <p class="error paymentName-err invalid">Please fill out your name</p>
+                            <p class="error paymentName-err">Please fill out your name</p>
                         </label>
                         <label for="address">Address
                             <input 
@@ -259,7 +259,7 @@
                             maxlength="30" 
                             size="10"
                             required>
-                            <p class="error address-err invalid">Please fill out your address</p>
+                            <p class="error address-err">Please fill out your address</p>
                         </label>
                         <label for="city">City
                             <input 
@@ -267,14 +267,14 @@
                             id="city" 
                             name="city" 
                             required>
-                            <p class="error city-err invalid">Please fill out your city</p>
+                            <p class="error city-err">Please fill out your city</p>
                         </label>
                         <label for="zipCode">ZIP Code
                             <input 
                             type="text" 
                             pattern="[0-9]{5}" 
                             required/>
-                            <p class="error zip-err invalid">Please fill out your ZIP code</p>
+                            <p class="error zip-err">Please fill out your ZIP code</p>
                         </label>
                         <label for="country">Country
                             <input 
@@ -282,7 +282,7 @@
                             id="country" 
                             name="country" 
                             required>
-                            <p class="error country-err invalid">Please fill out your country</p>
+                            <p class="error country-err">Please fill out your country</p>
                         </label>
                     </div>
                     
@@ -298,7 +298,7 @@
                           autocomplete="cc-number"
                           placeholder="xxxx xxxx xxxx xxxx"
                           required/>
-                          <p class="error cc-err invalid">Please fill out your credit card number</p>
+                          <p class="error cc-err">Please fill out your credit card number</p>
                       </label>
                       <label for="cardName">Cardholder's Name
                         <input
@@ -307,7 +307,7 @@
                           placeholder="John Smith"
                           autocomplete="name"
                           required/>
-                          <p class="error ccName-err invalid">Please fill out the cardholder's name</p>
+                          <p class="error ccName-err">Please fill out the cardholder's name</p>
                       </label>
                         <label for="expiryDate">Expiry Date
                           <input
@@ -316,7 +316,7 @@
                             maxlength="5"
                             class="cc-expiry-input"
                             required/>
-                            <p class="error expiry-err invalid">Please fill out your card's expiry date</p>
+                            <p class="error expiry-err">Please fill out your card's expiry date</p>
                         </label>
                         <label for="ccv">CVC
                           <input
@@ -325,7 +325,7 @@
                             maxlength="3"
                             class="cc-cvc-input"
                             required/>
-                            <p class="error ccv-err invalid">Please fill out the card's CVC number</p>
+                            <p class="error ccv-err">Please fill out the card's CVC number</p>
                         </label>
                     </div>
                 </form>
