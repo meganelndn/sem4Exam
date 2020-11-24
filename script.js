@@ -1,7 +1,5 @@
 window.addEventListener("DOMContentLoaded", init);
 
-/* import { gsap } from "gsap"; */
-
 function init() {
     fetchData();
     setUpBooking();
@@ -36,7 +34,7 @@ function fetchData(){
 }
 
 function setUpBooking(){
-    // set up book now window
+    /* ------------ set up book now window ----------- */
     document.getElementById("bookBtn").addEventListener("click", function(){
         let bookOverlay = document.getElementById("bookingOverlay");
         bookOverlay.classList.toggle("showOverlay");
@@ -44,11 +42,11 @@ function setUpBooking(){
 
     let tourInput = document.querySelector("select[name='tour']");
     tourInput.addEventListener("change", e => {
-        if (e.target.value == "landmarks") {
+        if (e.target.value === "landmarks") {
             document.querySelector(".landmarks").classList.remove("show");
             document.querySelector(".hidden-gems").classList.add("show");
             document.querySelector(".diana").classList.add("show");
-        } else if (e.target.value == "hidden-gems") {
+        } else if (e.target.value === "hidden-gems") {
             document.querySelector(".hidden-gems").classList.remove("show");
             document.querySelector(".landmarks").classList.add("show");
             document.querySelector(".diana").classList.add("diana");
@@ -59,39 +57,102 @@ function setUpBooking(){
         }
     })
 
-    // enable buttons
-    var counter = 1, step = "step";
+    formValidation();
+}
 
-    document.querySelector(".next").addEventListener('click', function () {
+function formValidation() {
+    /* ------------ form & elements ----------- */
+    const form1 = document.querySelector(".availability");
+    window.form1 = form1;
+    const elements = form1.elements;
+    window.elements = elements;
 
-    step = ".step" + counter;
-    if (counter <= 5) {
-        document.querySelector(step).classList.add("show");
-    }
-    counter++;
-    if (counter > 5) {
-        counter = 5;
-    }
-    step = ".step" + counter; // step is the class and we are appending counter with step so that it looks like the same class in the given class(like counter 1 means step1)
+    /* --------- delete default validation ------- */
+    form1.setAttribute("novalidate", true);
 
-    document.querySelector(step).classList.remove("show");
-});
+    /* ------------ custom validation ------------ */
+    document.querySelector(".next").addEventListener("click", (e) => {
+        e.preventDefault();
 
-    document.querySelector(".previous").addEventListener('click', function () {
+        // 1. select all inputs
+        const formElements = form1.querySelectorAll("input, select");
 
-    if (counter > 1) { // we don't want to remove the first step, it will always be shown
-        step = ".step" + counter;
+        if (form1.checkValidity()) {
+            console.log("form is valid");
+            
+            // loop through form elements and check if are valid or not
+            formElements.forEach((el) => {
+                if (el.checkValidity()) { 
+                    el.classList.add("valid");
+                }
 
-        document.querySelector(step).classList.add("show");
-    }
-    counter--;
-    if (counter < 1) {
-        counter = 1;
-    }
-    step = ".step" + counter;
+                // enable "next" btn when form is valid
+                var counter = 1, step = "step";
+                step = ".step" + counter;
+                if (counter <= 5) {
+                    document.querySelector(step).classList.add("show");
+                }
+                counter++;
+                if (counter > 5) {
+                    counter = 5;
+                }
+                step = ".step" + counter; // step is the class and we are appending counter with step so that it looks like the same class in the given class(like counter 1 means step1)
 
-    document.querySelector(step).classList.remove("show");
-});
+                document.querySelector(step).classList.remove("show");
+
+                // enable "previous" btn when form is valid
+                document.querySelector(".previous").addEventListener('click', function () {
+
+                    if (counter > 1) { // we don't want to remove the first step, it will always be shown
+                        step = ".step" + counter;
+                
+                        document.querySelector(step).classList.add("show");
+                    }
+                    counter--;
+                    
+                    if (counter < 1) {
+                        counter = 1;
+                    }
+                    step = ".step" + counter;
+                
+                    document.querySelector(step).classList.remove("show");
+                });
+            });
+        } else {
+            formElements.forEach((el) => {
+                
+                if (!el.checkValidity()) {
+                    console.log("form is invalid");
+
+                    el.classList.add("invalid");
+
+                    /* ------------ tour ------------ */
+                    elements.tour.addEventListener("change", () => {                
+                        if (elements.tour.value != "") {
+                            elements.tour.classList.add("valid");
+                            elements.tour.classList.remove("invalid");
+                        } else {                
+                            elements.tour.classList.remove("valid");
+                            elements.tour.classList.add("invalid");
+                        }
+                    })
+                    /* ------------ passengers ------------ */
+                    elements.passengers.addEventListener("change", () => {                
+                        if (elements.passengers.value != "") {
+                            elements.passengers.classList.add("valid");
+                            elements.passengers.classList.remove("invalid");
+                        } else {                
+                            elements.passengers.classList.remove("valid");
+                            elements.passengers.classList.add("invalid");
+                        }
+                    })
+
+                    } else {
+                        el.classList.remove("invalid");
+                    }
+                })
+            }
+        })
 }
 
 function showLandingPage(home) {
@@ -100,11 +161,11 @@ function showLandingPage(home) {
     const introCopy = introTemplate.cloneNode(true);
 
     // 2. text content
-    // HERO IMAGE
+    /* ------------ hero image ----------- */
     introCopy.querySelector(".heroImg").src = home[0].hero_video.guid;
-    // BANNER
+    /* -------------- banner ------------- */
     introCopy.querySelector(".banner").src = home[0].banner.guid;
-    // INTRO TEXT
+    /* ------------ intro text ----------- */
     introCopy.querySelector(".introTitle").textContent = home[0].social_sailing_in_copenhagen;
 
     // 3. append
@@ -211,15 +272,15 @@ function showContact(contact) {
     const templateC = document.querySelector(".contactTemplate").content;
     const contactCopy = templateC.cloneNode(true);
     // 2. text content
-    // SEASON OPENINGS
+    /* ------------ season openings ----------- */
     contactCopy.querySelector(".contactText").textContent = contact[2].openings;
-    // DEPARTURES/ARRIVALS
+    /* ---------- departures/arrivals ---------- */
     contactCopy.querySelector(".contactText2").textContent = contact[1].location; 
-    // CONTACT US
+    /* -------------- contact us --------------- */
     contactCopy.querySelector(".contactTitle3").textContent = contact[3].title.rendered;
     contactCopy.querySelector(".contactLink1").textContent = `E-mail: info@heycaptain.dk`; 
     contactCopy.querySelector(".contactLink2").textContent = `Phone: ${contact[3].contact_phone}`; 
-    // FOLLOW US
+    /* --------------- follow us --------------- */
     contactCopy.querySelector(".contactTitle4").textContent = contact[0].title.rendered;
     // 3. append
     document.querySelector("#bottomNavigation").appendChild(contactCopy);

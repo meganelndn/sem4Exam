@@ -274,7 +274,7 @@ select {
   display: block;
 }
 
-/* booking btns */
+/* ------------ booking buttons ----------- */
 .previous,
 .next {
   text-transform: uppercase;
@@ -285,21 +285,30 @@ select {
   color: #fff;
   cursor: pointer;
 }
-/* #next {
-  margin: 130px 130px 130px 80%;
-} */
-
-/* .step1,
-.step2,
-.step3,
-.step4,
-.step5,
-.hide {
-  display: none;
-} */
+/* ------------ booking forms ----------- */
 .show {
   display: none;
 }
 .availability {
   margin: 100px 0 0 50px;
+}
+/* ------------ custom validation ----------- */
+.valid {
+  border: 2px solid green;
+}
+.invalid {
+  border: 2px solid red;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.error {
+  text-transform: initial;
+  margin-bottom: 20px;
+  margin-top: -1px;
+  border: 2px solid red;
+  padding: 4px;
+  z-index: 10;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  display: none;
 }
