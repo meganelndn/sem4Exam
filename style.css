@@ -293,22 +293,19 @@ select {
   margin: 100px 0 0 50px;
 }
 /* ------------ custom validation ----------- */
-.next:disabled {
-  /* background-color: #4b4b4b;
-  color: #b8b8b8; */
-  cursor: default;
-}
 .valid {
-  border: 1px solid green;
+  border: 2px solid green;
 }
 .invalid {
-  border: 1px solid red;
+  border: 2px solid red;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .error {
   text-transform: initial;
   margin-bottom: 20px;
   margin-top: -1px;
-  border: 1px solid red;
+  border: 2px solid red;
   padding: 4px;
   z-index: 10;
   border-bottom-left-radius: 3px;

@@ -75,13 +75,16 @@ function formValidation() {
         e.preventDefault();
 
         // 1. select all inputs
-        const formElements = form1.querySelectorAll("input");
+        const formElements = form1.querySelectorAll("input, select");
 
-        /* ------------ date ------------ */
         if (form1.checkValidity()) {
+            console.log("form is valid");
+            
             // loop through form elements and check if are valid or not
-            formElements.forEach((elements) => {
-                elements.classList.remove("invalid");
+            formElements.forEach((el) => {
+                if (el.checkValidity()) { 
+                    el.classList.add("valid");
+                }
 
                 // enable "next" btn when form is valid
                 var counter = 1, step = "step";
@@ -115,31 +118,41 @@ function formValidation() {
                     document.querySelector(step).classList.remove("show");
                 });
             });
-
-            console.log("form is valid");
-
         } else {
-            formElements.forEach((elements) => {
-                // if elements invalid, add error messages
-                if (!elements.checkValidity()) {
-                    elements.classList.add("invalid");
-                        document.querySelector(".date-err").classList.add("invalid");
-                        document.querySelector(".date-err").style.display = "block";
-                        document.querySelector(".tour-err").classList.add("invalid");
-                        document.querySelector(".tour-err").style.display = "block";
-                        document.querySelector(".passengers-err").classList.add("invalid");
-                        document.querySelector(".passengers-err").style.display = "block";
-                        document.querySelector(".time-err").classList.add("invalid");
-                        document.querySelector(".time-err").style.display = "block"; 
-                    
-                    // if form invalid, cannot continue
-                    if (!form1.checkValidity()) {
-                        console.log("form is invalid");
-                    } 
-                }
-            })
-        } 
-    })
+            formElements.forEach((el) => {
+                
+                if (!el.checkValidity()) {
+                    console.log("form is invalid");
+
+                    el.classList.add("invalid");
+
+                    /* ------------ tour ------------ */
+                    elements.tour.addEventListener("change", () => {                
+                        if (elements.tour.value != "") {
+                            elements.tour.classList.add("valid");
+                            elements.tour.classList.remove("invalid");
+                        } else {                
+                            elements.tour.classList.remove("valid");
+                            elements.tour.classList.add("invalid");
+                        }
+                    })
+                    /* ------------ passengers ------------ */
+                    elements.passengers.addEventListener("change", () => {                
+                        if (elements.passengers.value != "") {
+                            elements.passengers.classList.add("valid");
+                            elements.passengers.classList.remove("invalid");
+                        } else {                
+                            elements.passengers.classList.remove("valid");
+                            elements.passengers.classList.add("invalid");
+                        }
+                    })
+
+                    } else {
+                        el.classList.remove("invalid");
+                    }
+                })
+            }
+        })
 }
 
 function showLandingPage(home) {
