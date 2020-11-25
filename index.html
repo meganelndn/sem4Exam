@@ -181,7 +181,7 @@
                         <input 
                         type="email" 
                         id="email"
-                        pattern=".+@gmail.com" 
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                         size="30" 
                         required>
                         <p class="error email-err">Please fill out your e-mail address</p>
@@ -191,7 +191,7 @@
                         type="tel" 
                         id="phone" 
                         name="phone"
-                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        pattern="^\+((?:9[679]|8[035789]|6[789]|5[90]|42|3[578]|2[1-689])|9[0-58]|8[1246]|6[0-6]|5[1-8]|4[013-9]|3[0-469]|2[70]|7|1)(?:\W*\d){0,13}\d$"
                         required>
                         <p class="error phone-err">Please fill out your phone number</p>
                     </label>
@@ -261,11 +261,11 @@
                     </div>
                     <div id="billing">
                     <h5 class="billingInfo">Billing info</h5>
-                        <label for="name">Full Name
+                        <label for="paymentName">Full Name
                             <input 
                             type="text" 
-                            id="payment-name" 
-                            name="payment-name" 
+                            id="paymentName" 
+                            name="paymentName" 
                             minlength="4" 
                             maxlength="8" 
                             size="10"
@@ -293,6 +293,8 @@
                         <label for="zipCode">ZIP Code
                             <input 
                             type="text" 
+                            name="zip"
+                            id="zip"
                             pattern="[0-9]{5}" 
                             required/>
                             <p class="error zip-err">Please fill out your ZIP code</p>
