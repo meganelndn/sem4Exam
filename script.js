@@ -3,8 +3,6 @@ window.addEventListener("DOMContentLoaded", init);
 function init() {
     fetchData();
     setUpBooking();
-    //modal
-    setUpModal();
 }
 
 function fetchData(){
@@ -33,22 +31,6 @@ function fetchData(){
         .then(res => res.json())
         .then(showFAQPage);
     }
-}
-
-// to do: move this all inside the CoronaSection, after the template - copy from Trips modal
-function setUpModal(){
-    document.querySelector("#corona").addEventListener("click", openCorona);
-    document.querySelector(".corona-modal-close").addEventListener("click", closeCorona);
-}
-
-function openCorona(){
-    const covidModal = document.querySelector("#corona-modal-background");
-    covidModal.classList.add("showModal");
-}
-
-function closeCorona(){
-    const covidModal = document.querySelector("#corona-modal-background");
-    covidModal.classList.remove("showModal");
 }
 
 function setUpBooking(){
@@ -437,8 +419,21 @@ function showLandingPage(home) {
     introCopy.querySelector(".introTitle").textContent = home[0].introduction_title;
     introCopy.querySelector(".introText").textContent = home[0].social_sailing_in_copenhagen;
 
+    buildCovidInfo(home[0].corona_text);
     // 3. append
     document.querySelector("#intro").appendChild(introCopy);
+}
+
+function buildCovidInfo(covid){
+    document.querySelector(".coronaText").textContent = covid;
+    document.querySelector("#corona").addEventListener("click", function(){
+        const covidModal = document.querySelector("#corona-modal-background");
+        covidModal.classList.add("showModal");
+    });
+    document.querySelector(".corona-modal-close").addEventListener("click", function(){
+        const covidModal = document.querySelector("#corona-modal-background");
+        covidModal.classList.remove("showModal");
+    });
 }
 
 function showTrips(trips) {

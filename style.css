@@ -143,6 +143,7 @@ input::-webkit-input-placeholder {
 /* --------- SECTIONS -------- */
 #intro,
 #tours,
+#covid,
 #gallery,
 #faqInfo {
   background: #2a3141;
@@ -320,6 +321,18 @@ input::-webkit-input-placeholder {
 .tourImg {
   width: 350px;
 }
+
+/* COVID */
+#corona {
+  padding-top: 50px;
+}
+.coronaText {
+  font-family: "Brandon Text Light";
+  margin: 20px 0;
+  text-align: justify;
+  color: var(--dark-blue);
+}
+
 /* -------- WEATHER ------- */
 #weather {
   text-align: center;
