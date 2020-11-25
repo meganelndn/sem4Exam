@@ -435,6 +435,32 @@ function showTrips(trips) {
         tripCopy.querySelector(".tripImg").src = oneTrip.trip_image.guid;
         tripCopy.querySelector(".duration").textContent = oneTrip.duration;
         tripCopy.querySelector(".tripText").textContent = oneTrip.description;
+        //table
+        tripCopy.querySelector("#bottle_of_wine .summer").textContent = oneTrip.bottle_of_wine.split(", ")[0];
+        tripCopy.querySelector("#bottle_of_wine .winter").textContent = oneTrip.bottle_of_wine.split(", ")[1];
+
+        tripCopy.querySelector("#glass_of_wine .summer").textContent = oneTrip.glass_of_wine.split(", ")[0];
+        tripCopy.querySelector("#glass_of_wine .winter").textContent = oneTrip.glass_of_wine.split(", ")[1];
+
+        tripCopy.querySelector("#beer .summer").textContent = oneTrip.beer.split(", ")[0];
+        tripCopy.querySelector("#beer .winter").textContent = oneTrip.beer.split(", ")[1];
+
+        // if (querySelector("#summerWinter p"))
+
+        //Icon
+        const replacementItem = document.querySelectorAll("#summerWinter p");
+        replacementItem.forEach((oneResult) => {
+            if (oneResult.textContent === "no"){
+                let addIcon = document.createElement("img");
+                oneResult.textContent= "";
+                addIcon.className = "iconSize";
+                addIcon.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/crossMark.png";
+                oneResult.appendChild(addIcon)
+            }
+        })
+        //price
+        tripCopy.querySelector(".publicPrice").textContent = oneTrip.public_tour_price;
+        tripCopy.querySelector(".privatePrice").textContent = oneTrip.private_tour_price;
         //3. append
         tripArea.appendChild(tripCopy);
     })
@@ -446,7 +472,6 @@ function showTours(tours) {
     const tourArea = document.querySelector("#tourArea");
     
     tours.forEach((oneTour) => {
-        console.log("one tour:", oneTour)
         const tourCopy = tourTemplate.cloneNode(true);
 
         tourCopy.querySelector(".tourImg").src = oneTour.tour_image.guid;

@@ -171,17 +171,24 @@ input::-webkit-input-placeholder {
   margin: 40px;
 }
 #singleTripArea {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
   max-width: fit-content;
-  margin: 20px 25px 0 25px;
+  margin: 20px 25px 0 0px;
+  transition: transform .5s;
+}
+
+#singleTripArea:hover,
+#singleTripArea:focus {
+  transform: scale3d(1.050, 1.050, 1);
 }
 .tripTitle {
   font-size: 16px;
+  text-align: center;
+  font-family: "Brandon Text Light";
+  margin: 20px 0;
 }
-.tripText,
-.tripTitle {
+.tripText {
   font-family: "Brandon Text Light";
   margin: 20px 0;
   text-align: justify;
@@ -197,7 +204,66 @@ input::-webkit-input-placeholder {
   margin: 50px;
 }
 .tripImg {
-  width: 200px;
+  width: 250px;
+}
+
+.readMoreTrip {
+  justify-self: self-end;
+  margin-bottom: 20px;
+  background-color: white;
+  color: var(--dark-blue);
+  border: solid 1px var(--dark-blue);
+}
+/* trip table */
+#tableHeader {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  color: white;
+  background-color: var(--dark-blue);
+}
+
+#bottle_of_wine,
+#glass_of_wine,
+#beer {
+  flex-direction: row;
+  display: flex;
+  place-content: space-between;
+}
+
+#summerWinter p {
+  padding: 10px;
+}
+
+#totalPrice {
+  background-color: var(--light-beige);
+  min-width: -webkit-fill-available;
+}
+
+#totalPrice p {
+  padding: 10px;
+}
+
+#tripSection {
+  position: relative;
+  display: inline-flex;
+}
+
+#tableGuide {
+  align-self: flex-end;
+}
+
+#tableGuide p {
+  padding: 10px 50px;
+}
+
+#tableGuide :nth-last-child(-n+2){
+  background-color: var(--light-beige);
+}
+
+.iconSize {
+  width: 20px;
+  height: 20px;
 }
 /* --------- TOURS -------- */
 #tourArea {
@@ -228,6 +294,8 @@ input::-webkit-input-placeholder {
   border: 1px solid var(--dark-blue);
   border-radius: 10px;
   box-shadow: 0 3px 10px 3px #000;
+  color: black;
+  background-color: white;
   transition: transform .5s;
 }
 
