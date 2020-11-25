@@ -113,9 +113,6 @@
                         type="date" 
                         id="date" 
                         name="date"  
-                        value="2020-12-20"
-                        min="2020-12-20" 
-                        max="2020-12-31" 
                         required>
                         <p class="error date-err">Please pick a date for your tour</p>
                     </label>
@@ -137,13 +134,25 @@
                             <p class="diana show">Exclusive | Inner Copenhagen | Historic buildings | Lunch | Swimming</p>
                             
                     <label for="passengers">Chose passengers (up to 12)
-                        <input 
-                        type="number" 
+                        <select 
+                        name="passengers" 
                         id="passengers" 
-                        name="passengers"
-                        min="1" 
-                        max="12" 
                         required>
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="private-tour">Private tour</option>
+                        </select>
                         <p class="error passengers-err">Please select a number</p>
                     </label>
                     <label for="time">Choose a time
@@ -151,9 +160,6 @@
                         type="datetime-local" 
                         id="time"
                         name="time" 
-                        value="2020-12-20T19:30"
-                        min="2020-12-20T00:00" 
-                        max="2020-12-31T00:00"
                         required>
                         <p class="error time-err">Please pick a time for your trip</p>
                     </label>
@@ -189,8 +195,8 @@
                         required>
                         <p class="error phone-err">Please fill out your phone number</p>
                     </label>
-                    <label for="accomodation-select">Currently staying at
-                        <select name="accomodation" id="accomodation" required>
+                    <label for="accommodation-select">Currently staying at
+                        <select name="accommodation" id="accommodation" required>
                             <option value=""></option>
                             <option value="cruiseship">Cruise ship</option>
                             <option value="airbnb">Airbnb</option>
@@ -243,10 +249,16 @@
                     name="terms"
                     required>
                     <label for="terms">I have read and accept the terms</label>
-                    <p class="error terms-err">Please tick this box in order to proceed</p>
+                    <p class="error terms-err">Please tick this box in order to proceed</p> 
                 </div>
                 <!-- PAYMENT -->
                 <form class="payment step4 show">
+                    <div id="paymentMethod">
+                        <h5 class="paymentP">Chose payment method</h5>
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                    </div>
                     <div id="billing">
                     <h5 class="billingInfo">Billing info</h5>
                         <label for="name">Full Name
