@@ -195,8 +195,8 @@
                         required>
                         <p class="error phone-err">Please fill out your phone number</p>
                     </label>
-                    <label for="accomodation-select">Currently staying at
-                        <select name="accomodation" id="accomodation" required>
+                    <label for="accommodation-select">Currently staying at
+                        <select name="accommodation" id="accommodation" required>
                             <option value=""></option>
                             <option value="cruiseship">Cruise ship</option>
                             <option value="airbnb">Airbnb</option>
@@ -249,10 +249,16 @@
                     name="terms"
                     required>
                     <label for="terms">I have read and accept the terms</label>
-                    <p class="error terms-err">Please tick this box in order to proceed</p>
+                    <p class="error terms-err">Please tick this box in order to proceed</p> 
                 </div>
                 <!-- PAYMENT -->
                 <form class="payment step4 show">
+                    <div id="paymentMethod">
+                        <h5 class="paymentP">Chose payment method</h5>
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                    </div>
                     <div id="billing">
                     <h5 class="billingInfo">Billing info</h5>
                         <label for="name">Full Name
