@@ -3,6 +3,8 @@ window.addEventListener("DOMContentLoaded", init);
 function init() {
     fetchData();
     setUpBooking();
+    //modal
+    setUpModal();
 }
 
 function fetchData(){
@@ -31,6 +33,22 @@ function fetchData(){
         .then(res => res.json())
         .then(showFAQPage);
     }
+}
+
+// to do: move this all inside the CoronaSection, after the template - copy from Trips modal
+function setUpModal(){
+    document.querySelector("#corona").addEventListener("click", openCorona);
+    document.querySelector(".corona-modal-close").addEventListener("click", closeCorona);
+}
+
+function openCorona(){
+    const covidModal = document.querySelector("#corona-modal-background");
+    covidModal.classList.add("showModal");
+}
+
+function closeCorona(){
+    const covidModal = document.querySelector("#corona-modal-background");
+    covidModal.classList.remove("showModal");
 }
 
 function setUpBooking(){
@@ -427,7 +445,7 @@ function showTrips(trips) {
     // 1. template clone
     const tripTemplate = document.querySelector(".tripTemplate").content;
     const tripArea = document.querySelector("#tripArea");
-    
+
     trips.forEach((oneTrip) => {
         const tripCopy = tripTemplate.cloneNode(true);
 
@@ -445,8 +463,6 @@ function showTrips(trips) {
         tripCopy.querySelector("#beer .summer").textContent = oneTrip.beer.split(", ")[0];
         tripCopy.querySelector("#beer .winter").textContent = oneTrip.beer.split(", ")[1];
 
-        // if (querySelector("#summerWinter p"))
-
         //Icon
         const replacementItem = document.querySelectorAll("#summerWinter p");
         replacementItem.forEach((oneResult) => {
@@ -461,6 +477,16 @@ function showTrips(trips) {
         //price
         tripCopy.querySelector(".publicPrice").textContent = oneTrip.public_tour_price;
         tripCopy.querySelector(".privatePrice").textContent = oneTrip.private_tour_price;
+        //modal content
+        tripCopy.querySelector(".readMoreTrip").addEventListener("click", function(){
+            const readMoreModal = document.querySelector("#trip-modal-background");
+            readMoreModal.classList.add("showModal"); 
+            readMoreModal.querySelector(".fullDescription").textContent = oneTrip.full_description;
+        });
+        tripCopy.querySelector(".trip-modal-close").addEventListener("click", function(){
+            const readMoreModal = document.querySelector("#trip-modal-background");
+            readMoreModal.classList.remove("showModal");
+        });
         //3. append
         tripArea.appendChild(tripCopy);
     })
@@ -563,3 +589,5 @@ function showContact(contact) {
     // 3. append
     document.querySelector("#bottomNavigation").appendChild(contactCopy);
 }
+
+

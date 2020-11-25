@@ -43,30 +43,42 @@
                 <img src="" alt="" class="tripImg">
                 <p class="tripText"></p>
                 <button class="readMoreTrip">Read more</button>
-                    <div id="summerWinter">
-                        <div id="tableHeader">
-                            <p>Summer</p>
-                            <p>Winter</p>
-                        </div>
-                        <div id="bottle_of_wine">
-                            <p class="summer"></p>
-                            <p class="winter"></p>
-                        </div>
-                        <div id="beer">
-                            <p class="summer"></p>
-                            <p class="winter"></p>
-                        </div>
-                                        <div id="glass_of_wine">
-                                            <p class="summer"></p>
-                                            <p class="winter"></p>
-                                        </div>
+                
+                <div id="summerWinter">
+                    <div id="tableHeader">
+                        <p>Summer</p>
+                        <p>Winter</p>
                     </div>
+                    <div id="bottle_of_wine">
+                        <p class="summer"></p>
+                        <p class="winter"></p>
+                    </div>
+                    <div id="beer">
+                        <p class="summer"></p>
+                        <p class="winter"></p>
+                    </div>
+                    <div id="glass_of_wine">
+                        <p class="summer"></p>
+                        <p class="winter"></p>
+                    </div>
+                </div>
+                
                 <div id="totalPrice">
                     <p class="publicPrice"></p>
                     <p class="privatePrice"></p>
                 </div>
             </div>
+
+            <!-- modal -->
+            <div id="trip-modal-background">
+                <div id="trip-modal-content">
+                    <button class="trip-modal-close">CLOSE</button>
+                    <p class="fullDescription">blabka</p>
+                    <p>blala</p>
+                </div>
+            </div>
         </template>
+
         <div id="tripSection">
             <div id="tableGuide">
                 <p>Bottle of wine</p>
@@ -77,6 +89,7 @@
             </div>
             <div id="tripArea"></div>
         </div>
+        
     </section>
 
     <section id="tours">
@@ -93,6 +106,14 @@
         </template>
         <div id="tourArea"></div>
     </section>
+    <div id="corona-modal-background">
+        <div id="corona-modal-content">
+            <button class="corona-modal-close">CLOSE</button>
+            <p class="coronaText">blabka</p>
+            <p>blala</p>
+        </div>
+    </div>
+
 
     <section id="weather">
         <h3 class="degrees">11°C</h3>
