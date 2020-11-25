@@ -218,6 +218,7 @@ input::-webkit-input-placeholder {
   height: auto;
   margin-top: 30px;
 }
+
 #singleTourArea {
   display: flex;
   margin: 40px;
@@ -227,14 +228,21 @@ input::-webkit-input-placeholder {
   border: 1px solid var(--dark-blue);
   border-radius: 10px;
   box-shadow: 0 3px 10px 3px #000;
+  transition: transform .5s;
 }
+
+#singleTourArea:hover,
+#singleTourArea:focus {
+  transform: scale3d(1.050, 1.050, 1);
+}
+
 .tourTitle {
-  padding: 50px 0 40px 0;
+  padding: 20px;
   font-family: "Brandon Text Thin";
 }
 .tourText {
   font-family: "Brandon Text Light";
-  padding: 40px;
+  padding: 20px;
   padding-top: 0;
   text-align: justify;
 }
