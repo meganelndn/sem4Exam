@@ -26,7 +26,7 @@
     <section id="intro">
         <template class="introTemplate">
             <img src="" alt="" class="banner">
-            <video class="video-container" src="" preload="auto" autoplay="true" loop="loop" muted="muted"></video>
+            <video class="video-container" src="" preload="auto" autoplay="true" loop="loop" muted="muted" onclick="this.paused? this.play() : this.pause()"></video>
             <h3 class="introTitle"></h3>
             <p class="introText"></p>
         </template>
@@ -308,14 +308,15 @@
                 </form>
                 <!-- PAYMENT -->
                 <form class="payment step4 show">
+                    <h5 class="paymentP">Chose payment method</h5>
                     <div id="paymentMethod">
-                        <h5 class="paymentP">Chose payment method</h5>
                         <img src="" alt="">
                         <img src="" alt="">
                         <img src="" alt="">
                     </div>
+                    <div id="cardBilling">
                     <div id="billing">
-                    <h5 class="billingInfo">Billing info</h5>
+                        <h5 class="billingInfo">Billing info</h5>
                         <label for="paymentName">Full Name
                             <input 
                             type="text" 
@@ -406,6 +407,7 @@
                             <p class="error ccv-err">Please fill out the card's CVC number</p>
                         </label>
                     </div>
+                </div>
                 </form>
                 <!-- RECEIPT -->
                 <div class="receipt step5 show">

@@ -32,6 +32,10 @@
   margin: 0;
 }
 
+body {
+  width: fit-content;
+}
+
 /* --------- TOP NAV -------- */
 #topNavigation,
 #bottomNavigation {
@@ -127,9 +131,12 @@ input::-webkit-input-placeholder {
 .banner {
   width: 40%;
   height: auto;
+  opacity: 0.4;
+  text-align: center;
   position: absolute;
-  top: 280px;
-  left: 430px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .video-container {
@@ -490,7 +497,7 @@ input,
 select {
   display: block;
   padding: 5px;
-  width: -webkit-fill-available;
+  width: 80%;
   margin-right: 50px;
 }
 p.landmarks,
@@ -533,6 +540,10 @@ p.diana::before {
 }
 .availability {
   margin: 100px 0 0 50px;
+}
+
+#cardBilling {
+  display: inline-flex;
 }
 /* ------------ custom validation ----------- */
 .valid {
