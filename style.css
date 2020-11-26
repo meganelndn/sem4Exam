@@ -466,6 +466,14 @@ hr {
   text-transform: uppercase;
   display: inline-block;
 }
+
+.makeBold {
+  color: red;
+}
+.displayNone {
+  display: none;
+}
+
 form,
 .orderOverview,
 .receipt {

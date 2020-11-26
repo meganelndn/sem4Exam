@@ -33,6 +33,8 @@ function fetchData(){
     }
 }
 
+import { availabilityFormValidation, personalDataFormValidation, paymentFormValidation } from "./modules/bookingSteps";
+
 function setUpBooking(){
     /* ------------ set up book now window ----------- */
     document.getElementById("bookBtn").addEventListener("click", function(){
@@ -72,6 +74,11 @@ function formValidation() {
     const elements2 = form2.elements;
     window.elements2 = elements2;
 
+    const form3 = document.querySelector(".orderOverview");
+    window.form3 = form3;
+    const elements3 = form3.elements;
+    window.elements3 = elements3;
+
     const form4 = document.querySelector(".payment");
     window.form4 = form4;
     const elements4 = form4.elements;
@@ -87,24 +94,25 @@ function formValidation() {
         // 1. select all inputs
         const formElements1 = form1.querySelectorAll("input, select");
         const formElements2 = form2.querySelectorAll("input, select");
+        const formElements3 = form3.querySelectorAll("input, select");
         const formElements4 = form4.querySelectorAll("input, select");
 
         /* ------------ availability form ------------ */
         if (form1.checkValidity()) {
-            console.log("form is valid");
-            
+            // console.log("form is valid");
             // loop through form elements and check if are valid or not
             formElements1.forEach((el) => {
                 if (el.checkValidity()) { 
                     el.classList.add("valid");
                 }
 
-                nextAndPrevious();
+                // nextAndPrevious();
+                goToStepTwo();
             });
         } else {
             formElements1.forEach((el) => {
                 if (!el.checkValidity()) {
-                    console.log("form is invalid");
+                    // console.log("form is invalid");
 
                     el.classList.add("invalid");
 
@@ -118,20 +126,20 @@ function formValidation() {
 
         /* ------------ personal data form ------------ */
         if (form2.checkValidity()) {
-            console.log("form is valid");
             
             formElements2.forEach((el) => {
                 if (el.checkValidity()) { 
                     el.classList.add("valid");
                 }
 
-                nextAndPrevious();
+                // nextAndPrevious();
+                goToStepThree();
             });
         } else {
             formElements2.forEach((el) => {
                 
                 if (!el.checkValidity()) {
-                    console.log("form is invalid");
+                    // console.log("form is invalid");
 
                     el.classList.add("invalid");
 
@@ -146,32 +154,41 @@ function formValidation() {
         /* ------------ order overview ------------ */
         const step3Checkbox = document.querySelector("input[id='terms']");
 
-        step3Checkbox.addEventListener('click', e  => {
-            e.preventDefault();
+        // step3Checkbox.addEventListener('click', e  => {
+        //     // e.preventDefault();
 
-            if(step3Checkbox.checked = true) {
-                console.log("checkbox is checked")
-            }
-          });
+        //     // if(step3Checkbox.checked = true) {
+        //     //     console.log("checkbox is checked")
+        //     // }
+        //     // goToPayment();
+            
+        // });
+
+        if (form3.checkValidity()) {
+            formElements3.forEach((el) => {
+                if (el.checkValidity() && step3Checkbox.checked == true) { 
+                    el.classList.add("valid");
+                    goToPayment();
+                }
+            });
+        }
 
         /* ------------ payment form ------------ */
         if (form4.checkValidity()) {
-            console.log("form is valid");
+            // console.log("form is valid");
             
             // loop through form elements and check if are valid or not
             formElements4.forEach((el) => {
                 if (el.checkValidity()) { 
                     el.classList.add("valid");
+                    goToReceipt();
                 }
 
-                nextAndPrevious();
             });
         } else {
 
             formElements4.forEach((el) => {
                 if (!el.checkValidity()) {
-                    console.log("form is invalid");
-
                     el.classList.add("invalid");
 
                     paymentFormValidation(elements4);
@@ -183,226 +200,36 @@ function formValidation() {
     })  
 }
 
-function availabilityFormValidation(elements1) {
-    /* ------------ date ------------ */
-    elements1.date.addEventListener("change", () => {                
-        if (elements1.date.value != "") {
-            elements1.date.classList.add("valid");
-            elements1.date.classList.remove("invalid");
-        } else {                
-            elements1.date.classList.remove("valid");
-            elements1.date.classList.add("invalid");
-        }
-    })
-    /* -------------- tour ------------ */
-    elements1.tour.addEventListener("change", () => {                
-        if (elements1.tour.value != "") {
-            elements1.tour.classList.add("valid");
-            elements1.tour.classList.remove("invalid");
-        } else {                
-            elements1.tour.classList.remove("valid");
-            elements1.tour.classList.add("invalid");
-        }
-    })
-    /* ------------ passengers ------------ */
-    elements1.passengers.addEventListener("change", () => {                
-        if (elements1.passengers.value != "") {
-            elements1.passengers.classList.add("valid");
-            elements1.passengers.classList.remove("invalid");
-        } else {                
-            elements1.passengers.classList.remove("valid");
-            elements1.passengers.classList.add("invalid");
-        }
-    })
-    /* ------------ date & time ------------ */
-    elements1.time.addEventListener("change", () => {                
-        if (elements1.time.value != "") {
-            elements1.time.classList.add("valid");
-            elements1.time.classList.remove("invalid");
-        } else {                
-            elements1.time.classList.remove("valid");
-            elements1.time.classList.add("invalid");
-        }
-    })
-
-}
-
-function personalDataFormValidation(elements2) {
-    /* ------------ date ------------ */
-    elements2.name.addEventListener("keyup", () => {                
-        if (elements2.name.value != "") {
-            elements2.name.classList.add("valid");
-            elements2.name.classList.remove("invalid");
-        } else {                
-            elements2.name.classList.remove("valid");
-            elements2.name.classList.add("invalid");
-        }
-    })
-    /* -------------- tour ------------ */
-    elements2.email.addEventListener("keyup", () => {                
-        if (elements2.email.value != "") {
-            elements2.email.classList.add("valid");
-            elements2.email.classList.remove("invalid");
-        } else {                
-            elements2.email.classList.remove("valid");
-            elements2.email.classList.add("invalid");
-        }
-    })
-    /* ------------ passengers ------------ */
-    elements2.phone.addEventListener("keyup", () => {                
-        if (elements2.phone.value != "") {
-            elements2.phone.classList.add("valid");
-            elements2.phone.classList.remove("invalid");
-        } else {                
-            elements2.phone.classList.remove("valid");
-            elements2.phone.classList.add("invalid");
-        }
-    })
-    /* ------------ date & time ------------ */
-    elements2.accommodation.addEventListener("change", () => {                
-        if (elements2.accommodation.value != "") {
-            elements2.accommodation.classList.add("valid");
-            elements2.accommodation.classList.remove("invalid");
-        } else {                
-            elements2.accommodation.classList.remove("valid");
-            elements2.accommodation.classList.add("invalid");
-        }
+function goToStepTwo() {
+    document.querySelector(".bookingSteps h6:nth-of-type(2)").classList.add("makeBold");
+    document.querySelector(".step1").classList.add("show");
+    document.querySelector(".step2").classList.remove("show");
+    document.querySelector(".previous").addEventListener("click", function(){
+        console.log("click previous")
     })
 }
 
-function paymentFormValidation(elements4) {
-/* ----------------- BILLING INFO ---------------- */
-    /* ------------ payment name ------------ */
-    elements4.paymentName.addEventListener("keyup", () => {                
-        if (elements4.paymentName.value != "") {
-            elements4.paymentName.classList.add("valid");
-            elements4.paymentName.classList.remove("invalid");
-        } else {                
-            elements4.paymentName.classList.remove("valid");
-            elements4.paymentName.classList.add("invalid");
-        }
-    })
-    /* -------------- address ------------ */
-    elements4.address.addEventListener("keyup", () => {                
-        if (elements4.address.value != "") {
-            elements4.address.classList.add("valid");
-            elements4.address.classList.remove("invalid");
-        } else {                
-            elements4.address.classList.remove("valid");
-            elements4.address.classList.add("invalid");
-        }
-    })
-    /* ---------------- city ------------- */
-    elements4.city.addEventListener("keyup", () => {                
-        if (elements4.city.value != "") {
-            elements4.city.classList.add("valid");
-            elements4.city.classList.remove("invalid");
-        } else {                
-            elements4.city.classList.remove("valid");
-            elements4.city.classList.add("invalid");
-        }
-    })
-    /* --------------- zip code --------------- */
-    elements4.zip.addEventListener("keyup", () => {                
-        if (elements4.zip.value != "") {
-            elements4.zip.classList.add("valid");
-            elements4.zip.classList.remove("invalid");
-        } else {                
-            elements4.zip.classList.remove("valid");
-            elements4.zip.classList.add("invalid");
-        }
-    })
-    /* --------------- country --------------- */
-    elements4.country.addEventListener("keyup", () => {                
-        if (elements4.country.value != "") {
-            elements4.country.classList.add("valid");
-            elements4.country.classList.remove("invalid");
-        } else {                
-            elements4.country.classList.remove("valid");
-            elements4.country.classList.add("invalid");
-        }
-    })
-
-    /* ---------------- CREDIT CARD INFO -------------- */
-    /* ------------ card number ------------ */
-    elements4.cardNumber.addEventListener("keyup", () => {                
-        if (elements4.cardNumber.value != "") {
-            elements4.cardNumber.classList.add("valid");
-            elements4.cardNumber.classList.remove("invalid");
-        } else {                
-            elements4.cardNumber.classList.remove("valid");
-            elements4.cardNumber.classList.add("invalid");
-        }
-    })
-    /* -------------- card name ------------ */
-    elements4.cardName.addEventListener("keyup", () => {                
-        if (elements4.cardName.value != "") {
-            elements4.cardName.classList.add("valid");
-            elements4.cardName.classList.remove("invalid");
-        } else {                
-            elements4.cardName.classList.remove("valid");
-            elements4.cardName.classList.add("invalid");
-        }
-    })
-    /* ------------ expiry date ------------ */
-    elements4.expiryDate.addEventListener("keyup", () => {                
-        if (elements4.expiryDate.value != "") {
-            elements4.expiryDate.classList.add("valid");
-            elements4.expiryDate.classList.remove("invalid");
-        } else {                
-            elements4.expiryDate.classList.remove("valid");
-            elements4.expiryDate.classList.add("invalid");
-        }
-    })
-    /* --------------- CVC --------------- */
-    elements4.ccv.addEventListener("keyup", () => {                
-        if (elements4.ccv.value != "") {
-            elements4.ccv.classList.add("valid");
-            elements4.ccv.classList.remove("invalid");
-        } else {                
-            elements4.ccv.classList.remove("valid");
-            elements4.ccv.classList.add("invalid");
-        }
-    })
+function goToStepThree(){
+    document.querySelector(".bookingSteps h6:nth-of-type(2)").classList.remove("makeBold");
+    document.querySelector(".bookingSteps h6:nth-of-type(3)").classList.add("makeBold");
+    document.querySelector(".step2").classList.add("show");
+    document.querySelector(".step3").classList.remove("show");
 }
 
-function nextAndPrevious() {
-    // enable "next" btn when form is valid
-    var counter = 1, step = "step";
-    step = ".step" + counter;
-    
-    if (counter <= 5) {
-        document.querySelector(step).classList.add("show");
-    }
-    
-    counter++;
-    if (counter > 5) {
-        counter = 5;
-    }
-    
-    step = ".step" + counter; // step is the class and we are appending counter with step so that it looks like the same class in the given class(like counter 1 means step1)
+function goToPayment(){
+    document.querySelector(".bookingSteps h6:nth-of-type(3)").classList.remove("makeBold");
+    document.querySelector(".bookingSteps h6:nth-of-type(4)").classList.add("makeBold");
+    document.querySelector(".step3").classList.add("show");
+    document.querySelector(".step4").classList.remove("show");
+}
 
-    document.querySelector(step).classList.remove("show");
-
-    // enable "previous" btn when form is valid
-    document.querySelector(".previous").addEventListener('click', function () {
-
-    if (counter > 1) {
-        step = ".step" + counter;
-                
-        document.querySelector(step).classList.add("show");
-    }
-    
-    counter--;
-                    
-    if (counter < 1) {
-        counter = 1;
-    }
-    
-    step = ".step" + counter;
-                
-    document.querySelector(step).classList.remove("show");
-    });
+function goToReceipt(){
+    document.querySelector(".bookingSteps h6:nth-of-type(4)").classList.remove("makeBold");
+    document.querySelector(".bookingSteps h6:nth-of-type(5)").classList.add("makeBold");
+    document.querySelector(".step4").classList.add("show");
+    document.querySelector(".step5").classList.remove("show");
+    document.querySelector(".overlay-content .previous").classList.add("displayNone");
+    document.querySelector(".overlay-content .next").classList.add("displayNone");
 }
 
 function showLandingPage(home) {
