@@ -132,6 +132,10 @@ input::-webkit-input-placeholder {
   left: 430px;
 }
 
+.video-container {
+  width: 100%;
+}
+
 /* --------- IMAGES -------- */
 .heroImg,
 .tourImg1,
