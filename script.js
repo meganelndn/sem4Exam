@@ -409,10 +409,9 @@ function showLandingPage(home) {
     // 1. template clone
     const introTemplate = document.querySelector(".introTemplate").content;
     const introCopy = introTemplate.cloneNode(true);
-
     // 2. text content
     /* ------------ hero image ----------- */
-    introCopy.querySelector(".heroImg").src = home[0].hero_video.guid;
+    introCopy.querySelector(".video-container").src = home[0].hero_video.guid;
     /* -------------- banner ------------- */
     introCopy.querySelector(".banner").src = home[0].banner.guid;
     /* ------------ intro text ----------- */
