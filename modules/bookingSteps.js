@@ -1,6 +1,6 @@
-export function  checkValidation(form, formElements, nextStep) {
+export function checkValidation(form, formElements, nextStep) {
     
-    document.querySelector(".next").addEventListener("click", (e) => {
+    document.querySelector(".toPayment", ".toReceipt").addEventListener("click", (e) => {
         e.preventDefault();
 
     if (form.checkValidity()) {
@@ -27,7 +27,7 @@ export function  checkValidation(form, formElements, nextStep) {
 }
 
 export function addClassToAll() {
-    let allForms = document.querySelectorAll('.overlay-content form');
+    let allForms = document.querySelectorAll('form');
     for (let i = 0; i < allForms.length; i++) {
     allForms[i].classList.add('show');
     }
