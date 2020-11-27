@@ -468,11 +468,6 @@ hr {
   border: 1px solid lightgray;
   margin: 140px 50px 20px 50px;
 }
-.bookingSteps h6 {
-  margin: 0 30px;
-  text-transform: uppercase;
-  display: inline-block;
-}
 
 .makeBold {
   color: red;
@@ -566,6 +561,9 @@ p.diana::before {
   display: none;
 }
 
+.displayError{
+  display: block;
+}
 
 /* modal */
 #corona-modal-background,

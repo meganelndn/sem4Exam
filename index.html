@@ -154,23 +154,9 @@
             <button id="bookBtn">Click to book!</button>
             <div class="overlay-content">
                 <hr>
-                <div class="bookingSteps">
-                    <h6>Availability</h6>
-                    <h6>Personal data</h6>
-                    <h6>Order overview</h6>
-                    <h6>Payment</h6>
-                    <h6>Receipt</h6>
-                </div>
+
                 <!-- AVAILABILITY -->
                 <form class="availability step1 show">
-                    <label for="date">Choose a date
-                        <input 
-                        type="date" 
-                        id="date" 
-                        name="date"  
-                        required>
-                        <p class="error date-err">Please pick a date for your tour</p>
-                    </label>
                     <label for="tour">Choose a tour
                         <select 
                         name="tour" 
@@ -218,9 +204,6 @@
                         required>
                         <p class="error time-err">Please pick a time for your trip</p>
                     </label>
-                </form>
-                <!-- PERSONAL DATA -->
-                <form class="personalData step2 show">
                     <label for="name">Full Name
                         <input 
                         type="text" 
@@ -250,64 +233,21 @@
                         required>
                         <p class="error phone-err">Please fill out your phone number</p>
                     </label>
-                    <label for="accommodation-select">Currently staying at
-                        <select name="accommodation" id="accommodation" required>
-                            <option value=""></option>
-                            <option value="cruiseship">Cruise ship</option>
-                            <option value="airbnb">Airbnb</option>
-                            <option value="hotel">Hotel</option>
-                            <option value="hostel">Hostel</option>
-                            <option value="friends">At a friend's place</option>
-                            <option value="local">I am a local</option>
-                        </select>
-                        <p class="error accommodation-err">Please select your current accommodation type</p>
-                    </label>
-                    <label for="comments">Comments
-                        <textarea 
-                        id="comments" 
-                        name="comments"
-                        rows="5" 
-                        cols="33">
-                    </textarea>
-                    </label>
-                    <label for="campaign-code">Campaign code
-                        <input 
-                        type="text" 
-                        id="campaign-code" 
-                        name="campaign-code"
-                        minlength="4" 
-                        maxlength="8" 
-                        size="10">
-                    </label>
-                    <input 
-                    type="checkbox" 
-                    id="spam" 
-                    name="spam">
-                    <label for="spam">Receive Hey Captain news and discounts (we won't spam you)</label>
+                        <label for="campaign-code">Campaign code
+                            <input 
+                            type="text" 
+                            id="campaign-code" 
+                            name="campaign-code"
+                            minlength="4" 
+                            maxlength="8" 
+                            size="10">
+                        </label>
+                        <label for="terms">I have read and accept the terms</label>
+                        <p class="error terms-err">Please tick this box in order to proceed</p> 
                 </form>
-                <!-- ORDER OVERVIEW -->
-                <form class="orderOverview step3 show">
-                    <h5>Your Order</h5>
-                    <p class="orderData">Name, email, etc.</p>
-                    <p>Hey Captain is based on being social and informative and we look forward to welcoming you
-                        on board. We hope you will embrace the DNA of Hey Captain, and be open to having a dialogue 
-                        with us and your fellow passengers.
-                    </p>
-                    <p>Please be aware that you cannot bring your own alcohol and we for safety reasons have a strict
-                        alcohol policy. We always reserve the right to reject passengers to board if we deem their
-                        behavious to be inappropriate.
-                    </p>
-                    <h5 class="price">TOTAL: DKK </h5>
-                    <input 
-                    type="checkbox" 
-                    id="terms" 
-                    name="terms"
-                    required>
-                    <label for="terms">I have read and accept the terms</label>
-                    <p class="error terms-err">Please tick this box in order to proceed</p> 
-                </form>
+    
                 <!-- PAYMENT -->
-                <form class="payment step4 show">
+                <form class="payment step2 show">
                     <h5 class="paymentP">Chose payment method</h5>
                     <div id="paymentMethod">
                         <img src="" alt="">
