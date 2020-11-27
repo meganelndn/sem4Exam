@@ -33,7 +33,7 @@ function fetchData(){
     }
 }
 
-import { availabilityFormValidation, personalDataFormValidation, paymentFormValidation } from "./modules/bookingSteps";
+import { checkValidation, addClassToAll } from "./modules/bookingSteps";
 
 function setUpBooking(){
     /* ------------ set up book now window ----------- */
@@ -58,178 +58,34 @@ function setUpBooking(){
             document.querySelector(".landmarks").classList.add("show");
         }
     })
-
     formValidation();
-   
-
 }
 
 function formValidation() {
-    // setUpBoat();
-    document.querySelector(".step2").classList.add("show");
-    document.querySelector(".step3").classList.add("show");
-    document.querySelector(".step4").classList.add("show");
-    document.querySelector(".step1").classList.remove("show");
-    /* ------------ form & elements ----------- */
+    addClassToAll();
+    document.querySelector(".overlay-content form:nth-of-type(1)").classList.remove("show");
     const form1 = document.querySelector(".availability");
-    window.form1 = form1;
     const elements1 = form1.elements;
-    window.elements1 = elements1;
-    /* --------- delete default validation ------- */
     form1.setAttribute("novalidate", true);
+    const formElements1 = form1.querySelectorAll("input, select");
     /* ------------ custom validation ------------ */
-    document.querySelector(".next").addEventListener("click", (e) => {
-        e.preventDefault();
-        // 1. select all inputs
-        const formElements1 = form1.querySelectorAll("input, select");
-        /* ------------ availability form ------------ */
-        if (form1.checkValidity()) {
-            // loop through form elements and check if are valid or not
-            formElements1.forEach((el) => {
-                if (el.checkValidity()) { 
-                    el.classList.add("valid");
-                }
-                goToStepTwo();
-            });
-        } else {
-            formElements1.forEach((el) => {
-                if (!el.checkValidity()) {
-                    el.classList.add("invalid");
-                    availabilityFormValidation(elements1);
-                    } else {
-                        el.classList.remove("invalid");
-                    }
-                })
-            }
-    })  
-}
+    checkValidation(form1, formElements1, goToPayment);
 
-function goToStepTwo() {
-    // setUpBoat();
-    document.querySelector(".step1").classList.add("show");
-    document.querySelector(".step3").classList.add("show");
-    document.querySelector(".step4").classList.add("show");
-    document.querySelector(".step2").classList.remove("show");
-    document.querySelector(".previous").addEventListener("click", function(){
-        formValidation();
-    })
-
-    document.querySelector(".next").addEventListener("click", (e) => { 
-        e.preventDefault();
-
-    const form2 = document.querySelector(".personalData");
-    window.form2 = form2;
-    const elements2 = form2.elements;
-    window.elements2 = elements2;
-    const formElements2 = form2.querySelectorAll("input, select");
-    /* ------------ personal data form ------------ */
-    if (form2.checkValidity()) {
-        formElements2.forEach((el) => {
-            if (el.checkValidity()) { 
-                el.classList.add("valid");
-            }
-            goToStepThree();
-        });
-    } else {
-        formElements2.forEach((el) => {
-            if (!el.checkValidity()) {
-                el.classList.add("invalid");
-                personalDataFormValidation(elements2);
-            } else {
-                el.classList.remove("invalid");
-            }
-        })
-    }
-})
-}
-
-function goToStepThree(){
-    document.querySelector(".step1").classList.add("show");
-    document.querySelector(".step2").classList.add("show");
-    document.querySelector(".step4").classList.add("show");
-    document.querySelector(".step3").classList.remove("show");
-    document.querySelector(".previous").addEventListener("click", function(){
-        goToStepTwo();
-    })
-
-    const form3 = document.querySelector(".orderOverview");
-    window.form3 = form3;
-    const elements3 = form3.elements;
-    window.elements3 = elements3;
-
-    document.querySelector(".next").addEventListener("click", (e) => {
-        e.preventDefault(); 
-        const formElements3 = form3.querySelectorAll("input, select");
-        /* ------------ order overview ------------ */
-        const step3Checkbox = document.querySelector("input[id='terms']");
-        if (form3.checkValidity()) {
-            formElements3.forEach((el) => {
-                if (el.checkValidity() && step3Checkbox.checked == true) { 
-                    el.classList.add("valid");
-                    goToPayment();
-                }
-            });
-        }
-    })
 }
 
 function goToPayment(){
-    document.querySelector(".step1").classList.add("show");
-    document.querySelector(".step2").classList.add("show");
-    document.querySelector(".step3").classList.add("show");
-    document.querySelector(".step4").classList.remove("show");
-    document.querySelector(".previous").addEventListener("click", function(){
-        goToStepThree();
-    })
-    
+    addClassToAll();
+    document.querySelector(".overlay-content form:nth-of-type(2)").classList.remove("show");
     const form4 = document.querySelector(".payment");
-    window.form4 = form4;
     const elements4 = form4.elements;
-    window.elements4 = elements4;
-
-    document.querySelector(".next").addEventListener("click", (e) => {
-        e.preventDefault();
-        const formElements4 = form4.querySelectorAll("input, select");
-                /* ------------ payment form ------------ */
-                if (form4.checkValidity()) {
-                    // loop through form elements and check if are valid or not
-                    formElements4.forEach((el) => {
-                        if (el.checkValidity()) { 
-                            el.classList.add("valid");
-                            goToReceipt();
-                        }
-                    });
-                } else {
-                    formElements4.forEach((el) => {
-                        if (!el.checkValidity()) {
-                            el.classList.add("invalid");
-                            paymentFormValidation(elements4);
-                        } else {
-                            el.classList.remove("invalid");
-                        }
-                    })
-                 }
-    })
-
+    const formElements4 = form4.querySelectorAll("input, select");
+    checkValidation(form4, formElements4, goToReceipt);
 }
 
-function setUpBoat(){
-    console.log(document.querySelectorAll(".overlay-content form"))
-    const allForms = document.querySelectorAll(".overlay-content form");
-    allForms.forEach((oneItem) => {
-        if(!oneItem.classList.contains("show")){
-            // console.log("this one has class")
-            //here give a colour for the corresponding h6
-            // document.querySelector(".bookingSteps h6:nth-of-type(3)").classList.remove("makeBold");
-            // document.querySelector(".bookingSteps h6:nth-of-type(4)").classList.add("makeBold");
-
-        }
-    })
-}
 
 function goToReceipt(){
-    document.querySelector(".step4").classList.add("show");
-    document.querySelector(".step5").classList.remove("show");
+    addClassToAll();
+    document.querySelector(".overlay-content .step5").classList.remove("show");
     document.querySelector(".overlay-content .previous").classList.add("displayNone");
     document.querySelector(".overlay-content .next").classList.add("displayNone");
 }
