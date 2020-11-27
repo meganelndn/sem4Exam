@@ -16,7 +16,7 @@ export function  checkValidation(form, formElements, nextStep) {
             if (!el.checkValidity()) {
                 el.classList.add("invalid");
                 // personalDataFormValidation(elements1);
-                invalidFormError(el);
+                // invalidFormError(el);
             } else {
                 el.classList.remove("invalid");
             }
