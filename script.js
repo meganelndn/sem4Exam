@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 function init() {
     fetchData();
+    setUpNewsletter();
     setUpBooking();
 }
 
@@ -35,13 +36,14 @@ function fetchData(){
 
 import { checkValidation, addClassToAll } from "./modules/bookingSteps";
 
-function setUpBooking(){
-    /* ------------ set up book now window ----------- */
-    document.getElementById("bookBtn").addEventListener("click", function(){
-        let bookOverlay = document.getElementById("bookingOverlay");
-        bookOverlay.classList.toggle("showOverlay");
-    });  
+function setUpNewsletter() {
+    document.querySelector("#newsletterBtn").addEventListener("click", function(){
+        let newsletterOverlay = document.getElementById("newsletterOverlay");
+        newsletterOverlay.classList.toggle("showOverlay");
+    });
+}
 
+function setUpBooking(){
     let tourInput = document.querySelector("select[name='tour']");
     tourInput.addEventListener("change", e => {
         if (e.target.value === "landmarks") {
@@ -63,31 +65,40 @@ function setUpBooking(){
 
 function formValidation() {
     addClassToAll();
-    document.querySelector(".overlay-content form:nth-of-type(1)").classList.remove("show");
+    document.querySelector(".availability").classList.remove("show");
     const form1 = document.querySelector(".availability");
     const elements1 = form1.elements;
     form1.setAttribute("novalidate", true);
     const formElements1 = form1.querySelectorAll("input, select");
+
     /* ------------ custom validation ------------ */
     checkValidation(form1, formElements1, goToPayment);
-
 }
 
 function goToPayment(){
-    addClassToAll();
-    document.querySelector(".overlay-content form:nth-of-type(2)").classList.remove("show");
-    const form4 = document.querySelector(".payment");
-    const elements4 = form4.elements;
-    const formElements4 = form4.querySelectorAll("input, select");
-    checkValidation(form4, formElements4, goToReceipt);
+    document.querySelector(".toPayment").addEventListener("click", function(form4, formElements4){
+        const paymentModal = document.querySelector("#payment-modal-background");
+        paymentModal.classList.add("showModal");
+
+        addClassToAll();
+        document.querySelector(".payment").classList.remove("show");
+        document.querySelector(".receipt").classList.add("show");
+
+        checkValidation(form4, formElements4, goToReceipt);
+    });
+
+    document.querySelector(".payment-modal-close").addEventListener("click", function(){
+        const paymentModal = document.querySelector("#payment-modal-background");
+        paymentModal.classList.remove("showModal");
+    });
 }
 
-
 function goToReceipt(){
-    addClassToAll();
-    document.querySelector(".overlay-content .step5").classList.remove("show");
-    document.querySelector(".overlay-content .previous").classList.add("displayNone");
-    document.querySelector(".overlay-content .next").classList.add("displayNone");
+    document.querySelector(".toReceipt").addEventListener("click", function(){
+    
+        document.querySelector(".receipt").classList.remove("show");
+        document.querySelector(".payment").classList.add("show");
+    });
 }
 
 function showLandingPage(home) {

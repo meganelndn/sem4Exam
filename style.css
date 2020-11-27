@@ -77,16 +77,17 @@ body {
 .banner {
   width: 40%;
   height: auto;
-  opacity: 0.4;
+  /* opacity: 0.4; */
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .video-container {
   width: 100%;
+  /*   filter: grayscale(10%); */
 }
 
 /* --------- IMAGES -------- */
@@ -133,12 +134,12 @@ body {
   align-items: center;
   max-width: fit-content;
   margin: 20px 25px 0 0px;
-  transition: transform .5s;
+  transition: transform 0.5s;
 }
 
 #singleTripArea:hover,
 #singleTripArea:focus {
-  transform: scale3d(1.050, 1.050, 1);
+  transform: scale3d(1.05, 1.05, 1);
 }
 .tripTitle {
   font-size: 16px;
@@ -215,7 +216,7 @@ body {
   padding: 10px 50px;
 }
 
-#tableGuide :nth-last-child(-n+2){
+#tableGuide :nth-last-child(-n + 2) {
   background-color: var(--light-beige);
 }
 
@@ -254,12 +255,12 @@ body {
   box-shadow: 0 3px 10px 3px #000;
   color: black;
   background-color: white;
-  transition: transform .5s;
+  transition: transform 0.5s;
 }
 
 #singleTourArea:hover,
 #singleTourArea:focus {
-  transform: scale3d(1.050, 1.050, 1);
+  transform: scale3d(1.05, 1.05, 1);
 }
 
 .tourTitle {
@@ -370,12 +371,12 @@ body {
   color: #fff;
 }
 
-/* BOOKING */
-/* -------- BOOK BTN -------- */
-.bookingArea {
+/* NEWSLETTER OVERLAY */
+/* -------- BTN -------- */
+.newsletterArea {
   position: fixed;
 }
-#bookBtn {
+#newsletterBtn {
   background: var(--yellow);
   border: none;
   cursor: pointer;
@@ -392,16 +393,14 @@ body {
 .overlay {
   width: 0;
   position: inherit;
-  /* top: 95px; */
   top: 10px;
   bottom: 0;
   right: 0;
-  /* background-color: rgba(255, 255, 255, 0.9); */
   background-color: #fff;
   transition: 0.8s;
 }
 .showOverlay {
-  width: 50%;
+  width: 30%;
   height: 100%;
 }
 .overlay-content {
@@ -409,10 +408,6 @@ body {
   width: 100%;
   text-align: center;
   margin-top: 30px;
-}
-hr {
-  border: 1px solid lightgray;
-  margin: 140px 50px 20px 50px;
 }
 
 .makeBold {
@@ -456,8 +451,6 @@ p.diana::before {
 }
 
 /* ------------ booking buttons ----------- */
-.previous,
-.next,
 #expandFaq {
   text-transform: uppercase;
   padding: 10px 30px;
@@ -467,20 +460,30 @@ p.diana::before {
   color: #fff;
   cursor: pointer;
 }
-.previous {
-  margin-right: 55%;
-  /* margin-top: 100px; */
-}
-.next {
+.toPayment {
   margin-right: 0;
-  /* margin-top: 0px; */
+  text-transform: uppercase;
+  padding: 10px 30px;
+  background: #fff;
+  border: none;
+  border-radius: 3px;
+  color: var(--dark-blue);
+  cursor: pointer;
 }
 /* ------------ booking forms ----------- */
 .show {
   display: none;
 }
+#formBox {
+  background: var(--dark-blue);
+  color: white;
+  position: fixed;
+  top: 74%;
+  z-index: 999999;
+}
 .availability {
   margin: 100px 0 0 50px;
+  display: flex;
 }
 
 #cardBilling {
@@ -507,13 +510,14 @@ p.diana::before {
   display: none;
 }
 
-.displayError{
+.displayError {
   display: block;
 }
 
 /* modal */
 #corona-modal-background,
-#trip-modal-background {
+#trip-modal-background,
+#payment-modal-background {
   display: none;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -522,16 +526,17 @@ p.diana::before {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-.showModal{
+.showModal {
   display: block !important;
 }
 
 #corona-modal-content,
-#trip-modal-content {
+#trip-modal-content,
+#payment-modal-content {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
