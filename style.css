@@ -417,11 +417,15 @@ body {
   display: none;
 }
 
-form,
 .orderOverview,
 .receipt {
   margin-left: 50px;
 }
+
+.receipt {
+  color:black;
+}
+
 label {
   font-size: 12px;
   text-align: left;
@@ -441,6 +445,7 @@ p.hidden-gems,
 p.diana {
   text-align: left;
   font-size: 14px;
+  position: absolute;
 }
 p.landmarks::before,
 p.hidden-gems::before,
@@ -477,13 +482,27 @@ p.diana::before {
 #formBox {
   background: var(--dark-blue);
   color: white;
-  position: fixed;
+  position: absolute;
   top: 74%;
-  z-index: 999999;
+  z-index: 5;
+  transition: ease 1s;
 }
 .availability {
-  margin: 100px 0 0 50px;
+  padding: 30px;
   display: flex;
+  text-align: center;
+  justify-content: space-between;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+}
+
+.sticky {
+  position: fixed;
+  top: 10%;
+  background: var(--dark-blue);
+}
+
+.sticky + .content {
+  padding-top: 102px;
 }
 
 #cardBilling {

@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", init);
-
+// document.addEventListener("DOMContentLoaded", init);
 function init() {
     fetchData();
     setUpNewsletter();
@@ -34,7 +34,7 @@ function fetchData(){
     }
 }
 
-import { checkValidation, addClassToAll } from "./modules/bookingSteps";
+import { checkValidation, closeForm } from "./modules/bookingSteps";
 
 function setUpNewsletter() {
     document.querySelector("#newsletterBtn").addEventListener("click", function(){
@@ -61,45 +61,61 @@ function setUpBooking(){
         }
     })
     formValidation();
+    setScrollPosition();
+}
+
+function setScrollPosition() {
+    window.onscroll = function() {myFunction()};
+
+    var header = document.querySelector(".availability");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
 }
 
 function formValidation() {
-    addClassToAll();
-    document.querySelector(".availability").classList.remove("show");
     const form1 = document.querySelector(".availability");
     const elements1 = form1.elements;
-    form1.setAttribute("novalidate", true);
+    // form1.setAttribute("novalidate", true);
     const formElements1 = form1.querySelectorAll("input, select");
 
-    /* ------------ custom validation ------------ */
-    checkValidation(form1, formElements1, goToPayment);
+    document.querySelector(".toPayment").addEventListener("click", (e) => {
+        e.preventDefault();
+        checkValidation(form1, formElements1, doNothing);
+    })  
 }
 
-function goToPayment(){
-    document.querySelector(".toPayment").addEventListener("click", function(form4, formElements4){
-        const paymentModal = document.querySelector("#payment-modal-background");
-        paymentModal.classList.add("showModal");
+function doNothing() {
+    closeForm();
+    const paymentModal = document.querySelector("#payment-modal-background");
+    paymentModal.classList.add("showModal");
+    document.querySelector(".paymentForm").classList.remove("show");
 
-        addClassToAll();
-        document.querySelector(".payment").classList.remove("show");
-        document.querySelector(".receipt").classList.add("show");
-
-        checkValidation(form4, formElements4, goToReceipt);
-    });
-
-    document.querySelector(".payment-modal-close").addEventListener("click", function(){
-        const paymentModal = document.querySelector("#payment-modal-background");
-        paymentModal.classList.remove("showModal");
-    });
+    const form2 = document.querySelector(".paymentForm");
+    const elements2 = form2.elements;
+    // form2.setAttribute("novalidate", true);
+    const formElements2 = form2.querySelectorAll("input, select");
+  
+    document.querySelector(".toReceipt").addEventListener("click", (e) => {
+        e.preventDefault();
+        checkValidation(form2, formElements2, ohYes);
+    })  
 }
 
-function goToReceipt(){
-    document.querySelector(".toReceipt").addEventListener("click", function(){
-    
+function ohYes(){
         document.querySelector(".receipt").classList.remove("show");
-        document.querySelector(".payment").classList.add("show");
-    });
+        document.querySelector(".paymentForm").classList.add("show");
+        document.querySelector(".payment-modal-close").addEventListener("click", function(){
+            location.reload();
+        });
 }
+
 
 function showLandingPage(home) {
     // 1. template clone

@@ -1,7 +1,4 @@
 export function checkValidation(form, formElements, nextStep) {
-    
-    document.querySelector(".toPayment", ".toReceipt").addEventListener("click", (e) => {
-        e.preventDefault();
 
     if (form.checkValidity()) {
         formElements.forEach((el) => {
@@ -9,8 +6,8 @@ export function checkValidation(form, formElements, nextStep) {
             if (el.checkValidity()) { 
                 el.classList.add("valid");
             }
-            nextStep();
         });
+        nextStep();
     } else {
         formElements.forEach((el) => {
             if (!el.checkValidity()) {
@@ -22,15 +19,20 @@ export function checkValidation(form, formElements, nextStep) {
             }
         })
     }
-
-})  
 }
 
-export function addClassToAll() {
-    let allForms = document.querySelectorAll('form');
-    for (let i = 0; i < allForms.length; i++) {
-    allForms[i].classList.add('show');
-    }
+// export function addClassToAll() {
+//     let allForms = document.querySelectorAll('form');
+//     for (let i = 0; i < allForms.length; i++) {
+//     allForms[i].classList.add('show');
+//     }
+// }
+
+export function closeForm() {
+    document.querySelector(".payment-modal-close").addEventListener("click", function(){
+        const paymentModal = document.querySelector("#payment-modal-background");
+        paymentModal.classList.remove("showModal");
+    });
 }
 
 export function invalidFormError(el) {
