@@ -50,7 +50,7 @@
                     <p class="hidden-gems show">Danish Lifestyle | Social activities | Design | Architecture</p>
                     <p class="diana show">Exclusive | Inner Copenhagen | Historic buildings | Lunch | Swimming</p>
                     
-            <label for="passengers">Chose passengers (up to 12)
+            <label for="passengers">Passengers (max. 12)
                 <select 
                 name="passengers" 
                 id="passengers" 
@@ -118,12 +118,14 @@
                     maxlength="8" 
                     size="10">
                 </label>
-                <input 
+                
+                <label for="terms">I have read and accept the terms
+                    <input 
                     type="checkbox" 
                     id="terms" 
                     name="terms"
                     required>
-                <label for="terms">I have read and accept the terms</label>
+                </label>
                 <p class="error terms-err">Please tick this box in order to proceed</p> 
 
                 <button class="toPayment">Book Now</button>
@@ -132,7 +134,7 @@
     <div id="payment-modal-background">
         <div id="payment-modal-content">
             <button class="payment-modal-close">CLOSE</button>
-            <form class="payment step2 show">
+            <form class="paymentForm step2 show">
                 <h5 class="paymentP">Chose payment method</h5>
                 <div id="paymentMethod">
                     <img src="" alt="">
