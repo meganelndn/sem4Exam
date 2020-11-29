@@ -34,7 +34,9 @@ function fetchData(){
     }
 }
 
-import { checkValidation, closeForm } from "./modules/bookingSteps";
+import { checkValidation, closeForm, postSubscription } from "./modules/bookingSteps";
+
+let completedForm;
 
 function setUpNewsletter() {
     document.querySelector("#newsletterBtn").addEventListener("click", function(){
@@ -82,16 +84,31 @@ function setScrollPosition() {
 function formValidation() {
     const form1 = document.querySelector(".availability");
     const elements1 = form1.elements;
-    // form1.setAttribute("novalidate", true);
+    //form1.setAttribute("novalidate", true);
     const formElements1 = form1.querySelectorAll("input, select");
 
+    formElements1.forEach((e) => {
+        e.addEventListener("change", (e) => {
+            let objectReview = {
+            tour: form1.querySelector("select[id=tour").value,
+            passengers: form1.querySelector("select[id=passengers").value,
+            time: form1.querySelector("input[id=time").value,
+            name: form1.querySelector("input[id=name").value,
+            email: form1.querySelector("input[id=email").value,
+            phone: form1.querySelector("input[id=phone").value,
+            code: form1.querySelector("input[id=campaign-code").value,
+            };
+            console.log(objectReview)
+            completedForm = objectReview;
+        }) 
+    })
     document.querySelector(".toPayment").addEventListener("click", (e) => {
         e.preventDefault();
-        checkValidation(form1, formElements1, doNothing);
+        checkValidation(form1, formElements1, goToPayment);
     })  
 }
 
-function doNothing() {
+function goToPayment() {
     closeForm();
     const paymentModal = document.querySelector("#payment-modal-background");
     paymentModal.classList.add("showModal");
@@ -111,6 +128,9 @@ function doNothing() {
 function ohYes(){
         document.querySelector(".receipt").classList.remove("show");
         document.querySelector(".paymentForm").classList.add("show");
+        //post
+        postSubscription(completedForm);
+        //close
         document.querySelector(".payment-modal-close").addEventListener("click", function(){
             location.reload();
         });
@@ -295,5 +315,4 @@ function showContact(contact) {
     // 3. append
     document.querySelector("#bottomNavigation").appendChild(contactCopy);
 }
-
 

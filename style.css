@@ -475,6 +475,10 @@ p.diana::before {
   color: var(--dark-blue);
   cursor: pointer;
 }
+
+.paymentForm {
+  color: black;
+}
 /* ------------ booking forms ----------- */
 .show {
   display: none;
