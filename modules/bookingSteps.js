@@ -13,7 +13,7 @@ export function checkValidation(form, formElements, nextStep) {
             if (!el.checkValidity()) {
                 el.classList.add("invalid");
                 // personalDataFormValidation(elements1);
-                // invalidFormError(el);
+                invalidFormError(el);
             } else {
                 el.classList.remove("invalid");
             }
@@ -36,19 +36,32 @@ export function closeForm() {
 }
 
 export function invalidFormError(el) {
-    // console.log(el)
-
-    // el.addEventListener("change", () => {  
-    if (el.classList.contains("invalid")){
-        // el.classList.add("valid");
-        // console.log("is invalid!")
-        // el.classList.remove("invalid");
+    if (el.nextElementSibling == null) {
+        // console.log("el is null")
+    } else if (el.classList.contains("invalid")) {
         el.nextElementSibling.classList.add("displayError");
     } else {
-        // el.classList.remove("valid");
-        // el.classList.add("invalid");
         el.nextElementSibling.classList.remove("displayError");
-        // console.log("is valid!")
     }
-//  })
+}
+
+
+//--------------------------------- post -----------------------------------------//
+
+export function postSubscription(formInfo) {
+    const postData = JSON.stringify(formInfo);
+    fetch("https://frontend2020-db3c.restdb.io/rest/hey-captain", {
+            method: "post",
+            body: JSON.stringify(formInfo),
+            headers: {
+                "Content-Type": "application/json; charset=utf-8",
+                "x-apikey": "5e95774d436377171a0c233c",
+                "cache-control": "no-cache",
+            },
+            body: postData,
+        })
+        .then((res) => res.json())
+        // .then((data) => {location.replace("asset.html")});
+        .then(console.log("it posted"));
+
 }
