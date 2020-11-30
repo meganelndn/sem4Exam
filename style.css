@@ -182,8 +182,11 @@ body {
   background-color: var(--dark-blue);
 }
 
+#lemonade_water,
+#tea_coffee_chocolate,
 #bottle_of_wine,
 #glass_of_wine,
+#glass_of_grog,
 #beer {
   flex-direction: row;
   display: flex;
@@ -197,6 +200,7 @@ body {
 #totalPrice {
   background-color: var(--light-beige);
   min-width: -webkit-fill-available;
+  text-align: right;
 }
 
 #totalPrice p {
@@ -213,7 +217,8 @@ body {
 }
 
 #tableGuide p {
-  padding: 10px 50px;
+  padding: 11px 50px;
+  text-align: left;
 }
 
 #tableGuide :nth-last-child(-n + 2) {
@@ -423,7 +428,7 @@ body {
 }
 
 .receipt {
-  color:black;
+  color: black;
 }
 
 label {

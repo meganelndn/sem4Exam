@@ -180,11 +180,20 @@ function showTrips(trips) {
         tripCopy.querySelector(".duration").textContent = oneTrip.duration;
         tripCopy.querySelector(".tripText").textContent = oneTrip.description;
         //table
+        tripCopy.querySelector("#lemonade_water .summer").textContent = oneTrip.lemonade_water.split(", ")[0];
+        tripCopy.querySelector("#lemonade_water .winter").textContent = oneTrip.lemonade_water.split(", ")[1];
+
+        tripCopy.querySelector("#tea_coffee_chocolate .summer").textContent = oneTrip.tea_coffee_chocolate.split(", ")[0];
+        tripCopy.querySelector("#tea_coffee_chocolate .winter").textContent = oneTrip.tea_coffee_chocolate.split(", ")[1];
+        
         tripCopy.querySelector("#bottle_of_wine .summer").textContent = oneTrip.bottle_of_wine.split(", ")[0];
         tripCopy.querySelector("#bottle_of_wine .winter").textContent = oneTrip.bottle_of_wine.split(", ")[1];
 
         tripCopy.querySelector("#glass_of_wine .summer").textContent = oneTrip.glass_of_wine.split(", ")[0];
         tripCopy.querySelector("#glass_of_wine .winter").textContent = oneTrip.glass_of_wine.split(", ")[1];
+
+        tripCopy.querySelector("#glass_of_grog .summer").textContent = oneTrip.glass_of_grog.split(", ")[0];
+        tripCopy.querySelector("#glass_of_grog .winter").textContent = oneTrip.glass_of_grog.split(", ")[1];
 
         tripCopy.querySelector("#beer .summer").textContent = oneTrip.beer.split(", ")[0];
         tripCopy.querySelector("#beer .winter").textContent = oneTrip.beer.split(", ")[1];
@@ -193,11 +202,17 @@ function showTrips(trips) {
         const replacementItem = document.querySelectorAll("#summerWinter p");
         replacementItem.forEach((oneResult) => {
             if (oneResult.textContent === "no"){
-                let addIcon = document.createElement("img");
-                oneResult.textContent= "";
-                addIcon.className = "iconSize";
-                addIcon.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/crossMark.png";
-                oneResult.appendChild(addIcon)
+                let addCross = document.createElement("img");
+                oneResult.textContent = "";
+                addCross.className = "iconSize";
+                addCross.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/crossMark.png";
+                oneResult.appendChild(addCross);
+            } else if (oneResult.textContent === "yes"){
+                let addCheck = document.createElement("img");
+                oneResult.textContent = "";
+                addCheck.className = "iconSize";
+                addCheck.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/—Pngtree—tick-vector-icon_4015270.png";
+                oneResult.appendChild(addCheck);
             }
         })
         //price
