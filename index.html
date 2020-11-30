@@ -27,13 +27,12 @@
             <p class="introText"></p>
         </template>
     </section>
-
-    <!-- data-panel-bounds="true -->
     
-        <!-- booking form -->
+    <!-- booking form -->
     <div id="formBox">
         <form class="availability step1 show" action="/s/all" role="submit">
-            <label for="tour">Choose a tour
+        <div class="label1 formLabel">
+            <label for="tour">Where to?
                 <select 
                 name="tour" 
                 id="tour" 
@@ -46,11 +45,12 @@
                 <p class="error tour-err">Please pick a tour</p>
             </label>
             <!-- keywords -->
-                    <p class="landmarks show">Historical sites | Royal Palace | Circle Brid | Black Diamond | Christiania | NOMA | Copenhagen Opera</p>
-                    <p class="hidden-gems show">Danish Lifestyle | Social activities | Design | Architecture</p>
-                    <p class="diana show">Exclusive | Inner Copenhagen | Historic buildings | Lunch | Swimming</p>
-                    
-            <label for="passengers">Passengers (max. 12)
+            <p class="landmarks keywords show">Historical sites | Royal Palace | Circle Brid | Black Diamond | Christiania | NOMA | Copenhagen Opera</p>
+            <p class="hidden-gems keywords show">Danish Lifestyle | Social activities | Design | Architecture</p>
+            <p class="diana keywords show">Exclusive | Inner Copenhagen | Historic buildings | Lunch | Swimming</p>
+        </div>
+        <div class="label2 formLabel">
+            <label for="passengers">Passengers
                 <select 
                 name="passengers" 
                 id="passengers" 
@@ -72,7 +72,9 @@
                 </select>
                 <p class="error passengers-err">Please select a number</p>
             </label>
-            <label for="time">Choose a time
+        </div>
+        <div class="label3 formLabel">
+            <label for="time">Date & Time
                 <input 
                 type="datetime-local" 
                 id="time"
@@ -80,6 +82,8 @@
                 required>
                 <p class="error time-err">Please pick a time for your trip</p>
             </label>
+        </div>
+        <div class="label4 formLabel">
             <label for="name">Full Name
                 <input 
                 type="text" 
@@ -91,6 +95,8 @@
                 size="10">
                 <p class="error name-err">Please fill out your name</p>
             </label>
+        </div>
+        <div class="label5 formLabel">
             <label for="email">Email address
                 <input 
                 type="email" 
@@ -100,6 +106,8 @@
                 required>
                 <p class="error email-err">Please fill out your e-mail address</p>
             </label>
+        </div>
+        <div class="label6 formLabel">
             <label for="phone">Phone number
                 <input 
                 type="tel" 
@@ -109,27 +117,32 @@
                 required>
                 <p class="error phone-err">Please fill out your phone number</p>
             </label>
-                <label for="campaign-code">Campaign code
-                    <input 
-                    type="text" 
-                    id="campaign-code" 
-                    name="campaign-code"
-                    minlength="4" 
-                    maxlength="8" 
-                    size="10">
-                </label>
-                
-                <label for="terms">I have read and accept the terms
-                    <input 
-                    type="checkbox" 
-                    id="terms" 
-                    name="terms"
-                    required>
-                    <p class="error terms-err">Please tick this box in order to proceed</p> 
-                </label>
+        </div>
+        <div class="label7 formLabel">
+            <label for="campaign-code">Campaign code
+                <input 
+                type="text" 
+                id="campaign-code" 
+                name="campaign-code"
+                minlength="4" 
+                maxlength="8" 
+                size="10">
+            </label>
+        </div>
+        <div class="label8 formLabel">
+            <label for="terms">I have read and accept the terms
+                <input 
+                type="checkbox" 
+                id="terms" 
+                name="terms"
+                required>
+                <p class="error terms-err">Please tick this box to proceed</p> 
+            </label>
+        </div>
 
-                <button class="toPayment">Book Now</button>
+            <button class="toPayment">→</button>
         </form>
+
     <!-- payment modal -->
     <div id="payment-modal-background">
         <div id="payment-modal-content">
@@ -386,8 +399,23 @@
 
     <div class="newsletterArea">
         <div id="newsletterOverlay" class="overlay">
-            <button id="newsletterBtn">Newsletter</button>
+            <button id="newsletterBtn"><img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/icon.png" alt="" class="newsletterIcon" /></button>
             <div class="overlay-content"> 
+                <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/waves.png" alt="" class="newsletterImg">
+                <h4 class="newsletterTitle">Subscribe to our newsletter</h4>
+                <p class="newsletterText">Join our mailing list to get the latest news delivered in your inbox</p>
+                <div class="label5 formLabel">
+                    <label for="email">Email address
+                        <input 
+                        type="email" 
+                        id="email"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        size="30" 
+                        required>
+                        <p class="error email-err">Please fill out your e-mail address</p>
+                    </label>
+                </div>
+                <button class="newsletterSubscription">Subscribe</button>
             </div>
         </div>
     </div>
