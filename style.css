@@ -569,6 +569,7 @@ input#terms {
   cursor: pointer;
 }
 .toPayment,
+.toReceipt,
 .newsletterSubscription {
   margin-right: 0;
   text-transform: uppercase;
@@ -583,8 +584,9 @@ input#terms {
   background: var(--yellow);
 }
 
-.paymentForm {
-  color: black;
+.toReceipt {
+  position: absolute;
+  bottom: 1%;
 }
 /* ------------ booking forms ----------- */
 .show {
@@ -648,7 +650,7 @@ input#terms {
   display: block;
 }
 
-/* modal */
+/* modals */
 #corona-modal-background,
 #trip-modal-background,
 #payment-modal-background {
@@ -681,12 +683,13 @@ input#terms {
 }
 .fullDescription,
 .coronaText {
-  /* font-family: "Brandon Text Light"; */
+  font-family: "Brandon Text Light";
   margin-top: 20px;
   margin: 0 30px;
 }
 .corona-modal-close,
-.trip-modal-close {
+.trip-modal-close,
+.payment-modal-close {
   cursor: pointer;
   background: inherit;
   border: none;
@@ -696,9 +699,23 @@ input#terms {
 }
 .corona-modal-close:hover,
 .corona-modal-close:focus,
+.payment-modal-close:hover,
+.payment-modal-close:focus,
 .trip-modal-close:hover,
 .trip-modal-close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.paymentP,
+.billingInfo,
+.ccInfo {
+  font-family: "Brandon Text Light";
+  color: #fff;
+}
+
+/* payment forms */
+.row {
+  display: flex;
 }

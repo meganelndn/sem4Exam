@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hey Captain</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="topNavigation">
     <nav class="navBar" id="navBar">
         <a href="index.html"><img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/heycaptain_logo.png" alt="logo" class="logo"></a>
         <div class="navBarContent">
-            <!-- nav links -->
+        <!-- nav links -->
         <a href="index.html">Home</a>
         <a href="faq.html">FAQ</a>
         <a href="#book" class="bookBtn">Book with us</a>
@@ -144,19 +145,92 @@
         </form>
 
     <!-- payment modal -->
+    <!-- <div id="payment-modal-background">
+        <div id="payment-modal-content">
+            <button class="payment-modal-close">CLOSE</button>
+
+        <div class="row">
+        <div class="col-75">
+          <div class="container">
+
+            <form class="paymentForm step2 show">
+              <div class="row">
+                <div class="col-50">
+                  <h3>Billing Address</h3>
+                  <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                  <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                  <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                  <input type="text" id="email" name="email" placeholder="john@example.com">
+                  <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                  <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                  <label for="city"><i class="fa fa-institution"></i> City</label>
+                  <input type="text" id="city" name="city" placeholder="New York">
+      
+                  <div class="row">
+                    <div class="col-50">
+                      <label for="state">State</label>
+                      <input type="text" id="state" name="state" placeholder="NY">
+                    </div>
+                    <div class="col-50">
+                      <label for="zip">Zip</label>
+                      <input type="text" id="zip" name="zip" placeholder="10001">
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-50">
+                  <h3>Credit Card Info</h3>
+                  <label for="fname">Accepted Cards</label>
+                  <div class="icon-container">
+                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                  </div>
+                  <label for="cname">Name on Card</label>
+                  <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                  <label for="ccnum">Credit card number</label>
+                  <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                  <label for="expmonth">Exp Month</label>
+                  <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                  <div class="row">
+                    <div class="col-50">
+                      <label for="expyear">Exp Year</label>
+                      <input type="text" id="expyear" name="expyear" placeholder="2018">
+                    </div>
+                    <div class="col-50">
+                      <label for="cvv">CVV</label>
+                      <input type="text" id="cvv" name="cvv" placeholder="352">
+                    </div>
+                  </div>
+
+                  <button class="toReceipt">Pay Now</button>
+                </form>
+
+                </div> 
+            </div>
+          </div>
+        </div>
+        </div>
+        </form> -->
+
+        <!-- receipt -->
+        <!-- <div class="receipt step5 show">
+            <h5>Payment complete!</h5>
+            <p>We've sent you an email with all the details of your order</p>
+            <h5>Order Number: #</h5>
+        </div> -->
+            
+    <!-- </div></div> -->
+
     <div id="payment-modal-background">
         <div id="payment-modal-content">
             <button class="payment-modal-close">CLOSE</button>
             <form class="paymentForm step2 show">
-                <h5 class="paymentP">Chose payment method</h5>
-                <div id="paymentMethod">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                </div>
                 <div id="cardBilling">
                 <div id="billing">
-                    <h5 class="billingInfo">Billing info</h5>
+                    <h3>Billing info</h3>
+                <div class="label9 formLabel">
                     <label for="paymentName">Full Name
                         <input 
                         type="text" 
@@ -168,6 +242,8 @@
                         required />
                         <p class="error paymentName-err">Please fill out your name</p>
                     </label>
+                </div>
+                <div class="label10 formLabel">
                     <label for="address">Address
                         <input 
                         type="street-address" 
@@ -178,6 +254,8 @@
                         required>
                         <p class="error address-err">Please fill out your address</p>
                     </label>
+                </div>
+                <div class="label11 formLabel">
                     <label for="city">City
                         <input 
                         type="text" 
@@ -186,6 +264,8 @@
                         required>
                         <p class="error city-err">Please fill out your city</p>
                     </label>
+                </div>
+                <div class="label12 formLabel">
                     <label for="zipCode">ZIP Code
                         <input 
                         type="text" 
@@ -195,6 +275,8 @@
                         required/>
                         <p class="error zip-err">Please fill out your ZIP code</p>
                     </label>
+                </div>
+                <div class="label13 formLabel">
                     <label for="country">Country
                         <input 
                         type="text" 
@@ -204,9 +286,11 @@
                         <p class="error country-err">Please fill out your country</p>
                     </label>
                 </div>
+                </div>
                 
                 <div id="cc">
-                <h5 class="ccInfo">Credit card info</h5>
+                <h3>Credit card info</h3>
+                <div class="label14 formLabel">
                   <label for="cardNumber">Card Number
                     <input
                       name="cardNumber"
@@ -219,6 +303,8 @@
                       required/>
                       <p class="error cc-err">Please fill out your credit card number</p>
                   </label>
+                </div>
+                <div class="label15 formLabel">
                   <label for="cardName">Cardholder's Name
                     <input
                       type="text"
@@ -228,6 +314,8 @@
                       required/>
                       <p class="error ccName-err">Please fill out the cardholder's name</p>
                   </label>
+                </div>
+                <div class="label16 formLabel">
                     <label for="expiryDate">Expiry Date
                       <input
                         name="expiryDate"
@@ -237,6 +325,8 @@
                         required/>
                         <p class="error expiry-err">Please fill out your card's expiry date</p>
                     </label>
+                </div>
+                <div class="label17 formLabel">
                     <label for="ccv">CVC
                       <input
                         name="ccv"
@@ -246,6 +336,7 @@
                         required/>
                         <p class="error ccv-err">Please fill out the card's CVC number</p>
                     </label>
+                </div>
                 </div>
             </div>
 
@@ -405,10 +496,10 @@
                 <h4 class="newsletterTitle">Subscribe to our newsletter</h4>
                 <p class="newsletterText">Join our mailing list to get the latest news delivered in your inbox</p>
                 <div class="label5 formLabel">
-                    <label for="email">Email address
+                    <label for="newsletterMail">Email address
                         <input 
                         type="email" 
-                        id="email"
+                        id="newsletterMail"
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                         size="30" 
                         required>
