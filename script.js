@@ -327,6 +327,9 @@ function showContact(contact) {
     contactCopy.querySelector(".contactLink2").textContent = `Phone: ${contact[3].contact_phone}`; 
     /* --------------- follow us --------------- */
     contactCopy.querySelector(".contactTitle4").textContent = contact[0].title.rendered;
+    contactCopy.querySelector(".contactIcon1").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/facebook-icon-vector-black-and-white-4.png";
+    contactCopy.querySelector(".contactIcon2").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/instagram-icon-vector-27.png";
+    contactCopy.querySelector(".contactIcon3").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/tripadvisor-logotype-1.png";
     // 3. append
     document.querySelector("#bottomNavigation").appendChild(contactCopy);
 }

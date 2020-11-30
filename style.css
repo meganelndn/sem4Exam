@@ -317,9 +317,41 @@ body {
 
 /* --------- BOTTOM NAV -------- */
 #bottomNavigation {
-  display: flex;
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "t1 t2 t3 t4"
+    "desc1 desc2 desc3 desc4";
   padding: 30px;
+}
+#bottomNavigation h5:first-of-type {
+  grid-area: t1;
+}
+#bottomNavigation h5:nth-of-type(2n) {
+  grid-area: t2;
+}
+#bottomNavigation h5:nth-of-type(3n) {
+  grid-area: t3;
+}
+#bottomNavigation h5:last-of-type {
+  grid-area: t4;
+  margin-left: 180px;
+}
+#bottomNavigation p:first-of-type {
+  grid-area: desc1;
+  margin: 0 70px 0 0;
+}
+#bottomNavigation p:nth-of-type(2n) {
+  grid-area: desc2;
+  margin: 0 70px 0 0;
+}
+#bottomNavigation p:nth-of-type(3n) {
+  grid-area: desc3;
+}
+#bottomNavigation p:nth-of-type(4n) {
+  grid-area: desc3;
+  margin-top: 20px;
 }
 #bottomNavigation p {
   font-size: 14px;
@@ -327,6 +359,21 @@ body {
 #bottomNavigation h5 {
   text-transform: uppercase;
   font-size: 12px;
+}
+
+.socialMediaIcon {
+  width: 30px;
+  height: auto;
+  grid-area: desc4;
+  margin-left: 170px;
+}
+.contactIcon2 {
+  grid-area: desc4;
+  padding-left: 50px;
+}
+.contactIcon3 {
+  grid-area: desc4;
+  padding-left: 100px;
 }
 
 /* --------- FAQ ---------- */
