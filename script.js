@@ -333,4 +333,3 @@ function showContact(contact) {
     // 3. append
     document.querySelector("#bottomNavigation").appendChild(contactCopy);
 }
-
