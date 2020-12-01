@@ -361,7 +361,7 @@ body {
 #bottomNavigation p:nth-of-type(3n) {
   grid-area: desc3;
 }
-#bottomNavigation p:nth-of-type(4n) {
+#bottomNavigation a {
   grid-area: desc3;
   margin-top: 20px;
 }
