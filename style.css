@@ -231,6 +231,16 @@ body {
   width: 20px;
   height: 20px;
 }
+
+#customiseYourOwn h3 {
+  font-family: "Brandon Text Light";
+  margin-top: 60px;
+}
+#customiseYourOwn a {
+  text-decoration: underline;
+  color: var(--dark-blue);
+}
+
 /* --------- TOURS -------- */
 #tourArea {
   display: inline-flex;
@@ -351,9 +361,15 @@ body {
 #bottomNavigation p:nth-of-type(3n) {
   grid-area: desc3;
 }
-#bottomNavigation p:nth-of-type(4n) {
+#bottomNavigation a:nth-of-type(1n) {
   grid-area: desc3;
   margin-top: 20px;
+}
+#bottomNavigation a:nth-of-type(2n),
+#bottomNavigation a:nth-of-type(3n),
+#bottomNavigation a:nth-of-type(4n) {
+  grid-area: desc4;
+  margin-top: 0;
 }
 #bottomNavigation p {
   font-size: 14px;
