@@ -37,7 +37,7 @@ function fetchData(){
 
 import { checkValidation, closeForm, postSubscription } from "./modules/bookingSteps";
 import { carouselEffect } from "./modules/imageCarousel";
-import { weatherCard } from "./modules/weatherApp.js";
+import { weatherCard } from "./modules/weatherCard.js";
 
 let completedForm;
 
