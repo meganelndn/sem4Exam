@@ -231,6 +231,16 @@ body {
   width: 20px;
   height: 20px;
 }
+
+#customiseYourOwn h3 {
+  font-family: "Brandon Text Light";
+  margin-top: 60px;
+}
+#customiseYourOwn a {
+  text-decoration: underline;
+  color: var(--dark-blue);
+}
+
 /* --------- TOURS -------- */
 #tourArea {
   display: inline-flex;
