@@ -26,6 +26,15 @@
   --light-blue: #3e4657;
   --dark-blue: #2a3141;
   --yellow: #ffff00;
+
+  /* weather */
+  --bg_main: #0a1f44;
+  --text_light: #fff;
+  --text_med: #53627c;
+  --text_dark: #1e2432;
+  --red: #ff1e42;
+  --darkred: #c3112d;
+  --orange: #ff8c00;
 }
 * {
   font-family: var(--main-font);
@@ -304,14 +313,184 @@ body {
 
 /* -------- WEATHER ------- */
 #weather {
-  text-align: center;
-  margin: 50px 0;
+  padding: 40px;
 }
-#weather h3,
-#weather h4,
-#weather img {
-  margin: 10px 0;
+/* beginning of https://codepen.io/tutsplus/pen/gObLaEP code snippet */
+.weatherBtn {
+  cursor: pointer;
 }
+.weatherInput {
+  -webkit-appearance: none;
+}
+.weatherBtn,
+.weatherInput {
+  border: none;
+  background: none;
+  outline: none;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* SECTION #1
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.top-banner {
+  color: var(--dark-blue);
+}
+.heading {
+  font-weight: bold;
+  font-size: 3rem;
+  letter-spacing: 0.02em;
+  padding: 0 0 30px 0;
+}
+.top-banner form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.top-banner form .weatherInput {
+  font-size: 2rem;
+  height: 30px;
+  padding: 5px 5px 10px;
+  border-bottom: 1px solid;
+}
+.top-banner form .weatherInput::placeholder {
+  color: currentColor;
+}
+.top-banner form .weatherBtn {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: 15px 20px;
+  margin-left: 15px;
+  border-radius: 5px;
+  background: var(--light-blue);
+  color: #fff;
+  transition: background 0.3s ease-in-out;
+}
+.top-banner form .weatherBtn:hover {
+  background: var(--darkred);
+}
+.top-banner form .msg {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  max-width: 450px;
+  min-height: 40px;
+}
+
+/* SECTION #2
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.ajax-section {
+  margin: 70px 0 20px;
+}
+.ajax-section .city {
+  position: relative;
+  padding: 40px 10%;
+  border-radius: 20px;
+  background: var(--light-beige);
+  color: var(--light-blue);
+}
+.ajax-section .cities {
+  display: grid;
+  grid-gap: 32px 20px;
+  grid-template-columns: repeat(4, 1fr);
+  padding-left: 0;
+}
+.container ul {
+  list-style: none;
+}
+.ajax-section .city::after {
+  content: "";
+  width: 90%;
+  height: 50px;
+  position: absolute;
+  bottom: -12px;
+  left: 5%;
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 20px;
+  background: var(--light-blue);
+}
+.ajax-section figcaption {
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.ajax-section .city-temp {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--text_dark);
+}
+.ajax-section .city sup {
+  font-size: 0.5em;
+}
+.ajax-section .city-name sup {
+  padding: 0.2em 0.6em;
+  border-radius: 30px;
+  color: #000;
+  background: var(--yellow);
+}
+.ajax-section .city-icon {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1000px) {
+  body {
+    padding: 30px;
+  }
+
+  .ajax-section .cities {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .heading,
+  .ajax-section .city-temp {
+    font-size: 3rem;
+  }
+  .ajax-section {
+    margin-top: 20px;
+  }
+  .top-banner form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .top-banner form .weatherInput,
+  .top-banner form .weatherBtn {
+    width: 100%;
+  }
+  .top-banner form .weatherBtn {
+    margin: 20px 0 0 0;
+  }
+  .top-banner form .msg {
+    position: static;
+    max-width: none;
+    min-height: 0;
+    margin-top: 10px;
+  }
+  .ajax-section .cities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    padding: 15px;
+  }
+  .ajax-section .cities {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* end of https://codepen.io/tutsplus/pen/gObLaEP code snippet */
 
 /* --------- BOTTOM NAV -------- */
 #bottomNavigation {
