@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hey Captain</title>
     <link rel="stylesheet" href="/style.css">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.5/css/weather-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.5/css/weather-icons-wind.min.css"> -->
 </head>
 <body>
     <div id="topNavigation">
@@ -457,9 +460,22 @@
     </section>
     
     <section id="weather">
-        <h3 class="degrees">11°C</h3>
-        <img src="" class="weather">Cloudy/rainy</h3>
-        <h4 class="weatherSentence">Experience Copenhagen through the lens of a Dane today!</h3>
+        <section class="top-banner">
+        <!-- https://codepen.io/tutsplus/pen/gObLaEP -->
+        <div class="container">
+            <h1 class="heading">Weather forecast</h1>
+            <form>
+              <input class="weatherInput" type="text" placeholder="Search for a city" autofocus>
+              <button class="weatherBtn" type="submit">SUBMIT</button>
+              <span class="msg"></span>
+            </form>
+          </div>
+        </section>
+        <section class="ajax-section">
+          <div class="container">
+            <ul class="cities"></ul>
+          </div>
+        </section>
     </section>
 
     <section id="gallery" class="row">
@@ -520,6 +536,9 @@
             </div>
         </div>
     </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://codepen.io/denmch/pen/debe9e615df1b7ac57a5e7603322870c"></script> -->
 
     <script src="script.js"></script>
 </body>
