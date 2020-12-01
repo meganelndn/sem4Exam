@@ -718,7 +718,7 @@ input#terms {
 }
 
 /* payment forms */
-.row {
+.paymentRow {
   display: flex;
 }
 
@@ -728,8 +728,8 @@ input#terms {
   padding: 100px 20px;
 }
 #gallery img {
-  width: 280px;
-  height: 240px;
+  width: 440px;
+  height: 320px;
 }
 /* display only the first 6 images for now, until we build the gallery */
 #singleGalleryImg:nth-child(n + 6) {
@@ -741,9 +741,9 @@ input#terms {
 .coverflow {
   position: relative;
   height: 460px;
-  padding: 30px;
-  overflow: hidden;
-  perspective: 1000px;
+  padding: 100px 0 0 0;
+  /* overflow: hidden;
+  perspective: 1000px; */
 }
 .coverflow__image {
   user-select: none;
