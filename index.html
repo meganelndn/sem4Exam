@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hey Captain</title>
-    <link rel="stylesheet" href="/style.css">   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <div id="topNavigation">
@@ -463,13 +462,20 @@
         <h4 class="weatherSentence">Experience Copenhagen through the lens of a Dane today!</h3>
     </section>
 
-    <section id="gallery">
+    <section id="gallery" class="row">
         <template class="galleryTemplate">
-            <div id="singleGalleryImg">
-                <img src="" alt="" class="galleryImg">
+            <div class="nine columns">
+                <div id="galleryImg" class="coverflow top10 bot10">
+                    <a class="prev-arrow"></a>
+                    <a href=""><img class="galleryImg i1 coverflow__image" src="" alt=""></a>
+                    <a href=""><img class="galleryImg i2 coverflow__image" src="" alt=""></a>
+                    <a href=""><img class="galleryImg i3 coverflow__image" src="" alt=""></a>
+                    <a href=""><img class="galleryImg i4 coverflow__image" src="" alt=""></a>
+                    <a href=""><img class="galleryImg i5 coverflow__image" src="" alt=""></a>
+                    <a href=""><a class="next-arrow"></a>
+                </div>
             </div>
         </template>
-        <div id="galleryArea"></div>
     </section>
 
     <div id="bottomNavigation">
@@ -514,7 +520,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -252,13 +252,15 @@ function showTours(tours) {
 function showGalleryPage(gallery) {
     // 1. template clone
     const galleryTemplate = document.querySelector(".galleryTemplate").content;
-    const galleryArea = document.querySelector("#galleryArea");
+    const galleryCopy = galleryTemplate.cloneNode(true);
     
-    gallery.forEach((oneImg) => {
-        const galleryCopy = galleryTemplate.cloneNode(true);
-        galleryCopy.querySelector(".galleryImg").src = oneImg.boat_image.guid;
-        galleryArea.appendChild(galleryCopy);
-    })
+    galleryCopy.querySelector(".i1").src = gallery[0].boat_image.guid;
+    galleryCopy.querySelector(".i2").src = gallery[1].boat_image.guid;
+    galleryCopy.querySelector(".i3").src = gallery[2].boat_image.guid;
+    galleryCopy.querySelector(".i4").src = gallery[3].boat_image.guid;
+    galleryCopy.querySelector(".i5").src = gallery[4].boat_image.guid;
+
+    document.querySelector("#gallery").appendChild(galleryCopy);
 }
 
 function showFAQPage(faq) {
