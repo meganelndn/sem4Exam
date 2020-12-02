@@ -121,7 +121,24 @@ function goToPayment() {
     const elements2 = form2.elements;
     // form2.setAttribute("novalidate", true);
     const formElements2 = form2.querySelectorAll("input, select");
-  
+
+    formElements2.forEach((e) => {
+        e.addEventListener("change", (e) => {
+            let objectReview = {
+            paymentName: form2.querySelector("input[id=paymentName").value,
+            address: form2.querySelector("input[id=address").value,
+            city: form2.querySelector("input[id=city").value,
+            zip: form2.querySelector("input[id=zip").value,
+            country: form2.querySelector("input[id=country").value,
+            cardName: form2.querySelector("input[id=cardName").value,
+            cardNumber: form2.querySelector("input[id=cardNumber").value,
+            expiryDate: form2.querySelector("input[id=expiryDate").value,
+            cvc: form2.querySelector("input[id=cvc").value,
+            };
+            console.log(objectReview)
+            completedForm = objectReview;
+        }) 
+    })
     document.querySelector(".toReceipt").addEventListener("click", (e) => {
         e.preventDefault();
         checkValidation(form2, formElements2, ohYes);
@@ -367,7 +384,6 @@ function weatherApp() {
         let content = "";
         // athens,gr
         if (inputVal.includes(",")) {
-        // athens,grrrrrr->invalid country code, so we keep only the first part of inputVal
         if (inputVal.split(",")[1].length > 2) {
           inputVal = inputVal.split(",")[0];
           content = el
