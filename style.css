@@ -40,7 +40,7 @@
   --darkred: #c3112d;
   --orange: #ff8c00;
 }
-* {
+body {
   font-family: var(--main-font);
   margin: 0;
 }
@@ -52,14 +52,15 @@ body {
 /* --------- TOP NAV -------- */
 #topNavigation,
 #bottomNavigation {
-  background-color: var(--light-beige);
+  /* background-color: var(--light-beige); */
   margin: 10px;
-  box-shadow: 0 2px 10px rgba(226, 225, 225, 0.2);
+  /* box-shadow: 0 2px 10px rgba(226, 225, 225, 0.2); */
 }
 #topNavigation {
   position: fixed;
   width: -webkit-fill-available;
   z-index: 99;
+  background-attachment: fixed;
 }
 .logo {
   width: 60px;
@@ -75,15 +76,19 @@ body {
   margin-inline-start: auto;
 }
 #navBar a {
-  color: #000;
+  color: var(--light-beige);
   font-family: var(--main-font);
-  font-size: var(--link-font-size);
-  text-transform: uppercase;
   text-decoration: none;
   margin: 10px;
+  font-size: 24px;
 }
 #navBar a:hover {
   border-bottom: 4px solid var(--dark-blue);
+}
+
+.addImage {
+background-image: url("http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/Copenhagen-Canal-tour-havnerundfart-og-kanalrundfart-i-kobenhavn-boat-tour-copenhagen-Hey-Captain-20.jpg");
+background-position: bottom;
 }
 
 /* --------- HERO SECTION -------- */
@@ -101,7 +106,8 @@ body {
 .video-container {
   width: 100%;
   height: 100%;
-  filter: contrast(80%);
+  /* filter: contrast(80%); */
+  box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
 }
 
 /* --------- IMAGES -------- */
@@ -115,13 +121,13 @@ body {
 /* --------- SECTIONS -------- */
 #intro,
 #tours,
-#covid,
 #gallery,
 #faqInfo {
   background: #2a3141;
   color: #fff;
   margin: 0;
   text-align: center;
+  box-shadow: 0 1px 35px 5px rgba(0, 0, 0, 0.4);
 }
 
 /* --------- INTRO -------- */
@@ -633,7 +639,7 @@ body {
   cursor: pointer;
   position: inherit;
   padding: 30px;
-  top: 45%;
+  bottom: 0;
   transform-origin: left 60px;
   transform: rotate(-90deg);
   text-transform: uppercase;
@@ -703,23 +709,22 @@ body {
 }
 
 label {
-  font-size: 11px;
+  font-size: 20px;
   text-align: left;
-  text-transform: uppercase;
   display: block;
   margin: 10px;
-  color: grey;
+  color: var(--dark-blue);
   font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  font-weight: 800;
 }
 input,
 select {
   display: block;
   /* padding: 10px; */
   /* width: 80%; */
-  margin-top: 10px;
+  /* margin-top: 10px; */
   border: 1px solid #fff;
+  font-size: 18px;
+  text-align-last: center;
   /* border-radius: 10px; */
   /* box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15); */
 }
@@ -730,10 +735,54 @@ select:focus {
 .formLabel {
   border: 1px solid #fff;
   background: #fff;
-  margin-right: 5px;
-  border-radius: 10px;
+  margin-right: 3px;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  display: flex;
+  flex-flow: column;
+  text-align-last: center;
+  height: 70px;
 }
+
+.formLabel p {
+  margin: 0;
+}
+#firstRow #oneCell:first-child .formLabel{
+  border-radius: 3px 0 0 3px;
+}
+
+#firstRow {
+  display: flex;
+}
+
+#firstRow .formLabel {
+  align-self: flex-start;
+}
+
+#secondRow {
+  display: flex;
+  /* flex-basis: calc(100%);
+  flex-flow: inherit;
+  place-items: center; */
+  margin-top: 10px;
+  border: none;
+  /* background-color: var(--dark-blue); */
+  color: white;
+}
+#secondRow .formLabel{
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  flex-flow: row;
+  height: 20px;
+  align-items: center;
+  box-shadow: none;
+
+}
+#secondRow label{
+ color: white;
+}
+/* .formLabel:nth-last-of-type(-n+2) label{
+} 
 
 input#terms {
   border: none;
@@ -741,10 +790,11 @@ input#terms {
 }
 .keywords {
   text-align: left;
-  font-size: 13px;
+  font-size: 20px;
   position: absolute;
-  margin-top: 5px;
+  margin-top: -30px;
 }
+
 .keywords::before {
   content: "ℹ";
   margin-right: 5px;
@@ -765,16 +815,17 @@ input#terms {
 .toReceipt,
 .newsletterSubscription {
   margin-right: 0;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-size: 12px;
   font-weight: 900;
   padding: 5px 15px;
   background: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 0 3px 3px 0;
   color: var(--dark-blue);
   cursor: pointer;
   background: var(--yellow);
+  font-size: 20px;
 }
 
 .toReceipt {
@@ -786,33 +837,54 @@ input#terms {
   display: none;
 }
 #formBox {
-  background: var(--light-blue);
-  background: inherit;
+  /* background: var(--light-blue);
+  background: inherit; */
   color: white;
   position: absolute;
-  top: 85%;
+  top: 70%;
   z-index: 999999;
   transition: ease 1s;
 }
+input, select {
+  border: none;
+  outline: none;
+}
+select:after {
+  border: none;
+}
+
 .availability {
-  padding: 30px;
+  padding: 20px;
   display: flex;
-  text-align: center;
-  justify-content: space-between;
-  background: var(--light-blue);
-  /* border-radius: 10px;
-  border: 1px solid var(--light-blue); */
-  /* border: 5px solid rgba(255, 255, 255, 0.5); */
+  position: fixed;
+  margin: 20px;
+  /* flex-flow: row; */
+  /* flex-basis: calc(100% / 1); */
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  /* max-width: max-content; */
+  /* max-width: fit-content; */
+  box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
+  background: rgba(42, 49, 65, 0.9);
+  width: min-content;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .sticky {
   position: fixed;
-  top: 0;
+  top: 20px;
   z-index: 999999;
-  background: var(--light-blue);
 }
 .sticky + .content {
   padding-top: 102px;
+}
+
+.repositionMenu {
+  /* flex-direction: column; */
+  margin: 50px 0;
+  margin-inline-start: auto;
 }
 
 #cardBilling {
@@ -823,16 +895,14 @@ input#terms {
   border: 2px solid green;
 }
 .invalid {
-  border: 2px solid red;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
 .error {
-  text-transform: initial;
-  margin-bottom: 20px;
-  margin-top: -1px;
+  background-color: var(--dark-blue);
   border: 2px solid red;
   padding: 4px;
+  margin: 0;
   z-index: 10;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -840,7 +910,8 @@ input#terms {
 }
 
 .displayError {
-  display: block;
+  display: flex;
+    align-self: flex-end;
 }
 
 /* modals */
@@ -869,7 +940,7 @@ input#terms {
   background: var(--light-blue);
   border: none;
   color: #fff;
-  padding: 70px 35px;
+  padding: 50px 35px;
   margin: 15% auto; /* 15% from the top and centered */
   width: 30%; /* Could be more or less, depending on screen size */
   text-align: justify;
@@ -941,7 +1012,7 @@ input#terms {
   margin-bottom: 8px;
 }
 .field input {
-  padding: 12px;
+  /* padding: 12px; */
   border-radius: 6px;
   border: 2px solid #e8ebed;
   display: block;

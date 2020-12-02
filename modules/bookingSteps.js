@@ -36,12 +36,15 @@ export function closeForm() {
 }
 
 export function invalidFormError(el) {
-    if (el.nextElementSibling == null) {
+    console.log(el.parentNode.nextElementSibling)
+    console.log(el.getElementsByClassName('error'))
+    // console.log(el.next(".error"))
+    if (el.parentNode.nextElementSibling == null) {
         // console.log("el is null")
     } else if (el.classList.contains("invalid")) {
-        el.nextElementSibling.classList.add("displayError");
+        el.parentNode.nextElementSibling.classList.add("displayError");
     } else {
-        el.nextElementSibling.classList.remove("displayError");
+        el.parentNode.nextElementSibling.classList.remove("displayError");
     }
 }
 
@@ -63,5 +66,4 @@ export function postSubscription(formInfo) {
         .then((res) => res.json())
         // .then((data) => {location.replace("asset.html")});
         .then(console.log("it posted"));
-
 }
