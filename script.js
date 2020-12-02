@@ -72,14 +72,21 @@ function setUpBooking(){
 function setScrollPosition() {
     window.onscroll = function() {myFunction()};
 
-    var header = document.querySelector(".availability");
-    var sticky = header.offsetTop;
+    let header = document.querySelector(".availability");
+    let sticky = header.offsetTop;
+
+    let navBar = document.querySelector(".navBarContent");
+    let menuArea = document.querySelector("#topNavigation");
     
     function myFunction() {
       if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
+        navBar.classList.add("repositionMenu");
+        menuArea.classList.add("addImage");
       } else {
         header.classList.remove("sticky");
+        navBar.classList.remove("repositionMenu")
+        menuArea.classList.remove("addImage");
       }
     }
 }
@@ -119,41 +126,24 @@ function goToPayment() {
 
     const form2 = document.querySelector(".paymentForm");
     const elements2 = form2.elements;
-    // form2.setAttribute("novalidate", true);
+    form2.setAttribute("novalidate", true);
     const formElements2 = form2.querySelectorAll("input, select");
-
-    formElements2.forEach((e) => {
-        e.addEventListener("change", (e) => {
-            let objectReview = {
-            paymentName: form2.querySelector("input[id=paymentName").value,
-            address: form2.querySelector("input[id=address").value,
-            city: form2.querySelector("input[id=city").value,
-            zip: form2.querySelector("input[id=zip").value,
-            country: form2.querySelector("input[id=country").value,
-            cardName: form2.querySelector("input[id=cardName").value,
-            cardNumber: form2.querySelector("input[id=cardNumber").value,
-            expiryDate: form2.querySelector("input[id=expiryDate").value,
-            cvc: form2.querySelector("input[id=cvc").value,
-            };
-            console.log(objectReview)
-            completedForm = objectReview;
-        }) 
-    })
+  
     document.querySelector(".toReceipt").addEventListener("click", (e) => {
         e.preventDefault();
-        checkValidation(form2, formElements2, ohYes);
+        checkValidation(form2, formElements2, paymentCompleted);
     })  
 }
 
-function ohYes(){
-        document.querySelector(".receipt").classList.remove("show");
-        document.querySelector(".paymentForm").classList.add("show");
-        //post
-        postSubscription(completedForm);
-        //close
-        document.querySelector(".payment-modal-close").addEventListener("click", function(){
-            location.reload();
-        });
+function paymentCompleted(){
+    document.querySelector(".receipt").classList.remove("show");
+    document.querySelector(".paymentForm").classList.add("show");
+    //post
+    postSubscription(completedForm);
+    //close
+    document.querySelector(".payment-modal-close").addEventListener("click", function(){
+        location.reload();
+    });
 }
 
 
