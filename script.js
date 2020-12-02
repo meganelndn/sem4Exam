@@ -367,7 +367,6 @@ function weatherApp() {
         let content = "";
         // athens,gr
         if (inputVal.includes(",")) {
-        // athens,grrrrrr->invalid country code, so we keep only the first part of inputVal
         if (inputVal.split(",")[1].length > 2) {
           inputVal = inputVal.split(",")[0];
           content = el
