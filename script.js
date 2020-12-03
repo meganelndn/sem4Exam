@@ -209,7 +209,8 @@ function showTrips(trips) {
         tripCopy.querySelector("#beer .winter").textContent = oneTrip.beer.split(", ")[1];
 
         //Icon
-        const replacementItem = document.querySelectorAll("#summerWinter p");
+        const replacementItem = tripCopy.querySelectorAll("#summerWinter p");
+
         replacementItem.forEach((oneResult) => {
             if (oneResult.textContent === "no"){
                 let addCross = document.createElement("img");
