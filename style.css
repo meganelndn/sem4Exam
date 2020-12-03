@@ -63,6 +63,7 @@ body {
   width: -webkit-fill-available;
   z-index: 99;
   background-attachment: fixed;
+  padding: 5px;
 }
 .logo {
   width: 60px;
@@ -123,7 +124,7 @@ body {
   width: 100%;
   /* filter: contrast(80%); */
   object-fit: cover;
-  filter: brightness(0.8);
+  filter: brightness(0.5);
   box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
   display: none;
 }
@@ -179,6 +180,8 @@ body {
 #tripArea {
   display: inline-flex;
   padding-top: 70px;
+  flex-direction: row-reverse;
+  place-items: flex-end;
 }
 
 .wheel {
@@ -202,10 +205,11 @@ body {
   transition: transform 0.5s;
 }
 
-#singleTripArea:hover,
+/* #singleTripArea:hover,
 #singleTripArea:focus {
   transform: scale3d(1.05, 1.05, 1);
-}
+} */
+
 .tripTitle {
   margin: 0;
   text-align: center;
@@ -239,8 +243,8 @@ body {
 .readMoreTrip {
   justify-self: self-end;
   margin-bottom: 5px;
-  background-color: var(--light-blue);
-  color: #fff;
+  background-color: white;
+  color: var(--dark-blue);
   border: solid 1px var(--light-blue);
   border-radius: 3px;
   cursor: pointer;
