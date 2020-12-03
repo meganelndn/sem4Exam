@@ -103,7 +103,7 @@ background-position: bottom;
   transform: translate(-50%, -50%);
   z-index: 1;
   filter: drop-shadow(2px 4px 6px black);
-  opacity: 0.3;
+  /* opacity: 0.3; */
 }
 
 .video-container {
@@ -1191,6 +1191,15 @@ select:after {
 }
 .card h4 {
   margin-bottom: 10px;
+}
+
+#cc {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#cc > #oneCell {
+  flex:1 0 100%;
 }
 .toReceipt {
   text-transform: uppercase;
