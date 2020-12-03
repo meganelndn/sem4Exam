@@ -70,7 +70,7 @@ body {
 #navBar {
   display: flex;
   align-items: center;
-  /*   margin: 20px; */
+  margin: 50px;
 }
 .navBarContent {
   display: flex;
@@ -83,7 +83,7 @@ body {
   cursor: pointer;
   font-family: var(--main-font);
   text-decoration: none;
-  margin: 15px;
+  margin: -40px 15px 10px 15px;
   font-size: 16px;
 }
 #navBar a:hover {
@@ -93,7 +93,8 @@ body {
 .addImage {
   background-image: url("http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/sea1.jpg");
   background-position: bottom;
-  filter: saturate(0.5);
+  filter: saturate(0.4);
+  /* background: var(--light-blue); */
 }
 
 /* --------- HERO SECTION -------- */
@@ -759,15 +760,18 @@ body {
 
 label {
   font-size: 12px;
+  font-family: "Brandon Text Regular";
   text-align: left;
   display: block;
   margin: 0;
+  text-transform: uppercase;
   color: var(--dark-blue);
-  font-family: "Roboto", sans-serif;
 }
 input,
 select {
+  font-family: "Brandon Text Light";
   display: block;
+  font-size: 14px;
   /* padding: 10px; */
   /* width: 80%; */
   /* margin-top: 10px; */
@@ -807,6 +811,12 @@ select:focus {
 #firstRow .formLabel {
   align-self: flex-start;
 }
+#firstRow #oneCell:nth-of-type(4n) {
+  width: 150px;
+}
+#firstRow #oneCell:first-of-type {
+  width: 160px;
+}
 
 #secondRow {
   display: flex;
@@ -825,10 +835,23 @@ select:focus {
   height: 20px;
   align-items: center;
   box-shadow: none;
+  margin-right: 20px;
+}
+#secondRow .formLabel:last-of-type {
+  border-left: 1px solid lightgray;
+  padding-left: 15px;
 }
 #secondRow label {
   color: white;
+  margin-right: 10px;
 }
+.secondRow #campaign-code {
+  padding-right: 20px;
+}
+#secondRow .terms {
+  padding-left: 5px;
+}
+
 /* .formLabel:nth-last-of-type(-n+2) label{
 }
 
@@ -855,6 +878,11 @@ input#terms {
   font-size: 12px;
   font-family: "Brandon Text Light";
 }
+.keywords::before {
+  content: "ℹ";
+  margin-right: 5px;
+  color: #fff;
+}
 
 /* ------------ buttons ----------- */
 
@@ -872,7 +900,8 @@ input#terms {
 .newsletterSubscription {
   margin-right: 0;
   /* text-transform: uppercase; */
-  font-size: 12px;
+  font-size: 14px;
+  text-transform: uppercase;
   padding: 5px 15px;
   background: #fff;
   border: none;
@@ -880,6 +909,9 @@ input#terms {
   color: var(--dark-blue);
   cursor: pointer;
   background: var(--yellow);
+}
+.toPayment {
+  height: 50px;
 }
 
 .toReceipt {
@@ -901,13 +933,15 @@ input,
 select {
   border: none;
   outline: none;
+  color: grey;
+  margin-top: 5px;
 }
 select:after {
   border: none;
 }
 
 .availability {
-  padding: 10px;
+  padding: 10px 20px;
   display: flex;
   position: fixed;
   margin: 20px;
@@ -927,8 +961,7 @@ select:after {
 
 .sticky {
   position: fixed;
-  /* top: 20px; */
-  top: 0;
+  top: 10px;
   z-index: 999999;
   background-color: transparent;
   box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
@@ -957,8 +990,8 @@ select:after {
   border-top-right-radius: 3px;
 }
 .error {
-  background-color: var(--dark-blue);
-  border: 1px solid red;
+  /* background-color: var(--dark-blue); */
+  background: rgba(0, 0, 0, 0.5);
   padding: 4px;
   margin: 0;
   z-index: 10;
@@ -966,7 +999,9 @@ select:after {
   border-bottom-right-radius: 3px;
   display: none;
 }
-
+.error::before {
+  content: "❗";
+}
 .displayError {
   display: flex;
   align-self: flex-end;
@@ -1208,7 +1243,7 @@ select:after {
 }
 
 #cc > #oneCell {
-  flex:1 0 100%;
+  flex: 1 0 100%;
 }
 .toReceipt {
   text-transform: uppercase;
