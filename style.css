@@ -233,7 +233,7 @@ body {
 }
 
 .tripImg {
-  width: 300px;
+  width: 220px;
 }
 .tripsDeco {
   height: auto;
@@ -246,13 +246,13 @@ body {
 }
 .readMoreTrip {
   justify-self: self-end;
-  margin-bottom: 10px;
+  margin: 10px;
   background-color: white;
   color: var(--dark-blue);
   border: solid 1px var(--light-blue);
   border-radius: 3px;
   cursor: pointer;
-  padding: 2px 5px;
+  /* padding: 2px 5px; */
   font-family: var(--main-font);
 }
 .readMoreTrip span {
@@ -279,7 +279,7 @@ body {
 /* trip table */
 #tableHeader {
   display: flex;
-  width: inherit;
+  width: 200px;
   justify-content: space-between;
   color: white;
   background-color: var(--dark-blue);
@@ -304,7 +304,7 @@ body {
   place-content: space-between;
   height: 30px;
   align-items: center;
-  /*   border: solid 0.1px whitesmoke; */
+    border: solid 0.1px whitesmoke;
 }
 
 #summerWinter p {
@@ -321,6 +321,7 @@ body {
   background-color: var(--light-beige);
   min-width: -webkit-fill-available;
   text-align: right;
+  display: none;
   /* text-align: -webkit-center; */
 }
 
@@ -339,7 +340,7 @@ body {
 
 #tableGuide {
   align-self: flex-end;
-  width: 300px;
+  width: 200px;
   font-size: var(--body-font);
   color: var(--dark-blue);
 }
@@ -351,12 +352,12 @@ body {
   font-family: "Brandon Text Regular";
 }
 
-#tableGuide :nth-last-child(-n + 2) {
+/* #tableGuide :nth-last-child(-n + 2) {
   background-color: var(--light-beige);
   font-family: "Brandon Text Bold";
   text-transform: uppercase;
   font-size: 14px;
-}
+} */
 
 .iconSize {
   width: 20px;
