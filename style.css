@@ -70,17 +70,20 @@ body {
 #navBar {
   display: flex;
   align-items: center;
-  margin: 20px;
+  /*   margin: 20px; */
 }
 .navBarContent {
   display: flex;
   margin-inline-start: auto;
+  margin-right: 15px;
+  margin-top: 15px;
 }
 #navBar a {
   color: white;
+  cursor: pointer;
   font-family: var(--main-font);
   text-decoration: none;
-  margin: 10px;
+  margin: 15px;
   font-size: 16px;
 }
 #navBar a:hover {
@@ -88,8 +91,9 @@ body {
 }
 
 .addImage {
-background-image: url("http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/boatCut.jpg");
-background-position: bottom;
+  background-image: url("http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/sea1.jpg");
+  background-position: bottom;
+  filter: saturate(0.5);
 }
 
 /* --------- HERO SECTION -------- */
@@ -147,10 +151,10 @@ background-position: bottom;
 
 #introText {
   position: absolute;
-    top: 40%;
-    padding: 0 230px;
-    letter-spacing: 0.1em;
-    text-align: center;
+  top: 40%;
+  padding: 0 230px;
+  letter-spacing: 0.1em;
+  text-align: center;
 }
 /* --------- TRIPS -------- */
 #tripArea {
@@ -164,8 +168,10 @@ background-position: bottom;
   animation: rotate 3s linear infinite;
 }
 
-@keyframes rotate{
-  to{ transform: rotate(360deg); }
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 #singleTripArea {
@@ -323,6 +329,7 @@ background-position: bottom;
   filter: drop-shadow(2px 4px 6px black);
   display: flex;
   margin: auto;
+  padding: 30px 0 60px 0;
 }
 
 #singleTourArea {
@@ -356,7 +363,7 @@ background-position: bottom;
   font-size: 12px;
 }
 #tours {
-  padding-top: 10px;
+  padding: 20px 0 90px 0;
 }
 .tourImg {
   width: 300px;
@@ -583,6 +590,7 @@ background-position: bottom;
 }
 #bottomNavigation p:nth-of-type(3n) {
   grid-area: desc3;
+  margin: 0;
 }
 #bottomNavigation a:nth-of-type(1n) {
   grid-area: desc3;
@@ -718,8 +726,8 @@ background-position: bottom;
 }
 .showOverlay {
   width: 15%;
-    height: fit-content;
-    bottom: 0;
+  height: fit-content;
+  bottom: 0;
 }
 .overlay-content {
   position: relative;
@@ -788,7 +796,7 @@ select:focus {
 .formLabel p {
   margin: 0;
 }
-#firstRow #oneCell:first-child .formLabel{
+#firstRow #oneCell:first-child .formLabel {
   border-radius: 3px 0 0 3px;
 }
 
@@ -810,17 +818,16 @@ select:focus {
   /* background-color: var(--dark-blue); */
   color: white;
 }
-#secondRow .formLabel{
+#secondRow .formLabel {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   flex-flow: row;
   height: 20px;
   align-items: center;
   box-shadow: none;
-
 }
-#secondRow label{
- color: white;
+#secondRow label {
+  color: white;
 }
 /* .formLabel:nth-last-of-type(-n+2) label{
 }
@@ -843,7 +850,6 @@ input#terms {
 }
 */
 
-
 .keywords {
   margin: 0 0 4px 0;
   font-size: 12px;
@@ -851,7 +857,6 @@ input#terms {
 }
 
 /* ------------ buttons ----------- */
-
 
 #expandFaq {
   text-transform: uppercase;
@@ -886,15 +891,14 @@ input#terms {
   display: none;
 }
 #formBox {
-  /* background: var(--light-blue);
-  background: inherit; */
   color: white;
   position: absolute;
   top: 80%;
   z-index: 999999;
   transition: ease 1s;
 }
-input, select {
+input,
+select {
   border: none;
   outline: none;
 }
@@ -914,7 +918,7 @@ select:after {
   /* max-width: max-content; */
   /* max-width: fit-content; */
   box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
-  background: rgba(42, 49, 65, 1);
+  /* background: rgba(42, 49, 65, 1); */
   width: min-content;
   left: 0;
   right: 0;
@@ -923,8 +927,11 @@ select:after {
 
 .sticky {
   position: fixed;
-  top: 20px;
+  /* top: 20px; */
+  top: 0;
   z-index: 999999;
+  background-color: transparent;
+  box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
 }
 .sticky + .content {
   padding-top: 102px;
@@ -932,7 +939,9 @@ select:after {
 
 .repositionMenu {
   /* flex-direction: column; */
-  margin: 50px 0;
+  /* margin: 50px 0; */
+  margin: 28px 0;
+  padding-right: 15px;
   margin-inline-start: auto;
 }
 
@@ -960,8 +969,8 @@ select:after {
 
 .displayError {
   display: flex;
-    align-self: flex-end;
-    font-size: 12px;
+  align-self: flex-end;
+  font-size: 12px;
 }
 
 /* modals */
@@ -989,7 +998,7 @@ select:after {
 #payment-modal-content {
   background: white;
   border: none;
-  color: var(--dark-blue);;
+  color: var(--dark-blue);
   padding: 50px 35px;
   margin: 15% auto; /* 15% from the top and centered */
   width: 50%; /* Could be more or less, depending on screen size */
@@ -1910,6 +1919,7 @@ select:after {
 .prev-arrow:focus,
 .next-arrow:focus {
   color: var(--yellow);
+  cursor: pointer;
 }
 .prev-arrow {
   left: 0%;
