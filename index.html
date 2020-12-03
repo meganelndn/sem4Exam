@@ -44,13 +44,13 @@
                 <div class="formLabel">
             <label for="tour">Where to?</label>
             <select name="tour" id="tour" required>
-                <option value=""></option>
+                <option value="">Select to chose</option>
                 <option value="landmarks">The Landmarks (1h)</option>
                 <option value="hidden-gems">Hidden Gems (2h)</option>
                 <option value="diana">The Diana (5h)</option>
             </select>
         </div>
-        <p class="error tour-err">Please pick a tour</p>
+        <p class="error tour-err">Pick a tour</p>
     </div>
 
 
@@ -63,7 +63,7 @@
             name="passengers"
             id="passengers"
             required>
-                <option value=""></option>
+                <!-- <option value="">How many</option> -->
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -92,7 +92,7 @@
             name="time"
             required>
         </div>
-        <p class="error time-err">Please pick a time for your trip</p>
+        <p class="error time-err">Pick a date & time</p>
         </div>
 
         
@@ -106,9 +106,10 @@
             required
             minlength="4"
             maxlength="20"
+            placeholder="John Smith"
             size="10">
         </div>
-        <p class="error name-err">Fill out your name</p>
+        <p class="error name-err">Fill in your name</p>
         </div>
         
         
@@ -120,9 +121,10 @@
             id="email"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             size="30"
+            placeholder="johnsmith@gmail.com"
             required>
         </div>
-        <p class="error email-err">Please fill out your e-mail address</p>
+        <p class="error email-err">Fill in your e-mail address</p>
         </div>
             
         
@@ -134,9 +136,10 @@
             id="phone"
             name="phone"
             pattern="^\+((?:9[679]|8[035789]|6[789]|5[90]|42|3[578]|2[1-689])|9[0-58]|8[1246]|6[0-6]|5[1-8]|4[013-9]|3[0-469]|2[70]|7|1)(?:\W*\d){0,13}\d$"
+            placeholder="+46 12345678"
             required>
             </div>
-            <p class="error phone-err">(+XX) 12345678</p>
+            <p class="error phone-err">Fill in a 10-digit number</p>
             </div>
 
             <button class="toPayment">Book</button>
@@ -145,7 +148,7 @@
 
         <div id="secondRow">
             <div class="formLabel">
-            <label for="campaign-code">Campaign code</label>
+            <label for="campaign-code" class="campaign-code">Campaign code</label>
             <input
             type="text"
             id="campaign-code"
@@ -156,14 +159,14 @@
             </div>
           
             <div class="formLabel">
-                <label for="terms">I have read and accept the terms</label>
                 <input
                 type="checkbox"
                 id="terms"
                 name="terms"
                 required>
+                <label for="terms" class="terms">I have read and accept the terms</label>
             </div>
-            <p class="error terms-err">Please tick this box to proceed</p>
+            <p class="error terms-err">Accept the terms to proceed</p>
         </div>
         </form>
 
