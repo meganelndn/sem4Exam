@@ -30,6 +30,37 @@ export function checkValidation(form, formElements, nextStep) {
     }
 }
 
+/* export function checkMailValidation(newsForm, newsFormEl) {
+
+    if (newsForm.checkValidity()) {
+        newsFormEl.forEach((newsEl) => {
+        // loop through form elements and check if are valid or not
+            if (newsEl.checkValidity()) { 
+                newsEl.classList.add("valid");
+            }
+        });
+    } else {
+        newsFormEl.forEach((newsEl) => {
+            if (!newsEl.checkValidity()) {
+                newsEl.classList.add("invalid");
+                // personalDataFormValidation(elements1);
+                invalidFormError(newsEl);
+
+                newsEl.addEventListener("change", function(){
+                    newsEl.classList.remove("invalid");
+                    invalidFormError(newsEl);
+
+                });
+    
+
+            } else {
+                newsEl.classList.remove("invalid");
+
+            }
+        })
+    }
+} */
+
 // export function addClassToAll() {
 //     let allForms = document.querySelectorAll('form');
 //     for (let i = 0; i < allForms.length; i++) {
