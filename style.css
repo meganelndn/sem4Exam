@@ -213,17 +213,19 @@ body {
 } */
 
 .tripTitle {
-  margin: 0;
+  margin: 10px 0;
   text-align: center;
   font-size: var(--body-font);
 }
 .tripText {
+  padding-top: 20px;
   text-align: left;
   margin: 0;
 }
 .duration {
-  margin: 0;
-  font-size: var(--body-font);
+  font-family: "Brandon Text Bold";
+  margin: 10px 0;
+  font-size: 14px;
 }
 
 #trips {
@@ -237,22 +239,42 @@ body {
   height: auto;
   width: 270px;
   position: absolute;
-  margin-top: 290px;
+  margin-top: 360px;
 }
 .tripsDeco:last-of-type {
-  margin-top: 140px;
+  margin-top: 170px;
 }
 .readMoreTrip {
   justify-self: self-end;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   background-color: white;
   color: var(--dark-blue);
   border: solid 1px var(--light-blue);
   border-radius: 3px;
   cursor: pointer;
-  padding: 0 10px;
-  font-size: var(--body-font);
+  padding: 2px 5px;
   font-family: var(--main-font);
+}
+.readMoreTrip span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.readMoreTrip span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.readMoreTrip:hover span {
+  padding-right: 25px;
+}
+.readMoreTrip:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 /* trip table */
 #tableHeader {
@@ -264,7 +286,12 @@ body {
   height: 30px;
   align-items: center;
   padding: 0 10px;
+  text-transform: uppercase;
+  font-size: 12px;
 }
+/* #tableHeader p {
+  font-family: "Brandon Text Regular";
+} */
 
 #lemonade_water,
 #tea_coffee_chocolate,
@@ -277,18 +304,24 @@ body {
   place-content: space-between;
   height: 30px;
   align-items: center;
-  border: solid 0.1px whitesmoke;
+  /*   border: solid 0.1px whitesmoke; */
 }
 
-/* #summerWinter p {
-
-} */
+#summerWinter p {
+  font-size: 15px;
+  font-family: "Brandon Text Regular";
+}
+.publicPrice,
+.privatePrice {
+  font-size: 15px;
+  font-family: "Brandon Text Bold";
+}
 
 #totalPrice {
   background-color: var(--light-beige);
   min-width: -webkit-fill-available;
   text-align: right;
-  text-align: -webkit-center;
+  /* text-align: -webkit-center; */
 }
 
 #totalPrice p {
@@ -312,13 +345,17 @@ body {
 }
 
 #tableGuide p {
-  padding: 4px;
+  padding: 4px 10px;
   text-align: left;
   margin: 0;
+  font-family: "Brandon Text Regular";
 }
 
 #tableGuide :nth-last-child(-n + 2) {
   background-color: var(--light-beige);
+  font-family: "Brandon Text Bold";
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .iconSize {
