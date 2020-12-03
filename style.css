@@ -22,8 +22,9 @@
 
 /* --------- VARIABLES -------- */
 :root {
-  --main-font: "Brandon Text Regular", sans-serif;
+  --main-font: "Brandon Text Light", sans-serif;
   --link-font-size: 14px;
+  --body-font: 16px;
 
   --light-beige: #eff0ea;
   --dark-beige: #e3e5d7;
@@ -115,7 +116,7 @@ body {
   height: 100%;
   /* filter: contrast(80%); */
   filter: brightness(0.6);
-  box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4); */
 }
 
 /* --------- IMAGES -------- */
@@ -129,6 +130,7 @@ body {
 /* --------- SECTIONS -------- */
 #intro,
 #tours,
+#seasonInfo,
 #gallery,
 #faqInfo {
   background: #2a3141;
@@ -137,16 +139,20 @@ body {
   text-align: center;
   /* box-shadow: 0 1px 35px 5px rgba(0, 0, 0, 0.4); */
 }
-
+/* SEASON */
+#seasonInfo h1{
+  margin: 0;
+  font-family: var(--main-font);
+  padding: 100px 300px;
+  font-size: 20px;
+}
 /* --------- INTRO -------- */
 .introTitle {
   text-transform: uppercase;
   padding-top: 30px;
-  font-size: 14px;
 }
 .introText {
   font-family: "Brandon Text Light";
-  font-size: 14px;
 }
 
 #introText {
@@ -155,12 +161,14 @@ body {
   padding: 0 230px;
   letter-spacing: 0.1em;
   text-align: center;
+  font-size: var(--body-font);
 }
 /* --------- TRIPS -------- */
 #tripArea {
   display: inline-flex;
-  font-size: 12px;
+
 }
+
 .wheel {
   width: 80px;
   height: auto;
@@ -187,44 +195,43 @@ body {
   transform: scale3d(1.05, 1.05, 1);
 }
 .tripTitle {
-  font-size: 12px;
   margin: 0;
   text-align: center;
-  font-family: "Brandon Text Light";
+  font-size: var(--body-font);
 }
 .tripText {
-  font-family: "Brandon Text Light";
-  font-size: 12px;
   text-align: left;
+  margin: 0;
 }
 .duration {
-  font-size: 12px;
   margin: 0;
-  font-family: "Brandon Text Bold";
+  font-size: var(--body-font);
 }
+
 #trips {
   text-align: center;
-  margin-top: 50px;
 }
+
 .tripImg {
-  width: 250px;
+  width: 300px;
 }
 .tripsDeco {
   height: auto;
-  width: 120px;
+  width: 200px;
   position: absolute;
   margin-top: 60px;
 }
 .readMoreTrip {
   justify-self: self-end;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   background-color: var(--light-blue);
   color: #fff;
   border: solid 1px var(--light-blue);
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
-  padding: 8px 15px;
-  font-size: 12px;
+  padding: 0 10px;
+  font-size: var(--body-font);
+  font-family: var(--main-font);
 }
 /* trip table */
 #tableHeader {
@@ -233,7 +240,7 @@ body {
   justify-content: space-around;
   color: white;
   background-color: var(--dark-blue);
-  height: 40px;
+  height: 30px;
   align-items: center;
 }
 
@@ -246,7 +253,7 @@ body {
   flex-direction: row;
   display: flex;
   place-content: space-between;
-  height: 40px;
+  height: 30px;
   align-items: center;
   padding: 0 50px;
 }
@@ -264,35 +271,32 @@ body {
 
 #totalPrice p {
   padding: 0;
-  height: 30px;
   align-items: center;
+  margin: 5px;
 }
 
 #tripSection {
   position: relative;
   display: inline-flex;
-  font-size: 12px;
-}
-
-#customiseYourOwn {
-  font-size: 12px;
+  font-size: var(--body-font);
+  color: var(--dark-blue);
 }
 
 #tableGuide {
   align-self: flex-end;
+  width: 300px;
+  font-size: var(--body-font);
+  color: var(--dark-blue);
 }
 
 #tableGuide p {
-  padding: 0;
+  padding: 4px;
   text-align: left;
   margin: 0;
-  height: 39px;
-  font-size: 12px;
 }
 
 #tableGuide :nth-last-child(-n + 2) {
   background-color: var(--light-beige);
-  padding: 5px;
 }
 
 .iconSize {
@@ -301,8 +305,12 @@ body {
 }
 
 #customiseYourOwn h3 {
-  font-family: "Brandon Text Light";
   margin-top: 60px;
+}
+
+#customiseYourOwn {
+  color: var(--dark-blue);
+
 }
 #customiseYourOwn a {
   text-decoration: underline;
@@ -353,20 +361,19 @@ body {
 
 .tourTitle {
   font-family: "Brandon Text Thin";
-  font-size: 14px;
+  font-size: 16px;
 }
 .tourText {
   font-family: "Brandon Text Light";
   padding: 0 20px;
   margin-top: 0;
   text-align: left;
-  font-size: 12px;
 }
 #tours {
   padding: 20px 0 90px 0;
 }
 .tourImg {
-  width: 300px;
+  width: 350px;
   border-radius: 5px 5px 0 0;
 }
 
@@ -1932,4 +1939,55 @@ select:after {
 }
 .next-arrow:after {
   content: "❯";
+}
+
+
+/* waves */
+/* https://codepen.io/goodkatz/pen/LYPGxQz */
+/* Animation */
+
+.waves {
+background-color: var(--dark-blue);
+  position:relative;
+  width: 100%;
+  height:10vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+}
+
+.parallax > use {
+  animation: move-forever 35s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+
 }
