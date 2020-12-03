@@ -416,6 +416,8 @@ body {
 }
 .weatherInput {
   -webkit-appearance: none;
+  text-align-last: left;
+  font-size: 18px;
 }
 .weatherBtn,
 .weatherInput {
@@ -437,9 +439,9 @@ body {
 }
 .heading {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 28px;
   letter-spacing: 0.02em;
-  padding: 0 0 30px 0;
+  padding: 0 0 20px 0;
 }
 .top-banner form {
   position: relative;
@@ -700,17 +702,6 @@ body {
 }
 #newsletterBtn {
   background: var(--yellow);
-  /* border: none;
-  cursor: pointer;
-  position: inherit;
-  padding: 15px 25px;
-  border-radius: 50px;
-  top: 55%;
-  width: 180px;
-  transform-origin: left 50px;
-  transform: rotate(-90deg);
-  text-transform: uppercase;
-  font-size: 11px; */
   border: none;
   cursor: pointer;
   position: inherit;
@@ -740,8 +731,12 @@ body {
   padding: 25px 35px;
   width: 100%;
 }
+#newsletterMail {
+  width: -webkit-fill-available;
+  text-align-last: left;
+}
 .newsletterImg {
-  width: 180px;
+  width: 150px;
   height: auto;
 }
 .overlay {
@@ -762,11 +757,18 @@ body {
   text-align: center;
   margin-top: 5px;
   font-size: 12px;
+  padding: 30px 40px;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
 }
 .newsletterTitle,
 .newsletterText {
   margin: 20px 0;
+}
+.newsletterTitle {
+  font-size: 18px;
+}
+.newsletterText {
+  font-size: 16px;
 }
 
 .makeBold {
@@ -922,10 +924,9 @@ input#terms {
   cursor: pointer;
 }
 .toPayment,
-.toReceipt,
+.weatherBtn .toReceipt,
 .newsletterSubscription {
   margin-right: 0;
-  /* text-transform: uppercase; */
   font-size: 14px;
   text-transform: uppercase;
   padding: 5px 15px;
