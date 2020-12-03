@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", init);
-// document.addEventListener("DOMContentLoaded", init);
+
 function init() {
     fetchData();
     setUpNewsletter();
