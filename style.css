@@ -141,7 +141,7 @@ body {
   /* box-shadow: 0 1px 35px 5px rgba(0, 0, 0, 0.4); */
 }
 /* SEASON */
-#seasonInfo h1{
+#seasonInfo h1 {
   margin: 0;
   font-family: var(--main-font);
   padding: 100px 300px;
@@ -167,7 +167,7 @@ body {
 /* --------- TRIPS -------- */
 #tripArea {
   display: inline-flex;
-
+  padding-top: 70px;
 }
 
 .wheel {
@@ -218,9 +218,12 @@ body {
 }
 .tripsDeco {
   height: auto;
-  width: 200px;
+  width: 270px;
   position: absolute;
-  margin-top: 60px;
+  margin-top: 290px;
+}
+.tripsDeco:last-of-type {
+  margin-top: 140px;
 }
 .readMoreTrip {
   justify-self: self-end;
@@ -311,7 +314,6 @@ body {
 
 #customiseYourOwn {
   color: var(--dark-blue);
-
 }
 #customiseYourOwn a {
   text-decoration: underline;
@@ -1976,23 +1978,22 @@ select:after {
   content: "❯";
 }
 
-
 /* waves */
 /* https://codepen.io/goodkatz/pen/LYPGxQz */
 /* Animation */
 
 .waves {
-background-color: var(--dark-blue);
-  position:relative;
+  background-color: var(--dark-blue);
+  position: relative;
   width: 100%;
-  height:10vh;
-  margin-bottom:-7px; /*Fix for safari gap*/
-  min-height:100px;
-  max-height:150px;
+  height: 10vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
 }
 
 .parallax > use {
-  animation: move-forever 35s cubic-bezier(.55,.5,.45,.5)     infinite;
+  animation: move-forever 35s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
 .parallax > use:nth-child(1) {
   animation-delay: -2s;
@@ -2012,17 +2013,16 @@ background-color: var(--dark-blue);
 }
 @keyframes move-forever {
   0% {
-   transform: translate3d(-90px,0,0);
+    transform: translate3d(-90px, 0, 0);
   }
-  100% { 
-    transform: translate3d(85px,0,0);
+  100% {
+    transform: translate3d(85px, 0, 0);
   }
 }
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
   .waves {
-    height:40px;
-    min-height:40px;
+    height: 40px;
+    min-height: 40px;
   }
-
 }
