@@ -176,7 +176,7 @@
     <div id="payment-modal-content">
         <button class="payment-modal-close">CLOSE</button>
         <form class="paymentForm step2 show">
-            <h5 class="paymentP">Chose payment method</h5>
+
             <div class="payment-type">
                 <h4>Choose payment method below</h4>
                 <div class="types flex justify-space-between">
@@ -206,27 +206,26 @@
                     </div>
                 </div>
             </div>
-            <div id="cardBilling">
-            <div id="billing">
-                <h5 class="billingInfo">Billing info</h5>
 
-                <div id="oneCell">
+            <!-- <div id="cardBilling"> -->
+            <div class="payment-info flex justify-space-between">
+            <div id="billing" class="column billing">
+                <h5 class="billingInfo title">Billing info</h5>
+
+                <div id="oneCell" class="field full">
                     <div class="formLabel">
                 <label for="paymentName">Full Name</label>
                     <input
                     type="text"
                     id="paymentName"
                     name="paymentName"
-                    minlength="4"
-                    maxlength="8"
-                    size="10"
+                    placeholder="John Smith"
                     required />
-               
                 </div>
-                <p class="error paymentName-err">Please fill out your name</p>
+                <p class="error paymentName-err">Fill in your name</p>
                 </div>
 
-                <div id="oneCell">
+                <div id="oneCell" class="field full">
                     <div class="formLabel">
                 <label for="address">Address</label>
                     <input
@@ -234,25 +233,27 @@
                     id="address" name="address"
                     minlength="8"
                     maxlength="30"
-                    size="10"
+                    placeholder="Street Address 55"
                     required>
                 </div>
-                <p class="error address-err">Please fill out your address</p>
+                <p class="error address-err">Fill in your address</p>
                 </div>
 
-                <div id="oneCell">
+                <div class="flex justify-space-between">
+                <div id="oneCell" class="field half">
                     <div class="formLabel">
                 <label for="city">City</label>
                     <input
                     type="text"
                     id="city"
                     name="city"
+                    placeholder="Dublin"
                     required>
                 </div>
-                <p class="error city-err">Please fill out your city</p>
+                <p class="error city-err">Fill in your city</p>
                 </div>
 
-                <div id="oneCell">
+                <div id="oneCell" class="field half">
                     <div class="formLabel">
                 <label for="zipCode">ZIP Code</label>
                     <input
@@ -260,45 +261,45 @@
                     name="zip"
                     id="zip"
                     pattern="[0-9]{5}"
+                    placeholder="14204"
                     required/>
                 </div>
-                <p class="error zip-err">Please fill out your ZIP code</p>
+                <p class="error zip-err">Fill in your ZIP code</p>
+                </div>
                 </div>
 
-                <div id="oneCell">
+                <div id="oneCell" class="field full">
                     <div class="formLabel">
                 <label for="country">Country</label>
                     <input
                     type="text"
                     id="country"
                     name="country"
+                    placeholder="Ireland"
                     required>
                 </div>
-                <p class="error country-err">Please fill out your country</p>
+                <p class="error country-err">Fill in your country</p>
                 </div>
 
             </div>
 
-            <div id="cc">
-            <h5 class="ccInfo">Credit card info</h5>
+            <div id="cc" class="column shipping">
+            <h5 class="ccInfo title">Credit card info</h5>
             
-            <div id="oneCell">
+            <div id="oneCell" class="field full">
                 <div class="formLabel">
               <label for="cardNumber">Card Number</label>
                 <input
                   name="cardNumber"
                   type="text"
                   maxlength="19"
-                  class="cc-number-input"
-                  inputmode="numeric"
-                  autocomplete="cc-number"
-                  placeholder="xxxx xxxx xxxx xxxx"
+                  placeholder="1234-5678-9012-3456"
                   required/>
                 </div>
-                <p class="error cc-err">Please fill out your credit card number</p>
+                <p class="error cc-err">Fill in your credit card number</p>
             </div>
 
-            <div id="oneCell">
+            <div id="oneCell" class="field full">
                 <div class="formLabel">
               <label for="cardName">Cardholder's Name</label>
                 <input
@@ -308,10 +309,11 @@
                   autocomplete="name"
                   required/>
                 </div>
-                <p class="error ccName-err">Please fill out the cardholder's name</p>
+                <p class="error ccName-err">Fill in the cardholder's name</p>
             </div>
 
-            <div id="oneCell">
+            <div class="flex justify-space-between">
+            <div id="oneCell" class="field half">
                 <div class="formLabel">
                 <label for="expiryDate">Expiry Date</label>
                   <input
@@ -319,12 +321,13 @@
                     type="text"
                     maxlength="5"
                     class="cc-expiry-input"
+                    placeholder="12/21"
                     required/>
                 </div>
-                <p class="error expiry-err">Please fill out your card's expiry date</p>
+                <p class="error expiry-err">Fill in the expiry date</p>
             </div>
 
-            <div id="oneCell">
+            <div id="oneCell" class="field half">
                 <div class="formLabel">
                 <label for="ccv">CVC</label>
                   <input
@@ -332,11 +335,14 @@
                     type="text"
                     maxlength="3"
                     class="cc-cvc-input"
+                    placeholder="781"
                     required/>
                 </div>
-                <p class="error ccv-err">Please fill out the card's CVC number</p>
-                </div>
+                <p class="error ccv-err">Fill in the CVC number</p>
             </div>
+        </div>
+
+        </div>
         </div>
 
             <button class="toReceipt">Pay Now</button>
@@ -344,26 +350,16 @@
 
         <!-- receipt -->
         <div class="receipt step5 show">
-            <h5>Payment complete!</h5>
+            <img class="paymentCheckmark" src="https://img.icons8.com/officel/80/000000/checkmark--v2.png"/>
+            <h3>Payment complete!</h3>
             <p>We've sent you an email with all the details of your order</p>
-            <h5>Order Number: #1</h5>
+            <h4>Order Number: #1</h4>
         </div>
 
     </div>
 </div>
 </div>
 
-            <!-- receipt -->
-            <div class="receipt step5 show">
-                <img class="paymentCheckmark" src="https://img.icons8.com/officel/80/000000/checkmark--v2.png"/>
-                <h3>Payment complete!</h3>
-                <p>We've sent you an email with all the details of your order</p>
-                <h4>Order Number: #</h4>
-            </div>
-
-        </div>
-    </div>
-    </div>
 
 <section id="seasonInfo">
     <h1>Autumn trips are sailing now
