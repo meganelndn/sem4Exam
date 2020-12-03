@@ -46,19 +46,17 @@ function setUpNewsletter() {
         let newsletterOverlay = document.getElementById("newsletterOverlay");
         newsletterOverlay.classList.toggle("showOverlay");
 
-       /*  document.querySelector(".overlay-content").classList.remove("show");
-        document.querySelector(".overlay-content2").classList.add("show"); */
-
-        /* const newsForm = document.querySelector(".newsletterForm");
-        const newsEl = newsForm.elements;
-        const newsFormEl = newsForm.querySelector("input"); */
+        document.querySelector(".overlay-content").classList.remove("hideOverlay");
 
         document.querySelector(".newsletterSubscription").addEventListener("click", function(e){
             e.preventDefault();
-            /* document.querySelector(".overlay-content2").classList.remove("show");
-            document.querySelector(".overlay-content").classList.add("show"); */
 
-            /* checkMailValidation(newsForm, newsFormEl); */
+            /* const newsForm = document.querySelector(".newsletterForm");
+            const newsEl = newsForm.elements;
+            const newsFormEl = newsForm.querySelector("input");  */
+
+            document.querySelector(".overlay-content2").classList.remove("show");
+            document.querySelector(".overlay-content").classList.add("hideOverlay");
         })
     });
 }

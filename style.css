@@ -752,7 +752,8 @@ body {
   height: fit-content;
   bottom: 0;
 }
-.overlay-content {
+.overlay-content,
+.overlay-content2 {
   position: relative;
   text-align: center;
   margin-top: 5px;
@@ -947,7 +948,11 @@ input#terms {
   bottom: 20%;
 }
 /* ------------ booking forms ----------- */
-.show {
+.show,
+.hideOverlay {
+  display: none;
+}
+.showNews {
   display: none;
 }
 #formBox {
