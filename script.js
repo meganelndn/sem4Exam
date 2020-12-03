@@ -77,16 +77,19 @@ function setScrollPosition() {
 
     let navBar = document.querySelector(".navBarContent");
     let menuArea = document.querySelector("#topNavigation");
+    let menuVideo = document.querySelector("#topNavigation .video-container-Nav");
     
     function myFunction() {
       if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
         navBar.classList.add("repositionMenu");
         menuArea.classList.add("addImage");
+        menuVideo.classList.add("showVideo");
       } else {
         header.classList.remove("sticky");
         navBar.classList.remove("repositionMenu")
         menuArea.classList.remove("addImage");
+        menuVideo.classList.remove("showVideo");
       }
     }
 }

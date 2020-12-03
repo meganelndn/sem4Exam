@@ -69,9 +69,10 @@ body {
   height: 60px;
 }
 #navBar {
-  display: flex;
-  align-items: center;
+  right: 0;
+  top: 0;
   margin: 50px;
+  position: absolute;
 }
 .navBarContent {
   display: flex;
@@ -92,7 +93,6 @@ body {
 }
 
 .addImage {
-  background-image: url("http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/sea1.jpg");
   background-position: bottom;
   filter: saturate(0.4);
   /* background: var(--light-blue); */
@@ -120,6 +120,19 @@ body {
   /* box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4); */
 }
 
+.video-container-Nav {
+  height: 150px;
+  width: 100%;
+  /* filter: contrast(80%); */  
+  object-fit: cover;
+  filter: brightness(0.6);
+  /* box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4); */
+  display: none;
+}
+
+.showVideo {
+  display: block;
+}
 /* --------- IMAGES -------- */
 .heroImg,
 .tourImg1,
