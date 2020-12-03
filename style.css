@@ -127,6 +127,7 @@ body {
   filter: brightness(0.5);
   box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
   display: none;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .showVideo {
@@ -984,6 +985,7 @@ select:after {
   margin: auto;
   border: 1px solid var(--dark-blue);
   border-radius: 5px;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .sticky {
@@ -993,6 +995,7 @@ select:after {
   z-index: 999999;
   box-shadow: none;
   border: none;
+  background: none;
   /* background-color: transparent;
   box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4); */
 }
