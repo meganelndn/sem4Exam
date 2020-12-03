@@ -14,8 +14,17 @@ export function checkValidation(form, formElements, nextStep) {
                 el.classList.add("invalid");
                 // personalDataFormValidation(elements1);
                 invalidFormError(el);
+
+                el.addEventListener("change", function(){
+                    el.classList.remove("invalid");
+                    invalidFormError(el);
+
+                });
+    
+
             } else {
-                el.classList.remove("invalid");
+                    el.classList.remove("invalid");
+
             }
         })
     }
@@ -36,8 +45,8 @@ export function closeForm() {
 }
 
 export function invalidFormError(el) {
-    console.log(el.parentNode.nextElementSibling)
-    console.log(el.getElementsByClassName('error'))
+    // console.log(el.parentNode.nextElementSibling)
+    // console.log(el.getElementsByClassName('error'))
     // console.log(el.next(".error"))
     if (el.parentNode.nextElementSibling == null) {
         // console.log("el is null")
