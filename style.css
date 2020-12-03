@@ -77,15 +77,13 @@ body {
 .navBarContent {
   display: flex;
   margin-inline-start: auto;
-  margin-right: 15px;
-  margin-top: 15px;
 }
 #navBar a {
   color: white;
   cursor: pointer;
   font-family: var(--main-font);
   text-decoration: none;
-  margin: -40px 15px 10px 15px;
+  margin: -20px 10px 10px 10px;
   font-size: 16px;
 }
 #navBar a:hover {
@@ -121,12 +119,12 @@ body {
 }
 
 .video-container-Nav {
-  height: 150px;
+  height: 140px;
   width: 100%;
-  /* filter: contrast(80%); */  
+  /* filter: contrast(80%); */
   object-fit: cover;
-  filter: brightness(0.6);
-  /* box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4); */
+  filter: brightness(0.8);
+  box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
   display: none;
 }
 
@@ -934,6 +932,7 @@ input#terms {
 }
 .toPayment {
   height: 50px;
+  width: 100px;
 }
 
 .toReceipt {
@@ -963,7 +962,7 @@ select:after {
 }
 
 .availability {
-  padding: 10px 20px;
+  padding: 20px 30px;
   display: flex;
   position: fixed;
   margin: 20px;
@@ -979,14 +978,19 @@ select:after {
   left: 0;
   right: 0;
   margin: auto;
+  border: 1px solid var(--dark-blue);
+  border-radius: 5px;
 }
 
 .sticky {
   position: fixed;
-  top: 10px;
+  margin: 0;
+  top: 0;
   z-index: 999999;
-  background-color: transparent;
-  box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: none;
+  border: none;
+  /* background-color: transparent;
+  box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4); */
 }
 .sticky + .content {
   padding-top: 102px;
@@ -995,8 +999,7 @@ select:after {
 .repositionMenu {
   /* flex-direction: column; */
   /* margin: 50px 0; */
-  margin: 28px 0;
-  padding-right: 15px;
+  /*  margin: 28px 0; */
   margin-inline-start: auto;
 }
 
