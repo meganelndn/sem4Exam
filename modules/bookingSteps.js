@@ -30,7 +30,7 @@ export function checkValidation(form, formElements, nextStep) {
     }
 }
 
-/* export function checkMailValidation(newsForm, newsFormEl) {
+export function checkMailValidation(newsForm, newsFormEl) {
 
     if (newsForm.checkValidity()) {
         newsFormEl.forEach((newsEl) => {
@@ -38,28 +38,36 @@ export function checkValidation(form, formElements, nextStep) {
             if (newsEl.checkValidity()) { 
                 newsEl.classList.add("valid");
             }
+            console.log("form is valid")
         });
     } else {
         newsFormEl.forEach((newsEl) => {
             if (!newsEl.checkValidity()) {
                 newsEl.classList.add("invalid");
-                // personalDataFormValidation(elements1);
-                invalidFormError(newsEl);
+                invalidNewsError(newsEl);
 
-                newsEl.addEventListener("change", function(){
+                console.log("form is invalid")
+
+                newsEl.addEventListener("keyup", function(){
                     newsEl.classList.remove("invalid");
-                    invalidFormError(newsEl);
-
+                    invalidNewsError(newsEl);
                 });
     
-
             } else {
                 newsEl.classList.remove("invalid");
 
             }
         })
     }
-} */
+}
+export function invalidNewsError(newsEl) {
+    if (newsEl == null) {
+    } else if (newsEl.classList.contains("invalid")) {
+        newsEl.classList.add("displayError");
+    } else {
+        newsEl.classList.remove("displayError");
+    }
+}
 
 // export function addClassToAll() {
 //     let allForms = document.querySelectorAll('form');
