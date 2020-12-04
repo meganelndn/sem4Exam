@@ -403,43 +403,17 @@
                     <p class="private">Private: <span></span></p>
                 </div>
                 
-                <button class="readMoreTrip"><span>Details</span></button>
-
+                
                 <div id="summerWinter">
-                    <div id="tableHeader">
-                        <p>Summer</p>
-                        <p>Winter</p>
-                    </div>
-                    <div id="lemonade_water">
-                        <p class="summer"></p>
-                        <p class="winter"></p>
-                    </div>
-                    <div id="tea_coffee_chocolate">
-                        <p class="summer"></p>
-                        <p class="winter"></p>
-                    </div>
-                    <div id="bottle_of_wine">
-                        <p class="summer"></p>
-                        <p class="winter"></p>
-                    </div>
-                    <div id="glass_of_wine">
-                        <p class="summer"></p>
-                        <p class="winter"></p>
-                    </div>
-                    <div id="glass_of_grog">
-                        <p class="summer"></p>
-                        <p class="winter"></p>
-                    </div>
-                    <div id="beer">
-                        <p class="summer"></p>
-                        <p class="winter"></p>
-                    </div>
+                    <p class="summerMenu"></p>
+                    <p class="winterMenu"></p>
                 </div>
-
+                
                 <div id="totalPrice">
                     <p class="publicPrice"></p>
                     <p class="privatePrice"></p>
                 </div>
+                <button class="readMoreTrip"><span>Details</span></button>
             </div>
 
             <!-- modal -->
@@ -466,29 +440,25 @@
                 </div>
             </div>
         </template>
+        <div id="tripArea"></div>
 
-        <div id="tripSection">
-            <div id="tableGuide">
-                <p style="text-decoration: underline;">Beverages on board:</p>
-                <p>Lemonade / water</p>
-                <p>Tea / coffee / hot chocolate</p>
-                <p>Bottle of wine</p>
-                <p>Glass of grog/mulled wine</p>
-                <p>Glass of wine</p>
-                <p>Beer</p>
-                <!-- <p>Public price</p>
-                <p>Private price</p> -->
+        <template id="beverages">
+            <div id="summerWinter">
+                <p class="summerMenu"></p>
+                <p class="winterMenu"></p>
             </div>
-
-            
-            <div id="tripArea"></div>
-
+        </template>
+        <div style="margin: 50px 250px;" id="beveragesOnly">
+            <span>Summer - until 1st of Oct
+            Lemonade and water | Beer DKK 40,- | Glass of wine DKK 40,- | bottle of wine is 200 DKK,-
+            </span>
+            <span>Autumn/Winter - from 1st Oct
+                Water, tea, coffee, hot chocolate | Beer DKK 40,- | Glass of grog/mulled wine DKK 40,-
+            </span>
         </div>
-        <div style="padding: 50px;" id="temporaryDiv">
-        <img style="width: 25px; height: 25px;" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/crossMark.png"><span>Not available</span>
-        <img style="width: 20px; height: 20px;" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/—Pngtree—tick-vector-icon_4015270.png"><span>Included on price</span>
-            <img style="width: 15px; height: 15px;" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/money.png"><span>DKK Items can be purchased on board</span>
+
     </div>
+
 
         <div id="customiseYourOwn">
             <h3>To customise your own private tour <br><a href="mailto:info@heycaptain.dk?subject=Customise your own private tour">Email Us</a></h3>
