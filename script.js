@@ -35,13 +35,18 @@ function fetchData(){
     }
 }
 
-import { checkValidation, closeForm, postSubscription } from "./modules/bookingSteps";
+import { checkValidation, checkMailValidation, invalidNewsError, closeForm, postSubscription, invalidFormError } from "./modules/bookingSteps";
 import { carouselEffect } from "./modules/imageCarousel";
 import { weatherCard } from "./modules/weatherCard.js";
 
 let completedForm;
 
 function setUpNewsletter() {
+    const newsForm = document.querySelector(".newsletterForm");
+    newsForm.setAttribute("novalidate", true);
+    const newsEl = newsForm.elements;
+    const newsFormEl = newsForm.querySelectorAll("input"); 
+
     document.querySelector("#newsletterBtn").addEventListener("click", function(){
         let newsletterOverlay = document.getElementById("newsletterOverlay");
         newsletterOverlay.classList.toggle("showOverlay");
@@ -51,9 +56,8 @@ function setUpNewsletter() {
         document.querySelector(".newsletterSubscription").addEventListener("click", function(e){
             e.preventDefault();
 
-            /* const newsForm = document.querySelector(".newsletterForm");
-            const newsEl = newsForm.elements;
-            const newsFormEl = newsForm.querySelector("input");  */
+            
+            checkMailValidation(newsForm, newsFormEl, invalidNewsError); 
 
             document.querySelector(".overlay-content2").classList.remove("show");
             document.querySelector(".overlay-content").classList.add("hideOverlay");
@@ -389,7 +393,6 @@ function weatherApp() {
         const filteredArray = listItemsArray.filter(el => {
 
         let content = "";
-        // athens,gr
         if (inputVal.includes(",")) {
         if (inputVal.split(",")[1].length > 2) {
           inputVal = inputVal.split(",")[0];
@@ -400,7 +403,6 @@ function weatherApp() {
           content = el.querySelector(".city-name").dataset.name.toLowerCase();
         }
         } else {
-        // athens
         content = el.querySelector(".city-name span").textContent.toLowerCase();
         }
       return content == inputVal.toLowerCase();
