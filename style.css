@@ -124,20 +124,10 @@ body {
   max-height: 600px;
   width: 100%;
   /* filter: contrast(80%); */
-  filter: brightness(0.6);
+  /* filter: brightness(0.6); */
   /* box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4); */
 }
 
-.video-container-Nav {
-  height: 140px;
-  width: 100%;
-  /* filter: contrast(80%); */
-  object-fit: cover;
-  filter: brightness(0.5);
-  box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
-  display: none;
-  background: rgba(0, 0, 0, 0.4);
-}
 
 .showVideo {
   display: block;
