@@ -246,14 +246,27 @@ body {
 }
 .readMoreTrip {
   justify-self: self-end;
-  margin: 10px;
+  margin: 10px 0;
   background-color: white;
-  color: var(--dark-blue);
+  color: var(--light-blue);
   border: solid 1px var(--light-blue);
   border-radius: 3px;
   cursor: pointer;
   /* padding: 2px 5px; */
   font-family: var(--main-font);
+}
+.vl {
+  border-left: 1px solid var(--light-blue);
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
+.tripsTimelineImg {
+  width: 500px;
+  display: block;
+  margin: auto;
 }
 .readMoreTrip span {
   cursor: pointer;

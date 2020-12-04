@@ -254,6 +254,12 @@ function showTrips(trips) {
             const readMoreModal = document.querySelector("#trip-modal-background");
             readMoreModal.classList.add("showModal"); 
             readMoreModal.querySelector(".fullDescription").textContent = oneTrip.full_description;
+            readMoreModal.querySelector(".img1").src = oneTrip.trip_image_1.guid;
+            readMoreModal.querySelector(".img2").src = oneTrip.trip_image_2.guid;
+            readMoreModal.querySelector(".img3").src = oneTrip.trip_image_3.guid;
+            readMoreModal.querySelector(".img4").src = oneTrip.trip_image_4.guid;
+            readMoreModal.querySelector(".img5").src = oneTrip.trip_image_5.guid; 
+        
         });
         tripCopy.querySelector(".trip-modal-close").addEventListener("click", function(){
             const readMoreModal = document.querySelector("#trip-modal-background");
