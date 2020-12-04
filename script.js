@@ -90,7 +90,7 @@ function setScrollPosition() {
     window.onscroll = function() {myFunction()};
 
     let header = document.querySelector(".availability");
-    let sticky = header.offsetTop;
+    let sticky = header.offsetTop - 600;
 
     let navBar = document.querySelector(".navBarContent");
     let menuArea = document.querySelector("#topNavigation");
