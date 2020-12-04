@@ -95,16 +95,17 @@ function setScrollPosition() {
     // let navBar = document.querySelector(".navBarContent");
     let book = document.querySelector("#navBar .bookBtn");
     let sticky = header.offsetTop;
-    // let menuVideo = document.querySelector("#topNavigation .video-container-Nav");
+    let navBar = document.querySelector("#navBar");
+
     function myFunction() {
       if (window.pageYOffset > sticky) {
         // book.classList.add("sticky");
-        // navBar.classList.add("repositionMenu");
+        navBar.classList.add("changeMenu");
         book.classList.add("addStyle");
         // menuVideo.classList.add("showVideo");
       } else {
         // book.classList.remove("sticky");
-        // navBar.classList.remove("repositionMenu")
+        navBar.classList.remove("changeMenu")
         book.classList.remove("addStyle");
         // menuVideo.classList.remove("showVideo");
 
@@ -211,43 +212,10 @@ function showTrips(trips) {
         tripCopy.querySelector(".tripImg").src = oneTrip.trip_image.guid;
         tripCopy.querySelector(".duration").textContent = oneTrip.duration;
         tripCopy.querySelector(".tripText").textContent = oneTrip.description;
-        //table
-        tripCopy.querySelector("#lemonade_water .summer").textContent = oneTrip.lemonade_water.split(", ")[0];
-        tripCopy.querySelector("#lemonade_water .winter").textContent = oneTrip.lemonade_water.split(", ")[1];
 
-        tripCopy.querySelector("#tea_coffee_chocolate .summer").textContent = oneTrip.tea_coffee_chocolate.split(", ")[0];
-        tripCopy.querySelector("#tea_coffee_chocolate .winter").textContent = oneTrip.tea_coffee_chocolate.split(", ")[1];
+        tripCopy.querySelector(".summerMenu").textContent = oneTrip.summer_menu;
+        tripCopy.querySelector(".winterMenu").textContent = oneTrip.winter_menu;
         
-        tripCopy.querySelector("#bottle_of_wine .summer").textContent = oneTrip.bottle_of_wine.split(", ")[0];
-        tripCopy.querySelector("#bottle_of_wine .winter").textContent = oneTrip.bottle_of_wine.split(", ")[1];
-
-        tripCopy.querySelector("#glass_of_wine .summer").textContent = oneTrip.glass_of_wine.split(", ")[0];
-        tripCopy.querySelector("#glass_of_wine .winter").textContent = oneTrip.glass_of_wine.split(", ")[1];
-
-        tripCopy.querySelector("#glass_of_grog .summer").textContent = oneTrip.glass_of_grog.split(", ")[0];
-        tripCopy.querySelector("#glass_of_grog .winter").textContent = oneTrip.glass_of_grog.split(", ")[1];
-
-        tripCopy.querySelector("#beer .summer").textContent = oneTrip.beer.split(", ")[0];
-        tripCopy.querySelector("#beer .winter").textContent = oneTrip.beer.split(", ")[1];
-
-        //Icon
-        const replacementItem = tripCopy.querySelectorAll("#summerWinter p");
-
-        replacementItem.forEach((oneResult) => {
-            if (oneResult.textContent === "no"){
-                let addCross = document.createElement("img");
-                oneResult.textContent = "";
-                addCross.className = "iconSize";
-                addCross.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/crossMark.png";
-                oneResult.appendChild(addCross);
-            } else if (oneResult.textContent === "yes"){
-                let addCheck = document.createElement("img");
-                oneResult.textContent = "";
-                addCheck.className = "iconSize";
-                addCheck.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/—Pngtree—tick-vector-icon_4015270.png";
-                oneResult.appendChild(addCheck);
-            }
-        })
         //price
         tripCopy.querySelector(".public span").textContent = oneTrip.public_tour_price;
         tripCopy.querySelector(".private span").textContent = oneTrip.private_tour_price;

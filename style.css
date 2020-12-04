@@ -72,19 +72,21 @@ body {
 #navBar {
   right: 0;
   top: 0;
-  margin: 50px;
+  padding: 20px;
   position: absolute;
 }
 .navBarContent {
   display: flex;
   margin-inline-start: auto;
+  align-items: center;
 }
 #navBar a {
   color: white;
   cursor: pointer;
   font-family: var(--main-font);
   text-decoration: none;
-  margin: -20px 10px 10px 10px;
+  /* margin: -20px 10px 10px 10px; */
+  margin: 0 20px;
   font-size: 16px;
 }
 #navBar a:hover {
@@ -213,9 +215,9 @@ body {
   text-align: left;
 }
 #singleTripArea {
-  display: grid;
   align-items: center;
   max-width: fit-content;
+  place-self: flex-start;
   margin: 20px 25px 0 0px;
   transition: transform 0.5s;
 }
@@ -246,7 +248,7 @@ body {
 }
 
 .tripImg {
-  width: 220px;
+  width: 300px;
 }
 .tripsDeco {
   height: auto;
@@ -258,9 +260,9 @@ body {
   margin-top: 170px;
 }
 .readMoreTrip {
-  justify-self: self-end;
+  display: flex;
+  margin-left: auto;
   font-size: 12px;
-  margin-bottom: 50px;
   background-color: white;
   text-transform: uppercase;
   color: var(--dark-blue) !important;
@@ -1158,11 +1160,15 @@ select:after {
   padding-top: 102px;
 }
 
-.repositionMenu {
-  /* flex-direction: column; */
-  /* margin: 50px 0; */
-  /*  margin: 28px 0; */
-  margin-inline-start: auto;
+.changeMenu {
+    /* flex-direction: column; */
+    /* margin: 50px 0; */
+    /* margin: 28px 0; */
+    margin-inline-start: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    width: 100%;
+    display: flex;
 }
 
 #cardBilling {
