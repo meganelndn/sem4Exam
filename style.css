@@ -269,32 +269,48 @@ body {
 .vl {
   grid-area: vl;
   border-left: 2px solid var(--light-blue);
-  height: 1250px;
+  height: 1500px;
   position: absolute;
   left: 50%;
   margin-left: 0;
   top: 75%;
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .tripsTimelineImg {
   width: 300px;
   display: block;
   margin: auto;
 }
+.tripsTimelingLoc {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
 .tripsTimelineImg:nth-of-type(1n) {
   grid-area: img1;
   margin: 60px 0 0 50px;
 }
-.tripsTimelineImg:nth-of-type(2n) {
+.location1 {
+  grid-area: img1;
+}
+.tripsTimelineImg:nth-of-type(2n),
+.location2 {
   grid-area: img2;
 }
-.tripsTimelineImg:nth-of-type(3n) {
+.tripsTimelineImg:nth-of-type(3n),
+.location3 {
   grid-area: img3;
   margin-left: 50px;
 }
-.tripsTimelineImg:nth-of-type(4n) {
+.tripsTimelineImg:nth-of-type(4n),
+.location4 {
   grid-area: img4;
 }
-.tripsTimelineImg:nth-of-type(5n) {
+.tripsTimelineImg:nth-of-type(5n),
+.location5 {
   grid-area: img5;
   margin-left: 50px;
 }
