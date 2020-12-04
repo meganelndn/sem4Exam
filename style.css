@@ -91,16 +91,21 @@ body {
   border-bottom: 4px solid var(--dark-blue);
 }
 
-.addImage {
-  background-position: bottom;
-  filter: saturate(0.4);
-  height: 130px;
-  background: rgba(0, 0, 0, 0.7);
-  /* background: var(--light-blue); */
+.addStyle {
+  margin-right: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  background: #fff;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  color: var(--dark-blue);
+  cursor: pointer;
+  background: var(--yellow);
 }
 
 /* --------- HERO SECTION -------- */
-.banner {
+.banner, #introText {
   width: 30%;
   height: auto;
   text-align: center;
@@ -113,8 +118,9 @@ body {
 }
 
 .video-container {
+  object-fit: cover;
+  max-height: 600px;
   width: 100%;
-  height: 100%;
   /* filter: contrast(80%); */
   filter: brightness(0.6);
   /* box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4); */
@@ -164,22 +170,23 @@ body {
 /* --------- INTRO -------- */
 .introTitle {
   text-transform: uppercase;
-  padding-top: 50px;
   font-family: "Brandon Text Regular";
+  font-size: 14px;
+  margin-top: 150px;
 }
 .introText {
   font-family: "Brandon Text Light";
   font-size: 18px;
 }
 
-#introText {
+/* #introText {
   position: absolute;
   top: 40%;
-  padding: 0 230px;
+  left: 35%;
   letter-spacing: 0.1em;
   text-align: center;
   font-size: var(--body-font);
-}
+} */
 /* --------- TRIPS -------- */
 #tripArea {
   display: inline-flex;
@@ -1098,10 +1105,10 @@ input#terms {
 #formBox {
   color: white;
   position: absolute;
-  top: 80%;
-  z-index: 999999;
-  transition: ease 1s;
+  top: 50%;
+  width: 100%;
 }
+
 input,
 select {
   border: none;
@@ -1116,8 +1123,7 @@ select:after {
 .availability {
   padding: 20px 30px;
   display: flex;
-  position: fixed;
-  margin: 20px;
+  /* margin: 20px; */
   /* flex-flow: row; */
   /* flex-basis: calc(100% / 1); */
   /* justify-content: center; */
@@ -2157,9 +2163,8 @@ select:after {
 /* Animation */
 
 .waves {
-  background-color: var(--dark-blue);
-  position: relative;
   width: 100%;
+  margin-top: -100px;
   height: 10vh;
   margin-bottom: -7px; /*Fix for safari gap*/
   min-height: 100px;

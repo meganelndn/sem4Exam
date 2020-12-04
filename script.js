@@ -91,22 +91,21 @@ function setScrollPosition() {
 
     let header = document.querySelector(".availability");
     // let sticky = header.offsetTop - 600;
-    let sticky = header.offsetTop;
-
-    let navBar = document.querySelector(".navBarContent");
-    let menuArea = document.querySelector("#topNavigation");
-    // let menuVideo = document.querySelector("#topNavigation .video-container-Nav");
     
+    // let navBar = document.querySelector(".navBarContent");
+    let book = document.querySelector("#navBar .bookBtn");
+    let sticky = header.offsetTop;
+    // let menuVideo = document.querySelector("#topNavigation .video-container-Nav");
     function myFunction() {
       if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-        navBar.classList.add("repositionMenu");
-        menuArea.classList.add("addImage");
+        // book.classList.add("sticky");
+        // navBar.classList.add("repositionMenu");
+        book.classList.add("addStyle");
         // menuVideo.classList.add("showVideo");
       } else {
-        header.classList.remove("sticky");
-        navBar.classList.remove("repositionMenu")
-        menuArea.classList.remove("addImage");
+        // book.classList.remove("sticky");
+        // navBar.classList.remove("repositionMenu")
+        book.classList.remove("addStyle");
         // menuVideo.classList.remove("showVideo");
 
       }
