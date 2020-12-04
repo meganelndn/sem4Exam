@@ -304,7 +304,7 @@ body {
   place-content: space-between;
   height: 30px;
   align-items: center;
-    border: solid 0.1px whitesmoke;
+  border: solid 0.1px whitesmoke;
 }
 
 #summerWinter p {
