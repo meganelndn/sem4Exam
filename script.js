@@ -90,25 +90,28 @@ function setScrollPosition() {
     window.onscroll = function() {myFunction()};
 
     let header = document.querySelector(".availability");
-    let sticky = header.offsetTop - 600;
+    // let sticky = header.offsetTop - 600;
+    let sticky = header.offsetTop;
 
     let navBar = document.querySelector(".navBarContent");
     let menuArea = document.querySelector("#topNavigation");
-    let menuVideo = document.querySelector("#topNavigation .video-container-Nav");
+    // let menuVideo = document.querySelector("#topNavigation .video-container-Nav");
     
     function myFunction() {
       if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
         navBar.classList.add("repositionMenu");
         menuArea.classList.add("addImage");
-        menuVideo.classList.add("showVideo");
+        // menuVideo.classList.add("showVideo");
       } else {
         header.classList.remove("sticky");
         navBar.classList.remove("repositionMenu")
         menuArea.classList.remove("addImage");
-        menuVideo.classList.remove("showVideo");
+        // menuVideo.classList.remove("showVideo");
+
       }
     }
+
 }
 
 function formValidation() {
@@ -247,8 +250,8 @@ function showTrips(trips) {
             }
         })
         //price
-        tripCopy.querySelector(".publicPrice").textContent = oneTrip.public_tour_price;
-        tripCopy.querySelector(".privatePrice").textContent = oneTrip.private_tour_price;
+        tripCopy.querySelector(".public span").textContent = oneTrip.public_tour_price;
+        tripCopy.querySelector(".private span").textContent = oneTrip.private_tour_price;
         //modal content
         tripCopy.querySelector(".readMoreTrip").addEventListener("click", function(){
             const readMoreModal = document.querySelector("#trip-modal-background");

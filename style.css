@@ -64,6 +64,7 @@ body {
   z-index: 99;
   background-attachment: fixed;
   padding: 5px;
+
 }
 .logo {
   width: 60px;
@@ -94,6 +95,8 @@ body {
 .addImage {
   background-position: bottom;
   filter: saturate(0.4);
+  height: 130px;
+  background: rgba(0, 0, 0, 0.7);
   /* background: var(--light-blue); */
 }
 
@@ -181,7 +184,6 @@ body {
 /* --------- TRIPS -------- */
 #tripArea {
   display: inline-flex;
-  padding-top: 70px;
   flex-direction: row-reverse;
   place-items: flex-end;
 }
@@ -199,6 +201,11 @@ body {
   }
 }
 
+#tripPrices {
+  font-size: 15px;
+  font-family: "Brandon Text Regular";
+  text-align: left;
+}
 #singleTripArea {
   display: grid;
   align-items: center;
@@ -219,7 +226,7 @@ body {
 }
 .tripText {
   padding-top: 20px;
-  text-align: left;
+  text-align: justify;
   margin: 0;
 }
 .duration {
@@ -246,14 +253,26 @@ body {
 }
 .readMoreTrip {
   justify-self: self-end;
-  margin: 10px 0;
+  font-size: 12px;
+  margin-bottom: 50px;
   background-color: white;
-  color: var(--light-blue);
-  border: solid 1px var(--light-blue);
-  border-radius: 3px;
+  text-transform: uppercase;
+  color: var(--dark-blue) !important;
+  border: solid 1px var(--dark-blue);
+  border-radius: 5px;
   cursor: pointer;
-  /* padding: 2px 5px; */
+  padding: 8px 20px;
   font-family: var(--main-font);
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  0 100px 80px rgba(0, 0, 0, 0.07)
+;
+
+
 }
 .vl {
   border-left: 1px solid var(--light-blue);
@@ -293,7 +312,7 @@ body {
 #tableHeader {
   display: flex;
   width: 200px;
-  justify-content: space-between;
+  justify-content: space-around;
   color: white;
   background-color: var(--dark-blue);
   height: 30px;
@@ -316,6 +335,7 @@ body {
   display: flex;
   place-content: space-between;
   height: 30px;
+  padding: 0 40px;
   align-items: center;
   border: solid 0.1px whitesmoke;
 }
@@ -359,9 +379,10 @@ body {
 }
 
 #tableGuide p {
-  padding: 4px 10px;
+  padding: 3px 10px;
   text-align: left;
   margin: 0;
+  display: flex;
   font-family: "Brandon Text Regular";
 }
 
@@ -395,13 +416,22 @@ body {
   margin: 300 0 30px 0px;
 }
 .corona-guidelines {
-  margin: 30px 500px;
+  margin: 30px auto;
   color: var(--yellow);
   border: 1px solid var(--yellow);
-  padding: 10px;
+  padding: 8px 20px;
   border-radius: 5px;
   cursor: pointer;
   max-width: max-content;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  0 100px 80px rgba(0, 0, 0, 0.07)
+;
+
 }
 .anchor {
   width: 70px;
@@ -417,13 +447,14 @@ body {
   margin: 0 40px;
   flex-direction: column;
   align-items: center;
-  max-width: fit-content;
+  max-width: 350px;
   border: 1px solid var(--dark-blue);
   border-radius: 6px;
   box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
   color: black;
   background-color: white;
   transition: transform 0.5s;
+  /* visibility: hidden; */
 }
 
 #singleTourArea:hover,
@@ -447,7 +478,24 @@ body {
 .tourImg {
   width: 350px;
   border-radius: 5px 5px 0 0;
+  display: none;
 }
+
+/* .slide {                  
+  visibility: visible;                  
+  animation: slide 1s;
+}
+
+@keyframes slide {
+  0% {
+      opacity: 0;
+      transform: translateY(50%);
+  } 
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  } 
+} */
 
 /* COVID */
 #corona {
@@ -464,6 +512,18 @@ body {
 /* beginning of https://codepen.io/tutsplus/pen/gObLaEP code snippet */
 .weatherBtn {
   cursor: pointer;
+  font-family: var(--body-font);
+  padding: 8px 20px;
+  border-radius: 5px;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  0 100px 80px rgba(0, 0, 0, 0.07)
+;
+
 }
 .weatherInput {
   -webkit-appearance: none;
@@ -981,7 +1041,7 @@ input#terms {
   margin-right: 0;
   font-size: 14px;
   text-transform: uppercase;
-  padding: 5px 15px;
+  padding: 8px 20px;
   background: #fff;
   border: none;
   border-radius: 0 3px 3px 0;
@@ -1055,6 +1115,7 @@ select:after {
   box-shadow: none;
   border: none;
   background: none;
+  
   /* background-color: transparent;
   box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4); */
 }
