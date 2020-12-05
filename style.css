@@ -469,6 +469,10 @@ body {
     max-width: max-content;
 }
 
+#singleTourArea{
+  width: 400px;
+}
+
 #singleTourArea:hover,
 #singleTourArea:focus {
   transform: scale3d(1.05, 1.05, 1);
@@ -480,7 +484,7 @@ body {
 }
 .tourText {
   font-family: "Brandon Text Light";
-  width: 400px;
+  width: inherit;
   text-align: left;
   display: none;
   /* position: absolute; */
