@@ -223,6 +223,9 @@ function showTrips(trips) {
         tripCopy.querySelector(".readMoreTrip").addEventListener("click", function(){
             const readMoreModal = document.querySelector("#trip-modal-background");
             readMoreModal.classList.add("showModal"); 
+            //Prevent Body scroll
+            document.body.style.overflow = "hidden";
+            document.body.style.height = "100%"; 
             readMoreModal.querySelector(".fullDescription").textContent = oneTrip.full_description;
             readMoreModal.querySelector(".img1").src = oneTrip.trip_image_1.guid;
             readMoreModal.querySelector(".img2").src = oneTrip.trip_image_2.guid;
@@ -234,6 +237,9 @@ function showTrips(trips) {
         tripCopy.querySelector(".trip-modal-close").addEventListener("click", function(){
             const readMoreModal = document.querySelector("#trip-modal-background");
             readMoreModal.classList.remove("showModal");
+            //Allow body scroll
+            document.body.style.overflow = "auto"; // ADD THIS LINE
+            document.body.style.height = "auto"; 
         });
         //3. append
         tripArea.appendChild(tripCopy);
