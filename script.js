@@ -190,12 +190,11 @@ function showLandingPage(home) {
 
 function buildCovidInfo(covid){
     document.querySelector(".coronaText").textContent = covid;
+    const covidModal = document.querySelector("#corona-modal-background");
     document.querySelector("#corona").addEventListener("click", function(){
-        const covidModal = document.querySelector("#corona-modal-background");
         covidModal.classList.add("showModal");
     });
     document.querySelector(".corona-modal-close").addEventListener("click", function(){
-        const covidModal = document.querySelector("#corona-modal-background");
         covidModal.classList.remove("showModal");
     });
 }
