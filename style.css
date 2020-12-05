@@ -279,17 +279,24 @@ body {
 }
 .vl {
   grid-area: vl;
-  border-left: 2px solid var(--light-blue);
-  height: 1500px;
-  position: absolute;
+  /* border-left: 2px solid var(--light-blue); */
+  /* height: 700px; */
+  /* position: absolute;
   left: 50%;
-  margin-left: 0;
-  top: 75%;
-  stroke-width: 5;
+  margin-left: 0; */
+  /* top: 75%; */
+  /* stroke-width: 5;
   stroke-dasharray: 15, 310;
   stroke-dashoffset: 48;
-  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1); */
 }
+
+#lineSvg {
+  width: 400px;
+  height: 800px;
+  margin-left:-50px;
+}
+
 .tripsTimelineImg {
   width: 200px;
   display: block;

@@ -231,8 +231,17 @@ function showTrips(trips) {
             readMoreModal.querySelector(".img2").src = oneTrip.trip_image_2.guid;
             readMoreModal.querySelector(".img3").src = oneTrip.trip_image_3.guid;
             readMoreModal.querySelector(".img4").src = oneTrip.trip_image_4.guid;
-            readMoreModal.querySelector(".img5").src = oneTrip.trip_image_5.guid; 
-        
+            readMoreModal.querySelector(".img5").src = oneTrip.trip_image_5.guid;
+            //Animate line
+            const line = readMoreModal.querySelector("#line");
+            let length = line.getTotalLength();
+            line.style.strokeDasharray = length;
+            line.style.strokeDashoffset = length;
+            readMoreModal.addEventListener("scroll", function(){
+                let scroll = readMoreModal.scrollTop / readMoreModal.scrollHeight;
+                let draw = length * scroll;
+                line.style.strokeDashoffset = length - draw;
+            });
         });
         tripCopy.querySelector(".trip-modal-close").addEventListener("click", function(){
             const readMoreModal = document.querySelector("#trip-modal-background");
@@ -245,6 +254,7 @@ function showTrips(trips) {
         tripArea.appendChild(tripCopy);
     })
 }
+
 
 function showTours(tours) {
     // 1. template clone
