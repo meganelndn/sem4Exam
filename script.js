@@ -266,7 +266,16 @@ function showTours(tours) {
 
         tourCopy.querySelector(".tourImg").src = oneTour.tour_image.guid;
         tourCopy.querySelector(".tourTitle").textContent = oneTour.title.rendered;
-        tourCopy.querySelector(".tourText").textContent = oneTour.description;
+        const tourText = tourCopy.querySelector(".tourText");
+        tourText.textContent = oneTour.description;
+        //Expand single tour
+        tourCopy.querySelector(".tourTitle").addEventListener("click", function(){
+            if (tourText.style.display === "block") {
+                tourText.style.display = "none";
+                } else {
+                tourText.style.display = "block";
+                }
+        })
 
         tourArea.appendChild(tourCopy);
     })
