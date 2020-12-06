@@ -35,7 +35,7 @@ function fetchData(){
     }
 }
 
-import { checkValidation, checkMailValidation, invalidNewsError, closeForm, postSubscription, invalidFormError } from "./modules/bookingSteps";
+import { checkValidation, closeForm, postSubscription } from "./modules/bookingSteps";
 import { carouselEffect } from "./modules/imageCarousel";
 import { weatherCard } from "./modules/weatherCard.js";
 
@@ -55,14 +55,17 @@ function setUpNewsletter() {
 
         document.querySelector(".newsletterSubscription").addEventListener("click", function(e){
             e.preventDefault();
-
-            
-            checkMailValidation(newsForm, newsFormEl, invalidNewsError); 
-
-            document.querySelector(".overlay-content2").classList.remove("show");
-            document.querySelector(".overlay-content").classList.add("hideOverlay");
+            checkValidation(newsForm, newsFormEl, sendNewsletter); 
         })
     });
+}
+
+function sendNewsletter(){
+    document.querySelector(".overlay-content2").classList.remove("show");
+    document.querySelector(".overlay-content").classList.add("hideOverlay");
+    document.querySelector("#newsletterBtn").addEventListener("click", function(){
+        location.reload(); 
+    })
 }
 
 function setUpBooking(){
@@ -226,11 +229,9 @@ function showTrips(trips) {
             document.body.style.overflow = "hidden";
             document.body.style.height = "100%"; 
             readMoreModal.querySelector(".fullDescription").textContent = oneTrip.full_description;
-            readMoreModal.querySelector(".img1").src = oneTrip.trip_image_1.guid;
-            readMoreModal.querySelector(".img2").src = oneTrip.trip_image_2.guid;
-            readMoreModal.querySelector(".img3").src = oneTrip.trip_image_3.guid;
-            readMoreModal.querySelector(".img4").src = oneTrip.trip_image_4.guid;
-            readMoreModal.querySelector(".img5").src = oneTrip.trip_image_5.guid;
+            console.log("onetrip", oneTrip.content.rendered)
+            // Gallery timeline
+            readMoreModal.querySelector("#timelineGallery").innerHTML = oneTrip.content.rendered;
             //Animate line
             const line = readMoreModal.querySelector("#line");
             let length = line.getTotalLength();
@@ -275,7 +276,6 @@ function showTours(tours) {
                 tourText.style.display = "block";
                 }
         })
-
         tourArea.appendChild(tourCopy);
     })
 }

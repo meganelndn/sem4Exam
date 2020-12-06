@@ -51,6 +51,9 @@ body {
   width: fit-content;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 /* --------- TOP NAV -------- */
 /* #topNavigation, */
 #bottomNavigation {
@@ -73,7 +76,7 @@ body {
 #navBar {
   right: 0;
   top: 0;
-  padding: 20px;
+  padding: 10px;
   position: absolute;
 }
 .navBarContent {
@@ -86,10 +89,9 @@ body {
   cursor: pointer;
   font-family: var(--main-font);
   text-decoration: none;
-  /* margin: -20px 10px 10px 10px; */
   margin: 0 20px;
-  font-size: 16px;
 }
+
 #navBar a:hover {
   border-bottom: 4px solid var(--dark-blue);
 }
@@ -99,12 +101,12 @@ body {
   font-size: 14px;
   text-transform: uppercase;
   padding: 8px 20px;
-  background: #fff;
   border: none;
-  border-radius: 0 3px 3px 0;
+  border-radius: 20px;
   color: var(--dark-blue);
   cursor: pointer;
-  background: var(--yellow);
+  background-color: var(--yellow);
+  color: var(--dark-blue) !important;
 }
 
 /* --------- HERO SECTION -------- */
@@ -183,7 +185,7 @@ body {
 #tripArea {
   display: inline-flex;
   flex-direction: row-reverse;
-  place-items: flex-end;
+  /* place-items: flex-end; */
 }
 
 .wheel {
@@ -205,32 +207,36 @@ body {
   text-align: left;
 }
 #singleTripArea {
-  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
   max-width: fit-content;
-  place-self: flex-start;
-  margin: 20px 25px 0 0px;
-  transition: transform 0.5s;
+  margin: 0 20px;
 }
 
-/* #singleTripArea:hover,
-#singleTripArea:focus {
-  transform: scale3d(1.05, 1.05, 1);
-} */
-
 .tripTitle {
-  margin: 10px 0;
+  margin: 10px 0 0;
   text-align: center;
-  font-size: var(--body-font);
 }
 .tripText {
   padding-top: 20px;
-  text-align: justify;
+  text-align: left;
   margin: 0;
+  text-indent: 50px;
 }
+
 .duration {
   font-family: "Brandon Text Bold";
   margin: 10px 0;
   font-size: 14px;
+}
+
+#summerWinter h3 {
+  font-size: 15px;
+  margin: 15px 0 0;
+}
+
+#summerWinter p {
+  margin: 0;
 }
 
 #trips {
@@ -250,14 +256,14 @@ body {
   margin-top: 170px;
 }
 .readMoreTrip {
-  display: flex;
   margin-left: auto;
-  font-size: 12px;
-  background-color: white;
+  margin-top: auto;
+  font-size: 14px;
+  background-color: var(--dark-blue) !important;
   text-transform: uppercase;
-  color: var(--dark-blue) !important;
+  color: white;
   border: solid 1px var(--dark-blue);
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   padding: 8px 20px;
   font-family: var(--main-font);
@@ -271,13 +277,12 @@ body {
   display: flex;
   justify-content: center;
 }
-.oneTimeline, .twoTimeline {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
+#gallery-1 , #gallery-2, #gallery-3{
+column-count: 2;
+text-align: center;
 }
 .vl {
-  padding: 0 50px;
+  position: absolute;
 }
 
 #lineSvg {
@@ -350,10 +355,6 @@ body {
   border: solid 0.1px whitesmoke;
 }
 
-#summerWinter p {
-  font-size: 15px;
-  font-family: "Brandon Text Regular";
-}
 .publicPrice,
 .privatePrice {
   font-size: 15px;
@@ -410,6 +411,7 @@ body {
 
 #customiseYourOwn h3 {
   margin-top: 60px;
+  display: inline-flex;
 }
 
 #customiseYourOwn {
@@ -418,31 +420,31 @@ body {
 #customiseYourOwn a {
   text-decoration: underline;
   color: var(--dark-blue);
+  margin-left: 5px;
 }
 
 /* --------- TOURS -------- */
-#tours {
-  margin-bottom: 350px;
-}
 
 #tourArea {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
 .corona-guidelines {
   margin: 30px auto;
-  color: var(--yellow);
-  border: 1px solid var(--yellow);
   padding: 8px 20px;
-  border-radius: 5px;
+  border: none;
+  border-radius: 20px;
+  color: var(--dark-blue);
+  cursor: pointer;
+  background-color: var(--yellow);
+  color: var(--dark-blue) !important;
   cursor: pointer;
   max-width: max-content;
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-    0 100px 80px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
 }
+
 .anchor {
   width: 70px;
   height: auto;
@@ -457,16 +459,17 @@ body {
   flex-direction: column;
   align-items: center;
   max-width: 350px;
-  border: 1px solid var(--dark-blue);
-  box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
-  color: black;
-  background-color: white;
+  box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  color:  var(--light-blue);
+  border: solid 1px var(--dark-blue);
+  border-radius: 20px;
+  font-family: var(--main-font);
   transition: transform 0.5s;
   margin: 30px auto;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    max-width: max-content;
+  padding: 8px 20px;
+  cursor: pointer;
+  max-width: max-content;
 }
 
 #singleTourArea{
@@ -484,10 +487,10 @@ body {
 }
 .tourText {
   font-family: "Brandon Text Light";
-  width: inherit;
+  width: 400px;
   text-align: left;
   display: none;
-  /* position: absolute; */
+  text-indent: 50px;
 }
 
 .tourImg {
@@ -582,7 +585,7 @@ body {
   letter-spacing: 0.1em;
   padding: 10px 20px;
   margin-left: 15px;
-  border-radius: 5px;
+  border-radius: 20px;
   background: var(--light-blue);
   color: #fff;
   transition: 0.3s ease-in-out;
@@ -1054,7 +1057,7 @@ input#terms {
   padding: 8px 20px;
   background: #fff;
   border: none;
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 5px 5px 0;
   color: var(--dark-blue);
   cursor: pointer;
   background: var(--yellow);
@@ -1097,23 +1100,15 @@ select:after {
 .availability {
   padding: 20px 30px;
   display: flex;
-  /* margin: 20px; */
-  /* flex-flow: row; */
-  /* flex-basis: calc(100% / 1); */
-  /* justify-content: center; */
   flex-wrap: wrap;
-  /* max-width: max-content; */
-  /* max-width: fit-content; */
   box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
-  /* background: rgba(42, 49, 65, 1); */
   width: min-content;
   left: 0;
   right: 0;
-  /* bottom: 10%; */
   margin: auto;
-  border: 1px solid var(--dark-blue);
+  /* border: 1px solid var(--dark-blue); */
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .sticky {
@@ -1137,7 +1132,7 @@ select:after {
     /* margin: 50px 0; */
     /* margin: 28px 0; */
     margin-inline-start: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #2a3141;
     padding: 30px;
     width: 100%;
     display: flex;
@@ -1201,7 +1196,7 @@ select:after {
   background: white;
   border: none;
   color: var(--dark-blue);
-  padding: 50px 35px;
+  padding: 30px;
   margin: 10% auto; /* 15% from the top and centered */
   width: 50%; /* Could be more or less, depending on screen size */
   text-align: justify;
@@ -1216,6 +1211,9 @@ select:after {
   font-family: "Brandon Text Light";
   margin-top: 20px;
   margin: 30px;
+  text-align: left;
+  text-indent: 50px;
+  line-height: 1.8;
 }
 .corona-modal-close,
 .trip-modal-close,
@@ -1225,7 +1223,6 @@ select:after {
   border: none;
   color: lightgray;
   float: right;
-  margin-top: -40px;
 }
 .corona-modal-close:hover,
 .corona-modal-close:focus,
@@ -2181,5 +2178,21 @@ select:after {
   .waves {
     height: 40px;
     min-height: 40px;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  #tripArea {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin: auto;
+  }
+  .availability {
+    display: flex;
+  }
+  #firstRow, #secondRow {
+    flex-direction: column;
   }
 }
