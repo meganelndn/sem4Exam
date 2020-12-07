@@ -44,15 +44,12 @@
 body {
   font-family: var(--main-font);
   margin: 0;
-}
-
-body {
   width: fit-content;
 }
-
 html {
   scroll-behavior: smooth;
 }
+
 /* --------- TOP NAV -------- */
 /* #topNavigation, */
 #bottomNavigation {
@@ -68,9 +65,10 @@ html {
   background-attachment: fixed;
   padding: 5px;
 }
-.logo {
+#logo {
   width: 60px;
   height: 60px;
+  margin-right: 1250px;
 }
 #navBar {
   right: 0;
@@ -88,11 +86,20 @@ html {
   cursor: pointer;
   font-family: var(--main-font);
   text-decoration: none;
-  margin: 0 20px;
+  margin: 10px 20px;
+}
+/* sticky navBar */
+.changeMenu {
+  margin-inline-start: auto;
+  background-color: #2a3141;
+  /*  padding: 30px; */
+  width: 100%;
+  display: flex;
 }
 
 #navBar a:hover {
-  border-bottom: 4px solid var(--dark-blue);
+  cursor: pointer;
+  color: var(--yellow);
 }
 
 .addStyle {
@@ -727,7 +734,7 @@ html {
   grid-template-areas:
     "t1 t2 t3 t4"
     "desc1 desc2 desc3 desc4"
-    "feature1 . . .";
+    ". feature1 feature2 .";
   padding: 30px;
 }
 #bottomNavigation h5:first-of-type {
@@ -799,10 +806,10 @@ html {
   display: flex;
   justify-self: right;
   align-self: flex-end;
-  margin-right: 50px;
+  margin-right: 90px;
 }
 .conde {
-  grid-area: feature1;
+  grid-area: feature2;
 }
 
 /* --------- FAQ ---------- */
@@ -1068,6 +1075,9 @@ input#terms {
 }
 
 /* ------------ buttons ----------- */
+.bookBtn {
+  cursor: pointer;
+}
 #expandFaq {
   text-transform: uppercase;
   padding: 10px 30px;
@@ -1156,24 +1166,13 @@ select:after {
   padding-top: 102px;
 }
 
-.changeMenu {
-  /* flex-direction: column; */
-  /* margin: 50px 0; */
-  /* margin: 28px 0; */
-  margin-inline-start: auto;
-  background-color: #2a3141;
-  padding: 30px;
-  width: 100%;
-  display: flex;
-}
-
 #cardBilling {
   display: inline-flex;
 }
 /* ------------ custom validation ----------- */
-/* .valid {
+.valid {
   border: 2px solid green;
-} */
+}
 .invalid {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;

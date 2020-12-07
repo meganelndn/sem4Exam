@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 function init() {
     fetchData();
+    smoothScroll();
     setUpNewsletter();
     setUpBooking();
     weatherApp();
@@ -42,6 +43,14 @@ import { weatherCard } from "./modules/weatherCard.js";
 
 let completedForm;
 
+function smoothScroll() {
+    document.querySelector(".bookBtn").addEventListener("click", e => {
+        document.querySelector('#intro').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    })
+}
+
 function setUpNewsletter() {
     const newsForm = document.querySelector(".newsletterForm");
     newsForm.setAttribute("novalidate", true);
@@ -65,7 +74,7 @@ function sendNewsletter(){
     document.querySelector(".overlay-content2").classList.remove("show");
     document.querySelector(".overlay-content").classList.add("hideOverlay");
     document.querySelector("#newsletterBtn").addEventListener("click", function(){
-        location.reload(); 
+        /* location.reload();  */
     })
 }
 
