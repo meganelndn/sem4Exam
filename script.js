@@ -8,25 +8,26 @@ function init() {
 }
 
 function fetchData(){
-    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/contact_page/")
-    .then(res => res.json())
-    .then(showContact);
 
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/landing_page/")
     .then(res => res.json())
     .then(showLandingPage);
 
-    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/trips")
-    .then(res => res.json())
-    .then(showTrips);
-
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/tours")
     .then(res => res.json())
     .then(showTours);
 
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/trips")
+    .then(res => res.json())
+    .then(showTrips);
+
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/gallery_page/")
     .then(res => res.json())
     .then(showGalleryPage);
+
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/contact_page/")
+    .then(res => res.json())
+    .then(showContact);
 
     if (window.location.pathname.includes("faq")) {
         fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/faq/")
@@ -95,7 +96,6 @@ function setScrollPosition() {
     let header = document.querySelector(".availability");
     // let sticky = header.offsetTop - 600;
     
-    // let navBar = document.querySelector(".navBarContent");
     let book = document.querySelector("#navBar .bookBtn");
     let sticky = header.offsetTop;
     let navBar = document.querySelector("#navBar");
@@ -105,16 +105,12 @@ function setScrollPosition() {
         // book.classList.add("sticky");
         navBar.classList.add("changeMenu");
         book.classList.add("addStyle");
-        // menuVideo.classList.add("showVideo");
       } else {
         // book.classList.remove("sticky");
         navBar.classList.remove("changeMenu")
         book.classList.remove("addStyle");
-        // menuVideo.classList.remove("showVideo");
-
       }
     }
-
 }
 
 function formValidation() {
@@ -171,7 +167,6 @@ function paymentCompleted(){
         location.reload();
     });
 }
-
 
 function showLandingPage(home) {
     // 1. template clone
@@ -255,7 +250,6 @@ function showTrips(trips) {
     })
 }
 
-
 function showTours(tours) {
     // 1. template clone
     const tourTemplate = document.querySelector(".tourTemplate").content;
@@ -292,7 +286,6 @@ function showGalleryPage(gallery) {
     galleryCopy.querySelector(".i5").src = gallery[4].boat_image.guid;
 
     document.querySelector("#gallery").appendChild(galleryCopy);
-
     /*---------------Image Carousel---------------*/
     carouselEffect();
 }
@@ -311,7 +304,6 @@ function showFAQPage(faq) {
 
         //3. append
         faqArea.appendChild(cloneFAQ);
-
     })
     accordion();
     expandOptions();
@@ -417,7 +409,6 @@ function weatherApp() {
       return;
     }
   }
-
   weatherCard(form, input, msg, list, apiKey, inputVal);
   });
 }

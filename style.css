@@ -279,8 +279,12 @@ html {
 }
 #gallery-1 , #gallery-2, #gallery-3{
 column-count: 2;
-text-align: center;
 }
+
+/* .gallery-item {
+  column-span: all;
+} */
+
 .vl {
   position: absolute;
 }
@@ -868,12 +872,15 @@ text-align: center;
   position: inherit;
   bottom: 0;
   right: 0;
+  /* height: 60%; */
   background-color: #fff;
   transition: 0.8s;
 }
 .showOverlay {
-  width: 15%;
-  height: fit-content;
+  /* width: 15%;
+  height: fit-content; */
+  width: min-content;
+  height: auto;
   bottom: 0;
 }
 .overlay-content,
