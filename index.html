@@ -6,6 +6,10 @@
     <title>Hey Captain</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--- weather widget -->
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css" 
+        type="text/css"/>
 </head>
 <body>
     <div id="topNavigation">
@@ -466,8 +470,10 @@
     </section>
 
 
+    <div id="like_button_container"></div>
+
     <section id="weather">
-        
+
         <section class="top-banner">
         <!-- https://codepen.io/tutsplus/pen/gObLaEP -->
         <div class="container">
@@ -560,6 +566,16 @@
         </div>
         </div>
     </div>
+
+    <!-- npm module for weather -->
+    <script src="node_modules/react-open-weather/lib/js/ReactWeather.js"></script>
+
+    <!-- Load React -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Load our React component -->
+    <script src="like_button.js"></script>
 
     <script src="script.js"></script>
 </body>
