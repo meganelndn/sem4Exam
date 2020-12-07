@@ -65,7 +65,7 @@ function sendNewsletter(){
     document.querySelector(".overlay-content2").classList.remove("show");
     document.querySelector(".overlay-content").classList.add("hideOverlay");
     document.querySelector("#newsletterBtn").addEventListener("click", function(){
-        location.reload(); 
+        /* location.reload();  */
     })
 }
 
