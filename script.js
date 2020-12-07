@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 function init() {
     fetchData();
+    smoothScroll();
     setUpNewsletter();
     setUpBooking();
     weatherApp();
@@ -41,6 +42,14 @@ import { carouselEffect } from "./modules/imageCarousel";
 import { weatherCard } from "./modules/weatherCard.js";
 
 let completedForm;
+
+function smoothScroll() {
+    document.querySelector(".bookBtn").addEventListener("click", e => {
+        document.querySelector('#intro').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    })
+}
 
 function setUpNewsletter() {
     const newsForm = document.querySelector(".newsletterForm");
