@@ -491,15 +491,19 @@ html {
 }
 
 #singleTourArea:hover,
-#singleTourArea:focus {
+#singleTourArea:focus,
+.corona-guidelines:hover,
+.corona-guidelines:focus {
   transform: scale3d(1.05, 1.05, 1);
 }
 
-.tourTitle {
+.tourTitle,
+.corona-guidelines {
   font-family: "Brandon Text Thin";
   font-size: 16px;
 }
-.tourText {
+.tourText,
+.coronaText {
   font-family: "Brandon Text Light";
   width: 400px;
   text-align: left;
@@ -529,16 +533,27 @@ html {
   } 
 } */
 
-/* COVID */
-#corona {
-  display: flex;
-  align-items: center;
-  place-content: center;
-  flex-flow: column-reverse;
+/* -------- covid & weather container ------- */
+#two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "covid weather";
 }
 
-/* -------- WEATHER ------- */
+/* -------- covid ------- */
+#corona {
+  grid-area: covid;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  place-content: center;
+  flex-flow: column;
+  margin-left: 100px;
+}
+
+/* -------- weather ------- */
 #weather {
+  grid-area: weather;
   padding: 40px;
 }
 /* beginning of https://codepen.io/tutsplus/pen/gObLaEP code snippet */
