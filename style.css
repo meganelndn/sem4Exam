@@ -253,6 +253,7 @@ html {
 .whatWeOffer {
   text-align: center;
   color: var(--dark-blue);
+  margin-top: 70px;
 }
 
 .tripImg {

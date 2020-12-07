@@ -2,10 +2,21 @@ window.addEventListener("DOMContentLoaded", init);
 
 function init() {
     fetchData();
+    /* onScrollAnimation(); */
     smoothScroll();
     setUpNewsletter();
     setUpBooking();
     weatherApp();
+
+    window.sr = ScrollReveal({ reset: true });
+    sr.reveal("#trips", { origin: "bottom" });
+
+    /* ScrollReveal().reveal("body", "#gallery", { 
+        useDelay: "always",
+        delay: 3,
+        origin: "bottom",
+        reset: true
+    }); */
 }
 
 function fetchData(){
