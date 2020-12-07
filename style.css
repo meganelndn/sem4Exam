@@ -176,6 +176,7 @@ html {
 .introText {
   font-family: "Brandon Text Light";
   font-size: 18px;
+  display: none;
 }
 
 /* #introText {
@@ -234,18 +235,24 @@ html {
   margin: 10px 0;
   font-size: 14px;
 }
-
+#summerWinter {
+  text-align: left;
+}
 #summerWinter h3 {
   font-size: 15px;
   margin: 15px 0 0;
 }
-
 #summerWinter p {
   margin: 0;
 }
 
 #trips {
   text-align: center;
+  margin-top: 50px;
+}
+.whatWeOffer {
+  text-align: center;
+  color: var(--dark-blue);
 }
 
 .tripImg {
@@ -435,7 +442,6 @@ html {
 }
 
 /* --------- TOURS -------- */
-
 #tourArea {
   display: flex;
   justify-content: space-evenly;
@@ -444,13 +450,12 @@ html {
 
 .corona-guidelines {
   margin: 30px auto;
-  padding: 8px 20px;
+  padding: 10px 20px;
   border: none;
   border-radius: 20px;
   color: var(--dark-blue);
   cursor: pointer;
   background-color: var(--yellow);
-  color: var(--dark-blue) !important;
   cursor: pointer;
   max-width: max-content;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
@@ -489,6 +494,12 @@ html {
 #singleTourArea {
   width: 400px;
 }
+#singleTourArea:first-of-type {
+  margin-left: 370px;
+}
+#singleTourArea:last-of-type {
+  margin-right: 370px;
+}
 
 #singleTourArea:hover,
 #singleTourArea:focus,
@@ -499,7 +510,7 @@ html {
 
 .tourTitle,
 .corona-guidelines {
-  font-family: "Brandon Text Thin";
+  font-family: "Brandon Text Regular";
   font-size: 16px;
 }
 .tourText,
@@ -1217,7 +1228,6 @@ select:after {
 }
 
 /* modals */
-#corona-modal-background,
 #trip-modal-background,
 #payment-modal-background {
   display: none;
@@ -1236,7 +1246,6 @@ select:after {
   display: block !important;
 }
 
-#corona-modal-content,
 #trip-modal-content,
 #payment-modal-content {
   background: white;
@@ -1261,7 +1270,6 @@ select:after {
   text-indent: 50px;
   line-height: 1.8;
 }
-.corona-modal-close,
 .trip-modal-close,
 .payment-modal-close {
   cursor: pointer;
@@ -1270,8 +1278,6 @@ select:after {
   color: lightgray;
   float: right;
 }
-.corona-modal-close:hover,
-.corona-modal-close:focus,
 .payment-modal-close:hover,
 .payment-modal-close:focus,
 .trip-modal-close:hover,
