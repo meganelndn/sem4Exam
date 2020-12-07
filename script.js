@@ -8,25 +8,26 @@ function init() {
 }
 
 function fetchData(){
-    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/contact_page/")
-    .then(res => res.json())
-    .then(showContact);
 
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/landing_page/")
     .then(res => res.json())
     .then(showLandingPage);
 
-    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/trips")
-    .then(res => res.json())
-    .then(showTrips);
-
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/tours")
     .then(res => res.json())
     .then(showTours);
 
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/trips")
+    .then(res => res.json())
+    .then(showTrips);
+
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/gallery_page/")
     .then(res => res.json())
     .then(showGalleryPage);
+
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/contact_page/")
+    .then(res => res.json())
+    .then(showContact);
 
     if (window.location.pathname.includes("faq")) {
         fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/faq/")
@@ -35,7 +36,7 @@ function fetchData(){
     }
 }
 
-import { checkValidation, checkMailValidation, invalidNewsError, closeForm, postSubscription, invalidFormError } from "./modules/bookingSteps";
+import { checkValidation, closeForm, postSubscription } from "./modules/bookingSteps";
 import { carouselEffect } from "./modules/imageCarousel";
 import { weatherCard } from "./modules/weatherCard.js";
 
@@ -55,14 +56,17 @@ function setUpNewsletter() {
 
         document.querySelector(".newsletterSubscription").addEventListener("click", function(e){
             e.preventDefault();
-
-            
-            checkMailValidation(newsForm, newsFormEl, invalidNewsError); 
-
-            document.querySelector(".overlay-content2").classList.remove("show");
-            document.querySelector(".overlay-content").classList.add("hideOverlay");
+            checkValidation(newsForm, newsFormEl, sendNewsletter); 
         })
     });
+}
+
+function sendNewsletter(){
+    document.querySelector(".overlay-content2").classList.remove("show");
+    document.querySelector(".overlay-content").classList.add("hideOverlay");
+    document.querySelector("#newsletterBtn").addEventListener("click", function(){
+        location.reload(); 
+    })
 }
 
 function setUpBooking(){
@@ -92,7 +96,6 @@ function setScrollPosition() {
     let header = document.querySelector(".availability");
     // let sticky = header.offsetTop - 600;
     
-    // let navBar = document.querySelector(".navBarContent");
     let book = document.querySelector("#navBar .bookBtn");
     let sticky = header.offsetTop;
     let navBar = document.querySelector("#navBar");
@@ -102,16 +105,12 @@ function setScrollPosition() {
         // book.classList.add("sticky");
         navBar.classList.add("changeMenu");
         book.classList.add("addStyle");
-        // menuVideo.classList.add("showVideo");
       } else {
         // book.classList.remove("sticky");
         navBar.classList.remove("changeMenu")
         book.classList.remove("addStyle");
-        // menuVideo.classList.remove("showVideo");
-
       }
     }
-
 }
 
 function formValidation() {
@@ -169,7 +168,6 @@ function paymentCompleted(){
     });
 }
 
-
 function showLandingPage(home) {
     // 1. template clone
     const introTemplate = document.querySelector(".introTemplate").content;
@@ -226,11 +224,9 @@ function showTrips(trips) {
             document.body.style.overflow = "hidden";
             document.body.style.height = "100%"; 
             readMoreModal.querySelector(".fullDescription").textContent = oneTrip.full_description;
-            readMoreModal.querySelector(".img1").src = oneTrip.trip_image_1.guid;
-            readMoreModal.querySelector(".img2").src = oneTrip.trip_image_2.guid;
-            readMoreModal.querySelector(".img3").src = oneTrip.trip_image_3.guid;
-            readMoreModal.querySelector(".img4").src = oneTrip.trip_image_4.guid;
-            readMoreModal.querySelector(".img5").src = oneTrip.trip_image_5.guid;
+            console.log("onetrip", oneTrip.content.rendered)
+            // Gallery timeline
+            readMoreModal.querySelector("#timelineGallery").innerHTML = oneTrip.content.rendered;
             //Animate line
             const line = readMoreModal.querySelector("#line");
             let length = line.getTotalLength();
@@ -254,7 +250,6 @@ function showTrips(trips) {
     })
 }
 
-
 function showTours(tours) {
     // 1. template clone
     const tourTemplate = document.querySelector(".tourTemplate").content;
@@ -275,7 +270,6 @@ function showTours(tours) {
                 tourText.style.display = "block";
                 }
         })
-
         tourArea.appendChild(tourCopy);
     })
 }
@@ -292,7 +286,6 @@ function showGalleryPage(gallery) {
     galleryCopy.querySelector(".i5").src = gallery[4].boat_image.guid;
 
     document.querySelector("#gallery").appendChild(galleryCopy);
-
     /*---------------Image Carousel---------------*/
     carouselEffect();
 }
@@ -311,7 +304,6 @@ function showFAQPage(faq) {
 
         //3. append
         faqArea.appendChild(cloneFAQ);
-
     })
     accordion();
     expandOptions();
@@ -417,7 +409,6 @@ function weatherApp() {
       return;
     }
   }
-
   weatherCard(form, input, msg, list, apiKey, inputVal);
   });
 }

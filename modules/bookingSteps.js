@@ -14,58 +14,15 @@ export function checkValidation(form, formElements, nextStep) {
                 el.classList.add("invalid");
                 // personalDataFormValidation(elements1);
                 invalidFormError(el);
-
                 el.addEventListener("change", function(){
                     el.classList.remove("invalid");
                     invalidFormError(el);
 
                 });
-    
-
             } else {
                     el.classList.remove("invalid");
-
             }
         })
-    }
-}
-
-export function checkMailValidation(newsForm, newsFormEl) {
-
-    if (newsForm.checkValidity()) {
-        newsFormEl.forEach((newsEl) => {
-        // loop through form elements and check if are valid or not
-            if (newsEl.checkValidity()) { 
-                newsEl.classList.add("valid");
-            }
-            console.log("form is valid")
-        });
-    } else {
-        newsFormEl.forEach((newsEl) => {
-            if (!newsEl.checkValidity()) {
-                newsEl.classList.add("invalid");
-                invalidNewsError(newsEl);
-
-                console.log("form is invalid")
-
-                newsEl.addEventListener("keyup", function(){
-                    newsEl.classList.remove("invalid");
-                    invalidNewsError(newsEl);
-                });
-    
-            } else {
-                newsEl.classList.remove("invalid");
-
-            }
-        })
-    }
-}
-export function invalidNewsError(newsEl) {
-    if (newsEl == null) {
-    } else if (newsEl.classList.contains("invalid")) {
-        newsEl.classList.add("displayError");
-    } else {
-        newsEl.classList.remove("displayError");
     }
 }
 
@@ -84,18 +41,13 @@ export function closeForm() {
 }
 
 export function invalidFormError(el) {
-    // console.log(el.parentNode.nextElementSibling)
-    // console.log(el.getElementsByClassName('error'))
-    // console.log(el.next(".error"))
     if (el.parentNode.nextElementSibling == null) {
-        // console.log("el is null")
     } else if (el.classList.contains("invalid")) {
         el.parentNode.nextElementSibling.classList.add("displayError");
     } else {
         el.parentNode.nextElementSibling.classList.remove("displayError");
     }
 }
-
 
 //--------------------------------- post -----------------------------------------//
 
