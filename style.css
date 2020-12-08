@@ -1883,3 +1883,20 @@ body.modal-active {
     flex-direction: column;
   }
 }
+
+/* on scroll reveal */
+.hidden {
+  opacity: 0;
+}
+.fade-in-element {
+  animation: fade-in 1.5s;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.7, 0.7);
+  }
+  to {
+    opacity: 1;
+  }
+}

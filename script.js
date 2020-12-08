@@ -37,6 +37,36 @@ function fetchData(){
     }
 }
 
+/* https://www.dev-tips-and-tricks.com/animate-elements-scrolled-view-vanilla-js */
+(function() {
+    let elements;
+    let windowHeight;
+  
+    function start() {
+      elements = document.querySelectorAll('.hidden');
+      windowHeight = window.innerHeight;
+      _addEventHandlers();
+    }
+  
+    function checkPosition() {
+      for (let i = 0; i < elements.length; i++) {
+        let element = elements[i];
+        let positionFromTop = elements[i].getBoundingClientRect().top;
+  
+        if (positionFromTop - windowHeight <= 0) {
+          element.classList.add('fade-in-element');
+          element.classList.remove('hidden');
+        }
+      }
+    }
+  
+    window.addEventListener('scroll', checkPosition);
+    window.addEventListener('resize', start);
+  
+    start();
+    checkPosition();
+})();
+
 import { checkValidation, closeForm, postSubscription } from "./modules/bookingSteps";
 import { carouselEffect } from "./modules/imageCarousel";
 /* import { weatherCard } from "./modules/weatherCard.js"; */
