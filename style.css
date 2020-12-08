@@ -309,7 +309,19 @@ html {
   left: 50%;
 }
 #lineSvg {
-  height: 720px;
+  height: 1220px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear alternate infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 82;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .tripsTimelineImg {
