@@ -208,8 +208,8 @@ html {
 }
 
 #tripPrices {
-  font-size: 15px;
-  font-family: "Brandon Text Regular";
+  font-size: 16px;
+  font-family: "Brandon Text Bold";
   text-align: left;
 }
 #singleTripArea {
@@ -232,7 +232,7 @@ html {
 
 .duration {
   font-family: "Brandon Text Bold";
-  margin: 10px 0;
+  margin: 30px auto;
   font-size: 14px;
 }
 #summerWinter {
@@ -241,6 +241,7 @@ html {
 #summerWinter h3 {
   font-size: 15px;
   margin: 15px 0 0;
+  font-family: "Brandon Text Regular";
 }
 #summerWinter p {
   margin: 0;
@@ -253,7 +254,7 @@ html {
 .whatWeOffer {
   text-align: center;
   color: var(--dark-blue);
-  margin-top: 80px;
+  margin-top: 90px;
 }
 
 .tripImg {
@@ -449,22 +450,6 @@ html {
   flex-wrap: wrap;
 }
 
-.corona-guidelines {
-  margin: 30px auto;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  color: var(--dark-blue);
-  cursor: pointer;
-  background-color: var(--yellow);
-  cursor: pointer;
-  max-width: max-content;
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-    0 100px 80px rgba(0, 0, 0, 0.07);
-}
-
 .anchor {
   width: 70px;
   height: auto;
@@ -479,17 +464,36 @@ html {
   flex-direction: column;
   align-items: center;
   max-width: 350px;
-  box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   color: var(--light-blue);
-  border: solid 1px var(--dark-blue);
+  border: solid 1px transparent;
   border-radius: 20px;
   font-family: var(--main-font);
   transition: transform 0.5s;
   margin: 30px auto;
-  padding: 8px 20px;
+  padding: 8px 40px;
   cursor: pointer;
   max-width: max-content;
+}
+.corona-guidelines {
+  align-items: center;
+  display: flex;
+  margin: 30px auto;
+  transition: transform 0.5s;
+  flex-direction: column;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  color: var(--dark-blue);
+  cursor: pointer;
+  background-color: var(--yellow);
+  cursor: pointer;
+  max-width: max-content;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07);
 }
 
 #singleTourArea {
@@ -1660,8 +1664,8 @@ body.modal-active {
   background: var(--dark-blue);
 }
 .carousel-cell {
-  width: 70%;
-  height: 200px;
+  width: 100%;
+  /* height: 200px; */
   /* flex-box, center image in cell */
   display: -webkit-box;
   display: -webkit-flex;
@@ -1675,7 +1679,6 @@ body.modal-active {
 .carousel-cell img {
   display: block;
   max-width: 100%;
-  max-height: 100%;
   /* dim unselected */
   opacity: 0.7;
   -webkit-transform: scale(0.85);
