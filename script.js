@@ -241,11 +241,10 @@ function showTrips(trips) {
             document.body.style.overflow = "hidden";
             document.body.style.height = "100%"; 
             readMoreModal.querySelector(".fullDescription").textContent = oneTrip.full_description;
-            /* console.log("onetrip", oneTrip.content.rendered) */
             // Gallery timeline
             readMoreModal.querySelector("#timelineGallery").innerHTML = oneTrip.content.rendered;
-            //Animate line
-            const line = readMoreModal.querySelector("#line");
+            //Animate line as you scroll 
+            const line = readMoreModal.querySelector("#c");
             let length = line.getTotalLength();
             line.style.strokeDasharray = length;
             line.style.strokeDashoffset = length;

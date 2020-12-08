@@ -296,6 +296,9 @@ html {
 #gallery-3 {
   column-count: 2;
 }
+.gallery-item figcaption {
+  font-family: "Brandon Text Regular";
+}
 
 /* .gallery-item {
   column-span: all;
@@ -303,11 +306,22 @@ html {
 
 .vl {
   position: absolute;
+  left: 50%;
+}
+#lineSvg {
+  height: 1220px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear alternate infinite;
 }
 
-#lineSvg {
-  width: 1px;
-  height: 600px;
+@keyframes dash {
+  from {
+    stroke-dashoffset: 82;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .tripsTimelineImg {
@@ -1798,6 +1812,9 @@ body.modal-active {
   margin-bottom: -7px; /*Fix for safari gap*/
   min-height: 100px;
   max-height: 150px;
+}
+#waves {
+  position: relative;
 }
 
 .parallax > use {
