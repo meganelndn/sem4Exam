@@ -6,6 +6,8 @@
     <title>Hey Captain</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- flickity -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 <body>
     <div id="topNavigation">
@@ -486,9 +488,28 @@
     </section>
 
 
-    <section id="gallery" class="row">
+   <section id="gallery" class="row">
         <template class="galleryTemplate">
-            <div class="nine columns">
+            <!-- https://codepen.io/desandro/pen/jEpxqJ -->
+            <div class="carousel js-flickity">
+                <div class="carousel-cell">
+                    <img class="i1" src="" alt="">
+                </div>
+                <div class="carousel-cell">
+                    <img class="i2" src="" alt="">
+                </div>
+                <div class="carousel-cell">
+                    <img class="i3" src="" alt="">
+                </div>
+                <div class="carousel-cell">
+                    <img class="i4" src="" alt="">
+                </div>
+                <div class="carousel-cell">
+                    <img class="i5" src="" alt="">
+                </div>
+            </div>
+
+            <!-- <div class="nine columns">
                 <div id="galleryImg" class="coverflow top10 bot10">
                     <a class="prev-arrow"></a>
                     <a href=""><img class="galleryImg i1 coverflow__image" src="" alt=""></a>
@@ -498,7 +519,7 @@
                     <a href=""><img class="galleryImg i5 coverflow__image" src="" alt=""></a>
                     <a href=""><a class="next-arrow"></a>
                 </div>
-            </div>
+            </div> -->
         </template>
     </section>
 
@@ -560,6 +581,9 @@
         </div>
         </div>
     </div>
+
+    <!-- flickity -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
     <script src="script.js"></script>
 </body>
