@@ -29,28 +29,27 @@
             <div id="videoWrapper">
                 <video class="video-container" src="" preload="auto" autoplay="true" loop="loop" muted="muted" onclick="this.paused? this.play() : this.pause()"></video>
             </div>
-<div style="position: relative;">
-    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-    <defs>
-    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-    </defs>
-    <g class="parallax">
-    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-    </g>
-    </svg>
-    </div>
-    <!--Waves end-->
-            <div id="introText">
+
+            <div id="waves">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+        <!--Waves end-->
+        <div id="introText">
 
                 <h3 class="introTitle"></h3>
                 <p class="introText"></p>
-            </div>
+        </div>
         </template>
-
     </section>
 
     <!-- booking form -->
@@ -434,10 +433,19 @@
                         <div id="timelineGallery"></div>
 
                         <div class="vl">
-                            <svg id="lineSvg">
+                            <!-- <svg id="lineSvg">
                                 <path fill="none" stroke="black" stroke-width="1" d="M0 0 L0 1000" id="line" />
-                              </svg> 
-                        </div>
+                            </svg>  -->
+                
+                        <svg id="lineSvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300">
+                            <g stroke-width="1" fill="none" stroke="#000">
+                                <path id="c" d="M0 0 L0 1000"></path>
+                            </g>
+
+                            <!-- curved line: d="m75,75q-25,25 0,50 25,25 0,50-25,25 0,50" -->
+                        </svg>
+
+                        </div> 
 
                     </div>
                 </div>

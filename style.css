@@ -296,6 +296,9 @@ html {
 #gallery-3 {
   column-count: 2;
 }
+.gallery-item figcaption {
+  font-family: "Brandon Text Regular";
+}
 
 /* .gallery-item {
   column-span: all;
@@ -303,11 +306,10 @@ html {
 
 .vl {
   position: absolute;
+  left: 50%;
 }
-
 #lineSvg {
-  width: 1px;
-  height: 600px;
+  height: 720px;
 }
 
 .tripsTimelineImg {
@@ -1798,6 +1800,9 @@ body.modal-active {
   margin-bottom: -7px; /*Fix for safari gap*/
   min-height: 100px;
   max-height: 150px;
+}
+#waves {
+  position: relative;
 }
 
 .parallax > use {
