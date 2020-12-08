@@ -60,6 +60,7 @@ function setUpNewsletter() {
     document.querySelector("#newsletterBtn").addEventListener("click", function(){
         let newsletterOverlay = document.getElementById("newsletterOverlay");
         newsletterOverlay.classList.toggle("showOverlay");
+        newsletterOverlay.classList.toggle("newsletterAnimation");
 
         document.querySelector(".overlay-content").classList.remove("hideOverlay");
 
@@ -74,7 +75,8 @@ function sendNewsletter(){
     document.querySelector(".overlay-content2").classList.remove("show");
     document.querySelector(".overlay-content").classList.add("hideOverlay");
     document.querySelector("#newsletterBtn").addEventListener("click", function(){
-        /* location.reload();  */
+        document.querySelector(".showOverlay").classList.add("newsletterAnimation");
+        location.reload(); 
     })
 }
 
