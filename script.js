@@ -60,9 +60,9 @@ function setUpNewsletter() {
     document.querySelector("#newsletterBtn").addEventListener("click", function(){
         let newsletterOverlay = document.getElementById("newsletterOverlay");
         newsletterOverlay.classList.toggle("showOverlay");
+        newsletterOverlay.classList.toggle("newsletterAnimation");
 
         document.querySelector(".overlay-content").classList.remove("hideOverlay");
-        document.querySelector(".showOverlay").classList.add("newsletterAnimation");
 
         document.querySelector(".newsletterSubscription").addEventListener("click", function(e){
             e.preventDefault();
@@ -75,6 +75,7 @@ function sendNewsletter(){
     document.querySelector(".overlay-content2").classList.remove("show");
     document.querySelector(".overlay-content").classList.add("hideOverlay");
     document.querySelector("#newsletterBtn").addEventListener("click", function(){
+        document.querySelector(".showOverlay").classList.add("newsletterAnimation");
         location.reload(); 
     })
 }

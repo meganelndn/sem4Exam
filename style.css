@@ -926,7 +926,10 @@ html {
 }
 #newsletterMail {
   width: -webkit-fill-available;
-  text-align-last: left;
+  text-align-last: center;
+}
+.newsletterForm .error {
+  background: rgba(0, 0, 0, 0.1);
 }
 .newsletterImg {
   width: 150px;
