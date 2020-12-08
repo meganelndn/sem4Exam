@@ -416,14 +416,19 @@
                     <p class="private">Private: <span></span></p>
                 </div>
       
-                <button class="readMoreTrip"><span>Details</span></button>
+                <div class="button readMoreTrip" id="sketch"><span>Details</span></div>
             </div>
 
             <!-- modal -->
-            <div id="trip-modal-background">
-                <div id="trip-modal-content">
+            <div id="modal-container">
+            <div id="trip-modal-background" class="modal-background">
+                <div id="trip-modal-content" class="modal">
                     <button class="trip-modal-close">CLOSE</button>
+                    <!-- <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+                        <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+                    </svg> -->
                     <p class="fullDescription"></p>
+                    
                     <div id="timelineArea">
 
                         <div id="timelineGallery"></div>
@@ -437,6 +442,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </template>
         <div id="tripArea"></div>
 

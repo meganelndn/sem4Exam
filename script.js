@@ -230,13 +230,16 @@ function showTrips(trips) {
         tripCopy.querySelector(".private span").textContent = oneTrip.private_tour_price;
         //modal content
         tripCopy.querySelector(".readMoreTrip").addEventListener("click", function(){
+
+            /* document.querySelector('body').classList.add('modal-active');  */
+
             const readMoreModal = document.querySelector("#trip-modal-background");
             readMoreModal.classList.add("showModal"); 
             //Prevent Body scroll
             document.body.style.overflow = "hidden";
             document.body.style.height = "100%"; 
             readMoreModal.querySelector(".fullDescription").textContent = oneTrip.full_description;
-            console.log("onetrip", oneTrip.content.rendered)
+            /* console.log("onetrip", oneTrip.content.rendered) */
             // Gallery timeline
             readMoreModal.querySelector("#timelineGallery").innerHTML = oneTrip.content.rendered;
             //Animate line
