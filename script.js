@@ -6,6 +6,7 @@ function init() {
     setUpNewsletter();
     setUpBooking();
     weatherApp();
+    translate();
 }
 
 function fetchData(){
@@ -396,4 +397,22 @@ function showContact(contact) {
 }
 
 function weatherApp() {
+}
+
+function translate() {
+    /* https://rapidapi.com/googlecloud/api/google-translate1?endpoint=apiendpoint_a5764907-04b6-4d61-869b-79dc5325c739 */
+    fetch("https://google-translate1.p.rapidapi.com/language/translate/v2/languages", {
+	"method": "GET",
+	"headers": {
+		"accept-encoding": "application/gzip",
+		"x-rapidapi-key": "edb51fc423mshd23952f2956b3a3p1c420djsn493a47a4918b",
+		"x-rapidapi-host": "google-translate1.p.rapidapi.com"
+	}
+    })
+    .then(response => {
+	console.log(response);
+    })
+    .catch(err => {
+	console.error(err);
+    });
 }
