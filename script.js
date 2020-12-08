@@ -287,6 +287,17 @@ function showTours(tours) {
 }
 
 function showGalleryPage(gallery) {
+    var elem = document.querySelector('.js-flickity');
+    var flkty = new Flickity( elem, {
+        // options
+        cellAlign: 'left',
+        contain: true
+    });
+    //   for an individual element
+    var flkty = new Flickity( '.js-flickity', {
+        // options
+    }); 
+
     // 1. template clone
     const galleryTemplate = document.querySelector(".galleryTemplate").content;
     const galleryCopy = galleryTemplate.cloneNode(true);
@@ -299,7 +310,7 @@ function showGalleryPage(gallery) {
 
     document.querySelector("#gallery").appendChild(galleryCopy);
     /*---------------Image Carousel---------------*/
-    carouselEffect();
+    /* carouselEffect(); */
 }
 
 function showFAQPage(faq) {

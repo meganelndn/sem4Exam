@@ -4,6 +4,7 @@
   "description": "Final MMD Exam",
   "main": "script.js",
   "dependencies": {
+    "flickity": "^2.2.1",
     "gsap": "^3.5.1",
     "slick-carousel": "^1.8.1"
   },
