@@ -282,8 +282,11 @@ function showTours(tours) {
         tourCopy.querySelector(".tourTitle").addEventListener("click", function(){
             if (tourText.style.display === "block") {
                 tourText.style.display = "none";
+                document.querySelector("#boatSvg").classList.add("show");
                 } else {
                 tourText.style.display = "block";
+                document.querySelector("#boatSvg").classList.remove("show");
+                document.querySelector("#boatSvg").classList.add("boatAnimation"); 
                 }
         })
         tourArea.appendChild(tourCopy);
