@@ -323,16 +323,24 @@ html {
   }
 }
 #boatSvg {
-  left: 30%;
-  top: 115%;
-  width: 300px;
-  transform: rotate(-25deg);
+  left: -10%;
+  top: 110%;
+  width: 600px;
+  /* transform: rotate(-15deg); */
+  position: absolute;
+}
+#boatSvg2 {
+  right: -10%;
+  top: 110%;
+  width: 600px;
+  transform: scaleX(-1);
   position: absolute;
 }
 .boatAnimation {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
-  animation: draw 5s linear forwards infinite;
+  animation: draw 5s linear forwards;
+  /* animation-delay: 0.5s; */
 }
 @keyframes draw {
   to {
@@ -528,12 +536,6 @@ html {
 
 #singleTourArea {
   width: 400px;
-}
-#singleTourArea:first-of-type {
-  margin-left: 370px;
-}
-#singleTourArea:last-of-type {
-  margin-right: 370px;
 }
 
 #singleTourArea:hover,

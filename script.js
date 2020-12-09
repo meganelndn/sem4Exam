@@ -313,11 +313,16 @@ function showTours(tours) {
         tourCopy.querySelector(".tourTitle").addEventListener("click", function(){
             if (tourText.style.display === "block") {
                 tourText.style.display = "none";
+
                 document.querySelector("#boatSvg").classList.add("show");
+                document.querySelector("#boatSvg2").classList.add("show");
                 } else {
                 tourText.style.display = "block";
+
                 document.querySelector("#boatSvg").classList.remove("show");
                 document.querySelector("#boatSvg").classList.add("boatAnimation"); 
+                document.querySelector("#boatSvg2").classList.remove("show");
+                document.querySelector("#boatSvg2").classList.add("boatAnimation"); 
                 }
         })
         tourArea.appendChild(tourCopy);
