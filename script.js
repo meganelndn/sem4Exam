@@ -307,24 +307,48 @@ function showTours(tours) {
     tours.forEach((oneTour) => {
         const tourCopy = tourTemplate.cloneNode(true);
 
-        tourCopy.querySelector(".tourImg").src = oneTour.tour_image.guid;
         tourCopy.querySelector(".tourTitle").textContent = oneTour.title.rendered;
         const tourText = tourCopy.querySelector(".tourText");
         tourText.textContent = oneTour.description;
+
         //Expand single tour
         tourCopy.querySelector(".tourTitle").addEventListener("click", function(){
             if (tourText.style.display === "block") {
                 tourText.style.display = "none";
-
                 document.querySelector("#boatSvg").classList.add("show");
-                document.querySelector("#boatSvg2").classList.add("show");
+
+                /* if (document.querySelector(".tourTitle:first-of-type").checked = false) {
+                    document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
+                    document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
+                } else if (document.querySelector(".tourTitle:last-of-type").checked = false) {
+                    document.querySelector("#boatSvg2").classList.remove("show");
+                    document.querySelector("#boatSvg2").classList.add("boatAnimation"); 
+                    document.querySelector("#singleTripArea:first-of-type").classList.add("flashAnimation"); 
+                } */
+
+                document.querySelector("#boatSvg").classList.remove("boatAnimation"); 
+                document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
+                document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
                 } else {
                 tourText.style.display = "block";
 
+                /* oneTour.addEventListener("click", function(){
+                    if (document.querySelector(".tourTitle:first-of-type").checked == true) {
+                        document.querySelector("#boatSvg").classList.remove("show");
+                        document.querySelector("#boatSvg").classList.add("boatAnimation"); 
+                        document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
+                        document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation"); 
+                    } else if (document.querySelector(".tourTitle:last-of-type").checked == true) {
+                        document.querySelector("#boatSvg2").classList.remove("show");
+                        document.querySelector("#boatSvg2").classList.add("boatAnimation"); 
+                        document.querySelector("#singleTripArea:first-of-type").classList.add("flashAnimation"); 
+                    }  
+                }); */
+                  
                 document.querySelector("#boatSvg").classList.remove("show");
                 document.querySelector("#boatSvg").classList.add("boatAnimation"); 
-                document.querySelector("#boatSvg2").classList.remove("show");
-                document.querySelector("#boatSvg2").classList.add("boatAnimation"); 
+                document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
+                document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation");  
                 }
         })
         tourArea.appendChild(tourCopy);

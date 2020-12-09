@@ -217,6 +217,11 @@ html {
   flex-flow: column nowrap;
   max-width: fit-content;
   margin: 0 20px;
+  padding: 20px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07);
 }
 
 .tripTitle {
@@ -326,13 +331,12 @@ html {
   left: -10%;
   top: 110%;
   width: 600px;
-  /* transform: rotate(-15deg); */
   position: absolute;
 }
 #boatSvg2 {
   right: -10%;
   top: 110%;
-  width: 600px;
+  width: 700px;
   transform: scaleX(-1);
   position: absolute;
 }
@@ -340,11 +344,27 @@ html {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
   animation: draw 5s linear forwards;
-  /* animation-delay: 0.5s; */
+  animation-delay: 0.4s;
 }
 @keyframes draw {
   to {
     stroke-dashoffset: 0;
+  }
+}
+.flashAnimation {
+  animation: flash linear 1.5s forwards;
+  animation-delay: 5s;
+}
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+    background: rgba(217, 240, 247, 0.4);
   }
 }
 
