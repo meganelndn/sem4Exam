@@ -498,24 +498,23 @@
 
 
     <section id="weather">
-        
-        <section class="top-banner">
-        <!-- https://codepen.io/tutsplus/pen/gObLaEP -->
-        <div class="container">
-            <h1 class="heading">Weather forecast</h1>
-            <form>
-              <input class="weatherInput" type="text" placeholder="Search for a city" autofocus>
-              <button class="weatherBtn" type="submit">SUBMIT</button>
-              <span class="msg"></span>
-            </form>
-          </div>
-        </section>
-        <section class="ajax-section">
-          <div class="container">
-            <ul class="cities"></ul>
-          </div>
-        </section>
-        
+        <template>
+        <h1 class="location"></h1>
+        <div class="wind">
+            <p class="deg">Wind degrees <span></span></p>
+            <p class="speed">wind speed <span></span></p>
+        </div>
+        <div class="temperature">
+            <p class="main">Now: <span></span></p>
+            <p class="min">Min: <span></span></p>
+            <p class="max">Max: <span></span></p>
+        </div>
+        <div class="detail">
+            <p class="status"></p>
+        </div>
+        </template>
+
+        <div id="weatherArea"></div>
     </section>
 
     </section>

@@ -18,6 +18,9 @@ function init() {
     // const urlGallery = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/gallery_page/";
     // fetchData(urlGallery, showGalleryPage);
 
+    const weatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=Copenhagen,DK,&appid=675db572aaf339884c450ef6bc2a87f6&units=metric";
+    fetchData(weatherUrl, weatherApp)
+
     const urlContact = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/contact_page/";
     fetchData(urlContact, showContact);
     
@@ -431,5 +434,28 @@ function showContact(contact) {
     document.querySelector("#bottomNavigation").appendChild(contactCopy);
 }
 
-function weatherApp() {
+function weatherApp(weather) {
+     // 1. template clone
+     const template = document.querySelector("#weather template").content;
+     const weatherArea = document.querySelector("#weatherArea");
+
+     const copy = template.cloneNode(true);
+     
+    // console.log(weather)
+    copy.querySelector(".location").textContent = weather.name;
+    copy.querySelector(".wind .deg span").textContent = weather.wind.deg;
+    copy.querySelector(".wind .speed span").textContent = weather.wind.speed;
+    copy.querySelector(".temperature .main span").textContent = weather.main.temp;
+    copy.querySelector(".temperature .min span").textContent = weather.main.temp_min;
+    copy.querySelector(".temperature .max span").textContent = weather.main.temp_max;
+
+    //it can be more than one:
+    weather.weather.forEach((item) => {
+             copy.querySelector(".detail .status").textContent = item.description;
+
+    });
+
+    weatherArea.appendChild(copy)
+    
 }
+
