@@ -130,7 +130,7 @@ html {
 
 .video-container {
   object-fit: cover;
-  max-height: 850px;
+  max-height: 800px;
   width: 100%;
   /* filter: contrast(80%); */
   /* filter: brightness(0.6); */
