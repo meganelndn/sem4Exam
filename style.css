@@ -517,7 +517,8 @@ html {
 .corona-guidelines {
   align-items: center;
   display: flex;
-  margin: 30px auto;
+  /* margin: 30px auto; */
+  margin: 0;
   transition: transform 0.5s;
   flex-direction: column;
   padding: 10px 20px;
@@ -583,9 +584,12 @@ html {
 
 /* -------- covid & weather container ------- */
 #two-columns {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "covid weather";
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* grid-template-areas: "covid weather"; */
+  margin-bottom: 50px;
 }
 
 /* -------- covid ------- */
@@ -596,197 +600,56 @@ html {
   align-items: center;
   place-content: center;
   flex-flow: column;
-  margin-left: 100px;
+  margin: 0 40px;
+  align-self: start;
+  /* margin-left: 100px; */
 }
 
 /* -------- weather ------- */
 #weather {
-  grid-area: weather;
-  padding: 40px;
+  display: flex;
+  flex-direction: column;
 }
-/* beginning of https://codepen.io/tutsplus/pen/gObLaEP code snippet */
-.weatherBtn {
-  cursor: pointer;
-  font-family: var(--body-font);
-  padding: 8px 20px;
-  border-radius: 5px;
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-    0 100px 80px rgba(0, 0, 0, 0.07);
+#weatherArea {
+  display: inline-table;
+  flex-flow: column;
+  width: 300px;
+  margin: 0 40px;
+  text-align: center;
+  background-color: var(--light-beige);
 }
-.weatherInput {
-  -webkit-appearance: none;
-  text-align-last: left;
-  font-size: 18px;
-}
-.weatherBtn,
-.weatherInput {
-  border: none;
-  background: none;
-  outline: none;
-}
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+#weatherResult {
+  display: inline-table;
+  margin: 0 40px;
+  width: 300px;
 }
 
-/* SECTION #1
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.top-banner {
-  color: var(--dark-blue);
+#weatherArea .main {
+  font-size: xxx-large;
+  margin: 10px;
 }
-.heading {
-  font-weight: bold;
-  font-size: 28px;
-  letter-spacing: 0.02em;
-  padding: 0 0 20px 0;
+
+.minMax {
+  display: flex;
+  align-content: center;
+  place-content: center;
 }
-.top-banner form {
-  position: relative;
+
+.minMax p, .wind img, .wind p {
+  padding: 16px 5px;
+  margin: 0;
+}
+
+.wind {
   display: flex;
   align-items: center;
-}
-.top-banner form .weatherInput {
-  padding: 5px 5px 10px;
-  border-bottom: 1px solid;
-}
-.top-banner form .weatherInput::placeholder {
-  color: currentColor;
-}
-.top-banner form .weatherBtn {
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  padding: 10px 20px;
-  margin-left: 15px;
-  border-radius: 20px;
-  background: var(--light-blue);
-  color: #fff;
-  transition: 0.3s ease-in-out;
-}
-.top-banner form .weatherBtn:hover {
-  background: var(--dark-blue);
-}
-.top-banner form .msg {
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  max-width: 450px;
-  min-height: 40px;
+  place-content: center;
 }
 
-/* SECTION #2
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.ajax-section {
-  margin: 70px 0 20px;
+.wind img {
+  width: auto;
+  height: 15px;
 }
-.ajax-section .city {
-  position: relative;
-  padding: 40px 10%;
-  border-radius: 20px;
-  background: var(--light-beige);
-  color: var(--light-blue);
-}
-.ajax-section .cities {
-  display: grid;
-  grid-gap: 32px 20px;
-  grid-template-columns: repeat(4, 1fr);
-  padding-left: 0;
-}
-.container ul {
-  list-style: none;
-}
-.ajax-section .city::after {
-  content: "";
-  width: 90%;
-  height: 50px;
-  position: absolute;
-  bottom: -12px;
-  left: 5%;
-  z-index: -1;
-  opacity: 0.3;
-  border-radius: 20px;
-  background: var(--light-blue);
-}
-.ajax-section figcaption {
-  margin-top: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.ajax-section .city-temp {
-  font-size: 5rem;
-  font-weight: bold;
-  margin-top: 10px;
-  color: var(--text_dark);
-}
-.ajax-section .city sup {
-  font-size: 0.5em;
-}
-.ajax-section .city-name sup {
-  padding: 0.2em 0.6em;
-  border-radius: 30px;
-  color: #000;
-  background: var(--yellow);
-}
-.ajax-section .city-icon {
-  margin-top: 10px;
-  width: 100px;
-  height: 100px;
-}
-
-/* Media Queries */
-@media screen and (max-width: 1000px) {
-  body {
-    padding: 30px;
-  }
-
-  .ajax-section .cities {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .heading,
-  .ajax-section .city-temp {
-    font-size: 3rem;
-  }
-  .ajax-section {
-    margin-top: 20px;
-  }
-  .top-banner form {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .top-banner form .weatherInput,
-  .top-banner form .weatherBtn {
-    width: 100%;
-  }
-  .top-banner form .weatherBtn {
-    margin: 20px 0 0 0;
-  }
-  .top-banner form .msg {
-    position: static;
-    max-width: none;
-    min-height: 0;
-    margin-top: 10px;
-  }
-  .ajax-section .cities {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 500px) {
-  body {
-    padding: 15px;
-  }
-  .ajax-section .cities {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-/* end of https://codepen.io/tutsplus/pen/gObLaEP code snippet */
 
 /* --------- BOTTOM NAV -------- */
 #bottomNavigation {
@@ -1191,7 +1054,7 @@ input#terms {
   cursor: pointer;
 }
 .toPayment,
-.weatherBtn .toReceipt,
+.toReceipt,
 .newsletterSubscription {
   margin-right: 0;
   font-size: 14px;

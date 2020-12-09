@@ -71,7 +71,6 @@ import { checkValidation, closeForm, postSubscription } from "./modules/bookingS
 import { fetchData } from "./modules/shared";
 
 import { carouselEffect } from "./modules/imageCarousel";
-/* import { weatherCard } from "./modules/weatherCard.js"; */
 
 let completedForm;
 
@@ -443,19 +442,28 @@ function weatherApp(weather) {
      
     // console.log(weather)
     copy.querySelector(".location").textContent = weather.name;
-    copy.querySelector(".wind .deg span").textContent = weather.wind.deg;
     copy.querySelector(".wind .speed span").textContent = weather.wind.speed;
     copy.querySelector(".temperature .main span").textContent = weather.main.temp;
     copy.querySelector(".temperature .min span").textContent = weather.main.temp_min;
     copy.querySelector(".temperature .max span").textContent = weather.main.temp_max;
-
     //it can be more than one:
     weather.weather.forEach((item) => {
              copy.querySelector(".detail .status").textContent = item.description;
 
     });
 
+    console.log(weather.main.temp)
+    //text info
+    document.querySelector("#weatherResult h1").textContent = "";
+    document.querySelector("#weatherResult p").textContent = "";
+    if (weather.main.temp < 5) {
+        console.log("its less than 5deg.")
+        document.querySelector("#weatherResult h1").textContent = "Don't forget your coat!";
+        document.querySelector("#weatherResult p").textContent = "its less than 5deg.";
+    } else if (weather.main.temp > 5) {
+        console.log("its more than 5deg.")
+    }
+
     weatherArea.appendChild(copy)
-    
 }
 

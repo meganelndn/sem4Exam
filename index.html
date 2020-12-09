@@ -475,10 +475,10 @@
 
     </div>
 
+    <div id="customiseYourOwn" class="hidden">
+        <h3>To customise your own private tour<a href="mailto:info@heycaptain.dk?subject=Customise your own private tour">Email Us</a></h3>
+    </div>
 
-        <div id="customiseYourOwn" class="hidden">
-            <h3>To customise your own private tour<a href="mailto:info@heycaptain.dk?subject=Customise your own private tour">Email Us</a></h3>
-        </div>
 
         <div id="wheel" class="hidden">
             <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/wheel.png" alt="" class="wheel">
@@ -488,33 +488,42 @@
 
     <section id="two-columns" class="hidden">
     
+  
+
+
+    <section id="weather">
+        <template>
+        <h1 class="location"></h1>
+        <div class="detail">
+            <p class="status"></p>
+        </div>
+        <div class="temperature">
+            <p class="main"><span></span>°</p>
+            <div class="minMax">
+                <p class="min">Min.<span></span></p>
+                <p class="max">Max.<span></span></p>
+            </div>
+        </div>
+        <div class="wind">
+            <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/wind.png" alt="">
+            <p class="speed"><span></span> km/h</p>
+        </div>
+        </template>
+
+        <div id="weatherArea"></div>
+        <div id="weatherResult">
+            <h1></h1>
+            <p></p>
+        </div>
+    </section>
+
+
     <section id="corona">
         <h2 class="corona-guidelines">Read our COVID guidelines - safe outdoor activity</h2>
         <p class="coronaText"></p>
         
         <!-- <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/anchor.png" alt="" class="anchor"> -->
        
-    </section>
-
-
-    <section id="weather">
-        <template>
-        <h1 class="location"></h1>
-        <div class="wind">
-            <p class="deg">Wind degrees <span></span></p>
-            <p class="speed">wind speed <span></span></p>
-        </div>
-        <div class="temperature">
-            <p class="main">Now: <span></span></p>
-            <p class="min">Min: <span></span></p>
-            <p class="max">Max: <span></span></p>
-        </div>
-        <div class="detail">
-            <p class="status"></p>
-        </div>
-        </template>
-
-        <div id="weatherArea"></div>
     </section>
 
     </section>
