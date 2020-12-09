@@ -1,73 +1,72 @@
 window.addEventListener("DOMContentLoaded", init);
+import 'regenerator-runtime/runtime'
 
 function init() {
-    fetchData();
-    smoothScroll();
+   
+    // weatherApp();
+
+    if (window.location.pathname.includes("index")) {
+    const urlHome = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/landing_page/";
+    fetchData(urlHome, showLandingPage);
+
+    const urlTours = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/tours";
+    fetchData(urlTours, showTours);
+
+    const urlTrips = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/trips";
+    fetchData(urlTrips, showTrips);
+
+    // const urlGallery = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/gallery_page/";
+    // fetchData(urlGallery, showGalleryPage);
+
+    const urlContact = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/contact_page/";
+    fetchData(urlContact, showContact);
+    
     setUpNewsletter();
     setUpBooking();
-    weatherApp();
-}
-
-function fetchData(){
-
-    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/landing_page/")
-    .then(res => res.json())
-    .then(showLandingPage);
-
-    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/tours")
-    .then(res => res.json())
-    .then(showTours);
-
-    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/trips")
-    .then(res => res.json())
-    .then(showTrips);
-
-    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/gallery_page/")
-    .then(res => res.json())
-    .then(showGalleryPage);
-
-    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/contact_page/")
-    .then(res => res.json())
-    .then(showContact);
-
-    if (window.location.pathname.includes("faq")) {
-        fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/faq/")
-        .then(res => res.json())
-        .then(showFAQPage);
+    setScrollPosition();
+    
+    } else if (window.location.pathname.includes("faq")) {
+    
+        const urlFaq = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/faq/";
+        fetchData(urlFaq, showFAQPage);
     }
+
+    setUpScrollEffect();
 }
+
 
 /* https://www.dev-tips-and-tricks.com/animate-elements-scrolled-view-vanilla-js */
-(function() {
+function setUpScrollEffect(){
     let elements;
     let windowHeight;
   
+    elements = document.querySelectorAll('.hidden');
     function start() {
-      elements = document.querySelectorAll('.hidden');
       windowHeight = window.innerHeight;
-      _addEventHandlers();
+    //   _addEventHandlers();
     }
-  
+    
     function checkPosition() {
-      for (let i = 0; i < elements.length; i++) {
-        let element = elements[i];
-        let positionFromTop = elements[i].getBoundingClientRect().top;
-  
-        if (positionFromTop - windowHeight <= 0) {
-          element.classList.add('fade-in-element');
-          element.classList.remove('hidden');
+        for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+            let positionFromTop = elements[i].getBoundingClientRect().top;
+            
+            if (positionFromTop - windowHeight <= 0) {
+                element.classList.add('fade-in-element');
+                element.classList.remove('hidden');
+            }
         }
-      }
     }
+    checkPosition();
+    start();
   
     window.addEventListener('scroll', checkPosition);
     window.addEventListener('resize', start);
-  
-    start();
-    checkPosition();
-})();
+}
 
 import { checkValidation, closeForm, postSubscription } from "./modules/bookingSteps";
+import { fetchData } from "./modules/shared";
+
 import { carouselEffect } from "./modules/imageCarousel";
 /* import { weatherCard } from "./modules/weatherCard.js"; */
 
@@ -128,7 +127,7 @@ function setUpBooking(){
         }
     })
     formValidation();
-    setScrollPosition();
+    smoothScroll();
 }
 
 function setScrollPosition() {
@@ -226,6 +225,8 @@ function showLandingPage(home) {
     buildCovidInfo(home[0].corona_text);
     // 3. append
     document.querySelector("#intro").appendChild(introCopy);
+
+    setUpScrollEffect()
 }
 
 function buildCovidInfo(covid){
@@ -323,32 +324,32 @@ function showTours(tours) {
     })
 }
 
-function showGalleryPage(gallery) {
-    var elem = document.querySelector('.js-flickity');
-    var flkty = new Flickity( elem, {
-        // options
-        cellAlign: 'left',
-        contain: true
-    });
-    //   for an individual element
-    var flkty = new Flickity( '.js-flickity', {
-        // options
-    }); 
+// function showGalleryPage(gallery) {
+//     var elem = document.querySelector('.js-flickity');
+//     var flkty = new Flickity( elem, {
+//         // options
+//         cellAlign: 'left',
+//         contain: true
+//     });
+//     //   for an individual element
+//     var flkty = new Flickity( '.js-flickity', {
+//         // options
+//     }); 
 
-    // 1. template clone
-    const galleryTemplate = document.querySelector(".galleryTemplate").content;
-    const galleryCopy = galleryTemplate.cloneNode(true);
+//     // 1. template clone
+//     const galleryTemplate = document.querySelector(".galleryTemplate").content;
+//     const galleryCopy = galleryTemplate.cloneNode(true);
     
-    galleryCopy.querySelector(".i1").src = gallery[0].boat_image.guid;
-    galleryCopy.querySelector(".i2").src = gallery[1].boat_image.guid;
-    galleryCopy.querySelector(".i3").src = gallery[2].boat_image.guid;
-    galleryCopy.querySelector(".i4").src = gallery[3].boat_image.guid;
-    galleryCopy.querySelector(".i5").src = gallery[4].boat_image.guid;
+//     galleryCopy.querySelector(".i1").src = gallery[0].boat_image.guid;
+//     galleryCopy.querySelector(".i2").src = gallery[1].boat_image.guid;
+//     galleryCopy.querySelector(".i3").src = gallery[2].boat_image.guid;
+//     galleryCopy.querySelector(".i4").src = gallery[3].boat_image.guid;
+//     galleryCopy.querySelector(".i5").src = gallery[4].boat_image.guid;
 
-    document.querySelector("#gallery").appendChild(galleryCopy);
-    /*---------------Image Carousel---------------*/
-    /* carouselEffect(); */
-}
+//     document.querySelector("#gallery").appendChild(galleryCopy);
+//     /*---------------Image Carousel---------------*/
+//     /* carouselEffect(); */
+// }
 
 function showFAQPage(faq) {
     // 1. template clone
