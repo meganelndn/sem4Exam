@@ -481,22 +481,36 @@
 
 
     <section id="weather">
-        <template>
-        <h1 class="location"></h1>
-        <div class="detail">
-            <p class="status"></p>
-        </div>
-        <div class="temperature">
-            <p class="main"><span></span>°</p>
-            <div class="minMax">
+        <template id="weatherTemplate">
+            <h1 class="location"></h1>
+            <div class="dateTime">
+                <img class="weatherCal" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/icon-calendar.png" alt="">
+                <p class="dt"></p>
+            </div>
+            <div class="temperature">
+                <p class="main"><span></span>°</p>
+                <img class="weatherIcon" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png" alt="">
+            <!-- <div class="minMax">
                 <p class="min">Min.<span></span></p>
                 <p class="max">Max.<span></span></p>
+            </div> -->
             </div>
-        </div>
-        <div class="wind">
-            <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/wind.png" alt="">
-            <p class="speed"><span></span> km/h</p>
-        </div>
+            <div id="weatherDetails">
+                <div class="feelsLike">
+                    <p class="feeling"><span></span>°</p>
+                </div>
+                <div class="humid">
+                    <p class="humidity"><span></span> %</p>
+                </div>
+                <div class="wind">
+                    <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/wind.png" alt="">
+                    <p class="speed"><span></span> km/h</p>
+                </div>
+                <!-- <div class="detail">
+                    <p class="status"></p>
+                </div> -->
+            </div>
+            <div class="bottomSection"></div>
         </template>
 
         <div id="weatherArea"></div>
