@@ -457,7 +457,6 @@ html {
 .readMoreTrip span:after {
   content: "\00bb";
   position: absolute;
-  font-size: 26px;
   opacity: 0;
   top: 0;
   right: -20px;
@@ -710,17 +709,17 @@ html {
   color: var(--dark-blue);
   display: flex;
   flex-flow: column nowrap;
-  width: 500px;
+  width: 400px;
   margin: 0 40px;
   padding: 40px 40px 60px 40px;
   border-radius: 15px;
   box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2);
 }
 .weatherIcon {
-  width: 150px;
-  height: 120px;
-  float: right;
-  margin-left: auto;
+  width: 130px;
+  height: 100px;
+  position: absolute;
+  left: 40%;
 }
 #weatherResult {
   /* display: inline-table; */
@@ -738,8 +737,8 @@ html {
   font-size: 22px;
 }
 .temperature {
-  display: inline-flex;
-  margin-bottom: 5px;
+  /* display: inline-flex; */
+  margin-top: 0;
 }
 #weatherArea h1.location {
   font-size: 24px;
@@ -747,9 +746,9 @@ html {
   margin: 0 0 10px 0;
 }
 #weatherArea .main {
-  font-size: 50px;
+  font-size: 60px;
   font-family: "Proxima Nova Bold";
-  margin: 20px 0;
+  margin: 20px 0 0 0;
 }
 #weatherArea .dateTime {
   color: #949494;
@@ -776,20 +775,28 @@ html {
   padding: 16px 5px;
   margin: 0;
 }
+.status {
+  font-size: 14px;
+  font-family: "Proxima Nova Regular";
+  /* text-transform: uppercase; */
+  color: #949494;
+  margin: 0 20px 20px 0;
+  float: right;
+}
 #weatherDetails,
 .wind,
 .feelsLike,
 .humid {
   font-family: "Proxima Nova Bold";
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 12px;
   display: flex;
   color: var(--light-blue);
   align-items: center;
   float: left;
 }
 #weatherDetails div {
-  margin-right: 30px;
+  margin-right: 20px;
 }
 .bottomSection {
   margin-top: auto;

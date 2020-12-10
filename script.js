@@ -18,7 +18,7 @@ function init() {
     // const urlGallery = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/gallery_page/";
     // fetchData(urlGallery, showGalleryPage);
 
-    const weatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=Copenhagen,DK,&appid=675db572aaf339884c450ef6bc2a87f6&units=metric";
+    const weatherUrl = "http://api.weatherstack.com/forecast?access_key=bdb591c14b9e4a079623b1a838313888&query=Copenhagen";
     fetchData(weatherUrl, weatherApp)
 
     const urlContact = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/contact_page/";
@@ -463,31 +463,28 @@ function weatherApp(weather) {
 
      const copy = template.cloneNode(true);
      
-    // console.log(weather)
-    copy.querySelector(".location").textContent = weather.name + ", Denmark";
-    copy.querySelector(".dateTime .dt").textContent = weather.dt;
-    copy.querySelector(".wind .speed span").textContent = weather.wind.speed;
-    copy.querySelector(".temperature .main span").textContent = weather.main.temp;
-    copy.querySelector(".feelsLike .feeling span").textContent = "Feels like: " + weather.main.feels_like;
-    copy.querySelector(".humid .humidity span").textContent = "Humidity: " + weather.main.humidity;
-    /* copy.querySelector(".temperature .min span").textContent = weather.main.temp_min;
-    copy.querySelector(".temperature .max span").textContent = weather.main.temp_max; */
-    //it can be more than one:
+    copy.querySelector(".location").textContent = weather.request.query;
+    copy.querySelector(".dateTime .dt").textContent = weather.location.localtime;
+    copy.querySelector(".wind .speed span").textContent = weather.current.wind_speed;
+    copy.querySelector(".temperature .main span").textContent = weather.current.temperature;
+    copy.querySelector(".temperature .status").textContent = weather.current.weather_descriptions[0];
+    copy.querySelector(".feelsLike .feeling span").textContent = "Feels like: " + weather.current.feelslike;
+    copy.querySelector(".humid .humidity span").textContent = "Humidity: " + weather.current.humidity;
+    /* copy.querySelector(".temperature .min span").textContent = weather.forecast.mintemp;
+    copy.querySelector(".temperature .max span").textContent = weather.forecast.main.maxtemp; 
+
+    // it can be more than one:
     /* weather.weather.forEach((item) => {
             copy.querySelector(".detail .status").textContent = item.description;
     }); */
 
-    console.log(weather.main.temp)
-    //text info
-    /* document.querySelector("#weatherResult h1").textContent = ""; */
+    // output text
     document.querySelector("#weatherResult p").textContent = "";
-    if (weather.main.temp < 5) {
-        console.log("its less than 5deg.")
-        /* document.querySelector("#weatherResult h1").textContent = "Don't forget your coat!"; */
-        document.querySelector("#weatherResult p").textContent = "Don't forget bringing a warm coat with you today!";
-    } else if (weather.main.temp > 5) {
-        console.log("its more than 5deg.")
-    }
+    document.querySelector(".weatherIcon").src = "";
+    if (weather.current.weather_descriptions[0] === "Light Rain, Mist") {
+        document.querySelector("#weatherResult p").textContent = "Experience Copenhagen through the lens of a Dane today!";
+        document.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
+    } 
 
     weatherArea.appendChild(copy)
 }
