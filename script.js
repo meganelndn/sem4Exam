@@ -273,7 +273,7 @@ function showTrips(trips) {
             //Prevent Body scroll
             document.body.style.overflow = "hidden";
             document.body.style.height = "100%"; 
-            readMoreModal.querySelector(".fullDescription").textContent = oneTrip.full_description;
+            readMoreModal.querySelector(".fullDescription").innerText = oneTrip.full_description;
             // Gallery timeline
             readMoreModal.querySelector("#timelineGallery").innerHTML = oneTrip.content.rendered;
             //Animate line as you scroll 
