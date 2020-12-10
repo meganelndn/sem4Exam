@@ -464,7 +464,7 @@ function weatherApp(weather) {
      const copy = template.cloneNode(true);
      
     // console.log(weather)
-    copy.querySelector(".location").textContent = weather.name + ", " + weather.sys.country;
+    copy.querySelector(".location").textContent = weather.name + ", Denmark";
     copy.querySelector(".dateTime .dt").textContent = weather.dt;
     copy.querySelector(".wind .speed span").textContent = weather.wind.speed;
     copy.querySelector(".temperature .main span").textContent = weather.main.temp;
@@ -479,12 +479,12 @@ function weatherApp(weather) {
 
     console.log(weather.main.temp)
     //text info
-    document.querySelector("#weatherResult h1").textContent = "";
+    /* document.querySelector("#weatherResult h1").textContent = ""; */
     document.querySelector("#weatherResult p").textContent = "";
     if (weather.main.temp < 5) {
         console.log("its less than 5deg.")
-        document.querySelector("#weatherResult h1").textContent = "Don't forget your coat!";
-        document.querySelector("#weatherResult p").textContent = "its less than 5deg.";
+        /* document.querySelector("#weatherResult h1").textContent = "Don't forget your coat!"; */
+        document.querySelector("#weatherResult p").textContent = "Don't forget bringing a warm coat with you today!";
     } else if (weather.main.temp > 5) {
         console.log("its more than 5deg.")
     }

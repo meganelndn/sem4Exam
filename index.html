@@ -406,7 +406,7 @@
                 </div>
                 <div id="cardWrapper">
                     <div id="durationWrapper">
-                        <img class="durationImg" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/icon-history.png" alt="">
+                        <img class="durationImg" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/icon-history-grey.png" alt="">
                         <h3 class="duration"></h3>
                     </div>
                     <h3 class="tripTitle"></h3>
@@ -436,9 +436,6 @@
             <div id="trip-modal-background" class="modal-background">
                 <div id="trip-modal-content" class="modal">
                     <button class="trip-modal-close">X</button>
-                    <!-- <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
-                        <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
-                    </svg> -->
                     <p class="fullDescription"></p>
                     
                     <div id="timelineArea">
@@ -454,9 +451,6 @@
                         </div> 
                     </div>
                 </div>
-                <!-- <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
-                    <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
-                </svg> -->
             </div>
         </div>
         </template>
@@ -497,11 +491,15 @@
             </div>
             <div id="weatherDetails">
                 <div class="feelsLike">
+                    <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/icon-thermostat-half.png" alt="">
                     <p class="feeling"><span></span>°</p>
                 </div>
+                <span class="line"></span>
                 <div class="humid">
+                    <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/709eeb1ede3ab9cba74f6396f8e93f4d.png" alt="">
                     <p class="humidity"><span></span> %</p>
                 </div>
+                <span class="line"></span>
                 <div class="wind">
                     <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/wind.png" alt="">
                     <p class="speed"><span></span> km/h</p>
@@ -513,10 +511,11 @@
             <div class="bottomSection"></div>
         </template>
 
-        <div id="weatherArea"></div>
-        <div id="weatherResult">
-            <h1></h1>
-            <p></p>
+        <div id="weatherArea">
+            <div id="weatherResult">
+                <!--  <h1></h1> -->
+                <p></p>
+            </div>
         </div>
     </section>
 
