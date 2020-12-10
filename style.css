@@ -20,9 +20,26 @@
   src: url("fonts/Font-Awesome-5-Free-Regular-400.otf") format("woff");
 }
 
+@font-face {
+  font-family: "Proxima Nova Regular";
+  src: url("fonts/ProximaNova-Regular.otf") format("woff");
+}
+
+@font-face {
+  font-family: "Proxima Nova Light";
+  src: url("fonts/Proxima Nova Alt Light.otf") format("woff");
+}
+
+@font-face {
+  font-family: "Proxima Nova Bold";
+  src: url("fonts/Proxima Nova Bold.otf") format("woff");
+}
+
+
+
 /* --------- VARIABLES -------- */
 :root {
-  --main-font: "Brandon Text Light", sans-serif;
+  --main-font: "Proxima Nova Light", sans-serif;
   --link-font-size: 14px;
   --body-font: 16px;
 
@@ -87,7 +104,7 @@ html {
   font-family: var(--main-font);
   text-decoration: none;
   margin: 10px 20px;
-  font-family: "Brandon Text Bold";
+  font-family: "Proxima Nova Regular";
 }
 /* sticky navBar */
 .changeMenu {
@@ -169,7 +186,7 @@ html {
 /* --------- INTRO -------- */
 .introTitle {
   text-transform: uppercase;
-  font-family: "Brandon Text Regular";
+  font-family: "Proxima Nova Regular";
   font-size: 14px;
   margin-top: 150px;
 }
@@ -209,47 +226,90 @@ html {
 
 #tripPrices {
   font-size: 16px;
-  font-family: "Brandon Text Bold";
+  font-family: "Brandon Text Regular";
   text-align: left;
+  color: var(--dark-blue);
+  display: flex;
+  justify-content: space-around; 
+  margin-bottom: 20px;
+}
+
+#tripPrices p {
+  display: flex;
+  flex-direction: column;
+}
+
+#tripPrices p span {
+  font-size: 16px;
+  color: var(--dark-blue);
+}
+
+#tripPrices .line {
+  border-left: 1px solid lightgray;
+  margin: 10px 0;
 }
 #singleTripArea {
   display: flex;
   flex-flow: column nowrap;
   max-width: fit-content;
   margin: 0 20px;
-  padding: 20px;
+  border-radius: 5px;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
     0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
     0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
     0 100px 80px rgba(0, 0, 0, 0.07);
 }
 
+#cardWrapper {
+  padding: 20px;
+}
 .tripTitle {
-  margin: 10px 0 0;
-  text-align: center;
+  font-size: 18px;
+  text-align: left;
+  margin: 15px 0;
 }
 .tripText {
-  padding-top: 20px;
+  padding-bottom: 20px;
   text-align: left;
-  margin: 0;
-  text-indent: 50px;
+  font-family: "Proxima Nova Light";
 }
 
+#durationWrapper {
+  display: flex;
+  align-items: center;
+}
+
+#bottomSection {
+  margin-top: auto;
+  border-top: 1px solid lightgrey;
+  margin: 0 20px;
+}
 .duration {
-  font-family: "Brandon Text Bold";
-  margin: 30px auto;
-  font-size: 14px;
+  font-family: "Proxima Nova Regular";
+  font-size: 12px;
+  color: #949494;
+  /* text-align: left; */
+  /* margin-top: 20px; */
+}
+
+.durationImg {
+  height: 15px;
+  width: auto;
 }
 #summerWinter {
   text-align: left;
+  padding-bottom: 30px;
 }
-#summerWinter h3 {
-  font-size: 15px;
-  margin: 15px 0 0;
-  font-family: "Brandon Text Regular";
+
+#summerWinter h3, #tripPrices p{
+  font-size: 12px;
+  font-family: "Proxima Nova Regular";
+  color: #949494;
 }
+
 #summerWinter p {
   margin: 0;
+  font-size: 14px;
 }
 
 #trips {
@@ -264,6 +324,16 @@ html {
 
 .tripImg {
   width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+#imgWrapper p {
+  position: absolute;
+  padding: 10px 30px;
+  color: white;
+  font-family: "Proxima Nova Bold";
 }
 /* .tripsDeco {
   height: auto;
@@ -275,16 +345,17 @@ html {
   margin-top: 170px;
 } */
 .readMoreTrip {
-  margin-left: auto;
+  /* margin-left: auto; */
+  text-align: left;
   margin-top: auto;
   font-size: 14px;
-  background-color: var(--dark-blue) !important;
   text-transform: uppercase;
   color: white;
-  border: solid 1px var(--dark-blue);
-  border-radius: 20px;
+  background-color: var(--dark-blue);
+  /* border: solid 1px var(--dark-blue); */
+  border-radius: 0 0 5px 5px;
   cursor: pointer;
-  padding: 8px 20px;
+  padding: 20px;
   font-family: var(--main-font);
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
     0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
@@ -568,12 +639,12 @@ html {
 
 .tourTitle,
 .corona-guidelines {
-  font-family: "Brandon Text Regular";
+  font-family: "Proxima Nova Regular";
   font-size: 16px;
 }
 .tourText,
 .coronaText {
-  font-family: "Brandon Text Light";
+  font-family: "Proxima Nova Regular";
   width: 400px;
   text-align: left;
   display: none;
@@ -1374,7 +1445,7 @@ body.modal-active {
 }
 .fullDescription,
 .coronaText {
-  font-family: "Brandon Text Light";
+  font-family: "Proxima Nova Regular";
   margin-top: 20px;
   margin: 30px;
   text-align: left;

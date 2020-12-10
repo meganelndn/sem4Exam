@@ -404,24 +404,35 @@
         <!-- <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/waves.png" alt="" class="tripsDeco"> -->
         <template class="tripTemplate">
             <div id="singleTripArea">
-                <h3 class="tripTitle"></h3>
-                <h3 class="duration"></h3>
-                <img src="" alt="" class="tripImg">
-                <p class="tripText"></p>
-
-                <div id="summerWinter">
-                    <h3>Summer:</h3>
-                    <p class="summerMenu"></p>
-                    <h3>Winter/Autumn:</h3>
-                    <p class="winterMenu"></p>
+                <div id="imgWrapper">
+                    <p>RECOMMENDED</p>
+                    <img src="" alt="" class="tripImg">
                 </div>
-
-                <div id="tripPrices">
-                    <p class="public">Public: <span></span></p>
-                    <p class="private">Private: <span></span></p>
+                <div id="cardWrapper">
+                    <div id="durationWrapper">
+                        <img class="durationImg" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/icon-history.png" alt="">
+                        <h3 class="duration"></h3>
+                    </div>
+                    <h3 class="tripTitle"></h3>
+                    <p class="tripText"></p>
+    
+                    <div id="summerWinter">
+                        <h3>SUMMER</h3>
+                        <p class="summerMenu"></p>
+                        <h3>WINTER/AUTUMN</h3>
+                        <p class="winterMenu"></p>
+                    </div>
+    
                 </div>
-      
-                <div class="button readMoreTrip" id="sketch"><span>Details</span></div>
+                <div id="bottomSection">
+                    <div id="tripPrices">
+                                <p class="public">PUBLIC<span></span></p>
+                                <span class="line"></span>
+                                <p class="private">PRIVATE<span></span></p>
+                            </div>
+          
+                        </div>
+                        <div class="button readMoreTrip" id="sketch"><span>Details</span></div>
             </div>
 
             <!-- modal -->
@@ -459,10 +470,10 @@
         </template>
         <div id="tripArea"></div>
 
-    </div>
-
-    <div id="customiseYourOwn" class="hidden">
-        <h3>To customise your own private tour<a href="mailto:info@heycaptain.dk?subject=Customise your own private tour">Email Us</a></h3>
+    
+        <div id="customiseYourOwn" class="hidden">
+            <h3>To customise your own private tour<a href="mailto:info@heycaptain.dk?subject=Customise your own private tour">Email Us</a></h3>
+        </div>
     </div>
 
 
