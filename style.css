@@ -1756,19 +1756,7 @@ select:after {
 /* } */
 
 @media only screen and (max-width: 600px) {
-  #tripArea {
-    display: flex;
-    flex-direction: column;
-    width: max-content;
-    margin: auto;
-  }
-  .availability {
-    display: flex;
-  }
-  #firstRow,
-  #secondRow {
-    flex-direction: column;
-  }
+
 }
 
 /* on scroll reveal */
@@ -1821,4 +1809,66 @@ and (orientation : landscape) {
     width: auto;
   }
 
+}
+
+/* mobile */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 815px) {
+
+  .tripImg {
+    width: 90%;
+    height: auto;
+  }
+
+  #tripArea {
+    max-width: 600px;
+  }
+  #tripArea {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  #singleTripArea {
+    margin: 50px;
+  }
+  .availability {
+    display: flex;
+  }
+  #firstRow,
+  #secondRow {
+    flex-direction: column;
+  }
+
+  #two-columns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #corona {
+    align-self: center;
+  }
+  .corona-guidelines {
+    margin: 50px;
+  }
+  #singleTourArea {
+    width: auto;
+  }
+  .tourText, .coronaText {
+    max-width: 300px;
+    width: auto;
+  }
+  #formBox {
+    position: relative;
+  }
+  #oneCell {
+    width: auto !important;
+  }
+  #boatSvg {
+    display: none;
+  }
+  #faq {
+    padding: 20px;
+  }
 }
