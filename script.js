@@ -465,16 +465,18 @@ function weatherApp(weather) {
      const copy = template.cloneNode(true);
      
     // console.log(weather)
-    copy.querySelector(".location").textContent = weather.name;
+    copy.querySelector(".location").textContent = weather.name + ", " + weather.sys.country;
+    copy.querySelector(".dateTime .dt").textContent = weather.dt;
     copy.querySelector(".wind .speed span").textContent = weather.wind.speed;
     copy.querySelector(".temperature .main span").textContent = weather.main.temp;
-    copy.querySelector(".temperature .min span").textContent = weather.main.temp_min;
-    copy.querySelector(".temperature .max span").textContent = weather.main.temp_max;
+    copy.querySelector(".feelsLike .feeling span").textContent = "Feels like: " + weather.main.feels_like;
+    copy.querySelector(".humid .humidity span").textContent = "Humidity: " + weather.main.humidity;
+    /* copy.querySelector(".temperature .min span").textContent = weather.main.temp_min;
+    copy.querySelector(".temperature .max span").textContent = weather.main.temp_max; */
     //it can be more than one:
-    weather.weather.forEach((item) => {
-             copy.querySelector(".detail .status").textContent = item.description;
-
-    });
+    /* weather.weather.forEach((item) => {
+            copy.querySelector(".detail .status").textContent = item.description;
+    }); */
 
     console.log(weather.main.temp)
     //text info
