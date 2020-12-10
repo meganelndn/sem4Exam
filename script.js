@@ -221,7 +221,6 @@ function showLandingPage(home) {
     introCopy.querySelector(".banner").src = home[0].banner.guid;
     /* ------------ intro text ----------- */
     introCopy.querySelector(".introTitle").textContent = home[0].introduction_title;
-    introCopy.querySelector(".introText").textContent = home[0].social_sailing_in_copenhagen;
 
     /* ------------ covid info ----------- */
     buildCovidInfo(home[0].corona_text);

@@ -133,9 +133,10 @@ html {
 
 /* --------- HERO SECTION -------- */
 .banner,
-#introText {
+.introTitle {
   width: 30%;
   height: auto;
+  display: inline;
   text-align: center;
   position: absolute;
   top: 35%;
@@ -188,22 +189,9 @@ html {
   text-transform: uppercase;
   font-family: "Proxima Nova Regular";
   font-size: 14px;
-  margin-top: 150px;
-}
-.introText {
-  font-family: "Brandon Text Light";
-  font-size: 18px;
-  display: none;
+  margin-top: 80px;
 }
 
-/* #introText {
-  position: absolute;
-  top: 40%;
-  left: 35%;
-  letter-spacing: 0.1em;
-  text-align: center;
-  font-size: var(--body-font);
-} */
 /* --------- TRIPS -------- */
 #tripArea {
   display: inline-flex;
@@ -1718,12 +1706,12 @@ select:after {
   }
 }
 /*Shrinking for mobile*/
-@media (max-width: 768px) {
-  .waves {
-    height: 40px;
-    min-height: 40px;
-  }
-}
+/* @media (max-width: 768px) {
+  /* .waves {
+    /* height: 40px; */
+    /* min-height: 40px; */
+  /* } */
+/* } */
 
 @media only screen and (max-width: 600px) {
   #tripArea {
@@ -1756,4 +1744,39 @@ select:after {
   to {
     opacity: 1;
   }
+}
+
+
+/* Ipad */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) { 
+  .availability {
+    padding: 5px;
+  }
+  .toPayment {
+    width: auto;
+  }
+
+  .banner , .introTitle {
+    left: auto;
+    top: 20%;
+  }
+  #formBox {
+    top: 40%;
+  }
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+  .availability {
+    padding: 5px;
+  }
+  .toPayment {
+    width: auto;
+  }
+
 }
