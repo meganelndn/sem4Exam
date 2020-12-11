@@ -37,6 +37,7 @@ function init() {
     setUpScrollEffect();
 }
 
+let tripSelected;
 
 /* https://www.dev-tips-and-tricks.com/animate-elements-scrolled-view-vanilla-js */
 function setUpScrollEffect(){
@@ -159,6 +160,13 @@ function formValidation() {
     const elements1 = form1.elements;
     //form1.setAttribute("novalidate", true);
     const formElements1 = form1.querySelectorAll("input, select");
+    
+    if (!tripSelected) {
+        console.log("do nothing")
+    } else {
+        //to do: set the value for tour the already saved tripSelected""
+        console.log("final", tripSelected)
+    }
 
     formElements1.forEach((e) => {
         e.addEventListener("change", (e) => {
@@ -179,6 +187,7 @@ function formValidation() {
         e.preventDefault();
         checkValidation(form1, formElements1, goToPayment);
     })  
+
 }
 
 function goToPayment() {
@@ -250,6 +259,17 @@ function showTrips(trips) {
     trips.forEach((oneTrip) => {
         const tripCopy = tripTemplate.cloneNode(true);
 
+        tripCopy.querySelector(".bookTrip").addEventListener("click", function(){
+            // console.log("clicked")
+            // console.log(oneTrip.trip_name)
+            if (!tripSelected) {
+                tripSelected = oneTrip.trip_name;
+                console.log(tripSelected)
+            } else {
+                tripSelected = oneTrip.trip_name;
+                console.log(tripSelected)
+            }
+        })
         tripCopy.querySelector(".tripTitle").textContent = oneTrip.title.rendered;
         tripCopy.querySelector(".tripImg").src = oneTrip.trip_image.guid;
         tripCopy.querySelector(".duration").textContent = oneTrip.duration;
@@ -285,6 +305,8 @@ function showTrips(trips) {
                 let draw = length * scroll;
                 line.style.strokeDashoffset = length - draw;
             });
+     
+
         });
         tripCopy.querySelector(".trip-modal-close").addEventListener("click", function(){
             const readMoreModal = document.querySelector("#trip-modal-background");
@@ -293,6 +315,18 @@ function showTrips(trips) {
             document.body.style.overflow = "auto"; // ADD THIS LINE
             document.body.style.height = "auto"; 
         });
+        //Autofil
+        // let bookTrip = tripCopy.querySelectorAll(".tripTitle");
+        // bookTrip.forEach((item)=>{
+        //     console.log(item.textContent)
+        //     console.log(tripCopy.querySelector(".bookTrip"))
+        //     tripCopy.querySelector(".bookTrip").addEventListener("click", function(){
+        //         console.log(tripSelected)
+        //         tripSelected = "";
+        //         tripSelected = item.textContent;
+        //     })
+        // })
+
         //3. append
         tripArea.appendChild(tripCopy);
     })
