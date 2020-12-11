@@ -46,7 +46,6 @@ function setUpScrollEffect(){
     elements = document.querySelectorAll('.hidden');
     function start() {
       windowHeight = window.innerHeight;
-    //   _addEventHandlers();
     }
     
     function checkPosition() {
@@ -302,8 +301,33 @@ function showTours(tours) {
     // 1. template clone
     const tourTemplate = document.querySelector(".tourTemplate").content;
     const tourArea = document.querySelector("#tourArea");
+    /* document.querySelector("#boatSvg").style.display = "none"; */
+
+    function event1 () {
+        console.log('event1');
+        document.querySelector("#boatSvg").classList.add("boatAnimation"); 
+        document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
+        document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation");
+    }
+    function event2 () {
+        console.log('event2');
+        document.querySelector("#boatSvg").classList.remove("boatAnimation"); 
+        document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
+        document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation"); 
+    }
+    function event3 () {
+        console.log('event3');
+        document.querySelector("#boatSvg2").classList.add("boatAnimation"); 
+        document.querySelector("#singleTripArea:first-of-type").classList.add("flashAnimation"); 
+    }
+    function event4 () {
+        console.log('event4');
+        document.querySelector("#boatSvg2").classList.remove("boatAnimation"); 
+        document.querySelector("#singleTripArea:first-of-type").classList.remove("flashAnimation"); 
+    }
+    let events = [event1, event2, event3, event4];
     
-    tours.forEach((oneTour) => {
+    tours.forEach((oneTour, i) => {
         const tourCopy = tourTemplate.cloneNode(true);
 
         tourCopy.querySelector(".tourTitle").textContent = oneTour.title.rendered;
@@ -314,41 +338,19 @@ function showTours(tours) {
         tourCopy.querySelector(".tourTitle").addEventListener("click", function(){
             if (tourText.style.display === "block") {
                 tourText.style.display = "none";
+                // disable boat svg animation
                 document.querySelector("#boatSvg").classList.add("show");
-
-                /* if (document.querySelector(".tourTitle:first-of-type").checked = false) {
-                    document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
-                    document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
-                } else if (document.querySelector(".tourTitle:last-of-type").checked = false) {
-                    document.querySelector("#boatSvg2").classList.remove("show");
-                    document.querySelector("#boatSvg2").classList.add("boatAnimation"); 
-                    document.querySelector("#singleTripArea:first-of-type").classList.add("flashAnimation"); 
-                } */
-
-                document.querySelector("#boatSvg").classList.remove("boatAnimation"); 
-                document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
-                document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
+                document.querySelector("#boatSvg2").classList.add("show");
+                document.addEventListener("click", events[1]);
+                document.addEventListener("click", events[4]);
                 } else {
                 tourText.style.display = "block";
-
-                /* oneTour.addEventListener("click", function(){
-                    if (document.querySelector(".tourTitle:first-of-type").checked == true) {
-                        document.querySelector("#boatSvg").classList.remove("show");
-                        document.querySelector("#boatSvg").classList.add("boatAnimation"); 
-                        document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
-                        document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation"); 
-                    } else if (document.querySelector(".tourTitle:last-of-type").checked == true) {
-                        document.querySelector("#boatSvg2").classList.remove("show");
-                        document.querySelector("#boatSvg2").classList.add("boatAnimation"); 
-                        document.querySelector("#singleTripArea:first-of-type").classList.add("flashAnimation"); 
-                    }  
-                }); */
-                  
+                // enable svg animation
                 document.querySelector("#boatSvg").classList.remove("show");
-                document.querySelector("#boatSvg").classList.add("boatAnimation"); 
-                document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
-                document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation");  
-                }
+                document.querySelector("#boatSvg2").classList.remove("show");
+                document.addEventListener("click", events[0]);
+                document.addEventListener("click", events[3]);
+            }
         })
         tourArea.appendChild(tourCopy);
     })
@@ -482,8 +484,14 @@ function weatherApp(weather) {
    document.querySelector(".weatherIcon").src = "";
    if (weather.current.weather_descriptions[0] === "Light Rain, Mist") {
        document.querySelector("#weatherResult p").textContent = "Experience Copenhagen through the lens of a Dane today!";
+       document.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/foggy.png";
+   } else if (weather.current.weather_descriptions[0] === "Partly cloudy") {
+       document.querySelector("#weatherResult p").textContent = "Good news: No rain on the horizon today!";
        document.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
-   } 
+   } else if (weather.current.weather_descriptions[0] === "Overcast") {
+    document.querySelector("#weatherResult p").textContent = "Good news: No rain on the horizon today!";
+    document.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
+   }
 
    weatherArea.appendChild(copy)
 }
