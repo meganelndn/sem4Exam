@@ -74,7 +74,7 @@ import { carouselEffect } from "./modules/imageCarousel";
 let completedForm;
 
 function smoothScroll() {
-    document.querySelector(".bookBtn").addEventListener("click", e => {
+    document.querySelector(".bookBtn", ".bookTrip").addEventListener("click", e => {
         document.querySelector('#intro').scrollIntoView({ 
             behavior: 'smooth' 
         });
@@ -505,7 +505,7 @@ function weatherApp(weather) {
    copy.querySelector(".degrees span").textContent = weather.current.temperature;
    copy.querySelector(".status").textContent = weather.current.weather_descriptions[0];
    copy.querySelector(".feelsLike .feeling span").textContent = "Feels like: " + weather.current.feelslike;
-   copy.querySelector(".humid .humidity span").textContent = "Humidity: " + weather.current.humidity;
+   copy.querySelector(".humid .humidity span").textContent = "Precipitation: " + weather.current.precip;
 
    copy.querySelector(".weatherResult").textContent = "";
    copy.querySelector(".weatherIcon").src = "";
