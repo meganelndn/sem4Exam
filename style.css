@@ -266,7 +266,7 @@ html {
 .tripText {
   padding-bottom: 20px;
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Proxima Nova Regular";
 }
 
@@ -310,6 +310,33 @@ html {
   font-family: "Proxima Nova Regular";
 }
 
+
+/* new */
+#beverages {
+  font-family: "Proxima Nova Regular";
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+#beverageWrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+#beverages img{
+  height: 20px;
+  width: 20px;
+}
+
+#beverages h1 {
+  font-family: "Proxima Nova Bold";
+  font-size: 12px;
+}
+
+#beverages p {
+  font-size: 14px;
+}
+
 #trips {
   text-align: center;
   /* margin-top: 80px; */
@@ -350,9 +377,10 @@ html {
   font-size: 14px;
   text-transform: uppercase;
   color: white;
+  cursor: pointer;
   background-color: var(--dark-blue);
   /* border: solid 1px var(--dark-blue); */
-  border-radius: 0 0 10px 10px;
+  /* border-radius: 0 0 10px 10px; */
   padding: 20px;
   font-family: var(--main-font);
   /* box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
@@ -364,6 +392,14 @@ html {
   margin-left: auto;
   width: 20px;
   margin-right: 10px;
+}
+
+#trip-modal-content h1 {
+  margin: 30px;
+}
+
+#trip-modal-content #summerWinter {
+  margin: 30px;
 }
 
 #timelineArea {
@@ -475,6 +511,24 @@ html {
   opacity: 1;
   right: 0;
 }
+
+/* book single trip */
+
+.bookTrip {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--dark-blue);
+  background-color: var(--yellow);
+  /* border: solid 1px var(--dark-blue); */
+  border-radius: 0 0 10px 10px;
+  padding: 20px;
+  font-family: var(--main-font);
+}
+
 /* trip table */
 #tableHeader {
   display: flex;

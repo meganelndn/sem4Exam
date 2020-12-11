@@ -254,9 +254,6 @@ function showTrips(trips) {
         tripCopy.querySelector(".tripImg").src = oneTrip.trip_image.guid;
         tripCopy.querySelector(".duration").textContent = oneTrip.duration;
         tripCopy.querySelector(".tripText").textContent = oneTrip.description;
-
-        tripCopy.querySelector(".summerMenu").textContent = oneTrip.summer_menu;
-        tripCopy.querySelector(".winterMenu").textContent = oneTrip.winter_menu;
         
         //price
         tripCopy.querySelector(".public span").textContent = oneTrip.public_tour_price;
@@ -271,7 +268,11 @@ function showTrips(trips) {
             //Prevent Body scroll
             document.body.style.overflow = "hidden";
             document.body.style.height = "100%"; 
+            readMoreModal.querySelector(".oneTripTitle").textContent = oneTrip.title.rendered;
             readMoreModal.querySelector(".fullDescription").innerText = oneTrip.full_description;
+            
+            readMoreModal.querySelector(".summerMenu").textContent = oneTrip.summer_menu;
+            readMoreModal.querySelector(".winterMenu").textContent = oneTrip.winter_menu;
             // Gallery timeline
             readMoreModal.querySelector("#timelineGallery").innerHTML = oneTrip.content.rendered;
             //Animate line as you scroll 
