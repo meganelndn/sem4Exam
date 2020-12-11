@@ -401,27 +401,18 @@ html {
     stroke-dashoffset: 0;
   }
 }
-.hide {
-  display: none;
-}
 #boatSvg {
-  left: 0;
   width: 400px;
-  display: flex;
-  margin: 0 auto;
+  justify-content: center;
 }
 #boatSvg2 {
   width: 400px;
-  right: 0;
-  top: 115%;
   transform: scaleX(-1);
-  position: absolute;
 }
 .boatAnimation {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
-  animation: draw 10s linear forwards;
-  animation-delay: 0.4s;
+  animation: draw 5s linear forwards;
 }
 @keyframes draw {
   to {
