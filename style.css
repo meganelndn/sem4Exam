@@ -398,20 +398,22 @@ html {
   }
 }
 #boatSvg {
-  width: 600px;
+  width: 400px;
+  display: flex;
+  margin: 0 auto;
 }
 
 #boatSvg2 {
-  right: -10%;
-  top: 110%;
-  width: 700px;
+  width: 400px;
+  right: 0;
+  top: 115%;
   transform: scaleX(-1);
   position: absolute;
 }
 .boatAnimation {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
-  animation: draw 5s linear forwards;
+  animation: draw 10s linear forwards;
   animation-delay: 0.4s;
 }
 @keyframes draw {
@@ -791,11 +793,14 @@ html {
   font-size: 12px;
   display: flex;
   color: var(--light-blue);
-  align-items: center;
-  float: left;
+  flex: auto;
+  /*   align-items: center;
+  float: left; */
 }
 #weatherDetails div {
   margin-right: 20px;
+  display: flex;
+  place-content: space-around;
 }
 .bottomSection {
   margin-top: auto;
