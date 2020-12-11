@@ -83,7 +83,7 @@ html {
 #logo {
   width: 50px;
   height: 50px;
-  margin-right: 1250px;
+  margin-right: 1220px;
 }
 #navBar {
   right: 0;
@@ -97,18 +97,19 @@ html {
   align-items: center;
 }
 #navBar a {
-  color: white;
+  color: #000;
+  text-transform: uppercase;
   cursor: pointer !important;
   font-family: var(--main-font);
   text-decoration: none;
+  font-size: 14px;
   margin: 0 20px;
-  font-family: "Proxima Nova Regular";
+  font-family: "Proxima Nova Bold";
 }
 /* sticky navBar */
 .changeMenu {
   margin-inline-start: auto;
   background-color: var(--light-beige);
-
 }
 
 #navBar a:hover {
@@ -193,7 +194,8 @@ html {
 #tripArea {
   display: flex;
   flex-direction: row-reverse;
-  padding-top: 100px;
+  /* padding-top: 100px; */
+  padding-top: 50px;
   justify-content: center;
   /* max-width: 600px; */
 
@@ -246,11 +248,11 @@ html {
   max-width: fit-content;
   margin: 0 20px;
   border-radius: 10px;
-  /* box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
     0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
     0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-    0 100px 80px rgba(0, 0, 0, 0.07); */
-  box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2);
+    0 100px 80px rgba(0, 0, 0, 0.07);
+  /* box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2); */
 }
 
 #cardWrapper {
@@ -312,7 +314,6 @@ html {
   font-family: "Proxima Nova Regular";
 }
 
-
 /* new */
 #beverages {
   font-family: "Proxima Nova Regular";
@@ -325,7 +326,7 @@ html {
   align-items: center;
 }
 
-#beverages img{
+#beverages img {
   height: 20px;
   width: 20px;
   margin-right: 5px;
@@ -379,7 +380,7 @@ html {
   background-color: var(--dark-blue);
   /* border: solid 1px var(--dark-blue); */
   /* border-radius: 0 0 10px 10px; */
-  padding: 20px;
+  padding: 15px;
   font-family: var(--main-font);
   /* box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
     0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
@@ -487,6 +488,8 @@ html {
   display: inline-block;
   position: relative;
   transition: 0.5s;
+  margin-left: 10px;
+  font-weight: bold;
 }
 .readMoreTrip span:after {
   /* content: "\00bb"; */
@@ -512,12 +515,13 @@ html {
   justify-content: center;
   cursor: pointer;
   font-size: 14px;
+  font-weight: bold;
   text-transform: uppercase;
   color: var(--dark-blue);
   background-color: var(--yellow);
   /* border: solid 1px var(--dark-blue); */
   border-radius: 0 0 10px 10px;
-  padding: 20px;
+  padding: 15px;
   font-family: var(--main-font);
 }
 
@@ -622,9 +626,9 @@ html {
   margin-left: 5px;
 }
 
-
 /* --------- TOURS -------- */
-#tours, #trips {
+#tours,
+#trips {
   margin: 0 15%;
 }
 #tourArea {
@@ -658,7 +662,8 @@ html {
   /* margin: 30px auto; */
   margin-right: 10px;
   margin-bottom: 50px;
-  padding: 15px 30px;
+  /* padding: 15px 30px; */
+  padding: 10px 25px;
   cursor: pointer;
   max-width: max-content;
 }
@@ -693,7 +698,7 @@ html {
 
 #singleTourArea {
   /* width: 400px; */
-  margin-top: -70px;
+  margin-top: -60px;
   position: relative;
 }
 
@@ -768,12 +773,12 @@ html {
   color: var(--dark-blue);
   display: flex;
   flex-flow: column nowrap;
-  padding: 30px;
+  padding: 40px;
   border-radius: 15px;
   box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2);
 }
 
-#weatherArea #main{
+#weatherArea #main {
   display: flex;
   justify-content: space-between;
   place-items: center;
@@ -781,8 +786,8 @@ html {
 
 .statusWrapper {
   display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .weatherIcon {
@@ -829,8 +834,8 @@ html {
 } */
 
 .minMax p,
-.wind img,
-.wind p,
+.humidity img,
+.humidity p,
 .feelsLike img,
 .feelsLike p,
 .humid img,
@@ -852,7 +857,7 @@ html {
 }
 
 #weatherDetails,
-.wind,
+.humidity,
 .feelsLike,
 .humid {
   font-family: "Proxima Nova Bold";
@@ -1832,11 +1837,11 @@ select:after {
   display: none;
   width: 100%;
   /* margin-top: -100px; */
-  /* height: 10vh;
+/* height: 10vh;
   margin-bottom: -7px; /*Fix for safari gap*/
-  /* min-height: 100px; */
-  /* max-height: 150px; */
-/* } */ 
+/* min-height: 100px; */
+/* max-height: 150px; */
+/* } */
 /* #waves {
   position: relative;
   margin-top: -100px;
