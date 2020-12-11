@@ -335,6 +335,7 @@ html {
 
 #beverages p {
   font-size: 14px;
+  margin: 0;
 }
 
 #trips {
@@ -720,8 +721,8 @@ html {
   display: none;
 }
 
-/* .slide {                  
-  visibility: visible;                  
+/* .slide {
+  visibility: visible;
   animation: slide 1s;
 }
 
@@ -729,11 +730,11 @@ html {
   0% {
     opacity: 0;
     transform: translateY(50%);
-  } 
+  }
   100% {
     opacity: 1;
     transform: translateY(0);
-  } 
+  }
 } */
 
 /* -------- covid & weather container ------- */
@@ -766,31 +767,36 @@ html {
   color: var(--dark-blue);
   display: flex;
   flex-flow: column nowrap;
-  width: 400px;
-  margin: 0 40px;
-  padding: 40px 40px 60px 40px;
+  padding: 30px;
   border-radius: 15px;
   box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2);
 }
+
+#weatherArea #main{
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+}
+
+.statusWrapper {
+  display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .weatherIcon {
   width: 130px;
   height: 100px;
-  position: absolute;
   left: 55%;
 }
-#weatherResult {
-  /* display: inline-table; */
-  display: inline-flex;
-  margin: 0 -10px;
+.weatherResult {
   font-size: 14px;
   font-style: italic;
-  /* width: 300px; */
-  position: absolute;
-  margin-top: 14%;
+  margin: 0;
 }
 #weatherResult p::before {
   content: "\261E";
-  margin: 50px 10px;
+  margin-right: 10px;
   font-size: 22px;
 }
 .temperature {
@@ -802,10 +808,9 @@ html {
   font-family: "Proxima Nova Bold";
   margin: 0 0 10px 0;
 }
-#weatherArea .main {
+.temperature {
   font-size: 60px;
   font-family: "Proxima Nova Bold";
-  margin: 20px 0 0 0;
 }
 #weatherArea .dateTime {
   color: #949494;
@@ -815,7 +820,7 @@ html {
   border-right: 1px solid lightgray;
   margin: 10px 0;
 }
-/* 
+/*
 .minMax {
   display: flex;
   align-content: center;
@@ -837,7 +842,7 @@ html {
   font-family: "Proxima Nova Regular";
   /* text-transform: uppercase; */
   color: #949494;
-  margin: 0 20px 20px 0;
+  /* margin: 0 20px 20px 0; */
   float: right;
 }
 #weatherDetails,
@@ -854,7 +859,6 @@ html {
   float: left; */
 }
 #weatherDetails div {
-  margin-right: 20px;
   display: flex;
   place-content: space-around;
 }
