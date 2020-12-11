@@ -507,11 +507,18 @@
                     <img class="weatherCal" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/icon-calendar.png" alt="">
                     <p class="dt"></p>
                 </div>
-                <div class="temperature">
-                    <p class="main"><span></span>°</p>
-                    <p class="status"></p>
-                    <!-- <p class="min">Min.<span></span></p>
-                    <p class="max">Max.<span></span></p> -->
+                <div id="main">
+                    <div class="temperature">
+                        <p class="degrees"><span></span>°</p>
+                        
+                        <!-- <p class="min">Min.<span></span></p>
+                            <p class="max">Max.<span></span></p> -->
+                        </div>
+                        <div class="statusWrapper">
+                            <img class="weatherIcon" src="" alt="weatherIcon">
+                            <p class="status"></p>
+
+                        </div>
                 </div>
                 <div id="weatherDetails">
                     <div class="feelsLike">
@@ -530,16 +537,11 @@
                     </div>
                 </div>
                 <div class="bottomSection"></div>
-            </template>
-    
-            <div id="weatherArea">
-                <div id="icon">
-                    <img class="weatherIcon" src="" alt="weatherIcon">
-                </div>
                 <div id="weatherResult">
-                    <p></p>
+                    <p class="weatherResult"></p>
                 </div>
-            </div>
+            </template>
+            <div id="weatherArea"></div>
         </section>
 
 
