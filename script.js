@@ -230,7 +230,7 @@ function showLandingPage(home) {
 }
 
 function buildCovidInfo(covid){
-    document.querySelector(".coronaText").textContent = covid;
+    document.querySelector(".coronaText").innerText = covid;
     const covidText = document.querySelector(".coronaText");
      
     document.querySelector(".corona-guidelines").addEventListener("click", function(){
