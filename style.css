@@ -401,12 +401,15 @@ html {
     stroke-dashoffset: 0;
   }
 }
+.hide {
+  display: none;
+}
 #boatSvg {
+  left: 0;
   width: 400px;
   display: flex;
   margin: 0 auto;
 }
-
 #boatSvg2 {
   width: 400px;
   right: 0;
@@ -800,7 +803,6 @@ html {
   float: left; */
 }
 #weatherDetails div {
-  margin-right: 20px;
   display: flex;
   place-content: space-around;
 }
@@ -1251,6 +1253,7 @@ input#terms {
 .hideOverlay {
   display: none;
 }
+
 .showNews {
   display: none;
 }

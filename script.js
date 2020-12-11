@@ -301,31 +301,38 @@ function showTours(tours) {
     // 1. template clone
     const tourTemplate = document.querySelector(".tourTemplate").content;
     const tourArea = document.querySelector("#tourArea");
-    /* document.querySelector("#boatSvg").style.display = "none"; */
+    
+    document.querySelector("#boatSvg").classList.add("hide");
 
     function event1 () {
+        tourCopy.querySelector(".tourTitle:first-of-type").addEventListener("click", function(){
+            document.querySelector("#boatSvg").classList.remove("hide");
+            document.querySelector("#boatSvg").classList.add("boatAnimation"); 
+            document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
+            document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation");
+        })
         console.log('event1');
-        document.querySelector("#boatSvg").classList.add("boatAnimation"); 
-        document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
-        document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation");
     }
     function event2 () {
+        tourCopy.querySelector(".tourTitle:first-of-type").addEventListener("click", function(){
+            document.querySelector("#boatSvg").classList.add("hide");
+            document.querySelector("#boatSvg").classList.remove("boatAnimation"); 
+            document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
+            document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation"); 
+        })
         console.log('event2');
-        document.querySelector("#boatSvg").classList.remove("boatAnimation"); 
-        document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
-        document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation"); 
     }
-    function event3 () {
-        console.log('event3');
+    /* function event3 () {
         document.querySelector("#boatSvg2").classList.add("boatAnimation"); 
         document.querySelector("#singleTripArea:first-of-type").classList.add("flashAnimation"); 
+        console.log('event3');
     }
     function event4 () {
-        console.log('event4');
         document.querySelector("#boatSvg2").classList.remove("boatAnimation"); 
         document.querySelector("#singleTripArea:first-of-type").classList.remove("flashAnimation"); 
-    }
-    let events = [event1, event2, event3, event4];
+        console.log('event4');
+    } */
+    let events = [event1, event2];
     
     tours.forEach((oneTour, i) => {
         const tourCopy = tourTemplate.cloneNode(true);
@@ -339,17 +346,17 @@ function showTours(tours) {
             if (tourText.style.display === "block") {
                 tourText.style.display = "none";
                 // disable boat svg animation
-                document.querySelector("#boatSvg").classList.add("show");
-                document.querySelector("#boatSvg2").classList.add("show");
-                document.addEventListener("click", events[1]);
-                document.addEventListener("click", events[4]);
+                /* document.querySelector("#boatSvg").classList.add("hide");
+                document.querySelector("#boatSvg2").classList.add("hide"); */
+                events[1]
+                /* document.addEventListener("click", events[4]); */
                 } else {
                 tourText.style.display = "block";
                 // enable svg animation
-                document.querySelector("#boatSvg").classList.remove("show");
-                document.querySelector("#boatSvg2").classList.remove("show");
-                document.addEventListener("click", events[0]);
-                document.addEventListener("click", events[3]);
+                /* document.querySelector("#boatSvg").classList.remove("hide");
+                document.querySelector("#boatSvg2").classList.remove("hide"); */
+                events[0];
+                /* document.addEventListener("click", events[3]); */
             }
         })
         tourArea.appendChild(tourCopy);
