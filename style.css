@@ -101,16 +101,14 @@ html {
   cursor: pointer !important;
   font-family: var(--main-font);
   text-decoration: none;
-  margin: 10px 20px;
+  margin: 0 20px;
   font-family: "Proxima Nova Regular";
 }
 /* sticky navBar */
 .changeMenu {
   margin-inline-start: auto;
-  background-color: #2a3141;
-  /*  padding: 30px; */
-  width: 100%;
-  display: flex;
+  background-color: var(--light-beige);
+
 }
 
 #navBar a:hover {
@@ -146,7 +144,7 @@ html {
 
 .video-container {
   object-fit: cover;
-  max-height: 800px;
+  max-height: 700px;
   width: 100%;
   /* filter: contrast(80%); */
   /* filter: brightness(0.6); */
@@ -165,7 +163,7 @@ html {
 }
 
 /* --------- SECTIONS -------- */
-#intro,
+/* #intro,
 #seasonInfo,
 #gallery,
 #faqInfo {
@@ -174,7 +172,7 @@ html {
   margin: 0;
   text-align: center;
   /* box-shadow: 0 1px 35px 5px rgba(0, 0, 0, 0.4); */
-}
+/* } */
 /* SEASON */
 #seasonInfo h1 {
   margin: 0;
@@ -186,14 +184,19 @@ html {
 .introTitle {
   text-transform: uppercase;
   font-family: "Proxima Nova Regular";
+  color: white;
   font-size: 14px;
   margin-top: 80px;
 }
 
 /* --------- TRIPS -------- */
 #tripArea {
-  display: inline-flex;
+  display: flex;
   flex-direction: row-reverse;
+  padding-top: 100px;
+  justify-content: center;
+  /* max-width: 600px; */
+
   /* place-items: flex-end; */
 }
 
@@ -264,7 +267,6 @@ html {
   margin: 15px 0;
 }
 .tripText {
-  padding-bottom: 20px;
   text-align: left;
   font-size: 16px;
   font-family: "Proxima Nova Regular";
@@ -315,7 +317,7 @@ html {
 #beverages {
   font-family: "Proxima Nova Regular";
   text-align: left;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 #beverageWrapper {
@@ -326,6 +328,7 @@ html {
 #beverages img{
   height: 20px;
   width: 20px;
+  margin-right: 5px;
 }
 
 #beverages h1 {
@@ -340,6 +343,7 @@ html {
 
 #trips {
   text-align: center;
+  width: -webkit-fill-available;
   /* margin-top: 80px; */
 }
 .whatWeOffer {
@@ -355,13 +359,6 @@ html {
   margin: 15px;
 }
 
-#imgWrapper p {
-  position: absolute;
-  padding: 7px 25px;
-  font-size: 12px;
-  color: white;
-  font-family: "Proxima Nova Bold";
-}
 /* .tripsDeco {
   height: auto;
   width: 270px;
@@ -617,6 +614,7 @@ html {
 
 #customiseYourOwn {
   color: var(--dark-blue);
+  text-align-last: end;
 }
 #customiseYourOwn a {
   text-decoration: underline;
@@ -624,10 +622,14 @@ html {
   margin-left: 5px;
 }
 
+
 /* --------- TOURS -------- */
+#tours, #trips {
+  margin: 0 15%;
+}
 #tourArea {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -645,15 +647,18 @@ html {
   /* flex-direction: column; */
   align-items: center;
   max-width: 350px;
-  box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2); */
   text-transform: uppercase;
   color: var(--light-blue);
+  background-color: white;
   border: solid 1px transparent;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
   font-family: var(--main-font);
   transition: transform 0.5s;
-  margin: 30px auto;
-  padding: 8px 60px 8px 40px;
+  /* margin: 30px auto; */
+  margin-right: 10px;
+  margin-bottom: 50px;
+  padding: 15px 30px;
   cursor: pointer;
   max-width: max-content;
 }
@@ -687,7 +692,9 @@ html {
 }
 
 #singleTourArea {
-  width: 400px;
+  /* width: 400px; */
+  margin-top: -70px;
+  position: relative;
 }
 
 #singleTourArea:hover,
@@ -837,8 +844,13 @@ html {
   /* text-transform: uppercase; */
   color: #949494;
   /* margin: 0 20px 20px 0; */
+  margin: 0;
   float: right;
 }
+.degrees {
+  margin: 10px 0 0 0;
+}
+
 #weatherDetails,
 .wind,
 .feelsLike,
@@ -1815,47 +1827,48 @@ select:after {
 /* waves */
 /* https://codepen.io/goodkatz/pen/LYPGxQz */
 /* Animation */
-
+/* 
 .waves {
+  display: none;
   width: 100%;
   /* margin-top: -100px; */
-  height: 10vh;
+  /* height: 10vh;
   margin-bottom: -7px; /*Fix for safari gap*/
-  min-height: 100px;
-  max-height: 150px;
-}
-#waves {
+  /* min-height: 100px; */
+  /* max-height: 150px; */
+/* } */ 
+/* #waves {
   position: relative;
   margin-top: -100px;
-}
+} */
 
-.parallax > use {
+/* .parallax > use {
   animation: move-forever 35s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-}
-.parallax > use:nth-child(1) {
+} */
+/* .parallax > use:nth-child(1) {
   animation-delay: -2s;
   animation-duration: 7s;
-}
-.parallax > use:nth-child(2) {
+} */
+/* .parallax > use:nth-child(2) {
   animation-delay: -3s;
   animation-duration: 10s;
-}
-.parallax > use:nth-child(3) {
+} */
+/* .parallax > use:nth-child(3) {
   animation-delay: -4s;
   animation-duration: 13s;
-}
-.parallax > use:nth-child(4) {
+} */
+/* .parallax > use:nth-child(4) {
   animation-delay: -5s;
   animation-duration: 20s;
-}
-@keyframes move-forever {
+} */
+/* @keyframes move-forever {
   0% {
     transform: translate3d(-90px, 0, 0);
   }
   100% {
     transform: translate3d(85px, 0, 0);
   }
-}
+}  */
 /*Shrinking for mobile*/
 /* @media (max-width: 768px) {
   /* .waves {
@@ -1863,9 +1876,9 @@ select:after {
 /* min-height: 40px; */
 /* } */
 /* } */
-
+/* 
 @media only screen and (max-width: 600px) {
-}
+} */
 
 /* on scroll reveal */
 .hidden {

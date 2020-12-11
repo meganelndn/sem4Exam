@@ -307,7 +307,7 @@ function showTours(tours) {
 
         tourCopy.querySelector(".tourTitle").textContent = oneTour.title.rendered;
         const tourText = tourCopy.querySelector(".tourText");
-        tourText.textContent = oneTour.description;
+        tourText.innerText = oneTour.description;
 
         //Expand single tour
         tourCopy.querySelector(".tourTitle").addEventListener("click", function(){
