@@ -8,20 +8,16 @@
 </head>
 <body>
     <div id="topNavigation">
-    <nav class="navBar" id="navBar">
-        <a href="index.html"><img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/heycaptain_logo.png" alt="logo" class="logo"></a>
-        <div class="navBarContent">
+        <nav class="navBar" id="navBar">
+            <div class="navBarContent">
             <!-- nav links -->
-        <a href="index.html">Home</a>
-        <a href="faq.html">FAQ</a>
-        <a href="#book">Book with us</a>
-            <!-- search bar -->
-        <form id="searchBar">
-            <input type="search" placeholder="Search">
-        </form>
+            <a href="/index.html"><img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/heycaptain_logo.png" alt="logo" id="logo"></a>
+            <a href="/index.html">HOME</a>
+            <a href="/faq.html">FAQ</a>
+            <a href="#book" class="bookBtn">BOOK</a>
+            </div>
+        </nav>
         </div>
-    </nav> 
-    </div> 
 
     <section id="faqInfo">
         <h3 class="faqTitle">Welcome to Hey Captains FAQ</h3>
@@ -44,21 +40,42 @@
 
     <div id="bottomNavigation">
         <template class="contactTemplate">
-            <!-- season openings -->
-            <h5 class="contactTitle"></h5>
-            <p class="contactText"></p>
-            <!-- departures/arrivals -->
-            <h5 class="contactTitle2"></h5>
-            <p class="contactText2"></p>
-            <!-- contact us -->
-            <h5 class="contactTitle3"></h5>
-            <p class="contactLink1"></p>
-            <p class="contactLink2"></p>
-            <!-- follow us/social media -->
-            <h5 class="contactTitle4"></h5>
-        </template>    
+            <div id="footerPrimary">
+                <!-- season openings -->
+                <div id="footerSeason">
+                    <h5 class="contactTitle"></h5>
+                    <p class="contactText"></p>
+                </div>
+                <!-- departures/arrivals -->
+                <div id="footerDeparture">
+                    <h5 class="contactTitle2"></h5>
+                    <p class="contactText2"></p>
+                </div>
+                <!-- contact us -->
+                <div id="footerContact">
+                    <h5 class="contactTitle3"></h5>
+                    <a href="mailto:info@heycaptain.dk"><p class="contactLink1"></p></a>
+                    <p class="contactLink2"></p>
+                </div>
+                <!-- follow us/social media -->
+                <div id="footerSoMe">
+                    <h5 class="contactTitle4"></h5>
+                    <a href="https://www.facebook.com/heycaptaincph"><img src="" alt="facebook" class="contactIcon1 socialMediaIcon" /></a>
+                    <a href="https://www.instagram.com/heycaptaincph/"><img src="" alt="instagram" class="contactIcon2 socialMediaIcon" /></a>
+                    <a href="https://www.tripadvisor.com/Attraction_Review-g189541-d12292724-Reviews-Hey_Captain-Copenhagen_Zealand.html"><img src="" alt="tripAdvisor" class="contactIcon3 socialMediaIcon" /></a>
+                </div>
+            </div>
+            <div id="footerSecondary">
+                <!-- featured in -->
+                <div id="footerFeatured">
+                    <h5>FEATURE IN</h5>
+                    <img src="" alt="conde" class="conde featuredIn" />
+                    <img src="" alt="times" class="times featuredIn" />
+                </div>
+            </div>
+        </template>
     </div>
-
+    
     <script src="script.js"></script>
 </body>
 </html>

@@ -3,7 +3,9 @@ import 'regenerator-runtime/runtime'
 
 function init() {
    
-    // weatherApp();
+    // show for both pages
+    const urlContact = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/contact_page/";
+    fetchData(urlContact, showContact);
 
     if (window.location.pathname.includes("index")) {
     const urlHome = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/landing_page/";
@@ -21,8 +23,7 @@ function init() {
     const weatherUrl = "http://api.weatherstack.com/forecast?access_key=bdb591c14b9e4a079623b1a838313888&query=Copenhagen";
     fetchData(weatherUrl, weatherApp)
 
-    const urlContact = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/contact_page/";
-    fetchData(urlContact, showContact);
+  
     
     setUpNewsletter();
     setUpBooking();
@@ -32,6 +33,7 @@ function init() {
     
         const urlFaq = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/faq/";
         fetchData(urlFaq, showFAQPage);
+
     }
 
     setUpScrollEffect();

@@ -471,7 +471,7 @@
                         <div id="timelineGallery"></div>
 
                         <div class="vl">
-                            <svg id="lineSvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300">
+                            <svg id="lineSvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
                                 <g stroke-width="2" fill="none" stroke="#000">
                                     <path id="c" d="M0 0 L0 1000"></path>
                                 </g>
@@ -542,12 +542,7 @@
 
     <div id="two-columns" class="hidden">
     
-  
-
-
-
-
-    <section id="corona">
+    <section id="corona" class="hidden">
         <h4 class="corona-guidelines">Read our COVID guidelines - safe outdoor activity</h4>
         <p class="coronaText"></p>
         
@@ -625,24 +620,39 @@
 
     <div id="bottomNavigation">
         <template class="contactTemplate">
-            <!-- season openings -->
-            <h5 class="contactTitle"></h5>
-            <p class="contactText"></p>
-            <!-- departures/arrivals -->
-            <h5 class="contactTitle2"></h5>
-            <p class="contactText2"></p>
-            <!-- contact us -->
-            <h5 class="contactTitle3"></h5>
-            <a href="mailto:info@heycaptain.dk"><p class="contactLink1"></p></a>
-            <p class="contactLink2"></p>
-            <!-- follow us/social media -->
-            <h5 class="contactTitle4"></h5>
-            <a href="https://www.facebook.com/heycaptaincph"><img src="" alt="facebook" class="contactIcon1 socialMediaIcon" /></a>
-            <a href="https://www.instagram.com/heycaptaincph/"><img src="" alt="instagram" class="contactIcon2 socialMediaIcon" /></a>
-            <a href="https://www.tripadvisor.com/Attraction_Review-g189541-d12292724-Reviews-Hey_Captain-Copenhagen_Zealand.html"><img src="" alt="tripAdvisor" class="contactIcon3 socialMediaIcon" /></a>
-            <!-- featured in -->
-            <img src="" alt="times" class="times featuredIn" />
-            <img src="" alt="conde" class="conde featuredIn" />
+            <div id="footerPrimary">
+                <!-- season openings -->
+                <div id="footerSeason">
+                    <h5 class="contactTitle"></h5>
+                    <p class="contactText"></p>
+                </div>
+                <!-- departures/arrivals -->
+                <div id="footerDeparture">
+                    <h5 class="contactTitle2"></h5>
+                    <p class="contactText2"></p>
+                </div>
+                <!-- contact us -->
+                <div id="footerContact">
+                    <h5 class="contactTitle3"></h5>
+                    <a href="mailto:info@heycaptain.dk"><p class="contactLink1"></p></a>
+                    <p class="contactLink2"></p>
+                </div>
+                <!-- follow us/social media -->
+                <div id="footerSoMe">
+                    <h5 class="contactTitle4"></h5>
+                    <a href="https://www.facebook.com/heycaptaincph"><img src="" alt="facebook" class="contactIcon1 socialMediaIcon" /></a>
+                    <a href="https://www.instagram.com/heycaptaincph/"><img src="" alt="instagram" class="contactIcon2 socialMediaIcon" /></a>
+                    <a href="https://www.tripadvisor.com/Attraction_Review-g189541-d12292724-Reviews-Hey_Captain-Copenhagen_Zealand.html"><img src="" alt="tripAdvisor" class="contactIcon3 socialMediaIcon" /></a>
+                </div>
+            </div>
+            <div id="footerSecondary">
+                <!-- featured in -->
+                <div id="footerFeatured">
+                    <h5>FEATURE IN</h5>
+                    <img src="" alt="conde" class="conde featuredIn" />
+                    <img src="" alt="times" class="times featuredIn" />
+                </div>
+            </div>
         </template>
     </div>
 
