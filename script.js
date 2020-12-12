@@ -139,7 +139,7 @@ function setScrollPosition() {
     
     let book = document.querySelector("#navBar .bookBtn");
     let sticky = header.offsetTop;
-    let navBar = document.querySelector("#navBar");
+    let navBar = document.querySelector("#topNavigation");
 
     function myFunction() {
       if (window.pageYOffset > sticky) {
@@ -546,7 +546,6 @@ function weatherApp(weather) {
    copy.querySelector(".degrees span").textContent = weather.current.temperature;
    copy.querySelector(".status").textContent = weather.current.weather_descriptions[0];
    copy.querySelector(".feelsLike .feeling span").textContent = "Feels like: " + weather.current.feelslike;
-   copy.querySelector(".humid .humidity span").textContent = "Precipitation: " + weather.current.precip;
 
    copy.querySelector(".weatherResult").textContent = "";
    copy.querySelector(".weatherIcon").src = "";

@@ -75,36 +75,35 @@ html {
 }
 #topNavigation {
   position: fixed;
-  width: -webkit-fill-available;
-  z-index: 99;
-  background-attachment: fixed;
-  padding: 5px;
+  width: 100%;
+  z-index: 10;
 }
+
 #logo {
-  width: 50px;
   height: 50px;
-  margin-right: 1220px;
 }
-#navBar {
+
+/* #navBar {
   right: 0;
   top: 0;
   padding: 10px;
-  position: absolute;
-}
+} */
 .navBarContent {
   display: flex;
-  margin-inline-start: auto;
   align-items: center;
+  justify-content: flex-end;
 }
+
 #navBar a {
   color: #000;
-  text-transform: uppercase;
   cursor: pointer !important;
-  font-family: var(--main-font);
   text-decoration: none;
-  font-size: 14px;
-  margin: 0 20px;
+  padding: 8px 20px;
   font-family: "Proxima Nova Bold";
+}
+
+#navBar a:first-of-type {
+  flex-grow: 1;
 }
 /* sticky navBar */
 .changeMenu {
@@ -194,20 +193,13 @@ html {
 #tripArea {
   display: flex;
   flex-direction: row-reverse;
-  /* padding-top: 100px; */
   padding-top: 50px;
   justify-content: center;
-  /* max-width: 600px; */
-
-  /* place-items: flex-end; */
 }
 
 .wheel {
   width: 80px;
-  height: auto;
-  margin: 40px;
   animation: rotate 3s linear infinite;
-  margin-bottom: 60px;
 }
 
 @keyframes rotate {
@@ -217,16 +209,15 @@ html {
 }
 
 #tripPrices {
-  font-size: 16px;
-  font-family: "Brandon Text Regular";
-  text-align: center;
   color: var(--dark-blue);
   display: flex;
   justify-content: space-around;
 }
+
 #tripPrices p {
   display: flex;
   flex-direction: column;
+  text-align: left;
   color: var(--dark-blue);
   font-size: 12px;
   font-family: "Proxima Nova Bold";
@@ -244,16 +235,12 @@ html {
   margin: 10px 0;
 }
 #singleTripArea {
-  display: flex;
-  flex-flow: column nowrap;
-  max-width: fit-content;
   margin: 0 20px;
   border-radius: 10px;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
     0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
     0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
     0 100px 80px rgba(0, 0, 0, 0.07);
-  /* box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2); */
 }
 
 #cardWrapper {
@@ -271,7 +258,6 @@ html {
 }
 .tripText {
   text-align: left;
-  font-size: 16px;
   font-family: "Proxima Nova Regular";
 }
 
@@ -281,7 +267,6 @@ html {
 }
 
 #bottomSection {
-  margin-top: auto;
   border-top: 1px solid lightgrey;
   margin: 0 20px;
 }
@@ -295,7 +280,6 @@ html {
 
 .durationImg {
   height: 15px;
-  width: auto;
   margin-right: 10px;
 }
 #summerWinter {
@@ -317,7 +301,6 @@ html {
 
 /* new */
 #beverages {
-  font-family: "Proxima Nova Regular";
   text-align: left;
   margin-bottom: 20px;
 }
@@ -372,22 +355,13 @@ html {
 } */
 .readMoreTrip {
   display: flex;
-  text-align: left;
-  margin-top: auto;
   font-size: 14px;
-  text-transform: uppercase;
   color: white;
   cursor: pointer;
   background-color: var(--dark-blue);
-  /* border: solid 1px var(--dark-blue); */
-  /* border-radius: 0 0 10px 10px; */
   padding: 15px;
-  font-family: var(--main-font);
-  /* box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-    0 100px 80px rgba(0, 0, 0, 0.07); */
 }
+
 .readMoreTrip img {
   margin-left: auto;
   width: 20px;
@@ -485,9 +459,6 @@ html {
 }
 
 .readMoreTrip span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
   transition: 0.5s;
   margin-left: 10px;
   font-weight: bold;
@@ -511,19 +482,12 @@ html {
 /* book single trip */
 
 .bookTrip {
-  display: flex;
-  text-align: center;
-  justify-content: center;
   cursor: pointer;
-  font-size: 14px;
   font-weight: bold;
-  text-transform: uppercase;
   color: var(--dark-blue);
   background-color: var(--yellow);
-  /* border: solid 1px var(--dark-blue); */
   border-radius: 0 0 10px 10px;
   padding: 15px;
-  font-family: var(--main-font);
 }
 
 /* trip table */
@@ -614,7 +578,6 @@ html {
 
 #customiseYourOwn h3 {
   margin-top: 60px;
-  display: inline-flex;
 }
 
 #customiseYourOwn {
@@ -746,12 +709,11 @@ html {
 #weather {
   display: flex;
   justify-content: center;
+  margin-top: 70px;
 }
 
 #weatherArea {
   color: var(--dark-blue);
-  display: flex;
-  flex-flow: column nowrap;
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2);
@@ -760,7 +722,6 @@ html {
 #weatherArea #main {
   display: flex;
   justify-content: space-between;
-  place-items: center;
 }
 
 .statusWrapper {
@@ -775,21 +736,19 @@ html {
   left: 55%;
 }
 .weatherResult {
-  font-size: 14px;
   font-style: italic;
   margin: 0;
 }
+
 #weatherResult p::before {
   content: "\261E";
   margin-right: 10px;
   font-size: 22px;
 }
 .temperature {
-  /* display: inline-flex; */
   margin-top: 0;
 }
 #weatherArea h1.location {
-  font-size: 24px;
   font-family: "Proxima Nova Bold";
   margin: 0 0 10px 0;
 }
@@ -805,65 +764,49 @@ html {
   border-right: 1px solid lightgray;
   margin: 10px 0;
 }
-/*
-.minMax {
-  display: flex;
-  align-content: center;
-  place-content: center;
-} */
 
-.minMax p,
-.humidity img,
-.humidity p,
-.feelsLike img,
-.feelsLike p,
-.humid img,
-.humid p {
-  padding: 16px 5px;
-  margin: 0;
-}
 .status {
   font-size: 14px;
   font-family: "Proxima Nova Regular";
-  /* text-transform: uppercase; */
   color: #949494;
-  /* margin: 0 20px 20px 0; */
   margin: 0;
   float: right;
 }
+
 .degrees {
   margin: 10px 0 0 0;
 }
 
 #weatherDetails,
-.humidity,
-.feelsLike,
-.humid {
+.feelsLike {
   font-family: "Proxima Nova Bold";
   text-transform: uppercase;
   font-size: 12px;
   display: flex;
   color: var(--light-blue);
   flex: auto;
-  /*   align-items: center;
-  float: left; */
 }
+
 #weatherDetails div {
   display: flex;
-  place-content: space-around;
+  align-items: center;
 }
+
 .bottomSection {
   margin-top: auto;
   border-top: 1px solid lightgrey;
 }
+
 #weatherDetails img,
 .weatherCal {
   width: auto;
   height: 15px;
 }
+
 .dateTime {
   display: inline-flex;
 }
+
 .dt {
   font-size: 14px;
   margin: 0 0 0 10px;
