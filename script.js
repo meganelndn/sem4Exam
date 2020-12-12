@@ -160,13 +160,6 @@ function formValidation() {
     const elements1 = form1.elements;
     //form1.setAttribute("novalidate", true);
     const formElements1 = form1.querySelectorAll("input, select");
-    
-    if (!tripSelected) {
-        console.log("do nothing")
-    } else {
-        //to do: set the value for tour the already saved tripSelected""
-        console.log("final", tripSelected)
-    }
 
     formElements1.forEach((e) => {
         e.addEventListener("change", (e) => {
@@ -179,7 +172,7 @@ function formValidation() {
             phone: form1.querySelector("input[id=phone").value,
             code: form1.querySelector("input[id=campaign-code").value,
             };
-            console.log(objectReview)
+            // console.log(objectReview)
             completedForm = objectReview;
         }) 
     })
@@ -258,18 +251,35 @@ function showTrips(trips) {
 
     trips.forEach((oneTrip) => {
         const tripCopy = tripTemplate.cloneNode(true);
-
+        // autoFill save Book btn info
         tripCopy.querySelector(".bookTrip").addEventListener("click", function(){
-            // console.log("clicked")
-            // console.log(oneTrip.trip_name)
             if (!tripSelected) {
                 tripSelected = oneTrip.trip_name;
-                console.log(tripSelected)
+                autoFill(tripSelected);
             } else {
                 tripSelected = oneTrip.trip_name;
-                console.log(tripSelected)
+                autoFill(tripSelected);
             }
         })
+        function autoFill(tripSelected){
+            if (tripSelected.includes("The Landmarks")) {
+                document.querySelector('#intro').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+                document.querySelector("select[id=tour").selectedIndex = 1;
+            } else if (tripSelected.includes("Hidden Gems")) {
+                document.querySelector('#intro').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+                document.querySelector("select[id=tour").selectedIndex = 2;
+            } else if (tripSelected.includes("The Diana")) {
+                document.querySelector('#intro').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+                document.querySelector("select[id=tour").selectedIndex = 3;
+            }
+        }
+
         tripCopy.querySelector(".tripTitle").textContent = oneTrip.title.rendered;
         tripCopy.querySelector(".tripImg").src = oneTrip.trip_image.guid;
         tripCopy.querySelector(".duration").textContent = oneTrip.duration;
@@ -315,17 +325,6 @@ function showTrips(trips) {
             document.body.style.overflow = "auto"; // ADD THIS LINE
             document.body.style.height = "auto"; 
         });
-        //Autofil
-        // let bookTrip = tripCopy.querySelectorAll(".tripTitle");
-        // bookTrip.forEach((item)=>{
-        //     console.log(item.textContent)
-        //     console.log(tripCopy.querySelector(".bookTrip"))
-        //     tripCopy.querySelector(".bookTrip").addEventListener("click", function(){
-        //         console.log(tripSelected)
-        //         tripSelected = "";
-        //         tripSelected = item.textContent;
-        //     })
-        // })
 
         //3. append
         tripArea.appendChild(tripCopy);
