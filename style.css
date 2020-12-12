@@ -1152,10 +1152,6 @@ input#terms {
   width: 100px;
 }
 
-.toReceipt {
-  position: absolute;
-  bottom: 20%;
-}
 /* ------------ booking forms ----------- */
 .show,
 .hideOverlay {
@@ -1368,6 +1364,7 @@ select:after {
 }
 
 /* payment form */
+
 .paymentForm a {
   color: #28333b;
   text-decoration: none;
@@ -1412,33 +1409,18 @@ select:after {
 }
 .flex {
   display: flex;
-  flex-direction: row wrap;
-  align-items: center;
 }
+
 .flex.justify-space-between {
   justify-content: space-between;
 }
-/* .card {
-  padding: 0 50px;
-  max-width: 850px;
-  background: inherit;
-  box-sizing: border-box;
-} */
-.paymentForm {
-  max-width: 700px;
-  margin: 0 auto;
-}
+
 .paymentForm .formLabel {
   box-shadow: none;
   border: 3px solid #e8ebed;
   border-radius: 5px;
 }
-/* .card .card-title {
-  margin-bottom: 50px;
-}
-.card .card-title h2 {
-  margin: 0;
-} */
+
 .paymentForm .payment-type h4 {
   margin: 0;
 }
@@ -1509,11 +1491,8 @@ select:after {
 }
 .paymentForm .payment-info .column {
   width: calc(50% - 25px);
-  margin-top: 35px;
 }
-#cc.column.shipping {
-  margin-top: -55px;
-}
+
 .paymentForm .payment-info .title {
   display: flex;
   flex-direction: row;
@@ -1527,16 +1506,11 @@ select:after {
   font-family: "Brandon Text Regular";
 }
 
-#cc {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 #cc > #oneCell {
   flex: 1 0 100%;
 }
+
 .toReceipt {
-  text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 0.5px;
   padding: 15px 25px;
@@ -1546,10 +1520,7 @@ select:after {
   background: lightblue;
   border: 2px solid #e8ebed;
   color: #000;
-  position: absolute;
-  right: 28%;
-  bottom: -8.5%;
-  /*   left: 43%; */
+  float: right;
 }
 .toReceipt:hover {
   background: var(--light-blue);
