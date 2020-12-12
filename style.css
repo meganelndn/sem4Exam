@@ -207,6 +207,7 @@ html {
   height: auto;
   margin: 40px;
   animation: rotate 3s linear infinite;
+  margin-bottom: 60px;
 }
 
 @keyframes rotate {
@@ -675,26 +676,6 @@ html {
   content: "👥";
   margin-right: 20px;
 }
-.corona-guidelines {
-  align-items: center;
-  display: flex;
-  /* margin: 30px auto; */
-  margin: 0;
-  transition: transform 0.5s;
-  flex-direction: column;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  color: var(--dark-blue);
-  cursor: pointer;
-  background-color: var(--yellow);
-  cursor: pointer;
-  max-width: max-content;
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-    0 100px 80px rgba(0, 0, 0, 0.07);
-}
 
 #singleTourArea {
   /* width: 400px; */
@@ -709,8 +690,7 @@ html {
   transform: scale3d(1.05, 1.05, 1);
 }
 
-.tourTitle,
-.corona-guidelines {
+.tourTitle {
   font-family: "Proxima Nova Regular";
   font-size: 16px;
 }
@@ -727,48 +707,47 @@ html {
   display: none;
 }
 
-/* .slide {
-  visibility: visible;
-  animation: slide 1s;
-}
-
-@keyframes slide {
-  0% {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} */
-
 /* -------- covid & weather container ------- */
 #two-columns {
-  flex-direction: column;
-  justify-self: center;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
+  margin: 50px;
 }
 
 /* -------- covid ------- */
 #corona {
-  grid-area: covid / covid / covid / covid;
   display: flex;
-  /* place-self: start center; */
   align-items: center;
-  place-content: center;
   flex-flow: column;
-  margin: 40px;
+}
+
+.coronaText {
+  margin: 30px;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.corona-guidelines {
+  margin: 0;
+  transition: transform 0.5s;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  background-color: var(--dark-blue);
+  cursor: pointer;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07);
 }
 
 /* -------- weather ------- */
 #weather {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
+
 #weatherArea {
   color: var(--dark-blue);
   display: flex;
@@ -1022,46 +1001,21 @@ html {
 }
 
 /* NEWSLETTER OVERLAY */
-.newsletterArea {
-  position: fixed;
+#news {
+  display: flex;
+  align-self: flex-start;
 }
-#newsletterBtn {
-  background: var(--yellow);
-  border: none;
-  cursor: pointer;
-  position: inherit;
-  padding: 30px;
-  bottom: 0;
-  transform-origin: left 60px;
-  transform: rotate(-90deg);
-  text-transform: uppercase;
-  font-size: 11px;
-  height: 25px;
-  width: 25px;
-  background-color: #fff;
-  border-radius: 50%;
-  display: inline-block;
-  transition: transform 0.8s;
-  box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2);
-}
-.newsletterIcon {
-  height: 35px;
-  width: 35px;
-  transform: rotate(90deg);
-  position: inherit;
-  cursor: pointer;
-  top: 50%;
-  transform-origin: right;
-  left: -3px;
-}
+
 .newsletterSubscription {
-  padding: 25px 35px;
   width: 100%;
+  font-size: 14px;
+  padding: 8px 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background: var(--dark-blue);
 }
-#newsletterMail {
-  width: -webkit-fill-available;
-  text-align-last: center;
-}
+
 .newsletterForm .error {
   background: rgba(0, 0, 0, 0.1);
 }
@@ -1069,77 +1023,22 @@ html {
   width: 150px;
   height: auto;
 }
-.overlay {
-  width: 0;
-  position: inherit;
-  bottom: 0;
-  right: 0;
-  /* height: 60%; */
-  background-color: #fff;
-  animation: scale-up-center 0.9s both;
-}
-@keyframes scale-up-center {
-  0% {
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-.newsletterAnimation {
-  animation: scale-up-hor-right 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-}
-@keyframes scale-up-hor-right {
-  0% {
-    -webkit-transform: scaleX(0.4);
-    transform: scaleX(0.4);
-    -webkit-transform-origin: 100% 100%;
-    transform-origin: 100% 100%;
-  }
-  100% {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-    -webkit-transform-origin: 100% 100%;
-    transform-origin: 100% 100%;
-  }
-}
-.showOverlay {
-  /* width: 15%;
-  height: fit-content; */
-  width: min-content;
-  height: auto;
-  bottom: 0;
-}
+
 .overlay-content,
 .overlay-content2 {
-  position: relative;
   text-align: center;
-  margin-top: 5px;
-  font-size: 12px;
   padding: 30px 40px;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+  width: 300px;
+  height: 300px;
 }
-.overlay-content2 {
-  width: max-content;
-  height: auto;
-  bottom: 0;
-}
-.newsletterTitle,
-.newsletterText {
-  margin: 20px 0;
-}
-.newsletterTitle {
-  font-size: 18px;
-}
-.newsletterText {
-  font-size: 16px;
-}
+
+/* end */
 
 .makeBold {
   color: red;
 }
+
 .displayNone {
   display: none;
 }
@@ -1293,8 +1192,7 @@ input#terms {
   cursor: pointer;
 }
 .toPayment,
-.toReceipt,
-.newsletterSubscription {
+.toReceipt {
   margin-right: 0;
   font-size: 14px;
   text-transform: uppercase;
@@ -1500,13 +1398,7 @@ select:after {
   text-align: left;
   line-height: 1.8;
 }
-.coronaText {
-  font-family: "Proxima Nova Regular";
-  margin-top: 20px;
-  margin: 30px;
-  line-height: 1.8;
-  text-align: justify;
-}
+
 .trip-modal-close,
 .payment-modal-close {
   cursor: pointer;
@@ -1957,17 +1849,6 @@ select:after {
     flex-direction: column;
   }
 
-  #two-columns {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #corona {
-    align-self: center;
-  }
-  .corona-guidelines {
-    margin: 50px;
-  }
   #singleTourArea {
     width: auto;
   }

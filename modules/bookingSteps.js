@@ -64,6 +64,5 @@ export function postSubscription(formInfo) {
             body: postData,
         })
         .then((res) => res.json())
-        // .then((data) => {location.replace("asset.html")});
-        .then(console.log("it posted"));
+        .then(console.log("Booked! - check RestDb."));
 }

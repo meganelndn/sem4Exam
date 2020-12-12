@@ -68,11 +68,12 @@ function setUpScrollEffect(){
 }
 
 import { checkValidation, closeForm, postSubscription } from "./modules/bookingSteps";
-import { fetchData } from "./modules/shared";
+import { fetchData, postNewsletter } from "./modules/shared";
 
 import { carouselEffect } from "./modules/imageCarousel";
 
 let completedForm;
+let newsletterEmail;
 
 function smoothScroll() {
     document.querySelector(".bookBtn", ".bookTrip").addEventListener("click", e => {
@@ -88,27 +89,25 @@ function setUpNewsletter() {
     const newsEl = newsForm.elements;
     const newsFormEl = newsForm.querySelectorAll("input"); 
 
-    document.querySelector("#newsletterBtn").addEventListener("click", function(){
-        let newsletterOverlay = document.getElementById("newsletterOverlay");
-        newsletterOverlay.classList.toggle("showOverlay");
-        newsletterOverlay.classList.toggle("newsletterAnimation");
+    newsFormEl.forEach((e) => {
+        e.addEventListener("change", (e) => {
+            let objectNews = {
+            email: document.querySelector("input[id=newsletterMail").value,
+            };
+            newsletterEmail = objectNews;
+        }) 
+    })
 
-        document.querySelector(".overlay-content").classList.remove("hideOverlay");
-
-        document.querySelector(".newsletterSubscription").addEventListener("click", function(e){
-            e.preventDefault();
-            checkValidation(newsForm, newsFormEl, sendNewsletter); 
-        })
+    document.querySelector(".newsletterSubscription").addEventListener("click", function(e){
+    e.preventDefault();
+    checkValidation(newsForm, newsFormEl, sendNewsletter); 
     });
 }
 
 function sendNewsletter(){
+    postNewsletter(newsletterEmail)
     document.querySelector(".overlay-content2").classList.remove("show");
     document.querySelector(".overlay-content").classList.add("hideOverlay");
-    document.querySelector("#newsletterBtn").addEventListener("click", function(){
-        document.querySelector(".showOverlay").classList.add("newsletterAnimation");
-        location.reload(); 
-    })
 }
 
 function setUpBooking(){
