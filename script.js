@@ -217,7 +217,16 @@ function showLandingPage(home) {
     const introCopy = introTemplate.cloneNode(true);
     // 2. text content
     /* ------------ hero image ----------- */
-    introCopy.querySelector(".video-container").src = home[0].hero_video.guid;
+    const checkMobile = window.matchMedia('screen and (max-width: 575px)');
+  
+      if(checkMobile.matches) {
+          //TODO: add an img here, since there will be no video.
+          //console.log('MOBILE');
+      } else {
+          //console.log("big")
+          introCopy.querySelector(".video-container").src = home[0].hero_video.guid;
+      }
+
     /* -------------- banner ------------- */
     introCopy.querySelector(".banner").src = home[0].banner.guid;
     /* ------------ intro text ----------- */
