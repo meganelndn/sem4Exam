@@ -15,12 +15,12 @@
         <div class="navBarContent">
         <!-- nav links -->
         <a href="/index.html"><img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/heycaptain_logo.png" alt="logo" id="logo"></a>
-        <a href="/index.html">HOME</a>
-        <a href="/faq.html">FAQ</a>
+        <a href="/index.html">HOME <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/home.png" alt="" class="homeIcon"></a>
+        <a href="/faq.html">FAQ <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/faqs-1895578-1604568.png" alt="" class="faqIcon"></a>
         <a href="#book" class="bookBtn">BOOK</a>
         </div>
     </nav>
-    </div>
+    </div>  
 
     <section id="intro">
         <template class="introTemplate">
@@ -399,6 +399,7 @@
         </svg> 
     </section>
 
+
     <!-- class="hidden" REMOVED testing -->
     <section id="trips" class="hidden">
 
@@ -500,55 +501,46 @@
         
     </section>
 
-    <section id="weather">
-        <template id="weatherTemplate">
-            <h1 class="location"></h1>
-            <div class="dateTime">
-                <img class="weatherCal" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/icon-calendar.png" alt="">
-                <p class="dt"></p>
-            </div>
-            <div id="main">
-                <div class="temperature">
-                    <p class="degrees"><span></span>°</p>
-                    <p class="status"></p>
-                    
-                    <!-- <p class="min">Min.<span></span></p>
-                        <p class="max">Max.<span></span></p> -->
-                    </div>
-                    <div class="statusWrapper">
-                        <img class="weatherIcon" src="" alt="weatherIcon">
-                      
-
-                    </div>
-            </div>
-            <div id="weatherDetails">
-                <div class="feelsLike">
-                    <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/icon-thermostat-half.png" alt="">
-                    <p class="feeling"><span></span>°</p>
-                </div>
-                <div class="wind">
-                    <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/wind.png" alt="">
-                    <p class="speed"><span></span> km/h</p>
-                </div>
-            </div>
-            <div class="bottomSection"></div>
-            <div id="weatherResult">
-                <p class="weatherResult"></p>
-            </div>
-        </template>
-        <div id="weatherArea"></div>
-    </section>
-
-
-    <div id="two-columns" class="hidden">
+    <!-- <div id="two-columns" class="hidden"> -->
     
-    <section id="corona" class="hidden">
-        <h4 class="corona-guidelines">Read our COVID guidelines - safe outdoor activity</h4>
-        <p class="coronaText"></p>
-        
-        <!-- <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/anchor.png" alt="" class="anchor"> -->
-       
-    </section>
+        <section id="weather">
+            <template id="weatherTemplate">
+                <h1 class="location"></h1>
+                <div class="dateTime">
+                    <img class="weatherCal" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/icon-calendar.png" alt="">
+                    <p class="dt"></p>
+                </div>
+                <div id="main">
+                    <div class="temperature">
+                        <p class="degrees"><span></span>°</p>
+                        <p class="status"></p>
+                        
+                        <!-- <p class="min">Min.<span></span></p>
+                            <p class="max">Max.<span></span></p> -->
+                        </div>
+                        <div class="statusWrapper">
+                            <img class="weatherIcon" src="" alt="weatherIcon">
+                          
+    
+                        </div>
+                </div>
+                <div id="weatherDetails">
+                    <div class="feelsLike">
+                        <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/icon-thermostat-half.png" alt="">
+                        <p class="feeling"><span></span>°</p>
+                    </div>
+                    <div class="wind">
+                        <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/wind.png" alt="">
+                        <p class="speed"><span></span> km/h</p>
+                    </div>
+                </div>
+                <div class="bottomSection"></div>
+                <div id="weatherResult">
+                    <p class="weatherResult"></p>
+                </div>
+            </template>
+            <div id="weatherArea"></div>
+        </section>
 
     <section id="news">
         <div class="overlay-content">
@@ -580,11 +572,19 @@
             <p class="newsletterText">You will be receiving an email shortly</p>
         </div>
     </section>
-</div>
+<!-- </div> -->
 
+
+<section id="corona" class="hidden">
+    <h4 class="corona-guidelines">Read our COVID guidelines - safe outdoor activity</h4>
+    <p class="coronaText"></p>
+    
+    <!-- <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/anchor.png" alt="" class="anchor"> -->
+   
+</section>
 
    <section id="gallery" class="row hidden">
-        <template class="galleryTemplate">
+        <template class="galleryTemplate">  
             <!-- https://codepen.io/desandro/pen/jEpxqJ -->
             <div class="carousel js-flickity">
                 <div class="carousel-cell">
@@ -645,14 +645,7 @@
                     <a href="https://www.tripadvisor.com/Attraction_Review-g189541-d12292724-Reviews-Hey_Captain-Copenhagen_Zealand.html"><img src="" alt="tripAdvisor" class="contactIcon3 socialMediaIcon" /></a>
                 </div>
             </div>
-            <div id="footerSecondary">
-                <!-- featured in -->
-                <div id="footerFeatured">
-                    <h5>FEATURE IN</h5>
-                    <img src="" alt="conde" class="conde featuredIn" />
-                    <img src="" alt="times" class="times featuredIn" />
-                </div>
-            </div>
+
         </template>
     </div>
 
