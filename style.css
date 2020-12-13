@@ -77,11 +77,10 @@ html {
   height: 50px;
 }
 
-/* #navBar {
-  right: 0;
-  top: 0;
-  padding: 10px;
-} */
+.homeIcon, .faqIcon {
+  display: none;
+}
+
 .navBarContent {
   display: flex;
   align-items: center;
@@ -409,6 +408,7 @@ html {
   width: 400px;
   justify-content: center;
 }
+
 #boatSvg2 {
   width: 400px;
   transform: scaleX(-1);
@@ -592,7 +592,6 @@ html {
 #tourArea {
   display: flex;
   justify-content: flex-start;
-  flex-wrap: wrap;
 }
 
 .anchor {
@@ -635,9 +634,9 @@ html {
 }
 
 #singleTourArea {
-  /* width: 400px; */
   margin-top: -60px;
   position: relative;
+  width: 250px;
 }
 
 #singleTourArea:hover,
@@ -651,12 +650,11 @@ html {
   font-family: "Proxima Nova Regular";
   font-size: 16px;
 }
-.tourText,
-.coronaText {
+
+.tourText {
+  margin: 5px;
   font-family: "Proxima Nova Regular";
-  width: 400px;
   text-align: left;
-  display: none;
 }
 .tourImg {
   width: 350px;
@@ -677,34 +675,40 @@ html {
   display: flex;
   align-items: center;
   flex-flow: column;
+  align-items: stretch;
+  flex-flow: column;
+  text-align: center;
 }
 
 .coronaText {
   margin: 30px;
   line-height: 1.8;
   text-align: justify;
+  width: 70%;
+  align-self: center;
+  font-family: "Proxima Nova Regular";
+  text-align: left;
+  display: none;
+  margin: 30px 0;
+  text-align: left;
 }
 
 .corona-guidelines {
+  font-family: "Proxima Nova Light", sans-serif;
   margin: 0;
   transition: transform 0.5s;
   padding: 10px 20px;
-  border-radius: 20px;
   color: white;
+  background-color: var(--light-blue);
   cursor: pointer;
-  background-color: var(--dark-blue);
-  cursor: pointer;
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-    0 100px 80px rgba(0, 0, 0, 0.07);
+  /* box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15); */
 }
 
 /* -------- weather ------- */
 #weather {
   display: flex;
   justify-content: center;
-  margin-top: 70px;
+  margin-top: 50px;
 }
 
 #weatherArea {
@@ -812,8 +816,8 @@ html {
 
 /* --------- BOTTOM NAV -------- */
 #bottomNavigation {
-  background-color: var(--light-beige);
-  color: var(--dark-blue);
+  color: white;
+  background-color: var(--dark-blue);
 }
 
 #footerPrimary {
@@ -823,10 +827,6 @@ html {
 
 #footerPrimary div {
   margin-right: 70px;
-}
-
-#footerSecondary {
-  padding: 0 30px 30px 30px;
 }
 
 #bottomNavigation p {
@@ -844,14 +844,6 @@ html {
 
 .contactLink1 {
   cursor: pointer !important;
-}
-
-.times {
-  margin-right: 30px;
-  width: 120px;
-}
-.conde {
-  width: 100px;
 }
 
 /* --------- FAQ ---------- */
@@ -903,9 +895,12 @@ html {
 /* NEWSLETTER OVERLAY */
 #news {
   display: flex;
-  display: flex;
-  align-items: center;
-  align-self: center;
+  place-content: center;
+  background-image: url("http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/sea.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 40px;
+  margin-top: 70px;
 }
 
 .newsletterSubscription {
@@ -929,12 +924,16 @@ html {
 .overlay-content,
 .overlay-content2 {
   text-align: center;
+  background-color: white;
   padding: 30px 40px;
+  border-radius: 15px;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
-  width: 300px;
-  height: 300px;
+  width: 400px;
 }
 
+#news form {
+  display: flex;
+}
 /* end */
 
 .makeBold {
@@ -1479,8 +1478,10 @@ select:after {
   background: lightblue;
   border: 2px solid #e8ebed;
   color: #000;
-  float: right;
+  display: flex;
+  margin-left: auto;
 }
+
 .toReceipt:hover {
   background: var(--light-blue);
 }
@@ -1697,8 +1698,13 @@ select:after {
 
 /* mobile */
 @media only screen and (min-device-width: 300px) and (max-device-width: 815px) {
-  .banner, .introTitle {
+  .introTitle {
     display: none;
+  }
+
+  .banner {
+    top: 7%;
+    width: 70%;
   }
 
   #videoWrapper {
@@ -1710,7 +1716,17 @@ select:after {
     position: relative;
     background-image: url("http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/sea.jpg");
     background-attachment: fixed;
-    padding: 150px 0;
+    padding: 30% 0;
+  }
+
+  .availability {
+    flex-direction: column-reverse;
+    padding: 20px;
+  }
+
+  .formLabel{
+    height: 55px;
+    padding: 5px;
   }
 
   #oneCell {
@@ -1720,23 +1736,35 @@ select:after {
   #firstRow,
   #secondRow {
     flex-direction: column;
+    margin-bottom: 10px;
   }
 
   #secondRow .formLabel {
-  margin: inherit;
+  margin: 5px;
   }
 
   #secondRow .formLabel:last-of-type {
     border-left: none;
-  }
-  #secondRow .formLabel:last-of-type {
-  padding-left: 0;
+    padding-left: 0;
   }
 
   .toPayment {
     width: 100%;
+    border-radius: 0 0 5px 5px;
   }
 
+  /* payment */
+  .paymentForm .payment-type .types .type {
+    padding: 0;
+  }
+
+  #payment-modal-content #formLabel {
+    height: 50px;
+  }
+
+  .paymentForm .payment-info .title {
+    margin: 10px 0;
+  }
   /* trips */
   #tours, #trips {
     margin: 0 5%;
@@ -1760,23 +1788,53 @@ select:after {
   #customiseYourOwn {
     text-align-last: center;
   }
+  
+  /* modals */
+  #trip-modal-content, #payment-modal-content {
+    width: auto;
+    margin: 0;
+  }
 
+  .fullDescription {
+    margin: auto;
+  }
+
+  #trip-modal-content h1 {
+    margin: 30px 0;
+  }
+
+  #trip-modal-content #summerWinter {
+    margin: 30px 0;
+  }
+
+  #gallery-1, #gallery-2, #gallery-3 {
+    column-count: 1;
+    text-align-last: center;
+    margin-bottom: 50px;
+  }
+
+  .gallery-item figcaption {
+    margin-bottom: 30px;
+  }
+
+  #lineSvg {
+    display: none;
+  }
+  
   /* tour */
   #tourArea {
-    flex-wrap: nowrap;
+    position: relative;
   }
 
   #singleTourArea {
     width: auto;
+    padding: 5px;
+    margin-top: -80px;
   }
 
   .tourText,
   .coronaText {
     width: auto;
-  }
-  .coronaText {
-    margin: 30px 0;
-    text-align: left;
   }
 
   #customiseYourOwn h3 {
@@ -1785,15 +1843,18 @@ select:after {
   }
 
   #corona {
-    margin-bottom: 50px;
+    margin: 50px 5% 50px 5%;
   }
 
   #boatSvg {
     display: none;
   }
 
-  #weatherArea {
-    margin: 0 5%;
+  /* weather */
+
+  #weather {
+    margin-top: 0;
+    margin-bottom: 50px;
   }
 
   /* faq */
@@ -1807,15 +1868,18 @@ select:after {
   }
 
   /* news */
-  #news {
-    margin: 0 5%;
+  #news, #weather {
+    margin: 50px 5%;
   }
 
-  /* modals */
-  #trip-modal-content, #payment-modal-content {
-    width: auto;
-    margin: 15% auto;
+  #news form {
+    flex-direction: column;
   }
+
+  .overlay-content, .overlay-content2 {
+    width: auto;
+  }
+
   /* footer */
   #bottomNavigation {
     display: block;
@@ -1824,4 +1888,38 @@ select:after {
   #footerPrimary {
     flex-direction: column;
   }
+
+  /* navbar */
+  #navBar a {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  #navBar a:first-of-type {
+    display: none;
+  }
+  #navBar a:last-of-type {
+    padding: 25px;
+    font-size: 16px;
+  }
+  .addStyle {
+    border-radius: 0;
+  }
+  #topNavigation {
+    bottom: 0;
+  }
+  .navBarContent {
+    justify-content: space-between;
+    background-color: var(--light-beige );  
+  }
+  .changeMenu {
+    bottom: 0;
+  }
+  .homeIcon, .faqIcon {
+    width: 30px;
+    height: auto;
+    display: block;
+  }
+
 }

@@ -515,7 +515,7 @@ function showContact(contact) {
     // 2. text content
     /* ------------ season openings ----------- */
     contactCopy.querySelector(".contactTitle").textContent = contact[2].title.rendered;
-    contactCopy.querySelector(".contactText").textContent = contact[2].openings;
+    contactCopy.querySelector(".contactText").innerText = contact[2].openings;
     /* ---------- departures/arrivals ---------- */
     contactCopy.querySelector(".contactTitle2").textContent = contact[1].title.rendered; 
     contactCopy.querySelector(".contactText2").textContent = contact[1].location; 
@@ -528,9 +528,6 @@ function showContact(contact) {
     contactCopy.querySelector(".contactIcon1").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/facebook-icon-vector-black-and-white-4.png";
     contactCopy.querySelector(".contactIcon2").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/instagram-icon-vector-27.png";
     contactCopy.querySelector(".contactIcon3").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/tripadvisor-logotype-1.png";
-    /* --------------- featured in --------------- */
-    contactCopy.querySelector(".times").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/The_Times_logo_wrodmark.png";
-    contactCopy.querySelector(".conde").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/conde-1.png";
     // 3. append
     document.querySelector("#bottomNavigation").appendChild(contactCopy);
 }
