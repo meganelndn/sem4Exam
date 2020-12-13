@@ -88,7 +88,8 @@ html {
 }
 
 #navBar a {
-  color: #000;
+  color: white;
+  font-size: 14px;
   cursor: pointer !important;
   text-decoration: none;
   padding: 8px 20px;
@@ -101,7 +102,7 @@ html {
 /* sticky navBar */
 .changeMenu {
   margin-inline-start: auto;
-  background-color: var(--light-beige);
+  background-color: rgb(42, 49, 65, 0.9);
 }
 
 #navBar a:hover {
@@ -112,12 +113,12 @@ html {
   margin-right: 0;
   font-size: 14px;
   text-transform: uppercase;
-  padding: 8px 20px;
+  /* padding: 8px 20px; */
   border: none;
   border-radius: 20px;
-  color: var(--dark-blue);
-  background-color: var(--yellow);
-  color: var(--dark-blue) !important;
+  color: var(--yellow) !important;
+  /* background-color: var(--yellow); */
+  /* color: var(--dark-blue) !important; */
 }
 
 /* --------- HERO SECTION -------- */
@@ -140,7 +141,7 @@ html {
   max-height: 700px;
   width: 100%;
   /* filter: contrast(80%); */
-  /* filter: brightness(0.6); */
+  filter: brightness(0.8);
   /* box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4); */
 }
 
@@ -701,6 +702,9 @@ html {
   color: white;
   background-color: var(--light-blue);
   cursor: pointer;
+  display: flex;
+  align-self: center;
+  border-radius: 15px;
   /* box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15); */
 }
 
@@ -708,7 +712,7 @@ html {
 #weather {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin: 50px;
 }
 
 #weatherArea {
@@ -823,10 +827,7 @@ html {
 #footerPrimary {
   display: flex;
   padding: 30px;
-}
-
-#footerPrimary div {
-  margin-right: 70px;
+  justify-content: space-between;
 }
 
 #bottomNavigation p {
@@ -844,6 +845,7 @@ html {
 
 .contactLink1 {
   cursor: pointer !important;
+  color: white;
 }
 
 /* --------- FAQ ---------- */
@@ -903,14 +905,37 @@ html {
   margin-top: 70px;
 }
 
+.newsletterTitle {
+  color: white;
+  margin-right: 20px;
+}
+
 .newsletterSubscription {
-  width: 100%;
-  font-size: 14px;
   padding: 8px 20px;
   border: none;
   color: white;
   cursor: pointer;
   background: var(--dark-blue);
+  border-radius: 0 20px 20px 0;
+  height: inherit;
+}
+
+.newsletterForm {
+  height: fit-content;
+}
+
+.newsletterForm .formLabel {
+  border-radius: 20px 0 0 20px;
+  justify-content: center;
+  height: auto;
+}
+
+.newsletterForm .formLabel label {
+  display: none;
+}
+
+.newsletterForm .formLabel input {
+  margin-top: 0;
 }
 
 .newsletterForm .error {
@@ -923,12 +948,14 @@ html {
 
 .overlay-content,
 .overlay-content2 {
+  display: flex;
+  color: white;
   text-align: center;
-  background-color: white;
-  padding: 30px 40px;
-  border-radius: 15px;
+  align-items: center;
+  /* background-color: white; */
+  /* padding: 30px 40px; */
+  /* border-radius: 15px; */
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
-  width: 400px;
 }
 
 #news form {
@@ -1141,14 +1168,15 @@ select:after {
   padding: 20px 30px;
   display: flex;
   flex-wrap: wrap;
-  box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4); */
   width: min-content;
   left: 0;
   right: 0;
   margin: auto;
   /* border: 1px solid var(--dark-blue); */
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.6);
+  /* background: rgba(0, 0, 0, 0.6); */
+  /* background-color: rgb(42, 49, 65, 0.9); */
 }
 
 .sticky {
@@ -1868,7 +1896,7 @@ select:after {
   }
 
   /* news */
-  #news, #weather {
+  #weather {
     margin: 50px 5%;
   }
 
@@ -1876,6 +1904,13 @@ select:after {
     flex-direction: column;
   }
 
+  #news .formLabel {
+    border-radius: 0;
+  }
+
+  .newsletterSubscription {
+    border-radius: 0;
+  }
   .overlay-content, .overlay-content2 {
     width: auto;
   }
@@ -1887,13 +1922,16 @@ select:after {
 
   #footerPrimary {
     flex-direction: column;
+    margin-bottom: 70px;
   }
+
 
   /* navbar */
   #navBar a {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    color: black;
   }
 
   #navBar a:first-of-type {
@@ -1902,6 +1940,8 @@ select:after {
   #navBar a:last-of-type {
     padding: 25px;
     font-size: 16px;
+    color: var(--dark-blue) !important;
+    background-color: var(--yellow);
   }
   .addStyle {
     border-radius: 0;
