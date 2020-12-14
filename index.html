@@ -83,7 +83,6 @@
             name="passengers"
             id="passengers"
             required>
-                <!-- <option value="">How many</option> -->
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -379,9 +378,7 @@
 </div>
 </div>
 
-    <section id="tours">
-    <!-- <h1 class="whatWeOffer">What we offer</h1> -->
-        
+    <section id="tours">        
     <template class="tourTemplate">
         <div id="singleTourArea">
             <h1 class="tourTitle"></h1>
@@ -400,10 +397,7 @@
     </section>
 
 
-    <!-- class="hidden" REMOVED testing -->
     <section id="trips" class="hidden">
-
-        <!-- <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/waves.png" alt="" class="tripsDeco"> -->
         <template class="tripTemplate">
             <div id="singleTripArea">
                 <div id="imgWrapper">
@@ -417,23 +411,11 @@
                     <h3 class="tripTitle"></h3>
                     <p class="tripText"></p>
     
-                    <!-- <div id="beverages">
-                        <h1>BEVERAGES ON BOARD</h1>
-                       <div id="beverageWrapper">
-                           <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/andbeveragecocktaildrinkfoodicon-1320167993528957027.png" alt="">
-                           <p>Available for purchase</p>
-                       </div>
-                       <div id="beverageWrapper">
-                           <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/koffie.png" alt="">
-                           <p>Non-alcoholic beverages free of cost</p>
-                        </div>
-                    </div> -->
                     <div id="beverages">
                        <div id="beverageWrapper">
                         <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/coffee.png" alt="">
                            <h1>BEVERAGES ON BOARD</h1>
                        </div>
-            
                     </div>
     
                 </div>
@@ -454,9 +436,6 @@
             <div id="trip-modal-background" class="modal-background">
                 <div id="trip-modal-content" class="modal">
                     <button class="trip-modal-close">X</button>
-                    <!-- <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
-                        <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
-                    </svg> -->
                     <h1 class="oneTripTitle"></h1>
                     <p class="fullDescription"></p>
                     <h1>Beverages on board</h1>
@@ -480,9 +459,6 @@
                         </div> 
                     </div>
                 </div>
-                <!-- <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
-                    <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
-                </svg> -->
             </div>
         </div>
         </template>
@@ -513,14 +489,9 @@
                 <div class="temperature">
                     <p class="degrees"><span></span>°</p>
                     <p class="status"></p>
-                    
-                    <!-- <p class="min">Min.<span></span></p>
-                        <p class="max">Max.<span></span></p> -->
                     </div>
                     <div class="statusWrapper">
                         <img class="weatherIcon" src="" alt="weatherIcon">
-                      
-
                     </div>
             </div>
             <div id="weatherDetails">
@@ -528,31 +499,57 @@
                     <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/icon-thermostat-half.png" alt="">
                     <p class="feeling"><span></span>°</p>
                 </div>
-                <div class="wind">
+                <span class="line"></span>
+                <!-- <div class="wind">
                     <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/wind.png" alt="">
                     <p class="speed"><span></span> km/h</p>
+                </div> -->
+                <div id="weatherResult">
+                    <p class="weatherResult"></p>
                 </div>
             </div>
             <div class="bottomSection"></div>
-            <div id="weatherResult">
-                <p class="weatherResult"></p>
+            <div id="forecast">
+                <div class="day2">
+                    <h5>Tuesday</h5>
+                    <img class="forecastIcon" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/rainy.png" alt="">
+                    <p>-2°</p>
+                </div>
+                <div class="day3">
+                    <h5>Wednesday</h5>
+                    <img class="forecastIcon" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/sun.png" alt="">
+                    <p>6°</p>
+                </div>
+                <div class="day4">
+                    <h5>Thursday</h5>
+                    <img class="forecastIcon" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/rainy.png" alt="">
+                    <p>1°</p>
+                </div>
+                <div class="day5">
+                    <h5>Friday</h5>
+                    <img class="forecastIcon" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/heavy-rain.png" alt="">
+                    <p>3°</p>
+                </div>
+                <div class="day6">
+                    <h5>Saturday</h5>
+                    <img class="forecastIcon" src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/stormy.png" alt="">
+                    <p>-1°</p>
+                </div>
             </div>
         </template>
         <div id="weatherArea"></div>
     </section>
 
+
 <section id="corona" class="hidden">
     <h4 class="corona-guidelines">Read our COVID guidelines - safe outdoor activity</h4>
     <p class="coronaText"></p>
-    <!-- <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/anchor.png" alt="" class="anchor"> -->
 </section>
   
-
 
     <section id="news">
         <div class="overlay-content">
             <h4 class="newsletterTitle">Subscribe to our newsletter</h4>
-            <!-- <p class="newsletterText">Join our mailing list to get the latest news delivered in your inbox</p> -->
             <form class="newsletterForm">
                 
                 <div id="oneCell" class="label5">

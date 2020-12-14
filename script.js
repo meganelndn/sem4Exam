@@ -455,7 +455,7 @@ function weatherApp(weather) {
     
    copy.querySelector(".location").textContent = weather.request.query;
    copy.querySelector(".dateTime .dt").textContent = weather.location.localtime;
-   copy.querySelector(".wind .speed span").textContent = weather.current.wind_speed;
+   /* copy.querySelector(".wind .speed span").textContent = weather.current.wind_speed; */
    copy.querySelector(".degrees span").textContent = weather.current.temperature;
    copy.querySelector(".status").textContent = weather.current.weather_descriptions[0];
    copy.querySelector(".feelsLike .feeling span").textContent = "Feels like: " + weather.current.feelslike;
@@ -469,29 +469,18 @@ function weatherApp(weather) {
         copy.querySelector(".weatherResult").textContent = "Good news: No rain on the horizon today!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
     } else if (weather.current.weather_descriptions[0] === "Overcast") {
-        copy.querySelector(".weatherResult").textContent = "Good news: No rain on the horizon today!";
+        copy.querySelector(".weatherResult").textContent = "The good old boring Danish sky";
+        copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
+    } else if (weather.current.weather_descriptions[0] === "Light Rain, Drizzle And Rain" || "Light Rain, Drizzle And Rain" || "Light Drizzle") {
+        copy.querySelector(".weatherResult").textContent = "Light rain on the horizon today!";
+        copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/rainy.png";
+    } /* else if (weather.current.weather_descriptions[0] === "Light Drizzle") {
+        copy.querySelector(".weatherResult").textContent = "No major storm on the horizon today!";
+        copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/rainy.png";
+    } */ else {
+        copy.querySelector(".weatherResult").textContent = "Experience Copenhagen through the lens of a Dane today!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
     }
-
-   /* copy.querySelector(".temperature .min span").textContent = weather.forecast.mintemp;
-   copy.querySelector(".temperature .max span").textContent = weather.forecast.main.maxtemp; 
-   // it can be more than one:
-   /* weather.weather.forEach((item) => {
-           copy.querySelector(".detail .status").textContent = item.description;
-   }); */
-
-   // output text
-  
-//    if (weather.current.weather_descriptions[0] === "Light Rain, Mist") {
-//        document.querySelector("#weatherResult p").textContent = "Experience Copenhagen through the lens of a Dane today!";
-//        document.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/foggy.png";
-//    } else if (weather.current.weather_descriptions[0] === "Partly cloudy") {
-//        document.querySelector("#weatherResult p").textContent = "Good news: No rain on the horizon today!";
-//        document.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
-//    } else if (weather.current.weather_descriptions[0] === "Overcast") {
-//     document.querySelector("#weatherResult p").textContent = "Good news: No rain on the horizon today!";
-//     document.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
-//    }
 
    weatherArea.appendChild(copy)
 }

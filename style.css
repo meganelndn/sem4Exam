@@ -19,17 +19,14 @@
   font-family: "Font Awesome 5";
   src: url("fonts/Font-Awesome-5-Free-Regular-400.otf") format("woff");
 }
-
 @font-face {
   font-family: "Proxima Nova Regular";
   src: url("fonts/ProximaNova-Regular.otf") format("woff");
 }
-
 @font-face {
   font-family: "Proxima Nova Light";
   src: url("fonts/Proxima Nova Alt Light.otf") format("woff");
 }
-
 @font-face {
   font-family: "Proxima Nova Bold";
   src: url("fonts/Proxima Nova Bold.otf") format("woff");
@@ -114,12 +111,12 @@ html {
   margin-right: 0;
   font-size: 14px;
   text-transform: uppercase;
-  /* padding: 8px 20px; */
+  padding: 8px 20px;
   border: none;
   border-radius: 20px;
   color: var(--yellow) !important;
-  /* background-color: var(--yellow); */
-  /* color: var(--dark-blue) !important; */
+  background-color: var(--yellow);
+  color: var(--dark-blue) !important;
 }
 
 /* --------- HERO SECTION -------- */
@@ -314,6 +311,7 @@ html {
 #beverages h1 {
   font-family: "Proxima Nova Bold";
   font-size: 12px;
+  color: var(--light-blue);
 }
 
 #beverages p {
@@ -718,9 +716,10 @@ html {
 
 #weatherArea {
   color: var(--dark-blue);
-  padding: 40px;
+  padding: 35px 35px 25px 35px;
   border-radius: 15px;
   box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2);
+  width: 450px;
 }
 
 #weatherArea #main {
@@ -735,19 +734,8 @@ html {
 }
 
 .weatherIcon {
-  width: 130px;
-  height: 100px;
-  left: 55%;
-}
-.weatherResult {
-  font-style: italic;
-  margin: 0;
-}
-
-#weatherResult p::before {
-  content: "\261E";
-  margin-right: 10px;
-  font-size: 22px;
+  width: 110px;
+  height: 110px;
 }
 .temperature {
   margin-top: 0;
@@ -781,26 +769,37 @@ html {
   margin: 10px 0 0 0;
 }
 
-#weatherDetails,
-.feelsLike {
+#weatherDetails {
   font-family: "Proxima Nova Bold";
-  text-transform: uppercase;
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   color: var(--light-blue);
   flex: auto;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 15px 0 0 0;
 }
-#weatherDetails p {
-  margin-left: 5px;
-}
-
-#weatherDetails div {
+#weatherDetails div,
+#weatherDetails .feeling {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  margin: 0;
+}
+.feelsLike img {
+  margin-right: 10px;
+}
+.weatherResult {
+  margin: 0;
+  font-family: "Proxima Nova Light";
+  font-style: italic;
+}
+#weatherResult p::before {
+  content: "\261E";
+  margin-right: 10px;
 }
 
 .bottomSection {
-  margin-top: auto;
+  margin-top: 10px;
   border-top: 1px solid lightgrey;
 }
 
@@ -817,6 +816,22 @@ html {
 .dt {
   font-size: 14px;
   margin: 0 0 0 10px;
+}
+/* 5-day forecast */
+#forecast {
+  display: flex;
+  text-align: center;
+  place-content: space-between;
+}
+.forecastIcon {
+  width: 50px;
+  height: 50px;
+}
+#forecast h5 {
+  margin-bottom: 10px;
+}
+#forecast p {
+  margin: 5px 0 0 0;
 }
 
 /* --------- BOTTOM NAV -------- */
@@ -1245,20 +1260,19 @@ select:after {
   font-size: 12px;
 }
 
-/* sketch modal animation */
-
+/* modal animation */
 #trip-modal-background,
 #payment-modal-background {
   display: none;
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
   background: rgba(0, 0, 0, 0);
   animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
@@ -1273,8 +1287,8 @@ select:after {
   border: none;
   color: var(--dark-blue);
   padding: 30px;
-  margin: 10% auto; /* 15% from the top and centered */
-  width: 50%; /* Could be more or less, depending on screen size */
+  margin: 10% auto;
+  width: 50%;
   text-align: justify;
   border-radius: 3px;
   box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
@@ -1282,13 +1296,9 @@ select:after {
   animation: modalFadeIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
-/* .modal-svg rect{
-    animation: sketchIn .5s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-} */
-
 #trip-modal-content {
   opacity: 0;
-  animation: modalContentFadeIn 0.5s 1s cubic-bezier(0.165, 0.84, 0.44, 1)
+  animation: modalContentFadeIn 0.3s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)
     forwards;
 }
 
@@ -1309,15 +1319,6 @@ select:after {
     background-color: white;
   }
 }
-
-/* @keyframes sketchIn {
-	0% {
-		stroke-dashoffset: 778;
-	}
-	100% {
-		stroke-dashoffset: 0;
-	}
-} */
 
 @keyframes modalContentFadeIn {
   0% {
