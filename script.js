@@ -17,9 +17,6 @@ function init() {
     const urlTrips = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/trips";
     fetchData(urlTrips, showTrips);
 
-    // const urlGallery = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/gallery_page/";
-    // fetchData(urlGallery, showGalleryPage);
-
     const weatherUrl = "http://api.weatherstack.com/forecast?access_key=bdb591c14b9e4a079623b1a838313888&query=Copenhagen";
     fetchData(weatherUrl, weatherApp)
 
@@ -136,7 +133,6 @@ function setScrollPosition() {
     window.onscroll = function() {myFunction()};
 
     let header = document.querySelector(".availability");
-    // let sticky = header.offsetTop - 600;
     
     let book = document.querySelector("#navBar .bookBtn");
     let sticky = header.offsetTop;
@@ -324,7 +320,7 @@ function showTrips(trips) {
             const readMoreModal = document.querySelector("#trip-modal-background");
             readMoreModal.classList.remove("showModal");
             //Allow body scroll
-            document.body.style.overflow = "auto"; // ADD THIS LINE
+            document.body.style.overflow = "auto"; 
             document.body.style.height = "auto"; 
         });
 
@@ -448,7 +444,6 @@ function weatherApp(weather) {
     
    copy.querySelector(".location").textContent = weather.request.query;
    copy.querySelector(".dateTime .dt").textContent = weather.location.localtime;
-   /* copy.querySelector(".wind .speed span").textContent = weather.current.wind_speed; */
    copy.querySelector(".degrees span").textContent = weather.current.temperature;
    copy.querySelector(".status").textContent = weather.current.weather_descriptions[0];
    copy.querySelector(".feelsLike .feeling span").textContent = "Feels like: " + weather.current.feelslike;
