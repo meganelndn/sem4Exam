@@ -383,17 +383,19 @@ function showFAQPage(faq) {
         const cloneFAQ = faqTemplate.cloneNode(true);
 
         cloneFAQ.querySelector(".faqQuestion").textContent = oneFAQ.question;
+        cloneFAQ.querySelector(".questionBox img").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/arrow-down-1.png";
         cloneFAQ.querySelector(".faqAnswer").textContent = oneFAQ.answer;
 
         //3. append
         faqArea.appendChild(cloneFAQ);
     })
     accordion();
-    expandOptions();
+    expandOptions(icon);
 }
 
 function accordion(){
-    let accordion = document.querySelectorAll(".faqQuestion");
+    let accordion = document.querySelectorAll(".questionBox");
+    let icon = document.querySelector(".questionBox img");
     let counter;
     for (counter = 0; counter < accordion.length; counter++) {
         accordion[counter].addEventListener("click", function() {
@@ -401,8 +403,10 @@ function accordion(){
         let getAnswer = this.nextElementSibling;
             if (getAnswer.style.display === "block") {
             getAnswer.style.display = "none";
+            icon.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/arrow-down-1.png"
             } else {
             getAnswer.style.display = "block";
+            icon.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/arrow-up-1.png"
             }
         });
     }

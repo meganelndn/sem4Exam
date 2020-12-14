@@ -77,7 +77,8 @@ html {
   height: 50px;
 }
 
-.homeIcon, .faqIcon {
+.homeIcon,
+.faqIcon {
   display: none;
 }
 
@@ -853,19 +854,18 @@ html {
   margin: 0 25%;
 }
 #faqInfo {
-  padding:  10% 25%;
+  padding: 10% 25%;
   background-image: url("http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/sea.jpg");
   background-size: cover;
   background-attachment: fixed;
   color: white;
+  text-align: center;
 }
 
 .faqTitle {
   padding-top: 0;
   text-transform: uppercase;
-}
-.faqDescription {
-  font-family: "Brandon Text Light";
+  font-family: "Brandon Text Bold";
 }
 
 #compass {
@@ -877,21 +877,39 @@ html {
   display: block;
   margin: auto;
 }
-.faqQuestion {
+/* .faqQuestion {
   cursor: pointer;
-}
+} */
+/* .faqQuestion::after {
+  content: url(http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/icon-cheveron-selection-blue.png);
+  display: inline-flex;
+} */
 .faqAnswer {
   display: none;
+  margin-top: 0;
 }
 .oneQuestion {
-  padding: 10px;
+  padding: 5px 15px;
   border: 1px solid var(--dark-blue);
   margin: 10px 0;
+  border-radius: 5px;
+}
+.questionBox {
+  justify-content: space-between;
+  display: flex;
+  cursor: pointer;
+}
+.oneQuestion img {
+  display: flex;
+  align-self: center;
+  width: 15px;
+  height: 15px;
 }
 .accordionActive,
 .faqQuestion:hover {
-  background-color: var(--dark-blue);
-  color: #fff;
+  /* background-color: var(--dark-blue);
+  color: #fff; */
+  font-family: "Proxima Nova Bold";
 }
 
 /* NEWSLETTER OVERLAY */
@@ -1752,7 +1770,7 @@ select:after {
     padding: 20px;
   }
 
-  .formLabel{
+  .formLabel {
     height: 55px;
     padding: 5px;
   }
@@ -1768,7 +1786,7 @@ select:after {
   }
 
   #secondRow .formLabel {
-  margin: 5px;
+    margin: 5px;
   }
 
   #secondRow .formLabel:last-of-type {
@@ -1794,7 +1812,8 @@ select:after {
     margin: 10px 0;
   }
   /* trips */
-  #tours, #trips {
+  #tours,
+  #trips {
     margin: 0 5%;
   }
 
@@ -1816,9 +1835,10 @@ select:after {
   #customiseYourOwn {
     text-align-last: center;
   }
-  
+
   /* modals */
-  #trip-modal-content, #payment-modal-content {
+  #trip-modal-content,
+  #payment-modal-content {
     width: auto;
     margin: 0;
   }
@@ -1835,7 +1855,9 @@ select:after {
     margin: 30px 0;
   }
 
-  #gallery-1, #gallery-2, #gallery-3 {
+  #gallery-1,
+  #gallery-2,
+  #gallery-3 {
     column-count: 1;
     text-align-last: center;
     margin-bottom: 50px;
@@ -1848,7 +1870,7 @@ select:after {
   #lineSvg {
     display: none;
   }
-  
+
   /* tour */
   #tourArea {
     position: relative;
@@ -1911,7 +1933,8 @@ select:after {
   .newsletterSubscription {
     border-radius: 0;
   }
-  .overlay-content, .overlay-content2 {
+  .overlay-content,
+  .overlay-content2 {
     width: auto;
   }
 
@@ -1924,7 +1947,6 @@ select:after {
     flex-direction: column;
     margin-bottom: 70px;
   }
-
 
   /* navbar */
   #navBar a {
@@ -1951,15 +1973,15 @@ select:after {
   }
   .navBarContent {
     justify-content: space-between;
-    background-color: var(--light-beige );  
+    background-color: var(--light-beige);
   }
   .changeMenu {
     bottom: 0;
   }
-  .homeIcon, .faqIcon {
+  .homeIcon,
+  .faqIcon {
     width: 30px;
     height: auto;
     display: block;
   }
-
 }
