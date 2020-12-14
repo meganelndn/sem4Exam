@@ -160,6 +160,7 @@ function formValidation() {
     const elements1 = form1.elements;
     //form1.setAttribute("novalidate", true);
     const formElements1 = form1.querySelectorAll("input, select");
+    form1.querySelector("#time").min = new Date().toISOString().substring(0, 16);
 
     formElements1.forEach((e) => {
         e.addEventListener("change", (e) => {
