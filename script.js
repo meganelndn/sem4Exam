@@ -452,20 +452,29 @@ function weatherApp(weather) {
 
    copy.querySelector(".weatherResult").textContent = "";
    copy.querySelector(".weatherIcon").src = "";
-   if (weather.current.weather_descriptions[0] === "Light Rain, Mist") {
-        copy.querySelector(".weatherResult").textContent = "Experience Copenhagen through the lens of a Dane today!";
+   if (weather.current.weather_descriptions[0].includes("Mist", "Foggy")) {
+        copy.querySelector(".weatherResult").textContent = "See Copenhagen through the lens of a Dane today!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/foggy.png";
-    } else if (weather.current.weather_descriptions[0] === "Partly cloudy") {
-        copy.querySelector(".weatherResult").textContent = "Good news: No rain on the horizon today!";
+    } else if (weather.current.weather_descriptions[0].includes("Cloudy", "cloudy", "Overcast")) {
+        copy.querySelector(".weatherResult").textContent = "The good old boring Danish sky...";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
-    } else if (weather.current.weather_descriptions[0] === "Overcast") {
-        copy.querySelector(".weatherResult").textContent = "The good old boring Danish sky";
-        copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
-    } else if (weather.current.weather_descriptions[0] === "Light Rain, Drizzle And Rain" || "Light Rain, Drizzle And Rain" || "Light Drizzle") {
+    } else if (weather.current.weather_descriptions[0].includes("Light Drizzle", "Light Rain")) {
         copy.querySelector(".weatherResult").textContent = "Light rain on the horizon today!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/rainy.png";
+    } else if (weather.current.weather_descriptions[0].includes("Sun", "Sunny")) {
+        copy.querySelector(".weatherResult").textContent = "Enjoy the sun while it lasts!";
+        copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/sunny-cloudy.png";
+    } else if (weather.current.weather_descriptions[0].includes("Wind", "Windy")) { 
+        copy.querySelector(".weatherResult").textContent = "Careful, looks like today will be windy!";
+        copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/windy.png";
+    } else if (weather.current.weather_descriptions[0].includes("Thunder", "Stormy")) {
+        copy.querySelector(".weatherResult").textContent = "There is a storm on the horizon...";
+        copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/stormy.png";
+    } else if (weather.current.weather_descriptions[0].includes("Rain", "Heavy")) {
+        copy.querySelector(".weatherResult").textContent = "Watch out, you wouldn't want to get wet today!";
+        copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/heavy-rain.png";
     } else {
-        copy.querySelector(".weatherResult").textContent = "Experience Copenhagen through the lens of a Dane today!";
+        copy.querySelector(".weatherResult").textContent = "See Copenhagen through the lens of a Dane today!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
     }
 
