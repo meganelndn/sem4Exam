@@ -17,9 +17,6 @@ function init() {
     const urlTrips = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/trips";
     fetchData(urlTrips, showTrips);
 
-    // const urlGallery = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/gallery_page/";
-    // fetchData(urlGallery, showGalleryPage);
-
     const weatherUrl = "http://api.weatherstack.com/forecast?access_key=bdb591c14b9e4a079623b1a838313888&query=Copenhagen";
     fetchData(weatherUrl, weatherApp)
 
@@ -136,7 +133,6 @@ function setScrollPosition() {
     window.onscroll = function() {myFunction()};
 
     let header = document.querySelector(".availability");
-    // let sticky = header.offsetTop - 600;
     
     let book = document.querySelector("#navBar .bookBtn");
     let sticky = header.offsetTop;
@@ -144,11 +140,9 @@ function setScrollPosition() {
 
     function myFunction() {
       if (window.pageYOffset > sticky) {
-        // book.classList.add("sticky");
         navBar.classList.add("changeMenu");
         book.classList.add("addStyle");
       } else {
-        // book.classList.remove("sticky");
         navBar.classList.remove("changeMenu")
         book.classList.remove("addStyle");
       }
@@ -158,7 +152,6 @@ function setScrollPosition() {
 function formValidation() {
     const form1 = document.querySelector(".availability");
     const elements1 = form1.elements;
-    //form1.setAttribute("novalidate", true);
     const formElements1 = form1.querySelectorAll("input, select");
     form1.querySelector("#time").min = new Date().toISOString().substring(0, 16);
 
@@ -173,7 +166,6 @@ function formValidation() {
             phone: form1.querySelector("input[id=phone").value,
             code: form1.querySelector("input[id=campaign-code").value,
             };
-            // console.log(objectReview)
             completedForm = objectReview;
         }) 
     })
@@ -300,9 +292,6 @@ function showTrips(trips) {
         tripCopy.querySelector(".private span").textContent = oneTrip.private_tour_price;
         //modal content
         tripCopy.querySelector(".readMoreTrip").addEventListener("click", function(){
-
-            /* document.querySelector('body').classList.add('modal-active');  */
-
             const readMoreModal = document.querySelector("#trip-modal-background");
             readMoreModal.classList.add("showModal"); 
             //Prevent Body scroll
@@ -325,14 +314,13 @@ function showTrips(trips) {
                 let draw = length * scroll;
                 line.style.strokeDashoffset = length - draw;
             });
-     
 
         });
         tripCopy.querySelector(".trip-modal-close").addEventListener("click", function(){
             const readMoreModal = document.querySelector("#trip-modal-background");
             readMoreModal.classList.remove("showModal");
             //Allow body scroll
-            document.body.style.overflow = "auto"; // ADD THIS LINE
+            document.body.style.overflow = "auto"; 
             document.body.style.height = "auto"; 
         });
 
@@ -361,6 +349,7 @@ function showTours(tours) {
                 document.querySelector("#boatSvg").classList.remove("boatAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
+                document.querySelector("#singleTripArea:first-of-type").classList.remove("flashAnimation");
                 } else {
                 tourText.style.display = "block";
                   
@@ -368,6 +357,7 @@ function showTours(tours) {
                 document.querySelector("#boatSvg").classList.add("boatAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation");  
+                document.querySelector("#singleTripArea:first-of-type").classList.add("flashAnimation");  
                 }
         })
         tourArea.appendChild(tourCopy);
@@ -456,7 +446,6 @@ function weatherApp(weather) {
     
    copy.querySelector(".location").textContent = weather.request.query;
    copy.querySelector(".dateTime .dt").textContent = weather.location.localtime;
-   /* copy.querySelector(".wind .speed span").textContent = weather.current.wind_speed; */
    copy.querySelector(".degrees span").textContent = weather.current.temperature;
    copy.querySelector(".status").textContent = weather.current.weather_descriptions[0];
    copy.querySelector(".feelsLike .feeling span").textContent = "Feels like: " + weather.current.feelslike;
@@ -475,10 +464,7 @@ function weatherApp(weather) {
     } else if (weather.current.weather_descriptions[0] === "Light Rain, Drizzle And Rain" || "Light Rain, Drizzle And Rain" || "Light Drizzle") {
         copy.querySelector(".weatherResult").textContent = "Light rain on the horizon today!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/rainy.png";
-    } /* else if (weather.current.weather_descriptions[0] === "Light Drizzle") {
-        copy.querySelector(".weatherResult").textContent = "No major storm on the horizon today!";
-        copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/rainy.png";
-    } */ else {
+    } else {
         copy.querySelector(".weatherResult").textContent = "Experience Copenhagen through the lens of a Dane today!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
     }
