@@ -349,6 +349,7 @@ function showTours(tours) {
                 document.querySelector("#boatSvg").classList.remove("boatAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
+                document.querySelector("#singleTripArea:first-of-type").classList.remove("flashAnimation");
                 } else {
                 tourText.style.display = "block";
                   
@@ -356,6 +357,7 @@ function showTours(tours) {
                 document.querySelector("#boatSvg").classList.add("boatAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation");  
+                document.querySelector("#singleTripArea:first-of-type").classList.add("flashAnimation");  
                 }
         })
         tourArea.appendChild(tourCopy);
