@@ -5,7 +5,7 @@
 }
 @font-face {
   font-family: "Brandon Text Bold";
-  src: url("fonts/BrandonText-Bold.otf") format("woff");
+  src: url("fonts/Metropolis-Bold.otf") format("woff");
 }
 @font-face {
   font-family: "Brandon Text Light";
@@ -29,12 +29,13 @@
 }
 @font-face {
   font-family: "Proxima Nova Bold";
-  src: url("fonts/Proxima Nova Bold.otf") format("woff");
+  src: url("fonts/Metropolis-Bold.otf") format("woff");
 }
 
 /* --------- VARIABLES -------- */
 :root {
   --main-font: "Proxima Nova Light", sans-serif;
+  --regular-font: "Proxima Nova Regular", sans-serif;
   --link-font-size: 14px;
   --body-font: 16px;
 
@@ -92,7 +93,8 @@ html {
   cursor: pointer !important;
   text-decoration: none;
   padding: 8px 20px;
-  font-family: "Proxima Nova Bold";
+  font-family: var(--regular-font);
+  font-weight: bold;
 }
 
 #navBar a:first-of-type {
@@ -512,7 +514,7 @@ html {
 .publicPrice,
 .privatePrice {
   font-size: 15px;
-  font-family: "Brandon Text Bold";
+  font-family: "Proxima Nova Bold";
 }
 
 #totalPrice {
