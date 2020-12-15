@@ -1814,6 +1814,9 @@ select:after {
     left: 50%;
     top: 10%;
   }
+  #payment-modal-content {
+    height: 100%;
+  }
   #singleTourArea {
     margin-top: -60px;
   }
@@ -1842,6 +1845,10 @@ select:after {
   }
   .toPayment {
     width: auto;
+  }
+  #payment-modal-content {
+    height: 60%;
+    padding: 30px 60px;
   }
   .banner,
   .introTitle {
@@ -1875,6 +1882,10 @@ select:after {
     width: 60px;
     text-align: left;
     padding-left: 10px;
+  }
+  #payment-modal-content {
+    height: 100%;
+    padding: 30px 60px;
   }
   .newsletterForm .formLabel {
     border-radius: 20px 0 0 20px !important;
