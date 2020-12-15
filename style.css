@@ -1902,4 +1902,13 @@ select:after {
   .toPayment {
     width: auto;
   }
+  .video-container {
+    max-height: 900px;
+  }
+}
+/* 13'' monitor */
+@media screen and (min-width: 1600px) and (max-width: 2560px) {
+  .video-container {
+    max-height: 900px;
+  }
 }
