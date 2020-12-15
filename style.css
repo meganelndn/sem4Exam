@@ -1560,49 +1560,7 @@ select:after {
     opacity: 1;
   }
 }
-
-/* Ipad Pro portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .availability {
-    padding: 5px;
-  }
-  .toPayment {
-    width: auto;
-  }
-
-  .banner,
-  .introTitle {
-    left: auto;
-    top: 20%;
-  }
-  #formBox {
-    top: 40%;
-  }
-}
-/* Ipad Pro landscape */
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
-  .availability {
-    padding: 5px;
-  }
-  .toPayment {
-    width: auto;
-  }
-}
-/* Ipad landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  .availability {
-    padding: 0;
-  }
-  .formLabel {
-    margin-right: 0;
-  }
-  .toPayment {
-    width: 60px;
-    text-align: left;
-    padding-left: 10px;
-  }
-}
-
+/*-------------- MEDIA QUERIES ----------*/
 /* mobile */
 @media only screen and (min-device-width: 300px) and (max-device-width: 815px) {
   .introTitle {
@@ -1848,5 +1806,70 @@ select:after {
     width: 25px;
     height: auto;
     display: block;
+  }
+}
+/* Ipad portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .banner {
+    left: 50%;
+    top: 10%;
+  }
+  #singleTourArea {
+    margin-top: -60px;
+  }
+  #tripArea {
+    width: 60%;
+  }
+  #gallery-1,
+  #gallery-2,
+  #gallery-3 {
+    column-count: 2;
+  }
+  #corona {
+    margin: 0;
+  }
+  #news form {
+    flex-direction: row;
+  }
+}
+/* Ipad Pro portrait */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+  .availability {
+    padding: 5px;
+  }
+  .toPayment {
+    width: auto;
+  }
+
+  .banner,
+  .introTitle {
+    left: auto;
+    top: 20%;
+  }
+  #formBox {
+    top: 40%;
+  }
+}
+/* Ipad landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .availability {
+    padding: 0;
+  }
+  .formLabel {
+    margin-right: 0;
+  }
+  .toPayment {
+    width: 60px;
+    text-align: left;
+    padding-left: 10px;
+  }
+}
+/* Ipad Pro landscape */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
+  .availability {
+    padding: 5px;
+  }
+  .toPayment {
+    width: auto;
   }
 }
