@@ -374,12 +374,11 @@ html {
   column-count: 2;
 }
 .gallery-item figcaption {
-  font-family: "Brandon Text Regular";
+  font-family: "Proxima Nova Bold";
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--light-blue);
 }
-
-/* .gallery-item {
-  column-span: all;
-} */
 
 .vl {
   position: absolute;
@@ -387,8 +386,6 @@ html {
 }
 #lineSvg {
   height: 1300px;
-  /* stroke-dasharray: 1000; */
-  /* stroke-dashoffset: 1000; */
   animation: dash 5s linear alternate infinite;
 }
 @keyframes dash {
@@ -400,14 +397,14 @@ html {
   }
 }
 #boatSvg {
-  width: 400px;
+  width: 220px;
   justify-content: center;
+  /* transform: rotate(-30deg); */
 }
-
-#boatSvg2 {
+/* #boatSvg2 {
   width: 400px;
   transform: scaleX(-1);
-}
+} */
 .boatAnimation {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
@@ -431,7 +428,7 @@ html {
   }
   100% {
     opacity: 1;
-    background: rgba(217, 240, 247, 0.4);
+    background: rgba(239, 237, 234, 0.02);
   }
 }
 
@@ -567,6 +564,7 @@ html {
 
 #customiseYourOwn h3 {
   margin-top: 60px;
+  margin-right: 20px;
 }
 
 #customiseYourOwn {
@@ -599,33 +597,38 @@ html {
 }
 
 .tourTitle {
+  font-family: "Proxima Nova Regular";
+  font-size: 14px;
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   max-width: 350px;
-  /* box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2); */
+  height: auto;
   text-transform: uppercase;
   color: var(--light-blue);
   background-color: white;
-  border: solid 1px transparent;
-  border-radius: 20px 20px 0 0;
+  border: solid 4px var(--light-blue);
+  border-bottom: solid 4px transparent;
+  border-radius: 10px 10px 0 0;
   font-family: var(--main-font);
   transition: transform 0.5s;
-  /* margin: 30px auto; */
-  margin-right: 10px;
-  margin-bottom: 50px;
-  /* padding: 15px 30px; */
-  padding: 10px 25px;
+  margin-bottom: 20px;
+  padding: 8px 25px;
   cursor: pointer;
   max-width: max-content;
 }
 .tourTitle:first-of-type::before {
   content: "👤";
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .tourTitle:last-of-type::before {
   content: "👥";
-  margin-right: 20px;
+  margin-right: 10px;
+}
+.tourText {
+  margin: 5px;
+  font-family: "Proxima Nova Regular";
+  text-align: left;
+  display: none;
 }
 
 #singleTourArea {
@@ -641,16 +644,6 @@ html {
   transform: scale3d(1.05, 1.05, 1);
 }
 
-.tourTitle {
-  font-family: "Proxima Nova Regular";
-  font-size: 16px;
-}
-
-.tourText {
-  margin: 5px;
-  font-family: "Proxima Nova Regular";
-  text-align: left;
-}
 .tourImg {
   width: 350px;
   border-radius: 5px 5px 0 0;
