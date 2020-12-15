@@ -693,11 +693,11 @@ html {
   color: white;
   background-color: var(--light-blue);
   cursor: pointer;
-  /*   display: flex; */
   align-self: center;
-  width: 100%;
-  /*   border-radius: 15px; */
-  /* box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15); */
+  width: -webkit-fill-available;
+  /* display: flex;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15); */
 }
 
 /* -------- weather ------- */
@@ -929,6 +929,7 @@ html {
   background-attachment: fixed;
   padding: 40px;
   margin-top: 70px;
+  max-width: -webkit-fill-available;
 }
 
 .newsletterTitle {
@@ -1543,105 +1544,6 @@ select:after {
   font-family: "Brandon Text Light";
 }
 
-/* buttons, no circle */
-.flickity-prev-next-button {
-  width: 60px;
-  height: 60px;
-  background: transparent;
-  opacity: 0.6;
-}
-.flickity-prev-next-button:hover {
-  background: transparent;
-  opacity: 1;
-}
-/* arrow color */
-.flickity-prev-next-button .arrow {
-  fill: white;
-}
-.flickity-prev-next-button.no-svg {
-  color: white;
-}
-/* closer to edge */
-.flickity-prev-next-button.previous {
-  left: 0;
-}
-.flickity-prev-next-button.next {
-  right: 0;
-}
-/* hide disabled button */
-.flickity-prev-next-button:disabled {
-  display: none;
-}
-
-/* #galleryArea {
-  display: flex;
-  padding: 100px 20px;
-}
-#gallery img {
-  width: 440px;
-  height: 320px;
-}
-/* display only the first 6 images for now, until we build the gallery */
-/* #singleGalleryImg:nth-child(n + 6) {
-  display: none;
-} */
-
-/* waves */
-/* https://codepen.io/goodkatz/pen/LYPGxQz */
-/* Animation */
-/*
-.waves {
-  display: none;
-  width: 100%;
-  /* margin-top: -100px; */
-/* height: 10vh;
-  margin-bottom: -7px; /*Fix for safari gap*/
-/* min-height: 100px; */
-/* max-height: 150px; */
-/* } */
-/* #waves {
-  position: relative;
-  margin-top: -100px;
-} */
-
-/* .parallax > use {
-  animation: move-forever 35s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-} */
-/* .parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
-} */
-/* .parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
-} */
-/* .parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
-} */
-/* .parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
-} */
-/* @keyframes move-forever {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
-  100% {
-    transform: translate3d(85px, 0, 0);
-  }
-}  */
-/*Shrinking for mobile*/
-/* @media (max-width: 768px) {
-  /* .waves {
-    /* height: 40px; */
-/* min-height: 40px; */
-/* } */
-/* } */
-/*
-@media only screen and (max-width: 600px) {
-} */
-
 /* on scroll reveal */
 .hidden {
   opacity: 0;
@@ -1659,7 +1561,7 @@ select:after {
   }
 }
 
-/* Ipad */
+/* Ipad Pro portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .availability {
     padding: 5px;
@@ -1677,13 +1579,27 @@ select:after {
     top: 40%;
   }
 }
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+/* Ipad Pro landscape */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
   .availability {
     padding: 5px;
   }
   .toPayment {
     width: auto;
+  }
+}
+/* Ipad landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .availability {
+    padding: 0;
+  }
+  .formLabel {
+    margin-right: 0;
+  }
+  .toPayment {
+    width: 60px;
+    text-align: left;
+    padding-left: 10px;
   }
 }
 
@@ -1846,7 +1762,6 @@ select:after {
   }
 
   /* weather */
-
   #weather {
     margin-top: 0;
     margin-bottom: 50px;

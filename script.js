@@ -458,7 +458,7 @@ function weatherApp(weather) {
     } else if (weather.current.weather_descriptions[0].includes("Cloudy", "cloudy", "Overcast")) {
         copy.querySelector(".weatherResult").textContent = "The good old boring Danish sky...";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
-    } else if (weather.current.weather_descriptions[0].includes("Light Drizzle", "Light Rain")) {
+    } else if (weather.current.weather_descriptions[0].includes("Light", "Drizzle", "Rain")) {
         copy.querySelector(".weatherResult").textContent = "Light rain on the horizon today!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/rainy.png";
     } else if (weather.current.weather_descriptions[0].includes("Sun", "Sunny")) {
@@ -470,7 +470,7 @@ function weatherApp(weather) {
     } else if (weather.current.weather_descriptions[0].includes("Thunder", "Stormy")) {
         copy.querySelector(".weatherResult").textContent = "There is a storm on the horizon...";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/stormy.png";
-    } else if (weather.current.weather_descriptions[0].includes("Rain", "Heavy")) {
+    } else if (weather.current.weather_descriptions[0].includes("Heavy")) {
         copy.querySelector(".weatherResult").textContent = "Watch out, you wouldn't want to get wet today!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/heavy-rain.png";
     } else {
