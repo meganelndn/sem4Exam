@@ -1817,7 +1817,8 @@ select:after {
   #singleTourArea {
     margin-top: -60px;
   }
-  #tripArea {
+  #tripArea,
+  #weatherArea {
     width: 60%;
   }
   #gallery-1,
@@ -1835,19 +1836,31 @@ select:after {
 /* Ipad Pro portrait */
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
   .availability {
-    padding: 5px;
+    padding: 0;
+    position: absolute;
+    top: 20%;
   }
   .toPayment {
     width: auto;
   }
-
   .banner,
   .introTitle {
-    left: auto;
     top: 20%;
   }
   #formBox {
-    top: 40%;
+    top: 30%;
+  }
+  #tripArea {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+  #singleTripArea {
+    margin: 40px 0;
+  }
+  .tripImg {
+    width: 380px;
+    height: 280px;
   }
 }
 /* Ipad landscape */
@@ -1862,6 +1875,12 @@ select:after {
     width: 60px;
     text-align: left;
     padding-left: 10px;
+  }
+  .newsletterForm .formLabel {
+    border-radius: 20px 0 0 20px !important;
+  }
+  .newsletterSubscription {
+    border-radius: 8px 20px !important;
   }
 }
 /* Ipad Pro landscape */
