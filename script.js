@@ -346,7 +346,7 @@ function showTours(tours) {
                 tourText.style.display = "none";
                 
                 document.querySelector("#boatSvg").classList.add("show");
-                document.querySelector("#boatSvg").classList.remove("boatAnimation"); 
+                document.querySelector("#boatSvg").classList.add("boatAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
                 document.querySelector("#singleTripArea:first-of-type").classList.remove("flashAnimation");
