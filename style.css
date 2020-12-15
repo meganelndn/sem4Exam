@@ -232,7 +232,6 @@ html {
 #tripArea {
   display: flex;
   flex-direction: row-reverse;
-  padding-top: 50px;
   justify-content: center;
 }
 
@@ -439,8 +438,10 @@ html {
     stroke-dashoffset: 0;
   }
 }
-#boatSvg {
-  width: 220px;
+#boatSvg,
+#boatSvg2 {
+  width: 250px;
+  position: relative;
 }
 .flashAnimation {
   animation: flash linear 1.5s forwards;
@@ -455,7 +456,7 @@ html {
   }
   100% {
     opacity: 1;
-    background: rgba(239, 237, 234, 0.02);
+    background: var(--light-beige);
   }
 }
 
@@ -643,12 +644,12 @@ html {
   cursor: pointer;
   max-width: max-content;
 }
-.tourTitle:first-of-type::before {
-  content: "👤";
+.privateTourTitle img {
+  width: 14px;
   margin-right: 10px;
 }
-.tourTitle:last-of-type::before {
-  content: "👥";
+.publicTourTitle img {
+  width: 20px;
   margin-right: 10px;
 }
 .tourText {
@@ -658,14 +659,14 @@ html {
   display: none;
 }
 
-#singleTourArea {
-  margin-top: -60px;
+.singleTour {
+  margin-top: -55px;
   position: relative;
   width: 250px;
 }
 
-#singleTourArea:hover,
-#singleTourArea:focus,
+.singleTour:hover,
+.singleTour:focus,
 .corona-guidelines:hover,
 .corona-guidelines:focus {
   transform: scale3d(1.05, 1.05, 1);

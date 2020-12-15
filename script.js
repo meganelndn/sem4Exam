@@ -329,38 +329,45 @@ function showTrips(trips) {
     })
 }
 
-function showTours(tours) {
-    const tourTemplate = document.querySelector(".tourTemplate").content;
-    const tourArea = document.querySelector("#tourArea");
+function showTours() {
+    const privateTourText = document.querySelector(".privateTourText");
+    const publicTourText = document.querySelector(".publicTourText");
     
-    tours.forEach((oneTour) => {
-        const tourCopy = tourTemplate.cloneNode(true);
+    document.querySelector(".privateTourTitle").addEventListener("click", function() {
+        if (privateTourText.style.display === "block") {
+            privateTourText.style.display = "none";
 
-        tourCopy.querySelector(".tourTitle").textContent = oneTour.title.rendered;
-        const tourText = tourCopy.querySelector(".tourText");
-        tourText.innerText = oneTour.description;
-
-        //Expand single tour
-        tourCopy.querySelector(".tourTitle").addEventListener("click", function(){
-            if (tourText.style.display === "block") {
-                tourText.style.display = "none";
-                
-                document.querySelector("#boatSvg").classList.add("show");
-                document.querySelector("#boatSvg").classList.add("boatAnimation"); 
-                document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
-                document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
-                document.querySelector("#singleTripArea:first-of-type").classList.remove("flashAnimation");
-                } else {
-                tourText.style.display = "block";
+            document.querySelector("#boatSvg").classList.add("show");
+            document.querySelector("#boatSvg").classList.add("boatAnimation"); 
+            document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
+            document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
+        } else {
+            privateTourText.style.display = "block";
                   
-                document.querySelector("#boatSvg").classList.remove("show");
-                document.querySelector("#boatSvg").classList.add("boatAnimation"); 
-                document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
-                document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation");  
-                document.querySelector("#singleTripArea:first-of-type").classList.add("flashAnimation");  
-                }
-        })
-        tourArea.appendChild(tourCopy);
+            document.querySelector("#boatSvg").classList.remove("show");
+            document.querySelector("#boatSvg").classList.add("boatAnimation"); 
+            document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
+            document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation");    
+        }
+    })
+    document.querySelector(".publicTourTitle").addEventListener("click", function() {
+        if (publicTourText.style.display === "block") {
+            publicTourText.style.display = "none";
+
+            document.querySelector("#boatSvg2").classList.add("show");
+            document.querySelector("#boatSvg2").classList.add("boatAnimation"); 
+            document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
+            document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
+            document.querySelector("#singleTripArea:first-of-type").classList.remove("flashAnimation");
+        } else {
+            publicTourText.style.display = "block";
+                  
+            document.querySelector("#boatSvg2").classList.remove("show");
+            document.querySelector("#boatSvg2").classList.add("boatAnimation"); 
+            document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
+            document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation");  
+            document.querySelector("#singleTripArea:first-of-type").classList.add("flashAnimation");  
+        }
     })
 }
 
