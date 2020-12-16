@@ -6,28 +6,33 @@
     <title>FAQ</title>
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body id="faqBody">
     <div id="topNavigation">
         <nav class="navBar" id="navBar">
             <div class="navBarContent">
             <!-- nav links -->
-            <a href="/index.html"><img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/hey_captain_logo_white.png" alt="logo" id="logo"></a>
-            <a href="/index.html">HOME <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/home.png" alt="" class="homeIcon"></a>
-            <a href="/faq.html">FAQ <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/faqs-1895578-1604568.png" alt="" class="faqIcon"></a>
-            <a href="#book" class="bookBtn">BOOK <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/—Pngtree—shopping-cart-icon_5060874.png" alt="" class="bookIcon"></a>
+                <a href="/index.html"><img src="static/logo/hey_captain_logo_white.png" alt="logo" id="logo"></a>
+                <div class="dropdown">
+                    <button class="dropbtn"><img class="translate" src="static/icons/translate-white.png" alt=""></button>
+                    <div class="dropdown-content">
+                        <a href="#"><img class="da" src="static/icons/da-flag.png" alt="da-flag">Danish</a>
+                        <a href="#"><img class="en" src="static/icons/en-flag.png" alt="en-flag">English</a>
+                    </div>
+                </div>
+                <a href="/index.html" class="linkText">HOME <img src="static/icons/home.png" alt="" class="homeIcon"></a>
+                <a href="/faq.html" class="linkText">FAQ <img src="static/icons/faq.png" alt="" class="faqIcon"></a>
+                <a href="#book" class="bookBtn">BOOK <img src="static/icons/bookIcon.png" alt="" class="bookIcon"></a>
             </div>
         </nav>
-    </div>  
+        </div>  
 
     <section id="faqInfo">
-        <h3 class="faqTitle">Welcome to Hey Captains FAQ</h3>
+        <h3 class="faqTitle">WELCOME TO HEY CAPTAIN FAQ</h3>
         <p class="faqDescription">Maybe we have already answered your question - if not you are always welcome to leave a message.</p>
     </section>
 
-    <section id="faq" class="hidden">
-        <div id="compass">
-            <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/compass.png" alt="" class="compass">
-        </div>
+    <section id="faq">
+       
         <button id="expandFaq">Expand/Collapse all</button>
         <template class="faqTemplate">
             <div class="oneQuestion">
@@ -36,6 +41,9 @@
             </div>
         </template>
         <section id="faqList"></section>
+        <div id="compass">
+            <img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/compass.png" alt="" class="compass">
+        </div>
     </section>
 
     <div id="bottomNavigation">
@@ -54,20 +62,21 @@
                 <!-- contact us -->
                 <div id="footerContact">
                     <h5 class="contactTitle3"></h5>
-                    <a href="mailto:info@heycaptain.dk"><p class="contactLink1"></p></a>
+                    <a href="mailto:info@heycaptain.dk" class="contactLink1"><p class="contactLink1"></p></a>
                     <p class="contactLink2"></p>
                 </div>
                 <!-- follow us/social media -->
                 <div id="footerSoMe">
                     <h5 class="contactTitle4"></h5>
-                    <a href="https://www.facebook.com/heycaptaincph"><img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/facebook-icon-18-256-1.png" alt="facebook" class="contactIcon1 socialMediaIcon" /></a>
-                    <a href="https://www.instagram.com/heycaptaincph/"><img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/Instagram-icon-WHITE.png" alt="instagram" class="contactIcon2 socialMediaIcon" /></a>
-                    <a href="https://www.tripadvisor.com/Attraction_Review-g189541-d12292724-Reviews-Hey_Captain-Copenhagen_Zealand.html"><img src="http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/tripadvisor-xxl.png" alt="tripAdvisor" class="contactIcon3 socialMediaIcon" /></a>
+                    <a href="https://www.facebook.com/heycaptaincph"><img src="static/icons/facebook.png" alt="facebook" class="contactIcon1 socialMediaIcon" /></a>
+                    <a href="https://www.instagram.com/heycaptaincph/"><img src="static/icons/instagram.png" alt="instagram" class="contactIcon2 socialMediaIcon" /></a>
+                    <a href="https://www.tripadvisor.com/Attraction_Review-g189541-d12292724-Reviews-Hey_Captain-Copenhagen_Zealand.html"><img src="static/icons/tripadvisor.png" alt="tripAdvisor" class="contactIcon3 socialMediaIcon" /></a>
+                    <a href="https://www.youtube.com/channel/UCczCrOldJSKBzAyIDLxsXsQ"><img src="static/icons/youtube.png" alt="youtube" class="contactIcon2 socialMediaIcon" /></a>
                 </div>
             </div>
 
         </template>
-    </div>  
+    </div>
     
     <script src="script.js"></script>
 </body>
