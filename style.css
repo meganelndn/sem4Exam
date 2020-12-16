@@ -671,7 +671,6 @@ html {
   width: 250px;
 }
 
-
 .singleTour:focus,
 .corona-guidelines:hover,
 .corona-guidelines:focus {
@@ -893,7 +892,6 @@ html {
   margin: 5% 25%;
 }
 
-
 #faqInfo {
   padding: 10% 25%;
   background-image: url("http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/sea.jpg");
@@ -1029,8 +1027,7 @@ html {
   display: none;
 }
 
-.orderOverview,
-.receipt {
+.orderOverview {
   margin-left: 50px;
 }
 
@@ -1299,7 +1296,6 @@ select:after {
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
   background: rgba(0, 0, 0, 0);
-  animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 .showModal {
@@ -1311,13 +1307,18 @@ select:after {
   background: white;
   border: none;
   color: var(--dark-blue);
-  padding: 50px;
+  padding: 40px;
   margin: 10% auto;
-  width: 50%;
+  width: 40%;
   text-align: justify;
   border-radius: 3px;
   box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
-  background-color: transparent;
+  z-index: 99999;
+}
+#trip-modal-background {
+  animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#trip-modal-content {
   animation: modalFadeIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
@@ -1357,9 +1358,6 @@ select:after {
   }
 }
 
-#payment-modal-content {
-  width: 50%;
-}
 .fullDescription {
   font-family: "Proxima Nova Regular";
   margin-top: 20px;
@@ -1458,8 +1456,8 @@ select:after {
   margin: 25px 0;
 }
 .paymentForm .payment-type .types .type {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 130px;
   position: relative;
   background: #f2f4f7;
   border: 2px solid #e8ebed;
@@ -1478,11 +1476,11 @@ select:after {
   color: #28333b;
 }
 .paymentForm .payment-type .types .type.selected {
-  border-color: #40b3ff;
-  background: lightblue;
+  border-color: var(--dark-blue);
+  background: lightsteelblue;
 }
 .paymentForm .payment-type .types .type.selected .logo {
-  color: #40b3ff;
+  color: var(--light-blue);
 }
 .paymentForm .payment-type .types .type.selected p {
   color: #28333b;
@@ -1496,8 +1494,8 @@ select:after {
   top: -21px;
   right: -21px;
   color: #fff;
-  background: lightblue;
-  border: 2px solid #40b3ff;
+  background: lightsteelblue;
+  border: 2px solid var(--dark-blue);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1521,7 +1519,7 @@ select:after {
   color: #8a959c;
 }
 .paymentForm .payment-info .column {
-  width: calc(50% - 25px);
+  width: 300px;
 }
 
 .paymentForm .payment-info .title {
@@ -1548,11 +1546,15 @@ select:after {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.5s ease;
-  background: lightblue;
-  border: 2px solid #e8ebed;
-  color: #000;
+  background: var(--light-blue);
+  color: #fff;
   display: flex;
   margin-left: auto;
+}
+button.toReceipt.field.half {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0 160px;
 }
 
 .toReceipt:hover {
@@ -1568,12 +1570,10 @@ select:after {
 .receipt h3,
 .receipt p {
   margin-bottom: 15px;
+  font-family: var(--regular-font);
 }
 .receipt h3 {
-  margin-top: 30px;
-}
-.receipt p {
-  font-family: "Brandon Text Light";
+  margin-top: 0;
 }
 
 /* on scroll reveal */

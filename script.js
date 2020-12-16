@@ -544,7 +544,7 @@ function weatherApp(weather) {
         copy.querySelector(".weatherResult").textContent = "Watch out, you wouldn't want to get wet today!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/heavy-rain.png";
     } else {
-        copy.querySelector(".weatherResult").textContent = "Every day is a cloudy day in  Denamrk!";
+        copy.querySelector(".weatherResult").textContent = "Every day is a cloudy day in Denmark!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
     }
 
