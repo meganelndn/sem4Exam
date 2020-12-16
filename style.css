@@ -182,7 +182,6 @@ html {
   display: inline;
   text-align: center;
   position: absolute;
-  opacity: 0.5;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1231,8 +1230,8 @@ select:after {
   width: min-content;
   left: 0;
   right: 0;
-  margin: 100px auto;
-  border: 1px solid var(--light-blue);
+  margin: 70px auto;
+  /* border: 1px solid var(--light-blue); */
   border-radius: 5px;
   background: rgba(0, 0, 0, 0.6);
   /* background-color: rgb(42, 49, 65, 0.9); */
@@ -1266,7 +1265,7 @@ select:after {
   border-top-right-radius: 3px;
 }
 .error {
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(0, 0, 0, 0.5); */
   padding: 4px;
   margin: 0;
   z-index: 10;
