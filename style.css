@@ -1321,6 +1321,7 @@ select:after {
   border-radius: 3px;
   box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
   z-index: 99999;
+  height: fit-content;
 }
 #trip-modal-background {
   animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
@@ -1485,6 +1486,7 @@ select:after {
 .paymentForm .payment-type .types .type.selected {
   border-color: var(--dark-blue);
   background: lightsteelblue;
+  z-index: 999;
 }
 .paymentForm .payment-type .types .type.selected .logo {
   color: var(--light-blue);
@@ -1605,16 +1607,13 @@ button.toReceipt.field.half {
   .introTitle {
     display: none;
   }
-
   .banner {
     top: 7%;
     width: 70%;
   }
-
   #videoWrapper {
     display: none;
   }
-
   /* form */
   #formBox {
     position: relative;
@@ -1622,36 +1621,32 @@ button.toReceipt.field.half {
     background-attachment: fixed;
     padding: 30% 0;
   }
-
   .availability {
     flex-direction: column-reverse;
     padding: 20px;
   }
-
   .formLabel {
     height: 55px;
     padding: 5px;
   }
-
   #oneCell {
     width: auto !important;
   }
-
   #firstRow,
   #secondRow {
     flex-direction: column;
     margin-bottom: 10px;
   }
-
+  label.terms {
+    text-align-last: left;
+  }
   #secondRow .formLabel {
     margin: 5px;
   }
-
   #secondRow .formLabel:last-of-type {
     border-left: none;
     padding-left: 0;
   }
-
   .toPayment {
     width: 100%;
     border-radius: 0 0 5px 5px;
@@ -1659,13 +1654,20 @@ button.toReceipt.field.half {
 
   /* payment */
   .paymentForm .payment-type .types .type {
+    padding: 10px 0 0 0;
+  }
+  .paymentForm .payment-info .column {
+    width: 150px;
+  }
+  button.toReceipt.field.half {
+    margin: 10px 0 0 110px;
+  }
+  #payment-modal-content #formLabel {
     padding: 0;
   }
-
-  #payment-modal-content #formLabel {
-    height: 50px;
+  button.toReceipt.field.half {
+    margin: 20px 0 0 90px;
   }
-
   .paymentForm .payment-info .title {
     margin: 10px 0;
   }
@@ -1857,8 +1859,17 @@ button.toReceipt.field.half {
     left: 50%;
     top: 10%;
   }
+  label.terms {
+    text-align-last: left;
+  }
+  .paymentForm .payment-type .types .type .logo {
+    padding-top: 20px;
+  }
   #payment-modal-content {
     height: 100%;
+  }
+  #payment-modal-content .formLabel {
+    height: 40px;
   }
   #singleTourArea {
     margin-top: -60px;
@@ -1890,15 +1901,28 @@ button.toReceipt.field.half {
     width: auto;
   }
   #payment-modal-content {
-    height: 60%;
+    height: fit-content;
     padding: 30px 60px;
+  }
+  #trip-modal-content {
+    width: 60%;
+  }
+  .paymentForm .payment-info .column {
+    width: 200px;
+  }
+  button.toReceipt.field.half {
+    margin: 10px 0 0 110px;
+  }
+  .paymentForm .payment-type .types .type {
+    padding: 0;
+    margin: 0 3px;
   }
   .banner,
   .introTitle {
     top: 20%;
   }
   #formBox {
-    top: 30%;
+    top: 25%;
   }
   #tripArea {
     display: flex;
@@ -1912,11 +1936,24 @@ button.toReceipt.field.half {
     width: 380px;
     height: 280px;
   }
+  #customiseYourOwn h3 {
+    text-align-last: center;
+    margin: 30px 0;
+  }
+  #faqInfo {
+    padding: 15% 25% 10% 25%;
+  }
 }
 /* Ipad landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  #tours {
+    margin: 0 32%;
+  }
   .availability {
     padding: 0;
+  }
+  #formBox {
+    top: 45%;
   }
   .formLabel {
     margin-right: 0;
@@ -1926,9 +1963,22 @@ button.toReceipt.field.half {
     text-align: left;
     padding-left: 10px;
   }
+  #trip-modal-content {
+    width: 60%;
+  }
   #payment-modal-content {
     height: 100%;
     padding: 30px 60px;
+    height: fit-content;
+  }
+  .paymentForm .payment-info .column {
+    width: 200px;
+  }
+  button.toReceipt.field.half {
+    margin: 10px 0 0 110px;
+  }
+  #customiseYourOwn h3 {
+    text-align-last: center;
   }
   .newsletterForm .formLabel {
     border-radius: 20px 0 0 20px !important;
@@ -1944,6 +1994,12 @@ button.toReceipt.field.half {
   }
   .toPayment {
     width: auto;
+  }
+  .paymentForm .payment-info .column {
+    width: 250px;
+  }
+  button.toReceipt.field.half {
+    margin: 20px 0 0 135px;
   }
   .video-container {
     max-height: 900px;
