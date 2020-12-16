@@ -443,11 +443,21 @@ html {
     stroke-dashoffset: 0;
   }
 }
-#boatSvg,
+/* #boatSvg,
 #boatSvg2 {
   width: 250px;
   position: relative;
+} */
+
+
+.hiddenElement {
+  display: none;
 }
+
+.showBoat {
+  display: block;
+}
+
 .flashAnimation {
   animation: flash linear 1.5s forwards;
   animation-delay: 5s;
@@ -663,6 +673,10 @@ html {
   font-family: "Proxima Nova Regular";
   text-align: left;
   display: none;
+}
+
+.showTour {
+  display: block;
 }
 
 .singleTour {
@@ -1747,8 +1761,15 @@ select:after {
     margin: 50px 5% 50px 5%;
   }
 
-  #boatSvg {
-    display: none;
+  .boatAnimation {
+    stroke-dasharray: 1901;
+    stroke-dashoffset: 1901;
+    animation: draw 5s linear forwards;
+  }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 
   /* weather */
