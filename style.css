@@ -426,6 +426,7 @@ a.logo {
 #gallery-2,
 #gallery-3 {
   column-count: 2;
+  text-align-last: center
 }
 .gallery-item figcaption {
   font-family: "Proxima Nova Bold";
