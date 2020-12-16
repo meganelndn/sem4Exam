@@ -406,6 +406,7 @@ function showTours() {
             document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
             document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
             // document.querySelector("#boatSvg").classList.remove("boatAnimation"); 
+            privateBoat.src = "";
 
 
     } else if (!privateTourText.classList.contains("showTour")){
@@ -427,6 +428,7 @@ function showTours() {
                 document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
                 document.querySelector("#singleTripArea:first-of-type").classList.remove("flashAnimation");
+                publicBoat.src = "";
                 // document.querySelector("#boatSvg").classList.remove("boatAnimation"); 
 
         } else if (!publicTourText.classList.contains("showTour")){
