@@ -86,6 +86,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 25px 1px;
 }
 
 #navBar a,
@@ -95,12 +96,14 @@ html {
   cursor: pointer !important;
   text-decoration: none;
   padding: 8px 20px;
+  margin: 0 40px;
   font-family: var(--regular-font);
   font-weight: bold;
 }
 
 #navBar a:first-of-type {
   flex-grow: 1;
+  margin-left: 0;
 }
 /* sticky navBar */
 .changeMenu {
@@ -110,7 +113,7 @@ html {
 }
 
 .changeLinks {
-  color: black;
+  color: black !important;
 }
 
 #navBar a:hover {
@@ -136,7 +139,7 @@ html {
   cursor: pointer;
 }
 .translate {
-  width: 30px;
+  width: 25px;
 }
 .dropdown {
   position: relative;
@@ -639,8 +642,7 @@ html {
   text-transform: uppercase;
   color: var(--light-blue);
   background-color: white;
-  border: solid 4px var(--light-blue);
-  border-bottom: solid 4px transparent;
+  border: solid 4px var(--light-beige);
   border-radius: 10px 10px 0 0;
   font-family: var(--main-font);
   transition: transform 0.5s;
@@ -670,7 +672,7 @@ html {
   width: 250px;
 }
 
-.singleTour:hover,
+
 .singleTour:focus,
 .corona-guidelines:hover,
 .corona-guidelines:focus {
@@ -876,35 +878,39 @@ html {
 
 .socialMediaIcon {
   width: 30px;
+  margin-right: 10px;
   cursor: pointer;
 }
 
 .contactLink1 {
   cursor: pointer !important;
+  text-decoration: none;
   color: white;
 }
 
 /* --------- FAQ ---------- */
+
 #faq {
-  margin: 0 25%;
+  margin: 5% 25%;
 }
+
+
 #faqInfo {
   padding: 10% 25%;
   background-image: url("http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/sea.jpg");
   background-size: cover;
   background-attachment: fixed;
   color: white;
-  text-align: center;
+  text-align: left;
 }
 
 .faqTitle {
   padding-top: 0;
-  text-transform: uppercase;
   font-family: "Brandon Text Bold";
 }
 
 #compass {
-  margin: 20px 0 60px 0;
+  margin: 50px;
 }
 .compass {
   width: 80px;
@@ -925,9 +931,8 @@ html {
 }
 .oneQuestion {
   padding: 5px 15px;
-  border: 1px solid var(--dark-blue);
+  border-bottom: 1px solid var(--dark-blue);
   margin: 10px 0;
-  border-radius: 5px;
 }
 .questionBox {
   justify-content: space-between;
@@ -1169,7 +1174,7 @@ input#terms {
   padding: 10px 30px;
   background: var(--dark-blue);
   border: none;
-  border-radius: 3px;
+  border-radius: 20px;
   color: #fff;
   cursor: pointer;
 }
@@ -1755,7 +1760,7 @@ select:after {
 
   /* faq */
   #faq {
-    margin: 20px;
+    margin: 50px 20px;
   }
 
   #faqInfo {
@@ -1800,8 +1805,12 @@ select:after {
     flex-direction: column-reverse;
     align-items: center;
     color: black;
+    margin: 0;
   }
 
+  #navBar button {
+    margin: 0;
+  }
   #navBar a:first-of-type {
     display: none;
   }

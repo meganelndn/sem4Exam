@@ -1,3 +1,5 @@
+"use strict";
+
 window.addEventListener("DOMContentLoaded", init);
 import 'regenerator-runtime/runtime'
 
@@ -30,11 +32,18 @@ function init() {
     
         const urlFaq = "http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/faq/";
         fetchData(urlFaq, showFAQPage);
-        setUpScrollEffect();
+        setScrollPositionFaq();
 
     }
 
     setUpScrollEffect();
+
+    
+    const checkMobile = window.matchMedia('screen and (max-width: 800px)');
+    if (checkMobile.matches){
+        let translate = document.querySelector(".dropbtn .translate")
+        translate.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/translate-1.png";
+    } 
 }
 
 let tripSelected;
@@ -137,18 +146,69 @@ function setScrollPosition() {
     let book = document.querySelector("#navBar .bookBtn");
     let sticky = header.offsetTop;
     let navBar = document.querySelector("#topNavigation");
-    let links = document.querySelector("#navBar a");
+    let links = document.querySelectorAll(".linkText");
+    let translate = document.querySelector(".dropbtn .translate")
+    let logo = document.querySelector("#navBar #logo");
+    const checkMobile = window.matchMedia('screen and (max-width: 800px)');
 
     function myFunction() {
-      if (window.pageYOffset > sticky) {
-        navBar.classList.add("changeMenu");
-        links.classList.add("changeLinks");
-        book.classList.add("addStyle");
-      } else {
-        navBar.classList.remove("changeMenu");
-        links.classList.remove("changeLinks");
-        book.classList.remove("addStyle");
-      }
+        if (window.pageYOffset > sticky && !checkMobile.matches) {
+            navBar.classList.add("changeMenu");
+            links.forEach((oneLink)=>{
+                oneLink.classList.add("changeLinks")
+            })
+            book.classList.add("addStyle");
+            translate.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/translate-1.png";
+            logo.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/heycaptain_logo.png";
+        } else if (checkMobile.matches){
+            let translate = document.querySelector(".dropbtn .translate")
+            translate.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/translate-1.png";
+        } else {
+            navBar.classList.remove("changeMenu");
+            links.forEach((oneLink)=>{
+                oneLink.classList.remove("changeLinks")
+            })
+            book.classList.remove("addStyle");
+            translate.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/translate-white1.png";
+            logo.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/hey_captain_logo_white.png";
+        }
+    }
+}
+
+function setScrollPositionFaq() {
+    window.onscroll = function() {myFunction()};
+
+    
+    let base = document.querySelector("#faqInfo");
+    let sticky = base.offsetTop;
+    let book = document.querySelector("#navBar .bookBtn");
+    let navBar = document.querySelector("#topNavigation");
+    let links = document.querySelectorAll(".linkText");
+    let translate = document.querySelector(".dropbtn .translate")
+    let logo = document.querySelector("#navBar #logo");
+    const checkMobile = window.matchMedia('screen and (max-width: 800px)');
+    
+    function myFunction() {
+        if (window.pageYOffset > sticky && !checkMobile.matches) {
+            navBar.classList.add("changeMenu");
+            links.forEach((oneLink)=>{
+                oneLink.classList.add("changeLinks")
+            })
+            book.classList.add("addStyle");
+            translate.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/translate-1.png";
+            logo.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/heycaptain_logo.png";
+        } else if (checkMobile.matches){
+            let translate = document.querySelector(".dropbtn .translate")
+            translate.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/translate-1.png";
+        }else {
+            navBar.classList.remove("changeMenu");
+            links.forEach((oneLink)=>{
+                oneLink.classList.remove("changeLinks")
+            })
+            book.classList.remove("addStyle");
+            translate.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/translate-white1.png";
+            logo.src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/11/hey_captain_logo_white.png";
+        }
     }
 }
 
@@ -391,7 +451,7 @@ function showFAQPage(faq) {
         faqArea.appendChild(cloneFAQ);
     })
     accordion();
-    expandOptions(icon);
+    expandOptions();
 }
 
 function accordion(){
