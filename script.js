@@ -137,13 +137,16 @@ function setScrollPosition() {
     let book = document.querySelector("#navBar .bookBtn");
     let sticky = header.offsetTop;
     let navBar = document.querySelector("#topNavigation");
+    let links = document.querySelector("#navBar a");
 
     function myFunction() {
       if (window.pageYOffset > sticky) {
         navBar.classList.add("changeMenu");
+        links.classList.add("changeLinks");
         book.classList.add("addStyle");
       } else {
-        navBar.classList.remove("changeMenu")
+        navBar.classList.remove("changeMenu");
+        links.classList.remove("changeLinks");
         book.classList.remove("addStyle");
       }
     }
@@ -481,7 +484,7 @@ function weatherApp(weather) {
         copy.querySelector(".weatherResult").textContent = "Watch out, you wouldn't want to get wet today!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/heavy-rain.png";
     } else {
-        copy.querySelector(".weatherResult").textContent = "See Copenhagen through the lens of a Dane today!";
+        copy.querySelector(".weatherResult").textContent = "Every day is a cloudy day in  Denamrk!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
     }
 
