@@ -88,7 +88,10 @@ html {
   justify-content: flex-end;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 25px 1px;
 }
-
+a.logo {
+  flex-grow: 1;
+  margin-left: 0 !important;
+}
 #navBar a,
 #navBar button {
   color: white;
@@ -101,10 +104,14 @@ html {
   font-weight: bold;
 }
 
-#navBar a:first-of-type {
-  flex-grow: 1;
-  margin-left: 0;
+.dropdown-content a {
+  margin: 0 !important;
 }
+/* .dropdown-content a:first-of-type {
+  flex-grow: 0;
+  margin-left: 0;
+} */
+
 /* sticky navBar */
 .changeMenu {
   margin-inline-start: auto;
@@ -157,7 +164,7 @@ html {
   margin-right: 10px;
 }
 .dropdown-content a {
-  color: black;
+  color: black !important;
   text-decoration: none;
   display: flex;
   align-self: center;
