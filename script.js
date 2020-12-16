@@ -395,8 +395,9 @@ function showTrips(trips) {
 function showTours() {
     
     const privateTourText = document.querySelector(".privateTourText");
-    const privateBoat = document.querySelector("#boatSvg");
+    const privateBoat = document.querySelector("#privateBoatSvg");
     const publicTourText = document.querySelector(".publicTourText");
+    const publicBoat = document.querySelector("#publicBoatSvg");
     
     document.querySelector(".privateTourTitle").addEventListener("click", function() {
     if (privateTourText.classList.contains("showTour")) {
@@ -406,6 +407,7 @@ function showTours() {
             document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
             // document.querySelector("#boatSvg").classList.remove("boatAnimation"); 
 
+
     } else if (!privateTourText.classList.contains("showTour")){
             console.log("do stuff to show")
             // privateTourText.style.display = "none";
@@ -413,6 +415,7 @@ function showTours() {
             document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
             document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation");
             // document.querySelector("#boatSvg path").classList.add("boatAnimation"); 
+            privateBoat.src = require("./static/svg/newBoat_1.svg");
 
     }
     })
@@ -431,7 +434,8 @@ function showTours() {
                 publicTourText.classList.add("showTour");
                 document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation");  
-                document.querySelector("#singleTripArea:first-of-type").classList.add("flashAnimation");  
+                document.querySelector("#singleTripArea:first-of-type").classList.add("flashAnimation");
+                publicBoat.src = require("./static/svg/newBoat_2.svg");
                 // document.querySelector("#boatSvg path").classList.add("boatAnimation"); 
         }
     })
