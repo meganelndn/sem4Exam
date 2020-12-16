@@ -252,7 +252,7 @@ a.logo {
 
 .wheel {
   width: 80px;
-  animation: rotate 3s linear infinite;
+  animation: rotate 4s linear infinite;
 }
 
 @keyframes rotate {
@@ -1638,6 +1638,7 @@ button.toReceipt.field.half {
   .availability {
     flex-direction: column-reverse;
     padding: 20px;
+    margin: auto;
   }
   .formLabel {
     height: 55px;
@@ -1769,16 +1770,8 @@ button.toReceipt.field.half {
   #corona {
     margin: 50px 5% 50px 5%;
   }
-
-  .boatAnimation {
-    stroke-dasharray: 1901;
-    stroke-dashoffset: 1901;
-    animation: draw 5s linear forwards;
-  }
-  @keyframes draw {
-    to {
-      stroke-dashoffset: 0;
-    }
+  #privateBoatSvg, #publicBoatSvg {
+    display: none;
   }
 
   /* weather */
