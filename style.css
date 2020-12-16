@@ -456,7 +456,6 @@ a.logo {
   position: relative;
 } */
 
-
 .hiddenElement {
   display: none;
 }
@@ -656,9 +655,8 @@ a.logo {
   max-width: 350px;
   height: auto;
   text-transform: uppercase;
-  color: var(--light-blue);
-  background-color: white;
-  border: solid 4px var(--light-beige);
+  color: #fff;
+  border: 2px solid #fff;
   border-radius: 10px 10px 0 0;
   font-family: var(--main-font);
   transition: transform 0.5s;
@@ -761,6 +759,7 @@ a.logo {
   border-radius: 15px;
   box-shadow: 0 1px 25px 1px rgba(0, 0, 0, 0.2);
   width: 450px;
+  margin-top: 30px;
 }
 
 #weatherArea #main {
@@ -776,7 +775,7 @@ a.logo {
 
 .weatherIcon {
   width: 100px;
-  height: 100px;
+  height: auto;
 }
 .temperature {
   margin-top: 0;
@@ -833,6 +832,7 @@ a.logo {
   margin: 0;
   font-family: "Proxima Nova Light";
   font-style: italic;
+  font-size: 16px;
 }
 #weatherResult p::before {
   content: "\261E";
@@ -903,8 +903,8 @@ a.logo {
 
 .contactLink1 {
   cursor: pointer !important;
-  text-decoration: none;
   color: white;
+  font-size: 14px;
 }
 
 /* --------- FAQ ---------- */
@@ -1545,17 +1545,15 @@ select:after {
   width: 300px;
 }
 
-.paymentForm .payment-info .title {
+.paymentForm .payment-info .title,
+.paymentForm h4 {
   display: flex;
   flex-direction: row;
   align-items: center;
   font-size: 18px;
-  font-family: "Brandon Text Regular";
-}
-.paymentForm h4 {
-  padding: 20px 0 10px 0;
-  font-size: 18px;
-  font-family: "Brandon Text Regular";
+  font-family: var(--regular-font);
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 #cc > #oneCell {
@@ -1577,7 +1575,8 @@ select:after {
 button.toReceipt.field.half {
   display: flex;
   justify-content: center;
-  margin: 20px 0 0 160px;
+  margin-top: 20px;
+  border-radius: 20px;
 }
 
 .toReceipt:hover {
@@ -1680,7 +1679,7 @@ button.toReceipt.field.half {
     padding: 0;
   }
   button.toReceipt.field.half {
-    margin: 20px 0 0 90px;
+    padding: 10px;
   }
   .paymentForm .payment-info .title {
     margin: 10px 0;
@@ -1844,7 +1843,6 @@ button.toReceipt.field.half {
     display: none;
   }
   #navBar a:last-of-type {
-    /* padding: 25px; */
     font-size: 14px;
     color: var(--dark-blue) !important;
     background-color: var(--yellow);
@@ -1892,6 +1890,12 @@ button.toReceipt.field.half {
   #payment-modal-content .formLabel {
     height: 40px;
   }
+  button.toReceipt.field.half {
+    padding: 10px;
+  }
+  .paymentForm .payment-info .column {
+    width: 300px;
+  }
   #singleTourArea {
     margin-top: -60px;
   }
@@ -1932,7 +1936,7 @@ button.toReceipt.field.half {
     width: 200px;
   }
   button.toReceipt.field.half {
-    margin: 10px 0 0 110px;
+    padding: 10px;
   }
   .paymentForm .payment-type .types .type {
     padding: 0;
@@ -1996,7 +2000,7 @@ button.toReceipt.field.half {
     width: 200px;
   }
   button.toReceipt.field.half {
-    margin: 10px 0 0 110px;
+    padding: 10px;
   }
   #customiseYourOwn h3 {
     text-align-last: center;
@@ -2020,7 +2024,7 @@ button.toReceipt.field.half {
     width: 250px;
   }
   button.toReceipt.field.half {
-    margin: 20px 0 0 135px;
+    padding: 10px;
   }
   .video-container {
     max-height: 900px;
