@@ -1,0 +1,18 @@
+ <svg id="lineSvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+ <!-- Add styles inside the SVG file -->
+<style>
+.path {
+  stroke-dasharray: 600;
+  animation: dash 4s infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+</style>
+    <g stroke-width="2" fill="none" stroke="#000">
+        <path class="path" d="M0 0 L0 2000"></path>
+    </g>
+</svg>
