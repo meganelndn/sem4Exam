@@ -1309,7 +1309,7 @@ select:after {
 #payment-modal-background {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 12;
   left: 0;
   top: 0;
   width: 100%;
