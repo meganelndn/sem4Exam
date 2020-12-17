@@ -539,10 +539,10 @@ function weatherApp(weather) {
         copy.querySelector(".weatherResult").textContent = "See Copenhagen through the lens of a Dane today!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/foggy.png";
     } else if (weather.current.weather_descriptions[0].includes("Cloudy", "cloudy", "Overcast")) {
-        copy.querySelector(".weatherResult").textContent = "The good old boring Danish sky...";
+        copy.querySelector(".weatherResult").textContent = "The good old cloudy Danish sky...";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/cloudy.png";
     } else if (weather.current.weather_descriptions[0].includes("Light", "Drizzle", "Rain")) {
-        copy.querySelector(".weatherResult").textContent = "Light rain on the horizon today!";
+        copy.querySelector(".weatherResult").textContent = "Every day is raincoat day here!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/rainy.png";
     } else if (weather.current.weather_descriptions[0].includes("Sun", "Sunny")) {
         copy.querySelector(".weatherResult").textContent = "Enjoy the sun while it lasts!";
@@ -551,10 +551,10 @@ function weatherApp(weather) {
         copy.querySelector(".weatherResult").textContent = "Careful, looks like today will be windy!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/windy.png";
     } else if (weather.current.weather_descriptions[0].includes("Thunder", "Stormy")) {
-        copy.querySelector(".weatherResult").textContent = "There is a storm on the horizon...";
+        copy.querySelector(".weatherResult").textContent = "Storm on the horizon, thank you Thor!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/stormy.png";
     } else if (weather.current.weather_descriptions[0].includes("Heavy")) {
-        copy.querySelector(".weatherResult").textContent = "Watch out, you wouldn't want to get wet today!";
+        copy.querySelector(".weatherResult").textContent = "Rainboots needed, get the danish fisherman look!";
         copy.querySelector(".weatherIcon").src = "http://pbstyle.dk/wpinstall/wordpress/wp-content/uploads/2020/12/heavy-rain.png";
     } else {
         copy.querySelector(".weatherResult").textContent = "Every day is a cloudy day in Denmark!";
