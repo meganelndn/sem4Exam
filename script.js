@@ -368,15 +368,19 @@ function showTrips(trips) {
             // Gallery timeline
             readMoreModal.querySelector("#timelineGallery").innerHTML = oneTrip.content.rendered;
             //Animate line as you scroll 
-            const line = readMoreModal.querySelector("#c");
-            let length = line.getTotalLength();
-            line.style.strokeDasharray = length;
-            line.style.strokeDashoffset = length;
-            readMoreModal.addEventListener("scroll", function(){
-                let scroll = readMoreModal.scrollTop / readMoreModal.scrollHeight;
-                let draw = length * scroll;
-                line.style.strokeDashoffset = length - draw;
-            });
+            // const checkMobile = window.matchMedia('screen and (max-width: 800px)');
+            // if (checkMobile.matches){
+                const line = readMoreModal.querySelector("#pathLine");
+                console.log(line)
+                let length = line.getTotalLength(); 
+                line.style.strokeDasharray = length;
+                line.style.strokeDashoffset = length;
+                readMoreModal.addEventListener("scroll", function(){
+                    let scroll = readMoreModal.scrollTop / readMoreModal.scrollHeight;
+                    let draw = length * scroll;
+                    line.style.strokeDashoffset = length - draw;
+                });
+            // } 
 
         });
         tripCopy.querySelector(".trip-modal-close").addEventListener("click", function(){
