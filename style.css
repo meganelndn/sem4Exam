@@ -439,23 +439,10 @@ a.logo {
   position: absolute;
   left: 50%;
 }
-#lineSvg {
-  height: 1000px;
-  /* animation: dash 5s linear alternate infinite; */
+
+#modalLine {
+  height: 600px;
 }
-/* @keyframes dash {
-  from {
-    stroke-dashoffset: 82;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-} */
-/* #boatSvg,
-#boatSvg2 {
-  width: 250px;
-  position: relative;
-} */
 
 .hiddenElement {
   display: none;
@@ -1235,7 +1222,7 @@ select {
   border: none;
   outline: none;
   color: grey;
-  margin-top: 5px;
+  background-color: white;
 }
 select:after {
   border: none;
@@ -1309,7 +1296,7 @@ select:after {
 #payment-modal-background {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 12;
   left: 0;
   top: 0;
   width: 100%;
@@ -1324,7 +1311,19 @@ select:after {
   display: block !important;
 }
 
-#trip-modal-content,
+#trip-modal-content {
+  background: white;
+  border: none;
+  color: var(--dark-blue);
+  padding: 40px;
+  margin: 10% auto;
+  width: 60%;
+  text-align: justify;
+  border-radius: 3px;
+  box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.4);
+  z-index: 99999;
+  height: fit-content;
+}
 #payment-modal-content {
   background: white;
   border: none;
@@ -1338,6 +1337,7 @@ select:after {
   z-index: 99999;
   height: fit-content;
 }
+
 #trip-modal-background {
   animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
@@ -1641,7 +1641,7 @@ button.toReceipt.field.half {
     margin: auto;
   }
   .formLabel {
-    height: 55px;
+    height: 40px;
     padding: 5px;
   }
   #oneCell {
@@ -1671,12 +1671,13 @@ button.toReceipt.field.half {
   .paymentForm .payment-type .types .type {
     padding: 10px 0 0 0;
   }
-  .paymentForm .payment-info .column {
-    width: 150px;
+  #payment-modal-content {
+    height: -webkit-fill-available;
   }
-  button.toReceipt.field.half {
+
+  /* button.toReceipt.field.half {
     margin: 10px 0 0 110px;
-  }
+  } */
   #payment-modal-content #formLabel {
     padding: 0;
   }
@@ -1780,6 +1781,18 @@ button.toReceipt.field.half {
     margin-bottom: 50px;
   }
 
+  #weatherArea {
+    padding: 15px;
+  }
+
+  #weatherDetails div, #weatherDetails .feeling {
+    flex-flow: wrap;
+    justify-content: center;
+  }
+
+  .weatherResult {
+    text-align: center;
+  }
   /* faq */
   #faq {
     margin: 50px 20px;
@@ -1846,6 +1859,7 @@ button.toReceipt.field.half {
   }
   #topNavigation {
     bottom: 0;
+    z-index: 15;
   }
   .navBarContent {
     justify-content: space-between;

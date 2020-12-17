@@ -370,16 +370,18 @@ function showTrips(trips) {
             //Animate line as you scroll 
             const checkDesktop = window.matchMedia('screen and (min-width: 800px)');
             if (checkDesktop.matches){
-                const line = readMoreModal.querySelector("#pathLine");
-                console.log(line)
-                let length = line.getTotalLength(); 
-                line.style.strokeDasharray = length;
-                line.style.strokeDashoffset = length;
-                readMoreModal.addEventListener("scroll", function(){
-                    let scroll = readMoreModal.scrollTop / readMoreModal.scrollHeight;
-                    let draw = length * scroll;
-                    line.style.strokeDashoffset = length - draw;
-                });
+                readMoreModal.querySelector(".vl #modalLine").src = require("./static/svg/modalLine.svg");
+                // const line = readMoreModal.querySelector("#pathLine");
+                // console.log(line)
+                // let length = line.getTotalLength(); 
+                // console.log(length)
+                // line.style.strokeDasharray = length;
+                // line.style.strokeDashoffset = length;
+                // readMoreModal.addEventListener("scroll", function(){
+                //     let scroll = readMoreModal.scrollTop / readMoreModal.scrollHeight;
+                //     let draw = length * scroll;
+                //     line.style.strokeDashoffset = length - draw;
+                // });
             } 
 
         });
@@ -405,7 +407,7 @@ function showTours() {
     
     document.querySelector(".privateTourTitle").addEventListener("click", function() {
     if (privateTourText.classList.contains("showTour")) {
-            console.log("clicked to HIDE")
+            // console.log("clicked to HIDE")
             privateTourText.classList.remove("showTour");
             document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
             document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
@@ -414,7 +416,7 @@ function showTours() {
 
 
     } else if (!privateTourText.classList.contains("showTour")){
-            console.log("do stuff to show")
+            // console.log("do stuff to show")
             // privateTourText.style.display = "none";
             privateTourText.classList.add("showTour");
             document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
@@ -427,7 +429,7 @@ function showTours() {
 
     document.querySelector(".publicTourTitle").addEventListener("click", function() {
         if (publicTourText.classList.contains("showTour")) {
-                console.log("clicked to HIDE")
+                // console.log("clicked to HIDE")
                 publicTourText.classList.remove("showTour");
                 document.querySelector("#singleTripArea:nth-of-type(5n)").classList.remove("flashAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(3n)").classList.remove("flashAnimation");
@@ -436,7 +438,7 @@ function showTours() {
                 // document.querySelector("#boatSvg").classList.remove("boatAnimation"); 
 
         } else if (!publicTourText.classList.contains("showTour")){
-                console.log("do stuff to show")
+                // console.log("do stuff to show")
                 publicTourText.classList.add("showTour");
                 document.querySelector("#singleTripArea:nth-of-type(5n)").classList.add("flashAnimation"); 
                 document.querySelector("#singleTripArea:nth-of-type(3n)").classList.add("flashAnimation");  
