@@ -440,17 +440,17 @@ a.logo {
   left: 50%;
 }
 #lineSvg {
-  height: 1300px;
-  animation: dash 5s linear alternate infinite;
+  height: 1000px;
+  /* animation: dash 5s linear alternate infinite; */
 }
-@keyframes dash {
+/* @keyframes dash {
   from {
     stroke-dashoffset: 82;
   }
   to {
     stroke-dashoffset: 0;
   }
-}
+} */
 /* #boatSvg,
 #boatSvg2 {
   width: 250px;
