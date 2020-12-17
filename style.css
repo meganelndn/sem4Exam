@@ -1742,7 +1742,7 @@ button.toReceipt.field.half {
     margin-bottom: 30px;
   }
 
-  #lineSvg {
+  #lineSvg, .vl {
     display: none;
   }
 
