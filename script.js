@@ -368,8 +368,8 @@ function showTrips(trips) {
             // Gallery timeline
             readMoreModal.querySelector("#timelineGallery").innerHTML = oneTrip.content.rendered;
             //Animate line as you scroll 
-            // const checkMobile = window.matchMedia('screen and (max-width: 800px)');
-            // if (checkMobile.matches){
+            const checkDesktop = window.matchMedia('screen and (min-width: 800px)');
+            if (checkDesktop.matches){
                 const line = readMoreModal.querySelector("#pathLine");
                 console.log(line)
                 let length = line.getTotalLength(); 
@@ -380,7 +380,7 @@ function showTrips(trips) {
                     let draw = length * scroll;
                     line.style.strokeDashoffset = length - draw;
                 });
-            // } 
+            } 
 
         });
         tripCopy.querySelector(".trip-modal-close").addEventListener("click", function(){
